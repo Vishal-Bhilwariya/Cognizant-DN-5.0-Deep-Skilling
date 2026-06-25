@@ -45,4 +45,26 @@ Answer: Possible classes include:
         Librarian
         Library
         IssueRecord
+
+Q13. What is Abstraction?
+Answer:
+Abstraction is the process of hiding implementation details and exposing only the essential features to the user.
+
+Q14. Why is Abstraction important?
+Answer:
+It reduces complexity, improves maintainability, and allows users to interact with systems without understanding their internal implementation.
+
+Intermediate
+Q15. How is Abstraction achieved in Java?
+Answer:
+Java achieves abstraction primarily through abstract classes and interfaces.
+
+Q16. What is hidden in Abstraction?
+Answer:
+The internal implementation or working logic is hidden from the user.
+
+Scenario-Based
+Q17. Your banking app has a transferMoney() method. Should users know how encryption, authentication, and server communication work?
+Answer:
+No. Users only need to know how to initiate the transfer and receive the result. The internal implementation should remain hidden. This is Abstraction.
 */
