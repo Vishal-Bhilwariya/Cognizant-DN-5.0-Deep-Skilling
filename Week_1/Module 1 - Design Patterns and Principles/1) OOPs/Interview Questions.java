@@ -67,4 +67,30 @@ Scenario-Based
 Q17. Your banking app has a transferMoney() method. Should users know how encryption, authentication, and server communication work?
 Answer:
 No. Users only need to know how to initiate the transfer and receive the result. The internal implementation should remain hidden. This is Abstraction.
+
+Basic
+Q18. What is Encapsulation?
+Answer:
+Encapsulation is the process of wrapping data and methods into a single class while protecting the data using access modifiers like private.
+
+Q19. Why are variables declared private?
+Answer:
+To prevent direct access and unauthorized modification of data.
+
+Intermediate
+Q20. What are Getter and Setter methods?
+Answer:
+Getter → Reads the value.
+Setter → Updates the value after validation.
+
+Q21. How does Encapsulation improve security?
+Answer:
+It prevents direct access to important data and allows only controlled access through methods.
+
+Scenario-Based
+Q22.
+Why should the salary of an employee be private?
+Answer:
+Because salary is sensitive information. It should only be accessed or modified through controlled methods to prevent unauthorized changes.
+
 */
