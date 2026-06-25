@@ -93,4 +93,34 @@ Why should the salary of an employee be private?
 Answer:
 Because salary is sensitive information. It should only be accessed or modified through controlled methods to prevent unauthorized changes.
 
+Basic
+Q23. What is Inheritance?
+Answer:
+Inheritance is the mechanism by which one class acquires the properties and methods of another class.
+
+Q24. Which keyword is used for inheritance?
+Answer:extends
+
+Q25. What is the Parent Class called?
+Answer:Superclass or Base Class.
+
+Q26. What is the Child Class called?
+Answer:Subclass or Derived Class.
+
+Intermediate
+Q27. Why is Inheritance used?
+Answer:
+To promote code reusability, reduce duplication, and model "is-a" relationships.
+
+Scenario-Based
+Q28. You are creating an Employee Management System.
+     Classes:
+        Employee
+        Manager
+        Developer
+        Tester
+     Should inheritance be used?
+Answer:
+Yes.
+Employee should be the parent class because all employees share common properties like name, ID, and salary.
 */
