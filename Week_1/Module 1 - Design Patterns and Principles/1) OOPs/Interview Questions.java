@@ -160,4 +160,29 @@ Should you create:
 Answer:
 Use a common method pay() and implement different behavior in different payment classes. This is runtime polymorphism.
 
+Basic
+Q35. What are Access Modifiers?
+Answer:
+Access modifiers are keywords that control the visibility and accessibility of classes, methods, variables, and constructors.
+
+Q36. How many access modifiers are there in Java?
+Answer:
+        Four:
+                private
+                default
+                protected
+                public
+Q37. Which modifier provides the highest level of security?
+Answer: private
+
+Q38. Which modifier allows access from anywhere?
+Answer: public
+
+Scenario-Based
+Q39. Your class contains a user's password.
+Which access modifier should you use?
+Answer:
+private, because passwords should not be directly accessible from outside the class.
+
+
 */
