@@ -18,14 +18,14 @@ Each week's hands-on practice is maintained in a **separate Git branch**.
 
 | Week   | Branch Name      |
 | ------ | ---------------- |
-| Week 1 | `week1` |
-| Week 2 | `week2` |
-| Week 3 | `week3` |
-| Week 4 | `week4` |
-| Week 5 | `week5` |
-| Week 6 | `week6` |
-| Week 7 | `week7` |
-| Week 8 | `week8` |
+| Week 1 | `week_1` |
+| Week 2 | `week_2` |
+| Week 3 | `week_3` |
+| Week 4 | `week_4` |
+| Week 5 | `week_5` |
+| Week 6 | `week_6` |
+| Week 7 | `week_7` |
+| Week 8 | `week_8` |
 
 > **Note:** Update branch names if they differ in your repository.
 
