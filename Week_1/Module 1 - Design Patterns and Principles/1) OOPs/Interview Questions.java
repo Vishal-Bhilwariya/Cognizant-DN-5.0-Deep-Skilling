@@ -123,4 +123,41 @@ Q28. You are creating an Employee Management System.
 Answer:
 Yes.
 Employee should be the parent class because all employees share common properties like name, ID, and salary.
+
+Basic
+Q29. What is Polymorphism?
+Answer:
+Polymorphism means One Name, Many Forms, where the same method name behaves differently depending on the context.
+
+Q30. How many types of polymorphism are there in Java?
+Answer:
+Two:
+        Compile-Time (Method Overloading)
+        Runtime (Method Overriding)
+Q31. What is Method Overloading?
+Answer:
+Having multiple methods with the same name but different parameter lists in the same class.
+
+Q32. What is Method Overriding?
+Answer:
+When a child class provides its own implementation of a method defined in the parent class.
+
+Intermediate
+33. Why is Animal a = new Dog(); called Runtime Polymorphism?
+Answer:
+Because the method to execute is determined by the actual object (Dog) at runtime, not by the reference type (Animal).
+
+Scenario-Based
+Q34. Your payment application supports UPI, Credit Card, and Net Banking.
+Should you create:
+        payUPI()
+        payCard()
+        payBank()
+
+        or
+
+        pay()
+Answer:
+Use a common method pay() and implement different behavior in different payment classes. This is runtime polymorphism.
+
 */
