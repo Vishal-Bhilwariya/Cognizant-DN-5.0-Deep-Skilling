@@ -130,4 +130,63 @@ Disadvantages of Using Classes and Objects
 Application
     Used in almost all modern programming languages for developing large-scale applications.
     Example: Android apps, web applications, games, desktop software.
+
+What is a Constructor?
+-> A constructor is a special method in a class that is automatically called when an object is created.
+   It has the same name as the class and no return type.
+
+   Types of Constructors:
+    1. Default Constructor
+        - No parameters.
+        - Automatically provided if no other constructor exists.
+        - Example:
+            Student() {
+                // Default initialization
+            }
+
+    2. Parameterized Constructor
+        - Takes parameters to initialize fields.
+        - Example:
+            Student(String name, int age) {
+                this.name = name;
+                this.age = age;
+            }
+
+    3. Copy Constructor
+        - Initializes an object using another object of the same class.
+        - Example:
+            Student(Student s) {
+                this.name = s.name;
+                this.age = s.age;
+            }
+
+   Why Use Constructors?
+    - Initialize object state.
+    - Perform setup operations when an object is created.
+    - Ensure that objects are created with valid initial values.
+
+   Example:
+    class Student {
+        String name;
+        int age;
+
+        // Default Constructor
+        Student() {
+            name = "Unknown";
+            age = 0;
+        }
+
+        // Parameterized Constructor
+        Student(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Student s1 = new Student();              // Uses default constructor
+            Student s2 = new Student("Alice", 20);   // Uses parameterized constructor
+        }
+    }
 */
