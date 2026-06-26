@@ -184,5 +184,18 @@ Which access modifier should you use?
 Answer:
 private, because passwords should not be directly accessible from outside the class.
 
+Q40. What is UML? 
+Answer: UML (Unified Modeling Language) is a standard visual language used to design, visualize, and document software systems. 
 
+Q41. How many categories of UML diagrams are there? 
+Answer: Two: Structural Diagrams Behavioral Diagrams 
+
+Q42. Which UML diagram is most commonly used in OOP? 
+Answer: Class Diagram. 
+
+Q43. What are the three sections of a UML Class Diagram? 
+Answer: Class Name Attributes (Variables) Methods (Behaviors) 
+
+Q44. What does the '+' symbol represent in UML? 
+Answer: public
 */
