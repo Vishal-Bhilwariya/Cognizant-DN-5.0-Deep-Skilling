@@ -198,4 +198,22 @@ Answer: Class Name Attributes (Variables) Methods (Behaviors)
 
 Q44. What does the '+' symbol represent in UML? 
 Answer: public
+
+Basic
+Q45. What is Association?
+Answer: Association is a relationship between two classes or objects where they communicate or work together without owning each other.
+
+Q46. What does Association represent?
+Answer: A uses-a or works-with relationship.
+
+Intermediate
+Q47. Is Association the same as Inheritance?
+Answer: No.
+      Inheritance represents an is-a relationship, whereas Association represents a uses-a/works-with relationship.
+
+Scenario-Based
+Q48.vShould Teacher and Student use Association or Inheritance?
+Answer: Association.
+        Because a Student is not a Teacher.
+        They only interact.
 */
