@@ -16,7 +16,7 @@ Each week's hands-on practice is maintained in a **separate Git branch**.
 
 ## 🗂️ Repository Structure
 
-| Week   | Branch Name      |
+| Week   | Branch_Name      |
 | ------ | ---------------- |
 | Week 1 | `week1_practice` |
 | Week 2 | `week2_practice` |
