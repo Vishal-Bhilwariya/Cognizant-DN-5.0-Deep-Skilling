@@ -101,5 +101,100 @@
       Teacher can exist without Student.
     So they are simply associated.
 
+                          Association
+                               |
+              ---------------------------------
+              |                               |
+        Class Association              Object Association
+              |                               |
+         Inheritance                 -------------------------
+                                     |          |            |
+                              Simple Association Aggregation Composition
+
+  a) Class Association : "is-a relationship"
+    - A relationship between classes.
+    - It is decided while designing the software.
+    1) Inheritance  - Inheritance is also a relationship between classes.
+          +-----------+
+          |  Animal   |
+          +-----------+
+               ▲
+               |
+          +-----------+
+          |    Dog    |
+          +-----------+
+    
+  b) Object Association : "has-a relationship"
+    - A relationship between objects of two classes.
+    1) Simple Association :
+      -> Two classes are related, but neither owns the other.
+      -> Both can exist independently.
+      -> Represented by a simple line connecting two classes.
+      +-----------+          +------------+
+      | Customer  |----------| Restaurant |
+      +-----------+          +------------+
+      Example:
+          Student --------> Teacher
+          (A student studies under a teacher)
+
+      Code Example:
+          class Teacher {
+              String name;
+          }
+          class Student {
+              Teacher teacher;  // Student has a reference to Teacher
+          }
+
+     2) Aggregation (Weak HAS-A):
+      -> A "has-a" relationship where one class contains a reference to another class.
+      -> The contained object can exist independently.
+      -> Represented by a line with an empty diamond at the container end.
+      -> Weak ownership (child can exist without parent).
+        +-------------+
+        | Department  |
+        +-------------+
+              ◇
+              |
+              |
+        +-------------+
+        | Professor   |
+        +-------------+
+      Example:
+          Department ◇-------- Student
+          (A department has students, but students can exist without the department)
+
+      Code Example:
+          class Student {
+              String name;
+          }
+          class Department {
+              List<Student> students;  // Department has students
+          }
+
+     3) Composition (Strong HAS-A):
+      -> A stronger form of aggregation where one class owns another.
+      -> The contained object cannot exist independently.
+      -> Represented by a line with a filled diamond at the container end.
+      -> Strong ownership (child cannot exist without parent).
+        +-----------+
+        |   House   |
+        +-----------+
+              ◆
+              |
+              |
+        +-----------+
+        |   Room    |
+        +-----------+
+      Example:
+          House ◆-------- Room
+          (A house has rooms, but rooms cannot exist without the house)
+
+      Code Example:
+          class Room {
+              String name;
+          }
+          class House {
+              List<Room> rooms;  // House owns rooms
+          }
     
 */
