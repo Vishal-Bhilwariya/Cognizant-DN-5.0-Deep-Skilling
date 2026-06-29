@@ -22,8 +22,8 @@
 
 | # | Topic | Description |
 |---|-------|-------------|
-| a | UML Diagrams | Introduction to Unified Modeling Language diagrams used in design. |
-| b | Introduction to SOLID | Overview of SOLID principles for clean and maintainable OOP design. |
+| a | UML Diagrams | UML as a blueprint for software. Two types: Structural (Class, Object, Component, Deployment, Package Diagrams) and Behavioral (Use Case, Sequence, Activity, State Machine Diagrams). Class Diagram syntax: attributes & methods with access symbols (+, -, #, ~). Associations: Class Association (Inheritance / IS-A), Object Association (Simple Association, Aggregation - Weak HAS-A, Composition - Strong HAS-A). |
+| b | Introduction to SOLID | Problems without design principles: Code Duplication, Tight Coupling, Low Reusability, Difficult Maintenance, Difficult Testing, Difficult Extension. Why SOLID was introduced — to write Flexible, Maintainable, Scalable, Reusable, Testable code. SOLID map: SRP (Large classes), OCP (Difficult extension), LSP (Wrong inheritance), ISP (Large interfaces), DIP (Tight coupling). |
 
 ---
 
