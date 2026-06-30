@@ -302,4 +302,39 @@ Q66.
 You have a Vehicle class with a refuel() method. Should an ElectricCar inherit from it?
 Answer:
 Not directly, because an electric car does not refuel with petrol or diesel. A better design is to separate fuel-powered and electric vehicles so child classes don't inherit behaviors they cannot support.
+
+Q67. What is ISP?
+Answer:
+A class should not be forced to implement methods that it does not use. Instead of one large interface, create multiple small and specific interfaces.
+
+Q68. Why is ISP important?
+Answer:
+It avoids unnecessary dependencies and keeps interfaces focused and easy to maintain.
+
+Intermediate
+Q69. Why does the Robot example violate ISP?
+Answer:
+Because the Robot is forced to implement eat() and sleep(), even though those behaviors are not applicable.
+
+Q70. How can we fix the Robot example?
+Answer:
+Split the Worker interface into smaller interfaces like Workable, Eatable, and Sleepable. The Robot should implement only Workable.
+
+Scenario-Based
+Q71.
+You have an interface Vehicle with:
+drive()
+fly()
+sail()
+Should a Car implement it?
+Answer:
+No.
+A Car only drives.
+Create separate interfaces:
+Drivable
+Flyable
+Sailable
+Then implement only the required interface.
+
+
 */
