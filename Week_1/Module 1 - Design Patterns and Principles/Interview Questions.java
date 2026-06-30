@@ -740,4 +740,47 @@ An e-commerce application supports UPI, Card, Wallet, and Net Banking payments. 
 Answer:
 
 Strategy Pattern, because the payment method (algorithm) can be selected at runtime.
+
+Basic
+Q1. What is Command Pattern?
+
+Answer:
+
+Command Pattern is a Behavioral Design Pattern that encapsulates a request as an object, allowing requests to be executed, queued, logged, or undone.
+
+Q2. Why do we use Command Pattern?
+
+Answer:
+
+To separate the object that requests an action from the object that performs it.
+
+Q3. Which category does Command belong to?
+
+Answer:
+
+Behavioral Design Pattern.
+
+Intermediate
+Q4. Name the four participants.
+
+Answer:
+
+Command
+Concrete Command
+Receiver
+Invoker
+Q5. Which SOLID principle does Command Pattern support?
+
+Answer:
+
+Open/Closed Principle (OCP) because new commands can be added without modifying existing code.
+
+Scenario-Based
+Q6.
+
+A text editor supports Undo and Redo operations. Which design pattern is most suitable?
+
+Answer:
+
+Command Pattern, because each action (copy, paste, delete, type) can be stored as a command object and reversed if needed.
 */
