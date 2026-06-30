@@ -336,5 +336,28 @@ Flyable
 Sailable
 Then implement only the required interface.
 
+Q72. What is DIP?
+Answer:
+High-level modules should not depend on low-level modules. Both should depend on abstractions.
 
+Q73. What is an abstraction in DIP?
+Answer:
+An interface or abstract class that both high-level and low-level modules depend on.
+
+Intermediate
+Q74. Why is DIP important?
+Answer:
+It reduces coupling, improves flexibility, and makes it easier to replace implementations without changing business logic.
+
+Q75. What is the difference between DIP and DI?
+Answer:
+DIP is a design principle.
+DI is a technique used to implement DIP.
+
+Scenario-Based
+Q76.
+Your Notification system currently sends emails. Tomorrow, the client wants SMS and WhatsApp support.
+How should you design it?
+Answer:
+Create a MessageService interface. Let EmailService, SMSService, and WhatsAppService implement it. The Notification class should depend only on MessageService.
 */
