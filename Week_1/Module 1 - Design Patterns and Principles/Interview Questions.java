@@ -837,5 +837,47 @@ Model returns the result.
 Controller selects the appropriate View.
 View displays Login Successful or Login Failed.
 
+Basic
+Q1. What is Dependency Injection?
 
+Answer:
+
+Dependency Injection is a technique where required objects are provided to a class from outside instead of being created inside the class.
+
+Q2. Why do we use Dependency Injection?
+
+Answer:
+
+To reduce tight coupling, improve flexibility, and make testing easier.
+
+Q3. Name the three types of Dependency Injection.
+
+Answer:
+
+Constructor Injection
+Setter Injection
+Field Injection
+Intermediate
+Q4. Which Dependency Injection type is recommended?
+
+Answer:
+
+Constructor Injection because dependencies are mandatory, immutable after creation, and easier to test.
+
+Q5. Which SOLID principle is closely related to Dependency Injection?
+
+Answer:
+
+Dependency Inversion Principle (DIP).
+
+DI is the technique, while DIP is the design principle.
+
+Scenario-Based
+Q6.
+
+A Notification system currently uses Email. Tomorrow it should support SMS and WhatsApp without modifying the Notification class. Which architectural approach should you use?
+
+Answer:
+
+Dependency Injection with a common MessageService interface.
 */
