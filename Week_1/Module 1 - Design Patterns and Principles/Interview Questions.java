@@ -360,4 +360,128 @@ Your Notification system currently sends emails. Tomorrow, the client wants SMS 
 How should you design it?
 Answer:
 Create a MessageService interface. Let EmailService, SMSService, and WhatsAppService implement it. The Notification class should depend only on MessageService.
+
+Q1. What are Design Principles?
+
+Answer:
+
+Design Principles are best practices or guidelines that help developers write clean, maintainable, reusable, and scalable software.
+
+Q2. What are Design Patterns?
+
+Answer:
+
+Design Patterns are reusable, proven solutions to commonly occurring software design problems.
+
+Q3. What is the difference between Design Principles and Design Patterns?
+
+Answer:
+
+Design Principles are guidelines for writing good software, while Design Patterns are standard solutions to recurring design problems.
+
+Q4. Give examples of Design Principles.
+
+Answer:
+
+SOLID
+DRY
+KISS
+YAGNI
+Q5. Give examples of Design Patterns.
+
+Answer:
+
+Singleton
+Factory
+Builder
+Observer
+Prototype
+Adapter
+
+Basic
+Q1. What is Singleton Pattern?
+
+Answer:
+
+Singleton is a Creational Design Pattern that ensures only one object of a class exists and provides a global access point to it.
+
+Q2. Why is the constructor private?
+
+Answer:
+
+To prevent object creation from outside the class.
+
+Q3. Why is getInstance() static?
+
+Answer:
+
+Because we need to access it without creating an object of the class.
+
+Intermediate
+Q4. What are the three components of Singleton?
+
+Answer:
+
+Private Constructor
+Private Static Instance
+Public Static getInstance() Method
+Q5. Is the above Singleton thread-safe?
+
+Answer:
+
+No.
+
+If two threads call getInstance() simultaneously for the first time, multiple objects may be created. Thread-safe implementations use techniques like synchronized methods, eager initialization, or double-checked locking.
+
+
+Basic
+Q1. What is Factory Method Pattern?
+
+Answer:
+
+Factory Method Pattern is a Creational Design Pattern that creates objects without exposing the creation logic to the client.
+
+Q2. Why do we use Factory Pattern?
+
+Answer:
+
+To centralize object creation, reduce coupling, and make it easier to add new object types.
+
+Q3. Who creates the object?
+
+Answer:
+
+The Factory class.
+
+Intermediate
+Q4. Which SOLID Principle is supported by Factory Pattern?
+
+Answer:
+
+Open/Closed Principle (OCP).
+
+Q5. Does the client know which class is instantiated?
+
+Answer:
+
+No.
+
+The client requests an object from the Factory.
+
+Scenario-Based
+Q6.
+
+Your payment system supports:
+
+UPI
+Card
+Net Banking
+
+Should the client create these objects directly?
+
+Answer:
+
+No.
+
+Create a PaymentFactory that returns the required payment object.
 */
