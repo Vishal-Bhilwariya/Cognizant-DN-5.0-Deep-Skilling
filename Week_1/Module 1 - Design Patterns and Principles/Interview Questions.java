@@ -699,4 +699,45 @@ You are developing a weather application. Whenever the temperature changes, all 
 Answer:
 
 Observer Pattern.
+
+Basic
+Q1. What is Strategy Pattern?
+
+Answer:
+
+Strategy Pattern is a Behavioral Design Pattern that allows different algorithms or behaviors to be selected and changed at runtime.
+
+Q2. Why do we use Strategy Pattern?
+
+Answer:
+
+To avoid large if-else blocks and make algorithms interchangeable.
+
+Q3. Which category does Strategy belong to?
+
+Answer:
+
+Behavioral Design Pattern.
+
+Intermediate
+Q4. Which SOLID principle does Strategy Pattern support?
+
+Answer:
+
+Open/Closed Principle (OCP) because new strategies can be added without modifying existing code.
+
+Q5. What is the Context class?
+
+Answer:
+
+The Context class stores a reference to the Strategy and delegates the work to the selected strategy.
+
+Scenario-Based
+Q6.
+
+An e-commerce application supports UPI, Card, Wallet, and Net Banking payments. Which design pattern should be used?
+
+Answer:
+
+Strategy Pattern, because the payment method (algorithm) can be selected at runtime.
 */
