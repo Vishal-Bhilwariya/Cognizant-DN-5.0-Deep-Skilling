@@ -616,4 +616,46 @@ Answer:
 
 Decorator Pattern, because features (toppings) can be added dynamically without creating many subclasses.
 
+Basic
+Q1. What is Proxy Pattern?
+
+Answer:
+
+Proxy Pattern is a Structural Design Pattern that controls access to a real object by using a proxy object.
+
+Q2. Why do we use Proxy Pattern?
+
+Answer:
+
+To add security, lazy loading, caching, logging, or access control without modifying the real object.
+
+Q3. Which category does Proxy belong to?
+
+Answer:
+
+Structural Design Pattern.
+
+Intermediate
+Q4. What is the difference between Proxy and the Real Object?
+
+Answer:
+
+The Proxy controls access to the Real Object, while the Real Object performs the actual work.
+
+Q5. Name the four types of Proxy.
+
+Answer:
+
+Virtual Proxy
+Protection Proxy
+Remote Proxy
+Caching Proxy
+Scenario-Based
+Q6.
+
+A company wants to allow only managers to access salary records. Which design pattern should be used?
+
+Answer:
+
+Protection Proxy, because it checks permissions before allowing access to the real salary service.
 */
