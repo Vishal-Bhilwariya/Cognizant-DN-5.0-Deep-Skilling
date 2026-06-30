@@ -253,4 +253,30 @@ Your User class contains:
         Database
 Is this correct?
 Answer: No. Each responsibility should be moved into a separate class.
+
+Q57. What is OCP?
+Answer:A class should be open for extension but closed for modification.
+
+Q58. What does "Open for Extension" mean?
+Answer:
+We should be able to add new functionality by creating new classes or extending existing abstractions.
+
+Q59. What does "Closed for Modification" mean?
+Answer:
+Existing, tested code should not be changed whenever a new feature is added.
+
+Intermediate
+Q60. Why is OCP important?
+Answer:
+It reduces bugs, improves maintainability, and allows software to grow without changing stable code.
+
+Scenario-Based
+Q61.
+
+Your payment application currently supports UPI and Card. The client asks for Wallet payment.
+Should you modify the existing Payment class?
+Answer:
+No.
+Create a new Wallet class that extends Payment.
+This follows OCP.
 */
