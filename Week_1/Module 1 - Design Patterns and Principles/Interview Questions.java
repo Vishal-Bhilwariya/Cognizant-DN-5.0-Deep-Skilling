@@ -216,4 +216,17 @@ Q48.vShould Teacher and Student use Association or Inheritance?
 Answer: Association.
         Because a Student is not a Teacher.
         They only interact.
+
+Q49. Why do we need Design Principles?
+Answer: Design Principles help developers write clean, reusable, maintainable, scalable, and flexible software.
+
+Q50. What problems occur without Design Principles?
+Answer: Code duplication
+        Tight coupling
+        Difficult maintenance
+        Poor reusability
+        Difficult testing
+        Difficult extension
+Q51. Why were SOLID Principles introduced?
+Answer: SOLID Principles were introduced to solve common software design problems and make applications easier to maintain, extend, and test.
 */

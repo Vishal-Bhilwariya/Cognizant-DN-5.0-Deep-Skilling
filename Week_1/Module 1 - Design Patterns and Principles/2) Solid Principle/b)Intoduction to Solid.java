@@ -119,6 +119,7 @@
             Scalable Code
             Reusable Code
             Testable Code
+        SOLID Principles were introduced to solve these problems.    
             Problem	                SOLID Solution
         Large classes	    SRP (Single Responsibility Principle)
         Difficult extension	OCP (Open/Closed Principle)
