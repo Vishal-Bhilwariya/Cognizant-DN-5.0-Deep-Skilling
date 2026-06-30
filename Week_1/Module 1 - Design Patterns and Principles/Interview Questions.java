@@ -279,4 +279,27 @@ Answer:
 No.
 Create a new Wallet class that extends Payment.
 This follows OCP.
+
+Q62. What is LSP?
+Answer:
+A child class should be able to replace its parent class without affecting the correctness of the program.
+
+Q63. Why is LSP important?
+Answer:
+It ensures that inheritance is used correctly and child classes do not break the expected behavior of the parent.
+
+Intermediate
+Q64. Why does the Bird–Penguin example violate LSP?
+Answer:
+Because Penguin cannot perform the fly() behavior expected from the Bird class.
+
+Q65. How can we fix the Bird–Penguin problem?
+Answer:
+Move fly() into a separate FlyingBird class so that only birds capable of flying inherit that behavior.
+
+Scenario-Based
+Q66.
+You have a Vehicle class with a refuel() method. Should an ElectricCar inherit from it?
+Answer:
+Not directly, because an electric car does not refuel with petrol or diesel. A better design is to separate fuel-powered and electric vehicles so child classes don't inherit behaviors they cannot support.
 */
