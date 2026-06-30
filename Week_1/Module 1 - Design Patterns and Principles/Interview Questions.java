@@ -658,4 +658,45 @@ A company wants to allow only managers to access salary records. Which design pa
 Answer:
 
 Protection Proxy, because it checks permissions before allowing access to the real salary service.
+
+Basic
+Q1. What is Observer Pattern?
+
+Answer:
+
+Observer Pattern is a Behavioral Design Pattern where one object notifies multiple dependent objects automatically whenever its state changes.
+
+Q2. What are the two main components?
+
+Answer:
+
+Subject (Publisher)
+Observer (Subscriber)
+Q3. Which category does Observer Pattern belong to?
+
+Answer:
+
+Behavioral Design Pattern.
+
+Intermediate
+Q4. Why do we use Observer Pattern?
+
+Answer:
+
+To automatically notify multiple objects when the state of one object changes without creating tight coupling.
+
+Q5. Which SOLID principle does Observer Pattern support?
+
+Answer:
+
+Open/Closed Principle (OCP) because new observers can be added without modifying the subject.
+
+Scenario-Based
+Q6.
+
+You are developing a weather application. Whenever the temperature changes, all mobile users should receive an update. Which design pattern should you use?
+
+Answer:
+
+Observer Pattern.
 */
