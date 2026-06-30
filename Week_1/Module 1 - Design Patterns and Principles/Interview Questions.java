@@ -484,4 +484,49 @@ Answer:
 No.
 
 Create a PaymentFactory that returns the required payment object.
+
+Q1. What is Builder Pattern?
+
+Answer:
+
+Builder Pattern is a Creational Design Pattern used to construct complex objects step by step.
+
+Q2. Why do we use Builder Pattern?
+
+Answer:
+
+To avoid constructors with many parameters and make object creation more readable and flexible.
+
+Q3. What is method chaining?
+
+Answer:
+
+Method chaining is calling multiple methods one after another because each method returns the current object (this).
+
+Example:
+
+builder.setName("Vishal")
+       .setAge(20)
+       .setCity("Agra");
+Intermediate
+Q4. Which Java class is a real example of Builder Pattern?
+
+Answer:
+
+StringBuilder
+
+Q5. What is the role of build()?
+
+Answer:
+
+It creates and returns the final object after all required values have been set.
+
+Scenario-Based
+Q6.
+
+A User object has 20 optional fields. Should you use constructors or Builder Pattern?
+
+Answer:
+
+Builder Pattern, because it makes object creation readable, avoids constructor overloading, and reduces errors.
 */
