@@ -574,4 +574,46 @@ Answer:
 Adapter Pattern.
 
 Create an adapter that converts XML into JSON so the application can continue working without changes.
+
+Basic
+Q1. What is Decorator Pattern?
+
+Answer:
+
+Decorator Pattern is a Structural Design Pattern that adds new functionality to an object dynamically without modifying its original class.
+
+Q2. Why do we use Decorator Pattern?
+
+Answer:
+
+To add features at runtime without creating many subclasses or changing existing code.
+
+Q3. Which SOLID Principle does Decorator support?
+
+Answer:
+
+Open/Closed Principle (OCP) because new functionality is added without modifying existing classes.
+
+Intermediate
+Q4. What is the difference between inheritance and Decorator?
+
+Answer:
+
+Inheritance adds functionality at compile time, while Decorator adds functionality dynamically at runtime by wrapping objects.
+
+Q5. Give a real Java example of Decorator Pattern.
+
+Answer:
+
+Java I/O classes like BufferedInputStream and BufferedReader.
+
+Scenario-Based
+Q6.
+
+An online coffee shop allows customers to add Milk, Sugar, Chocolate, and Cream in any combination. Which design pattern should be used?
+
+Answer:
+
+Decorator Pattern, because features (toppings) can be added dynamically without creating many subclasses.
+
 */
