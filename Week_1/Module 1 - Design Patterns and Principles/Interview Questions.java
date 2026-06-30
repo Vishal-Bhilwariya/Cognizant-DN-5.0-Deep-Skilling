@@ -229,4 +229,28 @@ Answer: Code duplication
         Difficult extension
 Q51. Why were SOLID Principles introduced?
 Answer: SOLID Principles were introduced to solve common software design problems and make applications easier to maintain, extend, and test.
+
+Q52. What is SRP?
+Answer: A class should have only one responsibility and only one reason to change.
+
+Q53. What does "one reason to change" mean?
+Answer: A class should change only when its own responsibility changes, not because of unrelated features.
+
+Intermediate
+Q54. Why does the Employee class violate SRP?
+Answer: Because it performs multiple responsibilities such as salary calculation, database operations, and email sending.
+
+Q55. What is the benefit of separating responsibilities?
+Answer: It improves maintainability, testing, readability, and code reuse.
+
+Scenario-Based
+Q56.
+Your User class contains:
+        Login
+        Payment
+        Email
+        Report
+        Database
+Is this correct?
+Answer: No. Each responsibility should be moved into a separate class.
 */
