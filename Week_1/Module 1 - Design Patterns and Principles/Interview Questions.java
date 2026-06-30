@@ -783,4 +783,59 @@ A text editor supports Undo and Redo operations. Which design pattern is most su
 Answer:
 
 Command Pattern, because each action (copy, paste, delete, type) can be stored as a command object and reversed if needed.
+
+Basic
+Q1. What is MVC?
+
+Answer:
+
+MVC is an architectural pattern that separates an application into Model, View, and Controller.
+
+Q2. What is the role of the Model?
+
+Answer:
+
+The Model manages data and business logic.
+
+Q3. What is the role of the View?
+
+Answer:
+
+The View displays data to the user.
+
+Q4. What is the role of the Controller?
+
+Answer:
+
+The Controller receives user requests, interacts with the Model, and sends data to the View.
+
+Intermediate
+Q5. Why do we use MVC?
+
+Answer:
+
+To separate responsibilities, improve maintainability, support code reuse, and simplify testing.
+
+Q6. Can multiple Views use the same Model?
+
+Answer:
+
+Yes. One Model can provide data to multiple Views.
+
+Scenario-Based
+Q7.
+
+A user clicks the Login button in a web application. Explain the MVC flow.
+
+Answer:
+
+User clicks Login.
+Controller receives the request.
+Controller asks the Model to validate the user.
+Model checks the database.
+Model returns the result.
+Controller selects the appropriate View.
+View displays Login Successful or Login Failed.
+
+
 */
