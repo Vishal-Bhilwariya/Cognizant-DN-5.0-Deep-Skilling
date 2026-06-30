@@ -529,4 +529,49 @@ A User object has 20 optional fields. Should you use constructors or Builder Pat
 Answer:
 
 Builder Pattern, because it makes object creation readable, avoids constructor overloading, and reduces errors.
+
+Basic
+Q1. What is Adapter Pattern?
+
+Answer:
+
+Adapter Pattern is a Structural Design Pattern that allows two incompatible interfaces to work together.
+
+Q2. Why do we use Adapter Pattern?
+
+Answer:
+
+To connect existing classes with new systems without modifying their source code.
+
+Q3. Which design pattern category does Adapter belong to?
+
+Answer:
+
+Structural Design Pattern.
+
+Intermediate
+Q4. What are the main participants in Adapter Pattern?
+
+Answer:
+
+Client
+Target Interface
+Adapter
+Adaptee (Existing Class)
+Q5. Which SOLID principle does Adapter support?
+
+Answer:
+
+Open/Closed Principle (OCP) because existing classes are reused without modification.
+
+Scenario-Based
+Q6.
+
+Your application expects JSON data, but a third-party API returns XML. What design pattern would you use?
+
+Answer:
+
+Adapter Pattern.
+
+Create an adapter that converts XML into JSON so the application can continue working without changes.
 */
