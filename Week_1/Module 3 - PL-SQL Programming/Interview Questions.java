@@ -143,4 +143,51 @@ Example:
 EXCEPTION
    WHEN OTHERS THEN
       DBMS_OUTPUT.PUT_LINE('Unexpected Error');
+
+Q1. What is a Cursor?
+
+Answer:
+
+A Cursor is a pointer to the result set of an SQL query that allows PL/SQL to process rows one at a time.
+
+Q2. Why do we use Cursors?
+
+Answer:
+
+To process multiple rows returned by a query one by one.
+
+Q3. What are the two types of Cursors?
+
+Answer:
+
+Implicit Cursor
+Explicit Cursor
+Q4. Difference between Implicit and Explicit Cursor?
+Implicit Cursor	Explicit Cursor
+Created automatically by Oracle	Created manually by the programmer
+Used for single-row operations	Used for multiple-row queries
+No OPEN/FETCH/CLOSE required	Requires OPEN, FETCH, and CLOSE
+Q5. Name the four Cursor Attributes.
+
+Answer:
+
+%FOUND
+%NOTFOUND
+%ROWCOUNT
+%ISOPEN
+Q6. What is the correct order of Cursor Operations?
+
+Answer:
+
+OPEN
+
+↓
+
+FETCH
+
+↓
+
+CLOSE
+
+
 */
