@@ -108,4 +108,39 @@ Q5. Which loop is most commonly used?
 Answer:
 
 FOR LOOP, because it is simple and automatically manages the loop counter.
+
+Q1. What is an Exception?
+
+Answer:
+
+An exception is a runtime error that interrupts the normal execution of a PL/SQL program.
+
+Q2. What is the purpose of the EXCEPTION block?
+
+Answer:
+
+It handles runtime errors and prevents the program from terminating unexpectedly.
+
+Q3. What is the difference between Predefined and User-Defined Exceptions?
+Predefined Exception	User-Defined Exception
+Already provided by Oracle	Created by the programmer
+No declaration required	Must be declared
+Example: ZERO_DIVIDE	Example: invalid_age
+Q4. What is the use of RAISE?
+
+Answer:
+
+RAISE is used to manually trigger a user-defined exception.
+
+Q5. What does WHEN OTHERS do?
+
+Answer:
+
+It catches all exceptions that are not handled by specific exception handlers.
+
+Example:
+
+EXCEPTION
+   WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE('Unexpected Error');
 */
