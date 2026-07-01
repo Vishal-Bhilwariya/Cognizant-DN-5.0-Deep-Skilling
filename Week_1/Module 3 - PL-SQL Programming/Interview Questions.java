@@ -268,4 +268,42 @@ Q6. How do you call a package function?
 Answer:
 
 MathPackage.square(5);
+
+Q1. What is a Trigger?
+
+Answer:
+
+A Trigger is a stored PL/SQL block that automatically executes when a specified database event occurs.
+
+Q2. What events can fire a Trigger?
+
+Answer:
+
+INSERT
+UPDATE
+DELETE
+Q3. What are the types of Triggers?
+
+Answer:
+
+BEFORE Trigger
+AFTER Trigger
+INSTEAD OF Trigger
+Q4. Difference between BEFORE and AFTER Trigger?
+BEFORE Trigger	AFTER Trigger
+Executes before SQL statement	Executes after SQL statement
+Used for validation	Used for logging and auditing
+Q5. What is an INSTEAD OF Trigger?
+
+Answer:
+
+It replaces the original SQL operation and is mainly used on Views.
+
+Q6. What are :NEW and :OLD?
+
+Answer:
+
+Variable	Meaning
+:NEW	New value after INSERT/UPDATE
+:OLD	Previous value before UPDATE/DELETE
 */
