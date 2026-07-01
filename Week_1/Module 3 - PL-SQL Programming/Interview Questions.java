@@ -189,5 +189,44 @@ FETCH
 
 CLOSE
 
+Q1. What is a Procedure?
 
+Answer:
+
+A Procedure is a named PL/SQL block used to perform a specific task. It may or may not return values.
+
+Q2. What is a Function?
+
+Answer:
+
+A Function is a named PL/SQL block that performs a task and must return one value using the RETURN statement.
+
+Q3. Difference between Procedure and Function?
+Procedure	Function
+May or may not return a value	Must return exactly one value
+Called as a statement	Can be used inside SQL expressions
+Mainly performs actions	Mainly performs calculations and returns results
+Q4. What are parameter modes?
+
+Answer:
+
+IN
+OUT
+IN OUT
+Q5. Which parameter is used to return values?
+
+Answer:
+
+OUT
+
+Q6. Can a Function be used inside a SQL query?
+
+Answer:
+
+Yes, if it meets Oracle's rules for SQL-callable functions.
+
+Example:
+
+SELECT square(5)
+FROM dual;
 */
