@@ -117,5 +117,4 @@
                 {Syntax: DATE, Example: '2023-10-01', '2023-10-01 12:00:00'}
     5. BOOLEAN - Used to store logical values (TRUE, FALSE, NULL). 
                 {Syntax: BOOLEAN, Example: TRUE, FALSE}
-    6.
 */
