@@ -89,4 +89,15 @@
         Requires knowledge of SQL first.
         More complex than basic SQL for simple tasks.
         Less portable to non-Oracle databases.
+
+    Difference Between SQL and PL/SQL
+                    SQL	                                        PL/SQL
+    Stands for Structured Query Language	        Stands for Procedural Language/SQL
+    Used to query and manipulate data	            Used to write complete database programs
+    Executes one statement at a time	            Executes a block of statements
+    Does not support loops	                        Supports loops
+    Does not support IF-ELSE	                    Supports IF-ELSE
+    Does not support exception handling	            Supports exception handling
+    Cannot create procedures/functions (by itself)	Can create procedures, functions, packages, and triggers
+    Mainly performs CRUD operations	                Performs CRUD + business logic
 */
