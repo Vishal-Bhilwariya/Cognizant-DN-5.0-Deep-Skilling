@@ -229,4 +229,43 @@ Example:
 
 SELECT square(5)
 FROM dual;
+
+Q1. What is a Package?
+
+Answer:
+
+A Package is a collection of related PL/SQL objects such as procedures, functions, variables, constants, and cursors stored together under one name.
+
+Q2. What are the two parts of a Package?
+
+Answer:
+
+Package Specification
+Package Body
+Q3. What is Package Specification?
+
+Answer:
+
+Package Specification contains declarations of procedures, functions, variables, constants, and cursors.
+
+Q4. What is Package Body?
+
+Answer:
+
+Package Body contains the implementation of procedures and functions declared in the specification.
+
+Q5. Why do we use Packages?
+
+Answer:
+
+Organize related code.
+Improve performance.
+Increase reusability.
+Improve security.
+Simplify maintenance.
+Q6. How do you call a package function?
+
+Answer:
+
+MathPackage.square(5);
 */
