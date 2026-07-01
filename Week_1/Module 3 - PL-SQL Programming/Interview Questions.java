@@ -82,4 +82,30 @@ CHAR	VARCHAR2
 Fixed Length	Variable Length
 Wastes space if data is shorter	Uses only required space
 Faster for fixed-size values	More flexible and commonly used
+
+Q1. What are Control Structures?
+
+Answer:
+
+Control Structures control the flow of execution in a PL/SQL program by making decisions and repeating statements.
+
+Q2. What is the difference between IF and CASE?
+IF	CASE
+Used for complex conditions	Used for multiple fixed choices
+Supports logical operators	Better for comparing one value against many options
+Q3. Difference between LOOP, WHILE LOOP, and FOR LOOP?
+LOOP	WHILE LOOP	FOR LOOP
+Exit condition written manually using EXIT WHEN	Checks condition before each iteration	Automatically controls the loop variable and range
+Best when exit condition is dynamic	Best when number of iterations is unknown	Best when number of iterations is known
+Q4. What does EXIT WHEN do?
+
+Answer:
+
+It terminates a LOOP when the specified condition becomes true.
+
+Q5. Which loop is most commonly used?
+
+Answer:
+
+FOR LOOP, because it is simple and automatically manages the loop counter.
 */
