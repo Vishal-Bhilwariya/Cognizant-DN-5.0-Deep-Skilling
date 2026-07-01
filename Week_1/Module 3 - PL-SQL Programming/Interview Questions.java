@@ -52,4 +52,34 @@ Q5. Which engine executes SQL statements inside a PL/SQL program?
 Answer:
 
 The SQL Engine executes SQL statements, while the PL/SQL Engine executes procedural statements.
+
+Q1. What is a variable in PL/SQL?
+
+Answer:
+
+A variable is a named memory location used to store data temporarily during the execution of a PL/SQL block.
+
+Q2. Which operator is used for assignment in PL/SQL?
+
+Answer:
+
+:=
+Q3. Which operator is used to join strings?
+
+Answer:
+
+||
+
+(Concatenation Operator)
+
+Q4. Which command prints output?
+
+Answer:
+
+DBMS_OUTPUT.PUT_LINE()
+Q5. Difference between CHAR and VARCHAR2?
+CHAR	VARCHAR2
+Fixed Length	Variable Length
+Wastes space if data is shorter	Uses only required space
+Faster for fixed-size values	More flexible and commonly used
 */
