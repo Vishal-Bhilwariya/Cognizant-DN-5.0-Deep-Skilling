@@ -209,3 +209,30 @@ Scenario-Based Question
 Q6. You remove a <bean> definition from beans.xml, but your application still requests that Bean. What will happen?
 
 Answer: Spring will not find the Bean in the IoC Container, and an exception will be thrown when the application tries to retrieve it.
+
+Basic Questions
+Q1. What is a Spring Bean?
+
+Answer: A Spring Bean is an object that is created, managed, and maintained by the Spring IoC Container.
+
+Q2. What is a dependency?
+
+Answer: A dependency is an object that another object requires to perform its work.
+
+Q3. Is every Java object a Spring Bean?
+
+Answer: No. Only objects created and managed by the Spring IoC Container are Spring Beans.
+
+Intermediate Questions
+Q4. Why do we define Beans in Spring?
+
+Answer: To allow the IoC Container to create, manage, and provide objects automatically.
+
+Q5. Why are dependencies important?
+
+Answer: Most real-world classes require other classes to perform their tasks. Spring manages these relationships automatically, reducing manual work and promoting loose coupling.
+
+Scenario-Based Question
+Q6. A Car class requires an Engine object. In a Spring application, who should create these objects?
+
+Answer: The Spring IoC Container should create both the Car Bean and the Engine Bean and manage their relationship.
