@@ -182,3 +182,30 @@ Q6. You notice many new statements scattered across a large Java project. What i
 
 Answer:
 It may indicate excessive manual object creation, leading to tight coupling and maintenance challenges. Using the Spring IoC Container can centralize object creation and improve flexibility.
+
+Basic Questions
+Q1. What is XML Configuration in Spring?
+
+Answer: XML Configuration is the process of configuring the Spring IoC Container using an XML file (typically beans.xml) to define Beans and their relationships.
+
+Q2. What is the purpose of beans.xml?
+
+Answer: It stores Bean definitions and configuration information for the Spring IoC Container.
+
+Q3. What does the <bean> tag do?
+
+Answer: It tells Spring to create and manage an object of the specified class.
+
+Intermediate Questions
+Q4. What is the purpose of the id attribute?
+
+Answer: It uniquely identifies a Bean inside the Spring IoC Container.
+
+Q5. What is the purpose of the class attribute?
+
+Answer: It specifies the fully qualified Java class whose object Spring should create.
+
+Scenario-Based Question
+Q6. You remove a <bean> definition from beans.xml, but your application still requests that Bean. What will happen?
+
+Answer: Spring will not find the Bean in the IoC Container, and an exception will be thrown when the application tries to retrieve it.
