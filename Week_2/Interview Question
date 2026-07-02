@@ -63,3 +63,30 @@ Scenario-Based Question
 Q6. Your teammate manually downloads all JAR files for a Spring project. What would you suggest?
 
 Answer: I would recommend using Maven. By declaring dependencies in pom.xml, Maven automatically downloads the required libraries and manages their versions, reducing manual work and errors.
+
+Basic Questions
+Q1. What is a Maven Project?
+
+Answer: A Maven Project is a Java project that uses Maven to manage dependencies, automate builds, and follow a standard project structure.
+
+Q2. Why do we create a Maven Project?
+
+Answer: To automate project building, manage dependencies, and maintain a standard directory structure.
+
+Q3. What is the purpose of the src/main/java folder?
+
+Answer: It stores the application's Java source code.
+
+Intermediate Questions
+Q4. What is the purpose of the target folder?
+
+Answer: It stores the compiled classes and packaged output (such as JAR files) after the project is built.
+
+Q5. What is the difference between a Java Project and a Maven Project?
+
+Answer: A Java Project requires manual dependency management and may not follow a standard structure, while a Maven Project automates dependency management and uses a standard directory layout.
+
+Scenario-Based Question
+Q6. Your teammate manually creates folders and copies JAR files into every project. What would you suggest?
+
+Answer: I would recommend creating a Maven Project. Maven automatically provides a standard structure and manages dependencies through pom.xml, making the project easier to maintain.
