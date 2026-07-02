@@ -1,0 +1,38 @@
+Basic Questions
+Q1. What is Spring Framework?
+
+Answer: Spring is an open-source Java framework that simplifies the development of Java applications by providing ready-made features and managing common infrastructure tasks.
+
+Q2. Is Spring a programming language?
+
+Answer: No. Spring is a framework built on top of Java.
+
+Q3. Why is Spring popular?
+
+Answer: Because it reduces boilerplate code, improves maintainability, supports testing, and provides many modules for enterprise development.
+
+Intermediate Questions
+Q4. What problems does Spring solve?
+
+Answer:
+
+Reduces repetitive code
+Improves maintainability
+Encourages loosely coupled design
+Simplifies testing
+Provides modular architecture
+Q5. Name some important Spring modules.
+
+Answer:
+
+Core
+AOP
+Data Access
+ORM
+MVC
+Boot
+Scenario-Based Question
+Q6. Your company is building a large banking application. Why would you recommend Spring instead of writing everything using plain Java?
+
+Answer:
+Because Spring provides a structured framework, reduces repetitive code, supports modular design, simplifies testing, and includes features commonly required in enterprise applications.
