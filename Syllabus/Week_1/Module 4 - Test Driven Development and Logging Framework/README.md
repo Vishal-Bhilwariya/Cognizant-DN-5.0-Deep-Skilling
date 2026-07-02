@@ -1,3 +1,5 @@
 # Module 4 – Test Driven Development and Logging Framework
 
-> 🔜 Topics coming soon
+| # | Topic | Description |
+|---|-------|-------------|
+| a | Introduction to TDD | 🔜 Notes coming soon |
