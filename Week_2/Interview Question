@@ -90,3 +90,37 @@ Scenario-Based Question
 Q6. Your teammate manually creates folders and copies JAR files into every project. What would you suggest?
 
 Answer: I would recommend creating a Maven Project. Maven automatically provides a standard structure and manages dependencies through pom.xml, making the project easier to maintain.
+
+Basic Questions
+Q1. What is a dependency?
+
+Answer: A dependency is an external library or framework required by a project to provide additional functionality.
+
+Q2. What is the purpose of pom.xml?
+
+Answer: pom.xml stores the project's configuration, dependencies, plugins, and build information.
+
+Q3. Why do we add Spring dependencies?
+
+Answer: To use Spring classes and features in our Java project.
+
+Intermediate Questions
+Q4. What are the three important tags inside a dependency?
+
+Answer:
+
+groupId
+artifactId
+version
+Q5. Where does Maven download dependencies from?
+
+Answer: By default, Maven downloads dependencies from the Maven Central Repository.
+
+Scenario-Based Question
+Q6. You added a Spring dependency to pom.xml, but the library did not appear in your project. What would you check first?
+
+Answer: I would check:
+
+Whether the internet connection is available.
+Whether the dependency coordinates (groupId, artifactId, version) are correct.
+Whether Maven has refreshed/reloaded the project successfully.
