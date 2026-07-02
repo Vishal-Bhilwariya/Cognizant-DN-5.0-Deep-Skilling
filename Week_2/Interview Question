@@ -36,3 +36,30 @@ Q6. Your company is building a large banking application. Why would you recommen
 
 Answer:
 Because Spring provides a structured framework, reduces repetitive code, supports modular design, simplifies testing, and includes features commonly required in enterprise applications.
+
+Basic Questions
+Q1. What is Maven?
+
+Answer: Maven is an open-source build automation and dependency management tool used for Java projects.
+
+Q2. What is a Build Tool?
+
+Answer: A build tool automates tasks such as compiling code, running tests, managing dependencies, and packaging applications.
+
+Q3. Why do we use Maven?
+
+Answer: Maven automates the build process, manages dependencies, provides a standard project structure, and saves development time.
+
+Intermediate Questions
+Q4. What is the difference between Java and Maven?
+
+Answer: Java is a programming language used to write applications, while Maven is a build tool used to manage and build Java projects.
+
+Q5. What is a dependency?
+
+Answer: A dependency is an external library that a project requires to function.
+
+Scenario-Based Question
+Q6. Your teammate manually downloads all JAR files for a Spring project. What would you suggest?
+
+Answer: I would recommend using Maven. By declaring dependencies in pom.xml, Maven automatically downloads the required libraries and manages their versions, reducing manual work and errors.
