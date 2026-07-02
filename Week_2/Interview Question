@@ -124,3 +124,29 @@ Answer: I would check:
 Whether the internet connection is available.
 Whether the dependency coordinates (groupId, artifactId, version) are correct.
 Whether Maven has refreshed/reloaded the project successfully.
+
+Q1. What is Maven configuration?
+
+Answer: Maven configuration is the process of defining project settings in pom.xml, including dependencies, Java version, plugins, and build information.
+
+Q2. Which file is used to configure Maven?
+
+Answer: pom.xml.
+
+Q3. Why do we configure the Java version in Maven?
+
+Answer: To ensure Maven compiles the project using the correct Java version.
+
+Intermediate Questions
+Q4. What is the purpose of the <properties> section?
+
+Answer: It stores project properties, such as the Java compiler source and target versions.
+
+Q5. What is the purpose of plugins in Maven?
+
+Answer: Plugins extend Maven's functionality, enabling tasks like compiling code, packaging applications, generating reports, and more.
+
+Scenario-Based Question
+Q6. Your project compiles with Java 17, but another developer is using Java 21. How can Maven help?
+
+Answer: Configure the Java source and target versions in pom.xml. Maven will then compile the project using the specified version, helping maintain consistency across different development environments.
