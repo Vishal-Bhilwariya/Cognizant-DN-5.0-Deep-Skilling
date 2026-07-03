@@ -236,3 +236,51 @@ Scenario-Based Question
 Q6. A Car class requires an Engine object. In a Spring application, who should create these objects?
 
 Answer: The Spring IoC Container should create both the Car Bean and the Engine Bean and manage their relationship.
+
+Basic Questions
+Q1. What is ApplicationContext?
+
+Answer:
+
+ApplicationContext is the most commonly used implementation of the Spring IoC Container. It creates, manages, and provides Spring Beans.
+
+Q2. Why do we use ApplicationContext?
+
+Answer:
+
+To create, manage, and retrieve Beans automatically instead of creating objects manually.
+
+Q3. What does getBean() do?
+
+Answer:
+
+It retrieves a Bean from the Spring IoC Container.
+
+Intermediate Questions
+Q4. Does ApplicationContext create Beans automatically?
+
+Answer:
+
+Yes. By default, it creates singleton Beans when the container starts (eager initialization).
+
+Q5. Which configuration file does ClassPathXmlApplicationContext read?
+
+Answer:
+
+beans.xml (or any XML configuration file specified by the developer).
+
+Scenario-Based Question
+Q6.
+
+You wrote:
+
+ApplicationContext context =
+        new ClassPathXmlApplicationContext("beans.xml");
+
+But beans.xml contains no Bean with ID "student".
+
+What happens?
+
+Answer:
+
+When context.getBean("student") is called, Spring throws a NoSuchBeanDefinitionException because no Bean with that ID exists.
