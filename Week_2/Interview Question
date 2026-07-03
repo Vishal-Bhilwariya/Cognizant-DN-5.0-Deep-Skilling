@@ -284,3 +284,45 @@ What happens?
 Answer:
 
 When context.getBean("student") is called, Spring throws a NoSuchBeanDefinitionException because no Bean with that ID exists.
+
+Q1. What is BeanFactory?
+
+Answer:
+
+BeanFactory is the basic implementation of the Spring IoC Container. It creates, manages, and provides Beans.
+
+Q2. What is the main feature of BeanFactory?
+
+Answer:
+
+Lazy Loading—Beans are created only when they are requested.
+
+Q3. What is Lazy Loading?
+
+Answer:
+
+Lazy Loading means creating an object only when it is needed, rather than creating it at application startup.
+
+Intermediate Questions
+Q4. Does BeanFactory create all Beans when the application starts?
+
+Answer:
+
+No. It creates Beans only when getBean() is called.
+
+Q5. Is BeanFactory commonly used in modern Spring applications?
+
+Answer:
+
+No. Modern applications usually use ApplicationContext because it provides additional enterprise features.
+
+Scenario-Based Question
+Q6.
+
+Your application contains 1,000 Beans, but only 50 are used during execution.
+
+Which container would consume less memory initially?
+
+Answer:
+
+BeanFactory, because it uses Lazy Loading and creates only the Beans that are actually requested.
