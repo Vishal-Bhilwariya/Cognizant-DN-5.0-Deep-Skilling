@@ -374,3 +374,46 @@ Answer:
 One common reason is that component scanning is not enabled or the package containing the class is not being scanned.
 
 We'll learn this in the next sub-topic.
+
+Basic Questions
+Q1. What is Component Scanning?
+
+Answer:
+
+Component Scanning is the process by which Spring automatically searches packages for annotated classes and creates Beans.
+
+Q2. Why do we need Component Scanning?
+
+Answer:
+
+Without Component Scanning, Spring cannot discover classes annotated with @Component, @Service, @Repository, or @Controller.
+
+Q3. Which annotation is used for Component Scanning?
+
+Answer:
+
+@ComponentScan
+
+Intermediate Questions
+Q4. What does @ComponentScan("com.demo") mean?
+
+Answer:
+
+It tells Spring to scan the com.demo package for Spring-managed components.
+
+Q5. What happens if you forget @ComponentScan?
+
+Answer:
+
+Spring won't detect annotated classes, so the corresponding Beans won't be created.
+
+Scenario-Based Question
+Q6.
+
+Your Student class has @Component, but context.getBean(Student.class) throws an exception.
+
+What could be the reason?
+
+Answer:
+
+One possible reason is that the package containing Student is not included in Component Scanning.
