@@ -326,3 +326,51 @@ Which container would consume less memory initially?
 Answer:
 
 BeanFactory, because it uses Lazy Loading and creates only the Beans that are actually requested.
+
+Q1. What is an annotation?
+
+Answer:
+
+An annotation is a special marker in Java that provides metadata about the code. In Spring, annotations are used to configure and manage Beans.
+
+Q2. Why did Spring introduce annotations?
+
+Answer:
+
+To reduce XML configuration, improve readability, and simplify Bean configuration.
+
+Q3. Which symbol is used for annotations?
+
+Answer:
+
+The @ symbol.
+
+Intermediate Questions
+Q4. Which approach is preferred in modern Spring projects?
+
+Answer:
+
+Annotation-based configuration.
+
+Q5. Does an annotation itself create the Bean?
+
+Answer:
+
+No.
+
+The annotation marks the class.
+
+The Spring IoC Container, together with component scanning, detects the annotation and creates the Bean.
+
+Scenario-Based Question
+Q6.
+
+You add @Component to a class, but Spring doesn't create a Bean.
+
+What could be the reason?
+
+Answer:
+
+One common reason is that component scanning is not enabled or the package containing the class is not being scanned.
+
+We'll learn this in the next sub-topic.
