@@ -637,3 +637,44 @@ You are using a third-party library, and you cannot modify its classes to add @C
 Answer:
 
 Create a @Configuration class and define a @Bean method that returns an instance of the third-party class.
+
+Basic Questions
+Q1. What is Hybrid Configuration?
+
+Answer:
+
+Hybrid Configuration means using both XML configuration and Java-based configuration together in the same Spring application.
+
+Q2. Why do companies use Hybrid Configuration?
+
+Answer:
+
+To gradually migrate legacy XML-based applications to modern Java-based configuration without rewriting the entire project.
+
+Q3. Can XML and Java Configuration work together?
+
+Answer:
+
+Yes. Spring supports using both XML and Java configuration in the same application.
+
+Intermediate Questions
+Q4. Is Hybrid Configuration recommended for new Spring Boot projects?
+
+Answer:
+
+No. New Spring Boot projects usually use Java-based configuration and annotations. Hybrid configuration is mainly used during migration or when maintaining legacy systems.
+
+Q5. Which configuration style is preferred today?
+
+Answer:
+
+Java-based configuration with annotations (@Configuration, @Bean, @Component, etc.) is preferred in modern Spring applications.
+
+Scenario-Based Question
+Q6.
+
+Your company has a Spring application with 800 Bean definitions in beans.xml. Management wants to adopt Spring Boot without disrupting the existing system. What approach would you recommend?
+
+Answer:
+
+Use Hybrid Configuration. Keep the existing XML configuration working while gradually introducing Java-based configuration for new or refactored components.
