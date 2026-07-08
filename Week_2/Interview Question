@@ -596,3 +596,44 @@ A user clicks the "Check Balance" button in a banking application. Which layer r
 Answer:
 
 The Controller Layer receives the request first and then forwards it to the Service layer.
+
+Basic Questions
+Q1. What is Java-based Configuration?
+
+Answer:
+
+Java-based Configuration is the process of configuring Spring using Java classes instead of XML.
+
+Q2. What is @Configuration?
+
+Answer:
+
+@Configuration marks a class as a Spring configuration class that contains Bean definitions.
+
+Q3. What is @Bean?
+
+Answer:
+
+@Bean marks a method whose return value should be registered as a Spring Bean.
+
+Intermediate Questions
+Q4. What is the difference between @Component and @Bean?
+
+Answer:
+
+@Component is placed on a class and relies on component scanning. @Bean is placed on a method inside a @Configuration class and explicitly defines how a Bean should be created.
+
+Q5. Why is Java-based Configuration preferred over XML?
+
+Answer:
+
+Because it provides better readability, compile-time checking, IDE support, and easier maintenance.
+
+Scenario-Based Question
+Q6.
+
+You are using a third-party library, and you cannot modify its classes to add @Component. How can you register one of its objects as a Spring Bean?
+
+Answer:
+
+Create a @Configuration class and define a @Bean method that returns an instance of the third-party class.
