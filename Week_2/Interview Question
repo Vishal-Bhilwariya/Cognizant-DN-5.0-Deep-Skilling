@@ -507,3 +507,51 @@ You're developing an online shopping application. Where should the method calcul
 Answer:
 
 Inside a class annotated with @Service, because discount calculation is business logic.
+
+Basic Questions
+Q1. What is @Repository?
+
+Answer:
+
+@Repository is a Spring stereotype annotation used to mark a class responsible for database operations. Spring detects it during component scanning and manages it as a Bean.
+
+Q2. What is the purpose of @Repository?
+
+Answer:
+
+To perform database operations such as inserting, updating, deleting, and retrieving data.
+
+Q3. Which layer uses @Repository?
+
+Answer:
+
+The Data Access Layer (Repository/DAO Layer).
+
+Intermediate Questions
+Q4. Can business logic be written inside a Repository?
+
+Answer:
+
+No. Business logic belongs in the Service Layer. A Repository should only contain database-related operations.
+
+Q5. What is CRUD?
+
+Answer:
+
+CRUD stands for:
+
+C → Create
+R → Read
+U → Update
+D → Delete
+
+These are the basic database operations performed by a Repository.
+
+Scenario-Based Question
+Q6.
+
+You're developing a Student Management System. Where should the method saveStudent() be placed?
+
+Answer:
+
+Inside a class annotated with @Repository, because saving data is a database operation.
