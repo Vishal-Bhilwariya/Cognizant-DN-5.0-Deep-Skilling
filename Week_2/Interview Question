@@ -852,3 +852,56 @@ What happens?
 Answer:
 
 Spring cannot determine which Bean to inject and throws a NoUniqueBeanDefinitionException. This can be resolved using @Qualifier, which you'll learn next.
+
+Basic Questions
+Q1. What is @Qualifier?
+
+Answer:
+
+@Qualifier is a Spring annotation used with @Autowired to specify which Bean should be injected when multiple Beans of the same type are available.
+
+Q2. Why do we use @Qualifier?
+
+Answer:
+
+To resolve ambiguity when Spring finds more than one matching Bean during Autowiring.
+
+Q3. Can @Qualifier be used without @Autowired?
+
+Answer:
+
+In typical dependency injection scenarios, @Qualifier is used together with @Autowired (or another injection annotation) because its purpose is to narrow the Bean selection.
+
+Intermediate Questions
+Q4. What happens if @Qualifier is not used and two Beans of the same type exist?
+
+Answer:
+
+Spring throws a NoUniqueBeanDefinitionException because it cannot determine which Bean to inject.
+
+Q5. Can @Qualifier be used with Constructor Injection?
+
+Answer:
+
+Yes. It can be used with constructor parameters, setter methods, and field injection.
+
+Scenario-Based Question
+Q6.
+
+Your application contains:
+
+EmailService
+
+SMSService
+
+Both implement:
+
+NotificationService
+
+How do you inject only EmailService?
+
+Answer:
+
+@Autowired
+@Qualifier("emailService")
+private NotificationService notificationService;
