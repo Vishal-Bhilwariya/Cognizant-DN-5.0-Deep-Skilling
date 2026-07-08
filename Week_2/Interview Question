@@ -555,3 +555,44 @@ You're developing a Student Management System. Where should the method saveStude
 Answer:
 
 Inside a class annotated with @Repository, because saving data is a database operation.
+
+Basic Questions
+Q1. What is @Controller?
+
+Answer:
+
+@Controller is a Spring stereotype annotation used to mark a class that handles user requests and returns responses.
+
+Q2. What is the role of a Controller?
+
+Answer:
+
+The Controller receives requests from the client, calls the Service layer to process them, and returns the appropriate response.
+
+Q3. Which layer does @Controller belong to?
+
+Answer:
+
+The Presentation Layer (Web Layer).
+
+Intermediate Questions
+Q4. Should business logic be written inside a Controller?
+
+Answer:
+
+No. Business logic belongs in the Service Layer. The Controller should focus on request handling.
+
+Q5. Can a Controller directly access the database?
+
+Answer:
+
+Ideally, no. The Controller should call the Service layer, which in turn calls the Repository layer.
+
+Scenario-Based Question
+Q6.
+
+A user clicks the "Check Balance" button in a banking application. Which layer receives the request first?
+
+Answer:
+
+The Controller Layer receives the request first and then forwards it to the Service layer.
