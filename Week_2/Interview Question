@@ -803,3 +803,52 @@ Which injection type is more suitable?
 Answer:
 
 Setter Injection, because the dependency is optional and can be configured later.
+
+Basic Questions
+Q1. What is @Autowired?
+
+Answer:
+
+@Autowired is a Spring annotation that automatically injects a required Bean into another Bean.
+
+Q2. What is Autowiring?
+
+Answer:
+
+Autowiring is the process by which Spring automatically finds and injects required dependencies.
+
+Q3. Who performs Autowiring?
+
+Answer:
+
+The Spring IoC Container.
+
+Intermediate Questions
+Q4. Where can @Autowired be used?
+
+Answer:
+
+It can be used on:
+
+Fields
+Setter methods
+Constructors
+Q5. Which form of @Autowired is recommended?
+
+Answer:
+
+Constructor Injection, because it supports immutable dependencies, improves testability, and ensures required dependencies are available.
+
+Scenario-Based Question
+Q6.
+
+Your application has two Beans of type Engine: PetrolEngine and DieselEngine. You write:
+
+@Autowired
+private Engine engine;
+
+What happens?
+
+Answer:
+
+Spring cannot determine which Bean to inject and throws a NoUniqueBeanDefinitionException. This can be resolved using @Qualifier, which you'll learn next.
