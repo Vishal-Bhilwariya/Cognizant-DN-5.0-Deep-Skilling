@@ -905,3 +905,51 @@ Answer:
 @Autowired
 @Qualifier("emailService")
 private NotificationService notificationService;
+
+14. Interview Questions
+Basic Questions
+Q1. What is @Inject?
+
+Answer:
+
+@Inject is a standard Java (JSR-330) annotation used for dependency injection. Spring supports it as an alternative to @Autowired.
+
+Q2. What is @Resource?
+
+Answer:
+
+@Resource is a Jakarta annotation used for dependency injection. It primarily injects Beans by their name.
+
+Q3. What is the main difference between @Autowired and @Resource?
+
+Answer:
+
+@Autowired injects by type, whereas @Resource primarily injects by name.
+
+Intermediate Questions
+Q4. Is @Inject a Spring annotation?
+
+Answer:
+
+No. It is defined by the Java standard (JSR-330), but Spring supports it.
+
+Q5. Which annotation is most commonly used in Spring Boot?
+
+Answer:
+
+@Autowired (or constructor injection without explicitly writing @Autowired on a single constructor).
+
+Scenario-Based Question
+Q6.
+
+Two Beans implement the PaymentService interface:
+
+upiPayment
+cardPayment
+
+You want to inject upiPayment by its Bean name. Which annotation can you use?
+
+Answer:
+
+@Resource(name = "upiPayment")
+private PaymentService paymentService;
