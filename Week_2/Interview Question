@@ -417,3 +417,93 @@ What could be the reason?
 Answer:
 
 One possible reason is that the package containing Student is not included in Component Scanning.
+
+Basic Questions
+Q1. What is @Component?
+
+Answer:
+
+@Component is a Spring stereotype annotation used to mark a class as a Spring-managed Bean.
+
+Q2. What happens after adding @Component?
+
+Answer:
+
+If Component Scanning is enabled, Spring detects the class and registers it as a Bean in the IoC Container.
+
+Q3. Does @Component create the Bean?
+
+Answer:
+
+No.
+
+@Component only marks the class.
+
+The Spring IoC Container creates the Bean after Component Scanning.
+
+Intermediate Questions
+Q4. Can @Component work without @ComponentScan?
+
+Answer:
+
+No. Spring must scan the package to discover classes annotated with @Component.
+
+Q5. When should you use @Component?
+
+Answer:
+
+Use @Component for general-purpose classes that don't belong specifically to the service, repository, or controller layers.
+
+Scenario-Based Question
+Q6.
+
+You annotated a class with @Component, but Spring throws NoSuchBeanDefinitionException.
+
+What could be the reason?
+
+Answer:
+
+The class's package may not be included in @ComponentScan, so Spring never discovered and registered the Bean.
+
+Basic Questions
+Q1. What is @Service?
+
+Answer:
+
+@Service is a Spring stereotype annotation used to mark a class as part of the business logic layer. Spring detects it during component scanning and registers it as a Bean.
+
+Q2. Why do we use @Service?
+
+Answer:
+
+To clearly indicate that a class contains business logic and should be managed by the Spring IoC Container.
+
+Q3. Does @Service create a Bean?
+
+Answer:
+
+Not by itself.
+
+@Service marks the class, Component Scanning finds it, and the Spring IoC Container creates and manages the Bean.
+
+Intermediate Questions
+Q4. What kind of methods belong in a Service class?
+
+Answer:
+
+Methods that implement business rules, such as calculations, validations, payment processing, order management, or interest calculation.
+
+Q5. Can @Component replace @Service?
+
+Answer:
+
+Yes, technically it can because @Service is a specialized form of @Component. However, using @Service is recommended because it clearly communicates that the class belongs to the business logic layer.
+
+Scenario-Based Question
+Q6.
+
+You're developing an online shopping application. Where should the method calculateDiscount() be placed?
+
+Answer:
+
+Inside a class annotated with @Service, because discount calculation is business logic.
