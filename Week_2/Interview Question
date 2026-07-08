@@ -719,3 +719,44 @@ A StudentService class creates its own StudentRepository object using new Studen
 Answer:
 
 It creates tight coupling because StudentService is directly responsible for creating its dependency. Spring solves this by creating the StudentRepository Bean and injecting it into StudentService using Dependency Injection.
+
+Basic Questions
+Q1. What is Constructor Injection?
+
+Answer:
+
+Constructor Injection is a type of Dependency Injection where Spring provides required dependencies through the constructor of a class.
+
+Q2. Why is Constructor Injection preferred?
+
+Answer:
+
+Because it ensures mandatory dependencies are available when the object is created, promotes loose coupling, and improves testability.
+
+Q3. Who injects the dependency in Spring?
+
+Answer:
+
+The Spring IoC Container injects the dependency.
+
+Intermediate Questions
+Q4. Can Constructor Injection work without Spring?
+
+Answer:
+
+Yes. Constructor Injection is a general object-oriented design pattern. Spring automates the process of providing constructor arguments.
+
+Q5. When should you choose Constructor Injection?
+
+Answer:
+
+When a dependency is required for the object to function correctly.
+
+Scenario-Based Question
+Q6.
+
+A Car cannot function without an Engine. Which type of Dependency Injection is more appropriate?
+
+Answer:
+
+Constructor Injection, because the Engine is a mandatory dependency.
