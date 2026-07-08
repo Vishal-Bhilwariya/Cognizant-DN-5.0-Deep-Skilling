@@ -38,6 +38,8 @@
 | # | Topic | Description |
 |---|-------|-------------|
 | 1 | Using Annotations for Bean Configuration | Annotation = special marker starting with `@` that provides metadata to the framework. Problem with XML: 500 classes = 500 `<bean>` entries in XML — hard to maintain. Solution: `@Component` on a class tells Spring to create a Bean automatically. Common annotations: `@Component` (general), `@Service` (business logic), `@Repository` (DB layer), `@Controller` (web), `@Configuration` (config class), `@Bean` (manual bean declaration). XML vs Annotation: XML = external config, older style; Annotation = inline config, modern style preferred in Spring Boot. |
+| 2 | Component Scanning | Process where Spring automatically searches packages for annotated classes and creates Beans for them. Spring scans packages and registers any class marked with `@Component` (or similar) as a Bean. Configured using `@ComponentScan("com.demo")` on a `@Configuration` class. Analogy: staff walking through classrooms registering anyone wearing a Teacher ID Card. Eliminates large XML files, faster development, cleaner project structure. |
+| 3 | @Component | 🔜 Notes coming soon |
 
 ---
 
