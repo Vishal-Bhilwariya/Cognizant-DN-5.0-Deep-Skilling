@@ -678,3 +678,44 @@ Your company has a Spring application with 800 Bean definitions in beans.xml. Ma
 Answer:
 
 Use Hybrid Configuration. Keep the existing XML configuration working while gradually introducing Java-based configuration for new or refactored components.
+
+Basic Questions
+Q1. What is Dependency Injection?
+
+Answer:
+
+Dependency Injection is a design pattern where Spring provides required dependencies (objects) to a class instead of the class creating them manually.
+
+Q2. What is a dependency?
+
+Answer:
+
+A dependency is an object that another object needs to perform its work.
+
+Q3. What is injection?
+
+Answer:
+
+Injection means providing a dependency from outside rather than creating it inside the class.
+
+Intermediate Questions
+Q4. Why do we use Dependency Injection?
+
+Answer:
+
+To reduce tight coupling, improve maintainability, simplify testing, and let Spring manage object creation.
+
+Q5. What is the relationship between IoC and DI?
+
+Answer:
+
+IoC is the overall design principle, and Dependency Injection is one technique used by Spring to implement IoC.
+
+Scenario-Based Question
+Q6.
+
+A StudentService class creates its own StudentRepository object using new StudentRepository(). What design issue does this cause, and how can Spring solve it?
+
+Answer:
+
+It creates tight coupling because StudentService is directly responsible for creating its dependency. Spring solves this by creating the StudentRepository Bean and injecting it into StudentService using Dependency Injection.
