@@ -760,3 +760,46 @@ A Car cannot function without an Engine. Which type of Dependency Injection is m
 Answer:
 
 Constructor Injection, because the Engine is a mandatory dependency.
+
+Basic Questions
+Q1. What is Setter Injection?
+
+Answer:
+
+Setter Injection is a type of Dependency Injection where Spring injects dependencies through setter methods.
+
+Q2. Which method is used in Setter Injection?
+
+Answer:
+
+A setter method, such as setEngine(Engine engine).
+
+Q3. When should Setter Injection be used?
+
+Answer:
+
+When a dependency is optional or may need to be modified after object creation.
+
+Intermediate Questions
+Q4. What XML tag is used for Setter Injection?
+
+Answer:
+
+The <property> tag.
+
+Q5. Can Setter Injection work without Spring?
+
+Answer:
+
+Yes. It is a general object-oriented design pattern. Spring automates the process.
+
+Scenario-Based Question
+Q6.
+
+An application has an optional NotificationService. Sometimes it sends emails, and sometimes notifications are disabled.
+
+Which injection type is more suitable?
+
+Answer:
+
+Setter Injection, because the dependency is optional and can be configured later.
