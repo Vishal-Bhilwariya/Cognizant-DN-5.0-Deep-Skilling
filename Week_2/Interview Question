@@ -999,3 +999,44 @@ A banking application logs every transaction. Instead of writing logging code in
 Answer:
 
 Spring AOP. The logging logic can be placed in an Aspect and automatically applied to the required methods.
+
+Basic Questions
+Q1. What is an Aspect?
+
+Answer:
+
+An Aspect is a class containing cross-cutting concerns such as logging, security, or transaction management.
+
+Q2. What is Advice?
+
+Answer:
+
+Advice is the action executed by an Aspect at a specific point in the execution of a program.
+
+Q3. Which annotation marks a class as an Aspect?
+
+Answer:
+
+@Aspect
+Intermediate Questions
+Q4. Name the five types of Advice.
+
+Answer:
+
+@Before
+@After
+@AfterReturning
+@AfterThrowing
+@Around
+Q5. Which Advice executes only after successful execution?
+
+Answer:
+
+@AfterReturning
+
+Scenario-Based Question
+Q6.
+
+You want to log every method call before it executes. Which Advice should you use?
+
+Answer:
