@@ -1204,3 +1204,50 @@ The Controller calls the Model.
 The Model fetches data from the database.
 The Controller sends the data to the View.
 The View displays the student information to the user.
+
+Basic Questions
+Q1. What is MVC Configuration?
+
+Answer:
+
+MVC Configuration sets up Spring MVC so it can handle HTTP requests, locate Controllers, and return the correct Views.
+
+Q2. What is DispatcherServlet?
+
+Answer:
+
+DispatcherServlet is the Front Controller of Spring MVC. It receives all incoming requests and forwards them to the appropriate Controller.
+
+Q3. What is the purpose of @EnableWebMvc?
+
+Answer:
+
+It enables Spring MVC features such as request mapping, view resolution, and data binding.
+
+Intermediate Questions
+Q4. What is Component Scanning?
+
+Answer:
+
+Component Scanning automatically detects classes annotated with @Controller, @Service, @Repository, and @Component and registers them as Spring Beans.
+
+Q5. What is a View Resolver?
+
+Answer:
+
+A View Resolver converts a logical view name (like "home") into the actual view resource (such as /WEB-INF/views/home.jsp).
+
+Scenario-Based Question
+Q6.
+
+A user accesses http://localhost:8080/login. Describe the request flow.
+
+Answer:
+
+Browser sends the request.
+DispatcherServlet receives it.
+DispatcherServlet forwards it to the appropriate Controller.
+The Controller processes the request (possibly using the Model/Service).
+The Controller returns a view name.
+The View Resolver finds the corresponding page.
+The page is sent back to the browser.
