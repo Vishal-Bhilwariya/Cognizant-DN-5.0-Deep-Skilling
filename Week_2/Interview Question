@@ -953,3 +953,49 @@ Answer:
 
 @Resource(name = "upiPayment")
 private PaymentService paymentService;
+
+Basic Questions
+Q1. What is AOP?
+
+Answer:
+
+Aspect-Oriented Programming (AOP) is a programming paradigm that separates cross-cutting concerns such as logging and security from the application's business logic.
+
+Q2. Why do we use AOP?
+
+Answer:
+
+To avoid duplicate code, improve maintainability, and keep business logic clean by separating common functionalities.
+
+Q3. What is a Cross-Cutting Concern?
+
+Answer:
+
+A Cross-Cutting Concern is functionality that is required across multiple modules of an application, such as logging, security, or transaction management.
+
+Intermediate Questions
+Q4. Give some real-world uses of Spring AOP.
+
+Answer:
+
+Logging
+Security
+Transaction Management
+Performance Monitoring
+Exception Handling
+Q5. Does AOP replace OOP?
+
+Answer:
+
+No.
+
+AOP complements OOP by handling cross-cutting concerns, while OOP organizes the application's core business logic.
+
+Scenario-Based Question
+Q6.
+
+A banking application logs every transaction. Instead of writing logging code in every method, which Spring concept should be used?
+
+Answer:
+
+Spring AOP. The logging logic can be placed in an Aspect and automatically applied to the required methods.
