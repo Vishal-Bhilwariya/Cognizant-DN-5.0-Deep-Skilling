@@ -1251,3 +1251,55 @@ The Controller processes the request (possibly using the Model/Service).
 The Controller returns a view name.
 The View Resolver finds the corresponding page.
 The page is sent back to the browser.
+
+Basic Questions
+Q1. What is a Controller?
+
+Answer:
+
+A Controller is a Spring MVC component that receives HTTP requests, interacts with the Service/Model layer, and returns a View or Response.
+
+Q2. Which annotation marks a Controller?
+
+Answer:
+
+@Controller
+Q3. What is @RequestMapping?
+
+Answer:
+
+It maps a URL to a Controller class or method.
+
+Intermediate Questions
+Q4. What is the difference between @GetMapping and @PostMapping?
+
+Answer:
+
+@GetMapping handles HTTP GET requests (retrieve data).
+@PostMapping handles HTTP POST requests (submit or save data).
+Q5. Should business logic be written inside a Controller?
+
+Answer:
+
+No.
+
+The Controller should only handle requests and delegate business logic to the Service/Model layer.
+
+Scenario-Based Question
+Q6.
+
+A user opens:
+
+http://localhost:8080/students
+
+Explain the request flow.
+
+Answer:
+
+Browser sends a GET request.
+DispatcherServlet receives it.
+DispatcherServlet forwards it to the mapped Controller method.
+The Controller interacts with the Service/Model if needed.
+The Controller returns a view name.
+The View Resolver locates the view.
+The browser displays the page.
