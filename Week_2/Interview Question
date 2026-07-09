@@ -1157,3 +1157,50 @@ You created a LoggingAspect with @Aspect and @Before, but logging never appears 
 Answer:
 
 A common reason is that AOP has not been enabled using @EnableAspectJAutoProxy, or the Aspect is not registered as a Spring Bean (for example, missing @Component).
+
+Basic Questions
+Q1. What is MVC?
+
+Answer:
+
+MVC is a design pattern that separates an application into Model, View, and Controller.
+
+Q2. What is ORM?
+
+Answer:
+
+ORM is a technique that maps Java Objects to database tables, reducing the need to write SQL manually.
+
+Q3. What are the three parts of MVC?
+
+Answer:
+
+Model
+View
+Controller
+Intermediate Questions
+Q4. What is the role of a Controller?
+
+Answer:
+
+A Controller receives client requests, interacts with the Model, and returns the appropriate View.
+
+Q5. Why is Hibernate used?
+
+Answer:
+
+Hibernate is an ORM framework that automatically converts Java objects into SQL operations and database records into Java objects.
+
+Scenario-Based Question
+Q6.
+
+A user clicks the "View Student" button on a website. Explain the request flow in Spring MVC.
+
+Answer:
+
+The browser sends a request.
+The Controller receives it.
+The Controller calls the Model.
+The Model fetches data from the database.
+The Controller sends the data to the View.
+The View displays the student information to the user.
