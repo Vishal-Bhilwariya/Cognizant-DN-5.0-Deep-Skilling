@@ -1034,9 +1034,44 @@ Answer:
 
 @AfterReturning
 
+Basic Questions
+Q1. What is a Join Point?
+
+Answer:
+
+A Join Point is a point during program execution where Spring AOP can potentially execute Advice. In Spring AOP, this is typically a method execution.
+
+Q2. What is a Pointcut?
+
+Answer:
+
+A Pointcut is an expression that selects the Join Points where an Advice should execute.
+
+Q3. What is the purpose of execution()?
+
+Answer:
+
+execution() is a Pointcut designator used to match method execution based on method name, return type, parameters, and package.
+
+Intermediate Questions
+Q4. What is the difference between a Join Point and a Pointcut?
+
+Answer:
+
+A Join Point is every possible method execution where Advice can run. A Pointcut is a rule written by the developer that selects specific Join Points.
+
+Q5. Does every Join Point execute Advice?
+
+Answer:
+
+No. Advice executes only at the Join Points selected by the Pointcut.
+
 Scenario-Based Question
 Q6.
 
-You want to log every method call before it executes. Which Advice should you use?
+A banking application has 50 service methods, but you want Logging only for transferMoney() and withdrawMoney(). Which Spring AOP concept helps achieve this?
 
 Answer:
+
+A Pointcut. It selects only the required Join Points for Advice execution.
+
