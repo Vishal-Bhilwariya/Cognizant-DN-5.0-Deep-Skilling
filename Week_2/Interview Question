@@ -1344,3 +1344,61 @@ A Controller retrieves a student's details from the database. How does the data 
 Answer:
 
 The Controller adds the student data to the Model using addAttribute(), returns the View name, and the View reads the data from the Model and displays it.
+
+Basic Questions
+Q1. What is the View Layer?
+
+Answer:
+
+The View Layer is the presentation layer of Spring MVC that displays data received from the Model to the user.
+
+Q2. What are some View technologies in Spring MVC?
+
+Answer:
+
+JSP
+Thymeleaf
+HTML
+Q3. What is the purpose of View Resolver?
+
+Answer:
+
+View Resolver converts the logical View name returned by the Controller into the actual View file.
+
+Example:
+
+return "home";
+
+↓
+
+home.jsp
+Intermediate Questions
+Q4. Does the View communicate directly with the database?
+
+Answer:
+
+No.
+
+The View only displays data.
+
+Database communication is handled by the Service/Model layer.
+
+Q5. Can the View access data without the Model?
+
+Answer:
+
+No.
+
+The Controller must first place the data into the Model, then the View can access and display it.
+
+Scenario-Based Question
+Q6.
+
+A Controller retrieves a student's details and adds them to the Model. Explain how those details appear on the webpage.
+
+Answer:
+
+Controller retrieves the data.
+Controller stores it in the Model using addAttribute().
+Controller returns the View name.
+View Resolver finds the View.
