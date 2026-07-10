@@ -1303,3 +1303,44 @@ The Controller interacts with the Service/Model if needed.
 The Controller returns a view name.
 The View Resolver locates the view.
 The browser displays the page.
+
+Basic Questions
+Q1. What is the Model in Spring MVC?
+
+Answer:
+
+The Model is an object used to store and transfer data from the Controller to the View.
+
+Q2. What is addAttribute() used for?
+
+Answer:
+
+It adds data to the Model so that the View can access and display it.
+
+Q3. What is ModelAndView?
+
+Answer:
+
+ModelAndView is a class that stores both the Model data and the View name in a single object.
+
+Intermediate Questions
+Q4. What is the difference between Model and ModelMap?
+
+Answer:
+
+Model is an interface for passing data to the View, while ModelMap is a Map-based implementation that provides additional Map operations.
+
+Q5. When would you use ModelAndView?
+
+Answer:
+
+When you want to return both the data and the View together from a Controller method.
+
+Scenario-Based Question
+Q6.
+
+A Controller retrieves a student's details from the database. How does the data reach the webpage?
+
+Answer:
+
+The Controller adds the student data to the Model using addAttribute(), returns the View name, and the View reads the data from the Model and displays it.
