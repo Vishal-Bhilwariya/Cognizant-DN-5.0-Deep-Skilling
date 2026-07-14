@@ -1,0 +1,1450 @@
+Basic Questions
+Q1. What is Spring Framework?
+
+Answer: Spring is an open-source Java framework that simplifies the development of Java applications by providing ready-made features and managing common infrastructure tasks.
+
+Q2. Is Spring a programming language?
+
+Answer: No. Spring is a framework built on top of Java.
+
+Q3. Why is Spring popular?
+
+Answer: Because it reduces boilerplate code, improves maintainability, supports testing, and provides many modules for enterprise development.
+
+Intermediate Questions
+Q4. What problems does Spring solve?
+
+Answer:
+
+Reduces repetitive code
+Improves maintainability
+Encourages loosely coupled design
+Simplifies testing
+Provides modular architecture
+Q5. Name some important Spring modules.
+
+Answer:
+
+Core
+AOP
+Data Access
+ORM
+MVC
+Boot
+Scenario-Based Question
+Q6. Your company is building a large banking application. Why would you recommend Spring instead of writing everything using plain Java?
+
+Answer:
+Because Spring provides a structured framework, reduces repetitive code, supports modular design, simplifies testing, and includes features commonly required in enterprise applications.
+
+Basic Questions
+Q1. What is Maven?
+
+Answer: Maven is an open-source build automation and dependency management tool used for Java projects.
+
+Q2. What is a Build Tool?
+
+Answer: A build tool automates tasks such as compiling code, running tests, managing dependencies, and packaging applications.
+
+Q3. Why do we use Maven?
+
+Answer: Maven automates the build process, manages dependencies, provides a standard project structure, and saves development time.
+
+Intermediate Questions
+Q4. What is the difference between Java and Maven?
+
+Answer: Java is a programming language used to write applications, while Maven is a build tool used to manage and build Java projects.
+
+Q5. What is a dependency?
+
+Answer: A dependency is an external library that a project requires to function.
+
+Scenario-Based Question
+Q6. Your teammate manually downloads all JAR files for a Spring project. What would you suggest?
+
+Answer: I would recommend using Maven. By declaring dependencies in pom.xml, Maven automatically downloads the required libraries and manages their versions, reducing manual work and errors.
+
+Basic Questions
+Q1. What is a Maven Project?
+
+Answer: A Maven Project is a Java project that uses Maven to manage dependencies, automate builds, and follow a standard project structure.
+
+Q2. Why do we create a Maven Project?
+
+Answer: To automate project building, manage dependencies, and maintain a standard directory structure.
+
+Q3. What is the purpose of the src/main/java folder?
+
+Answer: It stores the application's Java source code.
+
+Intermediate Questions
+Q4. What is the purpose of the target folder?
+
+Answer: It stores the compiled classes and packaged output (such as JAR files) after the project is built.
+
+Q5. What is the difference between a Java Project and a Maven Project?
+
+Answer: A Java Project requires manual dependency management and may not follow a standard structure, while a Maven Project automates dependency management and uses a standard directory layout.
+
+Scenario-Based Question
+Q6. Your teammate manually creates folders and copies JAR files into every project. What would you suggest?
+
+Answer: I would recommend creating a Maven Project. Maven automatically provides a standard structure and manages dependencies through pom.xml, making the project easier to maintain.
+
+Basic Questions
+Q1. What is a dependency?
+
+Answer: A dependency is an external library or framework required by a project to provide additional functionality.
+
+Q2. What is the purpose of pom.xml?
+
+Answer: pom.xml stores the project's configuration, dependencies, plugins, and build information.
+
+Q3. Why do we add Spring dependencies?
+
+Answer: To use Spring classes and features in our Java project.
+
+Intermediate Questions
+Q4. What are the three important tags inside a dependency?
+
+Answer:
+
+groupId
+artifactId
+version
+Q5. Where does Maven download dependencies from?
+
+Answer: By default, Maven downloads dependencies from the Maven Central Repository.
+
+Scenario-Based Question
+Q6. You added a Spring dependency to pom.xml, but the library did not appear in your project. What would you check first?
+
+Answer: I would check:
+
+Whether the internet connection is available.
+Whether the dependency coordinates (groupId, artifactId, version) are correct.
+Whether Maven has refreshed/reloaded the project successfully.
+
+Q1. What is Maven configuration?
+
+Answer: Maven configuration is the process of defining project settings in pom.xml, including dependencies, Java version, plugins, and build information.
+
+Q2. Which file is used to configure Maven?
+
+Answer: pom.xml.
+
+Q3. Why do we configure the Java version in Maven?
+
+Answer: To ensure Maven compiles the project using the correct Java version.
+
+Intermediate Questions
+Q4. What is the purpose of the <properties> section?
+
+Answer: It stores project properties, such as the Java compiler source and target versions.
+
+Q5. What is the purpose of plugins in Maven?
+
+Answer: Plugins extend Maven's functionality, enabling tasks like compiling code, packaging applications, generating reports, and more.
+
+Scenario-Based Question
+Q6. Your project compiles with Java 17, but another developer is using Java 21. How can Maven help?
+
+Answer: Configure the Java source and target versions in pom.xml. Maven will then compile the project using the specified version, helping maintain consistency across different development environments.
+
+Q1. What is IoC?
+
+Answer:
+IoC (Inversion of Control) is the principle where the responsibility of creating and managing objects is transferred from the programmer to the Spring Framework.
+
+Q2. What is the IoC Container?
+
+Answer:
+The IoC Container is a part of the Spring Framework that creates, manages, stores, and provides objects (beans) throughout the application.
+
+Q3. Why do we need the IoC Container?
+
+Answer:
+It automates object creation and management, reduces manual coding, promotes loose coupling, and makes applications easier to maintain and test.
+
+Intermediate Questions
+Q4. What does "Control" mean in IoC?
+
+Answer:
+Control refers to the responsibility of creating and managing objects.
+
+Q5. Why is it called "Inversion" of Control?
+
+Answer:
+Because the responsibility of object creation is reversed—instead of the developer creating objects, the Spring Framework creates and manages them.
+
+Scenario-Based Question
+Q6. You notice many new statements scattered across a large Java project. What issue could this indicate?
+
+Answer:
+It may indicate excessive manual object creation, leading to tight coupling and maintenance challenges. Using the Spring IoC Container can centralize object creation and improve flexibility.
+
+Basic Questions
+Q1. What is XML Configuration in Spring?
+
+Answer: XML Configuration is the process of configuring the Spring IoC Container using an XML file (typically beans.xml) to define Beans and their relationships.
+
+Q2. What is the purpose of beans.xml?
+
+Answer: It stores Bean definitions and configuration information for the Spring IoC Container.
+
+Q3. What does the <bean> tag do?
+
+Answer: It tells Spring to create and manage an object of the specified class.
+
+Intermediate Questions
+Q4. What is the purpose of the id attribute?
+
+Answer: It uniquely identifies a Bean inside the Spring IoC Container.
+
+Q5. What is the purpose of the class attribute?
+
+Answer: It specifies the fully qualified Java class whose object Spring should create.
+
+Scenario-Based Question
+Q6. You remove a <bean> definition from beans.xml, but your application still requests that Bean. What will happen?
+
+Answer: Spring will not find the Bean in the IoC Container, and an exception will be thrown when the application tries to retrieve it.
+
+Basic Questions
+Q1. What is a Spring Bean?
+
+Answer: A Spring Bean is an object that is created, managed, and maintained by the Spring IoC Container.
+
+Q2. What is a dependency?
+
+Answer: A dependency is an object that another object requires to perform its work.
+
+Q3. Is every Java object a Spring Bean?
+
+Answer: No. Only objects created and managed by the Spring IoC Container are Spring Beans.
+
+Intermediate Questions
+Q4. Why do we define Beans in Spring?
+
+Answer: To allow the IoC Container to create, manage, and provide objects automatically.
+
+Q5. Why are dependencies important?
+
+Answer: Most real-world classes require other classes to perform their tasks. Spring manages these relationships automatically, reducing manual work and promoting loose coupling.
+
+Scenario-Based Question
+Q6. A Car class requires an Engine object. In a Spring application, who should create these objects?
+
+Answer: The Spring IoC Container should create both the Car Bean and the Engine Bean and manage their relationship.
+
+Basic Questions
+Q1. What is ApplicationContext?
+
+Answer:
+
+ApplicationContext is the most commonly used implementation of the Spring IoC Container. It creates, manages, and provides Spring Beans.
+
+Q2. Why do we use ApplicationContext?
+
+Answer:
+
+To create, manage, and retrieve Beans automatically instead of creating objects manually.
+
+Q3. What does getBean() do?
+
+Answer:
+
+It retrieves a Bean from the Spring IoC Container.
+
+Intermediate Questions
+Q4. Does ApplicationContext create Beans automatically?
+
+Answer:
+
+Yes. By default, it creates singleton Beans when the container starts (eager initialization).
+
+Q5. Which configuration file does ClassPathXmlApplicationContext read?
+
+Answer:
+
+beans.xml (or any XML configuration file specified by the developer).
+
+Scenario-Based Question
+Q6.
+
+You wrote:
+
+ApplicationContext context =
+        new ClassPathXmlApplicationContext("beans.xml");
+
+But beans.xml contains no Bean with ID "student".
+
+What happens?
+
+Answer:
+
+When context.getBean("student") is called, Spring throws a NoSuchBeanDefinitionException because no Bean with that ID exists.
+
+Q1. What is BeanFactory?
+
+Answer:
+
+BeanFactory is the basic implementation of the Spring IoC Container. It creates, manages, and provides Beans.
+
+Q2. What is the main feature of BeanFactory?
+
+Answer:
+
+Lazy Loading—Beans are created only when they are requested.
+
+Q3. What is Lazy Loading?
+
+Answer:
+
+Lazy Loading means creating an object only when it is needed, rather than creating it at application startup.
+
+Intermediate Questions
+Q4. Does BeanFactory create all Beans when the application starts?
+
+Answer:
+
+No. It creates Beans only when getBean() is called.
+
+Q5. Is BeanFactory commonly used in modern Spring applications?
+
+Answer:
+
+No. Modern applications usually use ApplicationContext because it provides additional enterprise features.
+
+Scenario-Based Question
+Q6.
+
+Your application contains 1,000 Beans, but only 50 are used during execution.
+
+Which container would consume less memory initially?
+
+Answer:
+
+BeanFactory, because it uses Lazy Loading and creates only the Beans that are actually requested.
+
+Q1. What is an annotation?
+
+Answer:
+
+An annotation is a special marker in Java that provides metadata about the code. In Spring, annotations are used to configure and manage Beans.
+
+Q2. Why did Spring introduce annotations?
+
+Answer:
+
+To reduce XML configuration, improve readability, and simplify Bean configuration.
+
+Q3. Which symbol is used for annotations?
+
+Answer:
+
+The @ symbol.
+
+Intermediate Questions
+Q4. Which approach is preferred in modern Spring projects?
+
+Answer:
+
+Annotation-based configuration.
+
+Q5. Does an annotation itself create the Bean?
+
+Answer:
+
+No.
+
+The annotation marks the class.
+
+The Spring IoC Container, together with component scanning, detects the annotation and creates the Bean.
+
+Scenario-Based Question
+Q6.
+
+You add @Component to a class, but Spring doesn't create a Bean.
+
+What could be the reason?
+
+Answer:
+
+One common reason is that component scanning is not enabled or the package containing the class is not being scanned.
+
+We'll learn this in the next sub-topic.
+
+Basic Questions
+Q1. What is Component Scanning?
+
+Answer:
+
+Component Scanning is the process by which Spring automatically searches packages for annotated classes and creates Beans.
+
+Q2. Why do we need Component Scanning?
+
+Answer:
+
+Without Component Scanning, Spring cannot discover classes annotated with @Component, @Service, @Repository, or @Controller.
+
+Q3. Which annotation is used for Component Scanning?
+
+Answer:
+
+@ComponentScan
+
+Intermediate Questions
+Q4. What does @ComponentScan("com.demo") mean?
+
+Answer:
+
+It tells Spring to scan the com.demo package for Spring-managed components.
+
+Q5. What happens if you forget @ComponentScan?
+
+Answer:
+
+Spring won't detect annotated classes, so the corresponding Beans won't be created.
+
+Scenario-Based Question
+Q6.
+
+Your Student class has @Component, but context.getBean(Student.class) throws an exception.
+
+What could be the reason?
+
+Answer:
+
+One possible reason is that the package containing Student is not included in Component Scanning.
+
+Basic Questions
+Q1. What is @Component?
+
+Answer:
+
+@Component is a Spring stereotype annotation used to mark a class as a Spring-managed Bean.
+
+Q2. What happens after adding @Component?
+
+Answer:
+
+If Component Scanning is enabled, Spring detects the class and registers it as a Bean in the IoC Container.
+
+Q3. Does @Component create the Bean?
+
+Answer:
+
+No.
+
+@Component only marks the class.
+
+The Spring IoC Container creates the Bean after Component Scanning.
+
+Intermediate Questions
+Q4. Can @Component work without @ComponentScan?
+
+Answer:
+
+No. Spring must scan the package to discover classes annotated with @Component.
+
+Q5. When should you use @Component?
+
+Answer:
+
+Use @Component for general-purpose classes that don't belong specifically to the service, repository, or controller layers.
+
+Scenario-Based Question
+Q6.
+
+You annotated a class with @Component, but Spring throws NoSuchBeanDefinitionException.
+
+What could be the reason?
+
+Answer:
+
+The class's package may not be included in @ComponentScan, so Spring never discovered and registered the Bean.
+
+Basic Questions
+Q1. What is @Service?
+
+Answer:
+
+@Service is a Spring stereotype annotation used to mark a class as part of the business logic layer. Spring detects it during component scanning and registers it as a Bean.
+
+Q2. Why do we use @Service?
+
+Answer:
+
+To clearly indicate that a class contains business logic and should be managed by the Spring IoC Container.
+
+Q3. Does @Service create a Bean?
+
+Answer:
+
+Not by itself.
+
+@Service marks the class, Component Scanning finds it, and the Spring IoC Container creates and manages the Bean.
+
+Intermediate Questions
+Q4. What kind of methods belong in a Service class?
+
+Answer:
+
+Methods that implement business rules, such as calculations, validations, payment processing, order management, or interest calculation.
+
+Q5. Can @Component replace @Service?
+
+Answer:
+
+Yes, technically it can because @Service is a specialized form of @Component. However, using @Service is recommended because it clearly communicates that the class belongs to the business logic layer.
+
+Scenario-Based Question
+Q6.
+
+You're developing an online shopping application. Where should the method calculateDiscount() be placed?
+
+Answer:
+
+Inside a class annotated with @Service, because discount calculation is business logic.
+
+Basic Questions
+Q1. What is @Repository?
+
+Answer:
+
+@Repository is a Spring stereotype annotation used to mark a class responsible for database operations. Spring detects it during component scanning and manages it as a Bean.
+
+Q2. What is the purpose of @Repository?
+
+Answer:
+
+To perform database operations such as inserting, updating, deleting, and retrieving data.
+
+Q3. Which layer uses @Repository?
+
+Answer:
+
+The Data Access Layer (Repository/DAO Layer).
+
+Intermediate Questions
+Q4. Can business logic be written inside a Repository?
+
+Answer:
+
+No. Business logic belongs in the Service Layer. A Repository should only contain database-related operations.
+
+Q5. What is CRUD?
+
+Answer:
+
+CRUD stands for:
+
+C → Create
+R → Read
+U → Update
+D → Delete
+
+These are the basic database operations performed by a Repository.
+
+Scenario-Based Question
+Q6.
+
+You're developing a Student Management System. Where should the method saveStudent() be placed?
+
+Answer:
+
+Inside a class annotated with @Repository, because saving data is a database operation.
+
+Basic Questions
+Q1. What is @Controller?
+
+Answer:
+
+@Controller is a Spring stereotype annotation used to mark a class that handles user requests and returns responses.
+
+Q2. What is the role of a Controller?
+
+Answer:
+
+The Controller receives requests from the client, calls the Service layer to process them, and returns the appropriate response.
+
+Q3. Which layer does @Controller belong to?
+
+Answer:
+
+The Presentation Layer (Web Layer).
+
+Intermediate Questions
+Q4. Should business logic be written inside a Controller?
+
+Answer:
+
+No. Business logic belongs in the Service Layer. The Controller should focus on request handling.
+
+Q5. Can a Controller directly access the database?
+
+Answer:
+
+Ideally, no. The Controller should call the Service layer, which in turn calls the Repository layer.
+
+Scenario-Based Question
+Q6.
+
+A user clicks the "Check Balance" button in a banking application. Which layer receives the request first?
+
+Answer:
+
+The Controller Layer receives the request first and then forwards it to the Service layer.
+
+Basic Questions
+Q1. What is Java-based Configuration?
+
+Answer:
+
+Java-based Configuration is the process of configuring Spring using Java classes instead of XML.
+
+Q2. What is @Configuration?
+
+Answer:
+
+@Configuration marks a class as a Spring configuration class that contains Bean definitions.
+
+Q3. What is @Bean?
+
+Answer:
+
+@Bean marks a method whose return value should be registered as a Spring Bean.
+
+Intermediate Questions
+Q4. What is the difference between @Component and @Bean?
+
+Answer:
+
+@Component is placed on a class and relies on component scanning. @Bean is placed on a method inside a @Configuration class and explicitly defines how a Bean should be created.
+
+Q5. Why is Java-based Configuration preferred over XML?
+
+Answer:
+
+Because it provides better readability, compile-time checking, IDE support, and easier maintenance.
+
+Scenario-Based Question
+Q6.
+
+You are using a third-party library, and you cannot modify its classes to add @Component. How can you register one of its objects as a Spring Bean?
+
+Answer:
+
+Create a @Configuration class and define a @Bean method that returns an instance of the third-party class.
+
+Basic Questions
+Q1. What is Hybrid Configuration?
+
+Answer:
+
+Hybrid Configuration means using both XML configuration and Java-based configuration together in the same Spring application.
+
+Q2. Why do companies use Hybrid Configuration?
+
+Answer:
+
+To gradually migrate legacy XML-based applications to modern Java-based configuration without rewriting the entire project.
+
+Q3. Can XML and Java Configuration work together?
+
+Answer:
+
+Yes. Spring supports using both XML and Java configuration in the same application.
+
+Intermediate Questions
+Q4. Is Hybrid Configuration recommended for new Spring Boot projects?
+
+Answer:
+
+No. New Spring Boot projects usually use Java-based configuration and annotations. Hybrid configuration is mainly used during migration or when maintaining legacy systems.
+
+Q5. Which configuration style is preferred today?
+
+Answer:
+
+Java-based configuration with annotations (@Configuration, @Bean, @Component, etc.) is preferred in modern Spring applications.
+
+Scenario-Based Question
+Q6.
+
+Your company has a Spring application with 800 Bean definitions in beans.xml. Management wants to adopt Spring Boot without disrupting the existing system. What approach would you recommend?
+
+Answer:
+
+Use Hybrid Configuration. Keep the existing XML configuration working while gradually introducing Java-based configuration for new or refactored components.
+
+Basic Questions
+Q1. What is Dependency Injection?
+
+Answer:
+
+Dependency Injection is a design pattern where Spring provides required dependencies (objects) to a class instead of the class creating them manually.
+
+Q2. What is a dependency?
+
+Answer:
+
+A dependency is an object that another object needs to perform its work.
+
+Q3. What is injection?
+
+Answer:
+
+Injection means providing a dependency from outside rather than creating it inside the class.
+
+Intermediate Questions
+Q4. Why do we use Dependency Injection?
+
+Answer:
+
+To reduce tight coupling, improve maintainability, simplify testing, and let Spring manage object creation.
+
+Q5. What is the relationship between IoC and DI?
+
+Answer:
+
+IoC is the overall design principle, and Dependency Injection is one technique used by Spring to implement IoC.
+
+Scenario-Based Question
+Q6.
+
+A StudentService class creates its own StudentRepository object using new StudentRepository(). What design issue does this cause, and how can Spring solve it?
+
+Answer:
+
+It creates tight coupling because StudentService is directly responsible for creating its dependency. Spring solves this by creating the StudentRepository Bean and injecting it into StudentService using Dependency Injection.
+
+Basic Questions
+Q1. What is Constructor Injection?
+
+Answer:
+
+Constructor Injection is a type of Dependency Injection where Spring provides required dependencies through the constructor of a class.
+
+Q2. Why is Constructor Injection preferred?
+
+Answer:
+
+Because it ensures mandatory dependencies are available when the object is created, promotes loose coupling, and improves testability.
+
+Q3. Who injects the dependency in Spring?
+
+Answer:
+
+The Spring IoC Container injects the dependency.
+
+Intermediate Questions
+Q4. Can Constructor Injection work without Spring?
+
+Answer:
+
+Yes. Constructor Injection is a general object-oriented design pattern. Spring automates the process of providing constructor arguments.
+
+Q5. When should you choose Constructor Injection?
+
+Answer:
+
+When a dependency is required for the object to function correctly.
+
+Scenario-Based Question
+Q6.
+
+A Car cannot function without an Engine. Which type of Dependency Injection is more appropriate?
+
+Answer:
+
+Constructor Injection, because the Engine is a mandatory dependency.
+
+Basic Questions
+Q1. What is Setter Injection?
+
+Answer:
+
+Setter Injection is a type of Dependency Injection where Spring injects dependencies through setter methods.
+
+Q2. Which method is used in Setter Injection?
+
+Answer:
+
+A setter method, such as setEngine(Engine engine).
+
+Q3. When should Setter Injection be used?
+
+Answer:
+
+When a dependency is optional or may need to be modified after object creation.
+
+Intermediate Questions
+Q4. What XML tag is used for Setter Injection?
+
+Answer:
+
+The <property> tag.
+
+Q5. Can Setter Injection work without Spring?
+
+Answer:
+
+Yes. It is a general object-oriented design pattern. Spring automates the process.
+
+Scenario-Based Question
+Q6.
+
+An application has an optional NotificationService. Sometimes it sends emails, and sometimes notifications are disabled.
+
+Which injection type is more suitable?
+
+Answer:
+
+Setter Injection, because the dependency is optional and can be configured later.
+
+Basic Questions
+Q1. What is @Autowired?
+
+Answer:
+
+@Autowired is a Spring annotation that automatically injects a required Bean into another Bean.
+
+Q2. What is Autowiring?
+
+Answer:
+
+Autowiring is the process by which Spring automatically finds and injects required dependencies.
+
+Q3. Who performs Autowiring?
+
+Answer:
+
+The Spring IoC Container.
+
+Intermediate Questions
+Q4. Where can @Autowired be used?
+
+Answer:
+
+It can be used on:
+
+Fields
+Setter methods
+Constructors
+Q5. Which form of @Autowired is recommended?
+
+Answer:
+
+Constructor Injection, because it supports immutable dependencies, improves testability, and ensures required dependencies are available.
+
+Scenario-Based Question
+Q6.
+
+Your application has two Beans of type Engine: PetrolEngine and DieselEngine. You write:
+
+@Autowired
+private Engine engine;
+
+What happens?
+
+Answer:
+
+Spring cannot determine which Bean to inject and throws a NoUniqueBeanDefinitionException. This can be resolved using @Qualifier, which you'll learn next.
+
+Basic Questions
+Q1. What is @Qualifier?
+
+Answer:
+
+@Qualifier is a Spring annotation used with @Autowired to specify which Bean should be injected when multiple Beans of the same type are available.
+
+Q2. Why do we use @Qualifier?
+
+Answer:
+
+To resolve ambiguity when Spring finds more than one matching Bean during Autowiring.
+
+Q3. Can @Qualifier be used without @Autowired?
+
+Answer:
+
+In typical dependency injection scenarios, @Qualifier is used together with @Autowired (or another injection annotation) because its purpose is to narrow the Bean selection.
+
+Intermediate Questions
+Q4. What happens if @Qualifier is not used and two Beans of the same type exist?
+
+Answer:
+
+Spring throws a NoUniqueBeanDefinitionException because it cannot determine which Bean to inject.
+
+Q5. Can @Qualifier be used with Constructor Injection?
+
+Answer:
+
+Yes. It can be used with constructor parameters, setter methods, and field injection.
+
+Scenario-Based Question
+Q6.
+
+Your application contains:
+
+EmailService
+
+SMSService
+
+Both implement:
+
+NotificationService
+
+How do you inject only EmailService?
+
+Answer:
+
+@Autowired
+@Qualifier("emailService")
+private NotificationService notificationService;
+
+14. Interview Questions
+Basic Questions
+Q1. What is @Inject?
+
+Answer:
+
+@Inject is a standard Java (JSR-330) annotation used for dependency injection. Spring supports it as an alternative to @Autowired.
+
+Q2. What is @Resource?
+
+Answer:
+
+@Resource is a Jakarta annotation used for dependency injection. It primarily injects Beans by their name.
+
+Q3. What is the main difference between @Autowired and @Resource?
+
+Answer:
+
+@Autowired injects by type, whereas @Resource primarily injects by name.
+
+Intermediate Questions
+Q4. Is @Inject a Spring annotation?
+
+Answer:
+
+No. It is defined by the Java standard (JSR-330), but Spring supports it.
+
+Q5. Which annotation is most commonly used in Spring Boot?
+
+Answer:
+
+@Autowired (or constructor injection without explicitly writing @Autowired on a single constructor).
+
+Scenario-Based Question
+Q6.
+
+Two Beans implement the PaymentService interface:
+
+upiPayment
+cardPayment
+
+You want to inject upiPayment by its Bean name. Which annotation can you use?
+
+Answer:
+
+@Resource(name = "upiPayment")
+private PaymentService paymentService;
+
+Basic Questions
+Q1. What is AOP?
+
+Answer:
+
+Aspect-Oriented Programming (AOP) is a programming paradigm that separates cross-cutting concerns such as logging and security from the application's business logic.
+
+Q2. Why do we use AOP?
+
+Answer:
+
+To avoid duplicate code, improve maintainability, and keep business logic clean by separating common functionalities.
+
+Q3. What is a Cross-Cutting Concern?
+
+Answer:
+
+A Cross-Cutting Concern is functionality that is required across multiple modules of an application, such as logging, security, or transaction management.
+
+Intermediate Questions
+Q4. Give some real-world uses of Spring AOP.
+
+Answer:
+
+Logging
+Security
+Transaction Management
+Performance Monitoring
+Exception Handling
+Q5. Does AOP replace OOP?
+
+Answer:
+
+No.
+
+AOP complements OOP by handling cross-cutting concerns, while OOP organizes the application's core business logic.
+
+Scenario-Based Question
+Q6.
+
+A banking application logs every transaction. Instead of writing logging code in every method, which Spring concept should be used?
+
+Answer:
+
+Spring AOP. The logging logic can be placed in an Aspect and automatically applied to the required methods.
+
+Basic Questions
+Q1. What is an Aspect?
+
+Answer:
+
+An Aspect is a class containing cross-cutting concerns such as logging, security, or transaction management.
+
+Q2. What is Advice?
+
+Answer:
+
+Advice is the action executed by an Aspect at a specific point in the execution of a program.
+
+Q3. Which annotation marks a class as an Aspect?
+
+Answer:
+
+@Aspect
+Intermediate Questions
+Q4. Name the five types of Advice.
+
+Answer:
+
+@Before
+@After
+@AfterReturning
+@AfterThrowing
+@Around
+Q5. Which Advice executes only after successful execution?
+
+Answer:
+
+@AfterReturning
+
+Basic Questions
+Q1. What is a Join Point?
+
+Answer:
+
+A Join Point is a point during program execution where Spring AOP can potentially execute Advice. In Spring AOP, this is typically a method execution.
+
+Q2. What is a Pointcut?
+
+Answer:
+
+A Pointcut is an expression that selects the Join Points where an Advice should execute.
+
+Q3. What is the purpose of execution()?
+
+Answer:
+
+execution() is a Pointcut designator used to match method execution based on method name, return type, parameters, and package.
+
+Intermediate Questions
+Q4. What is the difference between a Join Point and a Pointcut?
+
+Answer:
+
+A Join Point is every possible method execution where Advice can run. A Pointcut is a rule written by the developer that selects specific Join Points.
+
+Q5. Does every Join Point execute Advice?
+
+Answer:
+
+No. Advice executes only at the Join Points selected by the Pointcut.
+
+Scenario-Based Question
+Q6.
+
+A banking application has 50 service methods, but you want Logging only for transferMoney() and withdrawMoney(). Which Spring AOP concept helps achieve this?
+
+Answer:
+
+A Pointcut. It selects only the required Join Points for Advice execution.
+
+Interview Questions
+Basic Questions
+Q1. What is a Proxy in Spring AOP?
+
+Answer:
+
+A Proxy is an object created by Spring that intercepts method calls, executes Advice, and then delegates the call to the target object.
+
+Q2. Why does Spring use Proxies?
+
+Answer:
+
+To apply cross-cutting concerns such as logging, security, and transactions without modifying the original business class.
+
+Q3. What are the two proxy mechanisms used by Spring?
+
+Answer:
+
+JDK Dynamic Proxy
+CGLIB Proxy
+Intermediate Questions
+Q4. When does Spring use JDK Dynamic Proxy?
+
+Answer:
+
+When the target class implements an interface.
+
+Q5. When does Spring use CGLIB?
+
+Answer:
+
+When the target class does not implement an interface.
+
+Scenario-Based Question
+Q6.
+
+Your BankService class does not implement any interface, but you want to apply Spring AOP. Which proxy mechanism will Spring use?
+
+Answer:
+
+Spring will use CGLIB Proxy, which creates a subclass of BankService.
+
+Basic Questions
+Q1. How do you enable AOP in Spring?
+
+Answer:
+
+Using:
+
+@EnableAspectJAutoProxy
+Q2. Which annotation marks a class as an Aspect?
+
+Answer:
+
+@Aspect
+Q3. Why is @Component used on an Aspect?
+
+Answer:
+
+Because an Aspect must be registered as a Spring Bean so that the IoC Container can manage it.
+
+Intermediate Questions
+Q4. What happens if @EnableAspectJAutoProxy is missing?
+
+Answer:
+
+Spring does not create AOP proxies, so the Advice methods will not execute automatically.
+
+Q5. Does the client interact with the real object or the Proxy?
+
+Answer:
+
+The client interacts with the Proxy, which executes the Advice and then delegates the call to the target object.
+
+Scenario-Based Question
+Q6.
+
+You created a LoggingAspect with @Aspect and @Before, but logging never appears when the application runs. What is one possible reason?
+
+Answer:
+
+A common reason is that AOP has not been enabled using @EnableAspectJAutoProxy, or the Aspect is not registered as a Spring Bean (for example, missing @Component).
+
+Basic Questions
+Q1. What is MVC?
+
+Answer:
+
+MVC is a design pattern that separates an application into Model, View, and Controller.
+
+Q2. What is ORM?
+
+Answer:
+
+ORM is a technique that maps Java Objects to database tables, reducing the need to write SQL manually.
+
+Q3. What are the three parts of MVC?
+
+Answer:
+
+Model
+View
+Controller
+Intermediate Questions
+Q4. What is the role of a Controller?
+
+Answer:
+
+A Controller receives client requests, interacts with the Model, and returns the appropriate View.
+
+Q5. Why is Hibernate used?
+
+Answer:
+
+Hibernate is an ORM framework that automatically converts Java objects into SQL operations and database records into Java objects.
+
+Scenario-Based Question
+Q6.
+
+A user clicks the "View Student" button on a website. Explain the request flow in Spring MVC.
+
+Answer:
+
+The browser sends a request.
+The Controller receives it.
+The Controller calls the Model.
+The Model fetches data from the database.
+The Controller sends the data to the View.
+The View displays the student information to the user.
+
+Basic Questions
+Q1. What is MVC Configuration?
+
+Answer:
+
+MVC Configuration sets up Spring MVC so it can handle HTTP requests, locate Controllers, and return the correct Views.
+
+Q2. What is DispatcherServlet?
+
+Answer:
+
+DispatcherServlet is the Front Controller of Spring MVC. It receives all incoming requests and forwards them to the appropriate Controller.
+
+Q3. What is the purpose of @EnableWebMvc?
+
+Answer:
+
+It enables Spring MVC features such as request mapping, view resolution, and data binding.
+
+Intermediate Questions
+Q4. What is Component Scanning?
+
+Answer:
+
+Component Scanning automatically detects classes annotated with @Controller, @Service, @Repository, and @Component and registers them as Spring Beans.
+
+Q5. What is a View Resolver?
+
+Answer:
+
+A View Resolver converts a logical view name (like "home") into the actual view resource (such as /WEB-INF/views/home.jsp).
+
+Scenario-Based Question
+Q6.
+
+A user accesses http://localhost:8080/login. Describe the request flow.
+
+Answer:
+
+Browser sends the request.
+DispatcherServlet receives it.
+DispatcherServlet forwards it to the appropriate Controller.
+The Controller processes the request (possibly using the Model/Service).
+The Controller returns a view name.
+The View Resolver finds the corresponding page.
+The page is sent back to the browser.
+
+Basic Questions
+Q1. What is a Controller?
+
+Answer:
+
+A Controller is a Spring MVC component that receives HTTP requests, interacts with the Service/Model layer, and returns a View or Response.
+
+Q2. Which annotation marks a Controller?
+
+Answer:
+
+@Controller
+Q3. What is @RequestMapping?
+
+Answer:
+
+It maps a URL to a Controller class or method.
+
+Intermediate Questions
+Q4. What is the difference between @GetMapping and @PostMapping?
+
+Answer:
+
+@GetMapping handles HTTP GET requests (retrieve data).
+@PostMapping handles HTTP POST requests (submit or save data).
+Q5. Should business logic be written inside a Controller?
+
+Answer:
+
+No.
+
+The Controller should only handle requests and delegate business logic to the Service/Model layer.
+
+Scenario-Based Question
+Q6.
+
+A user opens:
+
+http://localhost:8080/students
+
+Explain the request flow.
+
+Answer:
+
+Browser sends a GET request.
+DispatcherServlet receives it.
+DispatcherServlet forwards it to the mapped Controller method.
+The Controller interacts with the Service/Model if needed.
+The Controller returns a view name.
+The View Resolver locates the view.
+The browser displays the page.
+
+Basic Questions
+Q1. What is the Model in Spring MVC?
+
+Answer:
+
+The Model is an object used to store and transfer data from the Controller to the View.
+
+Q2. What is addAttribute() used for?
+
+Answer:
+
+It adds data to the Model so that the View can access and display it.
+
+Q3. What is ModelAndView?
+
+Answer:
+
+ModelAndView is a class that stores both the Model data and the View name in a single object.
+
+Intermediate Questions
+Q4. What is the difference between Model and ModelMap?
+
+Answer:
+
+Model is an interface for passing data to the View, while ModelMap is a Map-based implementation that provides additional Map operations.
+
+Q5. When would you use ModelAndView?
+
+Answer:
+
+When you want to return both the data and the View together from a Controller method.
+
+Scenario-Based Question
+Q6.
+
+A Controller retrieves a student's details from the database. How does the data reach the webpage?
+
+Answer:
+
+The Controller adds the student data to the Model using addAttribute(), returns the View name, and the View reads the data from the Model and displays it.
+
+Basic Questions
+Q1. What is the View Layer?
+
+Answer:
+
+The View Layer is the presentation layer of Spring MVC that displays data received from the Model to the user.
+
+Q2. What are some View technologies in Spring MVC?
+
+Answer:
+
+JSP
+Thymeleaf
+HTML
+Q3. What is the purpose of View Resolver?
+
+Answer:
+
+View Resolver converts the logical View name returned by the Controller into the actual View file.
+
+Example:
+
+return "home";
+
+↓
+
+home.jsp
+Intermediate Questions
+Q4. Does the View communicate directly with the database?
+
+Answer:
+
+No.
+
+The View only displays data.
+
+Database communication is handled by the Service/Model layer.
+
+Q5. Can the View access data without the Model?
+
+Answer:
+
+No.
+
+The Controller must first place the data into the Model, then the View can access and display it.
+
+Scenario-Based Question
+Q6.
+
+A Controller retrieves a student's details and adds them to the Model. Explain how those details appear on the webpage.
+
+Answer:
+
+Controller retrieves the data.
+Controller stores it in the Model using addAttribute().
+Controller returns the View name.
+View Resolver finds the View.
+
+Basic Questions
+Q1. What is Form Handling?
+
+Answer:
+
+Form Handling is the process of receiving user input from an HTML form, processing it in the Controller, and returning a response.
+
+Q2. Why is @GetMapping used?
+
+Answer:
+
+To display the form page.
+
+Q3. Why is @PostMapping used?
+
+Answer:
+
+To receive and process submitted form data.
+
+Intermediate Questions
+Q4. What is @ModelAttribute?
+
+Answer:
+
+@ModelAttribute binds form fields automatically to a Java object.
+
+Q5. Why is @ModelAttribute useful?
+
+Answer:
+
+It eliminates manual copying of form values into Java objects, reducing boilerplate code.
+
+Scenario-Based Question
+Q6.
+
+A registration form has fields name, email, and age. Explain what happens after the user clicks Submit.
+
+Answer:
+
+Browser sends a POST request.
+Controller receives the request.
+@ModelAttribute binds the form fields to a Java object.
+Controller processes the object (often via a Service).
+Data is saved to the database.
+A success page is returned.
