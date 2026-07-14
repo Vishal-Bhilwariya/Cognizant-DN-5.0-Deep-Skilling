@@ -22,6 +22,24 @@
 
     Its purpose is:  Automatically configure Spring Beans based on the project dependencies
 
+    How Does Spring Boot Decide What to Configure?
+    Spring Boot checks:
+        Project Starts
+            ↓
+        Check Dependencies
+            ↓
+        Check Classpath
+            ↓
+        Dependency Found?
+              │
+         ┌────┴────┐
+         │         │
+        Yes        No
+         │         │
+         ▼         ▼
+        Configure  Ignore
+
+    
 Advantages
      Reduces manual configuration.
      Saves development time.
