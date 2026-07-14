@@ -1402,3 +1402,49 @@ Controller retrieves the data.
 Controller stores it in the Model using addAttribute().
 Controller returns the View name.
 View Resolver finds the View.
+
+Basic Questions
+Q1. What is Form Handling?
+
+Answer:
+
+Form Handling is the process of receiving user input from an HTML form, processing it in the Controller, and returning a response.
+
+Q2. Why is @GetMapping used?
+
+Answer:
+
+To display the form page.
+
+Q3. Why is @PostMapping used?
+
+Answer:
+
+To receive and process submitted form data.
+
+Intermediate Questions
+Q4. What is @ModelAttribute?
+
+Answer:
+
+@ModelAttribute binds form fields automatically to a Java object.
+
+Q5. Why is @ModelAttribute useful?
+
+Answer:
+
+It eliminates manual copying of form values into Java objects, reducing boilerplate code.
+
+Scenario-Based Question
+Q6.
+
+A registration form has fields name, email, and age. Explain what happens after the user clicks Submit.
+
+Answer:
+
+Browser sends a POST request.
+Controller receives the request.
+@ModelAttribute binds the form fields to a Java object.
+Controller processes the object (often via a Service).
+Data is saved to the database.
+A success page is returned.
