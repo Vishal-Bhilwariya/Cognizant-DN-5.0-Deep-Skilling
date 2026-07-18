@@ -215,4 +215,94 @@
         @PostMapping	    Maps POST request	                Create data	            @PostMapping("/users")
         @PutMapping	        Maps PUT request	                Update data	            @PutMapping("/users/{id}")
         @DeleteMapping	    Maps DELETE request	                Delete data	            @DeleteMapping("/users/{id}")
+
+    # Benefits of Using Spring Boot for REST Services
+     - Earlier (Spring Framework without Boot):
+            Large XML configuration
+            Manual dependency management
+            Manual server setup
+            Longer project setup time
+
+        Spring Boot simplifies REST development.
+
+    Major Benefits
+        Benefit	                                Explanation
+        Auto-Configuration	        Configures components automatically.
+        Embedded Server	            Built-in Tomcat/Jetty/Undertow; no external deployment needed.
+        Starter Dependencies	    One dependency pulls in all required libraries.
+        Production Ready	        Includes Actuator, Metrics, Health Checks.
+        JSON Support	            Jackson integrated by default.
+        Faster Development	        Minimal boilerplate.
+        Easy Testing	            Strong testing support with Spring Test and MockMvc.
+        
+    Enterprise Usage
+        Spring Boot REST is widely used for:
+            Banking APIs
+            E-commerce platforms
+            Healthcare systems
+            Microservices
+            Mobile backends
+            Cloud-native applications
+
+    # Setting up a Spring Boot Project for REST :
+    Required Dependencies
+        Dependency	                Purpose
+        Spring Web	            Build REST APIs
+        Spring Boot             Starter	Core Boot functionality
+        Spring Boot             DevTools	Faster development
+        Spring Data             JPA (optional)	Database access
+        MySQL Driver(optional)	Connect to MySQL
+
+    Basic Architecture
+        src
+         └── main
+              ├── java
+              │     ├── controller
+              │     ├── service
+              │     ├── repository
+              │     ├── entity
+              │     └── dto
+              └── resources
+                    └── application.properties
+
+        Why this architecture?
+            Controller → Receives HTTP requests.
+            Service → Contains business logic.
+            Repository → Communicates with the database.
+            Entity → Represents database tables.
+            DTO → Transfers data between client and server.
+            This layered architecture improves maintainability and follows separation of concerns.
+
+    # What's New in Spring Boot 3?
+     - Spring Boot 3 is a major release built on Spring Framework 6.
+
+     Important Changes
+        Feature	                            Description
+        Java 17+ Required	    Minimum supported Java version is 17.
+        Jakarta EE 9	        Package names changed from javax.* to jakarta.*.
+        Spring Framework 6	    Built on the latest Spring Framework.
+        Improved Native Support	Better support for GraalVM native images.
+        Better Observability	Enhanced metrics, tracing, and monitoring.
+        Improved Performance	Optimizations across the framework.
+        Security Updates	    Improved integration with Spring Security 6.
+
+    EXAMPLE : 
+        @RestController              // Marks this class as a REST Controller
+        @RequestMapping("/api")      // Base URL for all endpoints
+        public class EmployeeController {
+            @GetMapping("/employees")   // Handles GET /api/employees
+            public String getEmployees() {
+                // Returns data directly in the HTTP response
+                return "Employee List";
+            }
+        }
+
+    # Overall Advantages
+        Standard architecture for web APIs
+        Loose coupling between client and server
+        Easy integration with frontend and mobile applications
+        High scalability due to stateless communication
+        Strong ecosystem with Spring Boot
+        Easy JSON processing
+        Production-ready monitoring and security support
 */
