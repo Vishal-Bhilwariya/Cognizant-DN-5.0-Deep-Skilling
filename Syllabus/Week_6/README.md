@@ -2,4 +2,8 @@
 
 Branch: `week_6`
 
-> 🔜 Topics coming soon
+---
+
+| Module | Name |
+|--------|------|
+| [Module 9](./Module%209%20-%20React/README.md) | React |

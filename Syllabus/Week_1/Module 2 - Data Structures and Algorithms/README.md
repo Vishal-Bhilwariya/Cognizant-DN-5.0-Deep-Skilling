@@ -1,3 +1,5 @@
 # Module 2 – Data Structures and Algorithms
 
-> 🔜 Topics coming soon
+| # | Topic | Description |
+|---|-------|-------------|
+| 1 | Data Structures and Algorithms | 🔜 Notes coming soon |
