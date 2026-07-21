@@ -44,8 +44,7 @@
         Each component has one primary responsibility.
 
     # Understanding Each Component :
-    a) Web Server
-        The Web Server is the entry point of SonarQube.
+    a) Web Server - The Web Server provides the SonarQube user interface (UI) that developers access through a browser.
         It handles:
             User requests
             API calls
@@ -63,8 +62,8 @@
          Whenever you open SonarQube in a browser:   http://localhost:9000
             You're communicating with the Web Server.
 
-    b) Compute Engine
-        This is the brain of SonarQube.
+    b) Compute Engine - The Compute Engine is the processing unit (brain) of SonarQube.
+                        After the Scanner uploads analysis data, the Compute Engine processes it.
          Responsibilities:
             Process analysis reports
             Calculate metrics
@@ -75,7 +74,7 @@
         Without the Compute Engine, SonarQube cannot produce meaningful reports.
         It receives data from the scanner and processes it.
 
-    c) Search Server (Elasticsearch)
+    c) Search Server (Elasticsearch) - SonarQube uses Elasticsearch to provide fast searching and filtering of analysis results.
         Imagine a project with:
             20 million lines of code
             50,000 issues
@@ -87,7 +86,7 @@
                 Enable very fast searching
                 Support dashboard filters
 
-    d) SonarQube Scanner (Client)
+    d) SonarQube Scanner (Client) - The SonarQube Scanner is the client that reads your source code and sends analysis data to the SonarQube Server.
         The Scanner is a tool that:
             Runs on the developer's machine or build server
             Collects source code
@@ -105,7 +104,7 @@
             Coordinates between components
         It acts as the central hub.
 
-    f) Database
+    f) Database - The Database stores all SonarQube information permanently.
         The Database stores:
             Configuration settings
             User information
