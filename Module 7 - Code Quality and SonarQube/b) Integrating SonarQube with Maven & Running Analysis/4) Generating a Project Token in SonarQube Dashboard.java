@@ -85,4 +85,32 @@
             Whether analysis succeeded
             If any errors occurred
 
+    Successful Log
+        INFO Scanner started
+        INFO Analyzing project
+        INFO Uploading report
+        INFO Quality Gate passed
+        BUILD SUCCESS
+        
+                        Meaning
+        Log	                        Meaning
+        Scanner started	        Analysis has begun
+        Analyzing project	    Source code is being checked
+        Uploading report	    Results are sent to the server
+        Quality Gate passed	    Project met quality conditions
+        BUILD SUCCESS	        Entire process completed successfully
+        
+    Failed Log
+        ERROR Unable to connect to SonarQube Server
+        Possible reasons:
+            SonarQube Server is not running.
+            Wrong sonar.host.url.
+            Network issue.
+
+    Comparison
+    Project Token	                Dashboard	                    Sonar Logs
+    Authenticates the project	Displays analysis results	Shows execution details and errors
+    Used before analysis	    Used after analysis	        Used during analysis
+    Security	                Monitoring	                Troubleshooting
+
 */
