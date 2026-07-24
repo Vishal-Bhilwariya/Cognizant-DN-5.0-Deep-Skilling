@@ -61,7 +61,7 @@
         Single Login
         Better Security
         Easy User Management
-        Easy Password Change
+        Easy password Change
         No Duplicate Login Logic
         Better Scalability
         Centralized User Database
