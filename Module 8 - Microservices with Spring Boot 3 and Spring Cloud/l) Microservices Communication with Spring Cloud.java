@@ -106,10 +106,28 @@
         Hard debugging
         Difficult monitoring
         Complex event flow
+
     Orchestration vs Choreography
         Orchestration	        Choreography
         Central Controller	    No Controller
         Easy Monitoring	        Hard Monitoring
         Tight Coupling	        Loose Coupling
         Easier Debugging	    Difficult Debugging
+
+    # Spring Cloud Circuit Breaker :
+    - Spring Cloud Circuit Breaker prevents repeated requests to a failed service.
+    - It improves system resilience.
+
+    Three States
+     Closed : Everything normal.
+     Open : Requests blocked.
+     Half-Open : Test request sent.
+        If successful, Closed.
+        Otherwise, Open again.
+
+    Advantages
+        Prevents cascading failures
+        Improves availability
+        Better fault tolerance
+        Better user experience
 */
