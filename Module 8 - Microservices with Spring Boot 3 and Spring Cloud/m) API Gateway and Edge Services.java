@@ -113,5 +113,9 @@
         If one doctor is unavailable,another doctor handles the patient.
         The hospital continues working.
 
-   
+    Advantages
+        High Availability
+        Better Reliability
+        Better User Experience
+        Prevents Cascading Failures
 */
