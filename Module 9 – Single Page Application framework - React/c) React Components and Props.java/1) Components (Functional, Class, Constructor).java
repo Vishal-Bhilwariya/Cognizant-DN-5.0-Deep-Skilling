@@ -206,4 +206,173 @@ Advantages
     Independent Components
     Easy Testing
     Enterprise Friendly
+
+# Components in Files
+Instead of writing all components in one file, we create separate files.
+Example:
+    src
+    │── App.js
+    │── Header.js
+    │── Footer.js
+    │── Student.js
+
+Each file contains one component.
+
+Why?
+Without separate files:
+    App.js
+    1000+ lines 😨
+
+With separate files:
+    Header.js
+    Footer.js
+    Student.js
+
+Easy to read.
+Easy to maintain.
+
+# Passing Data :
+Suppose
+
+Parent knows
+
+Vishal
+
+Child should display
+
+Hello Vishal
+
+How?
+
+Parent sends data.
+
+Parent
+
+↓
+
+Child
+
+This is called
+
+Passing Data
+
+# Props :
+Props means Properties
+
+They are used to pass data from
+
+Parent
+
+↓
+
+Child
+
+Example:
+function Student(props){
+    return(
+        <h2>{props.name}</h2>
+    );
+}
+Parent
+<Student name="Vishal" />
+
+Props are Read Only
+Child cannot modify them.
+
+# Default Props :
+Suppose
+
+Parent forgot to send data.
+
+Instead of getting empty output
+
+React uses
+
+# Default Props.
+Example
+Student.defaultProps = {
+    name:"Unknown"
+}
+
+Now
+<Student />
+Output
+Unknown
+
+Why?
+Prevents errors.
+
+# State :
+State stores changing data
+
+Example
+
+Counter
+
+Initially
+
+0
+
+Click
+
+1
+
+Click
+
+2
+
+This changing value is State.
+
+Why not normal variable?
+let count=0;
+
+React won't update UI.
+State tells React
+UI changed.
+Please update screen.
+
+Example :
+import {useState} from "react";
+
+function App(){
+
+ const [count,setCount]=useState(0);
+
+ return(
+
+ <>
+   <h1>{count}</h1>
+
+   <button onClick={()=>setCount(count+1)}>
+
+      Increase
+
+   </button>
+
+ </>
+
+ );
+
+}
+
+Props vs State
+
+Props	                            State
+Data received from Parent	Data owned by Component
+Read Only	                Can Change
+Parent controls it	        Component controls it
+Used for communication	    Used for dynamic data
+
+
+Advantages
+
+✅ Reusable Components
+
+✅ Less Code
+
+✅ Better Maintenance
+
+✅ Parent → Child Communication
+
+✅ Dynamic UI
 */
