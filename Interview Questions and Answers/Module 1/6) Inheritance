@@ -1,0 +1,430 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 6 : INHERITANCE
+======================================================================
+
+Q1. What is Inheritance? Why do we need it?
+
+Interview Ready Answer
+
+Inheritance is an OOP concept in which one class
+(Child/Subclass) acquires the accessible properties
+(fields) and behaviors (methods) of another class
+(Parent/Superclass).
+
+Inheritance represents an "IS-A" relationship.
+
+Java uses the
+
+extends
+
+keyword to achieve inheritance.
+
+Why do we need it?
+
+• Code Reusability.
+• Reduce Code Duplication.
+• Improve Maintainability.
+• Support Method Overriding.
+• Enable Runtime Polymorphism.
+• Organize code hierarchically.
+
+Real-Life Example
+
+Vehicle
+    |
+-----------------
+|       |       |
+Car    Bike    Truck
+
+All inherit common properties like
+
+• Engine
+• Tyres
+• start()
+
+Software Industry Example
+
+class User{
+
+    String name;
+    String email;
+
+    void login(){
+
+    }
+}
+
+class Customer extends User{
+
+}
+
+class Admin extends User{
+
+}
+
+Customer and Admin reuse common functionality from User.
+
+======================================================================
+
+Q2. What are the different types of Inheritance?
+Which are supported in Java?
+
+Interview Ready Answer
+
+1. Single Inheritance
+
+One child inherits one parent.
+
+Animal
+   |
+ Dog
+
+Supported in Java.
+
+------------------------------------------------------------
+
+2. Multilevel Inheritance
+
+One child becomes parent of another class.
+
+Animal
+   |
+ Dog
+   |
+ Puppy
+
+Supported in Java.
+
+------------------------------------------------------------
+
+3. Hierarchical Inheritance
+
+Multiple child classes inherit the same parent.
+
+        Animal
+       /   |   \
+    Dog   Cat  Lion
+
+Supported in Java.
+
+------------------------------------------------------------
+
+4. Multiple Inheritance
+
+One child inherits from multiple parent classes.
+
+      A      B
+       \    /
+        \  /
+         C
+
+Not supported using Java classes.
+
+Reason
+
+Diamond Problem (Method Ambiguity).
+
+------------------------------------------------------------
+
+5. Hybrid Inheritance
+
+Combination of two or more inheritance types.
+
+Not supported using Java classes.
+
+Can be achieved using Interfaces.
+
+======================================================================
+
+Q3. Why doesn't Java support Multiple Inheritance
+using classes? Explain Diamond Problem.
+
+Interview Ready Answer
+
+Java does not support Multiple Inheritance using
+classes because it creates method ambiguity,
+known as the Diamond Problem.
+
+Example
+
+class A{
+
+    void display(){
+
+    }
+}
+
+class B extends A{
+
+}
+
+class C extends A{
+
+}
+
+// Assume Java allowed this
+
+class D extends B,C{
+
+}
+
+Now,
+
+D d=new D();
+
+d.display();
+
+Compiler cannot decide
+
+Should display() come from
+
+• B
+or
+• C
+
+This ambiguity is called the Diamond Problem.
+
+Java avoids this by allowing a class to extend
+only one class.
+
+However,
+
+Java supports multiple inheritance using Interfaces.
+
+======================================================================
+
+Q4. What is the difference between IS-A and HAS-A
+relationship?
+
+Interview Ready Answer
+
+IS-A Relationship
+
+• Represents Inheritance.
+• Implemented using extends.
+• Child is a specialized version of Parent.
+
+Examples
+
+Dog IS-A Animal
+
+Car IS-A Vehicle
+
+Java Example
+
+class Animal{
+
+}
+
+class Dog extends Animal{
+
+}
+
+------------------------------------------------------------
+
+HAS-A Relationship
+
+• Represents Composition/Aggregation.
+• One class contains an object of another class.
+• Implemented by creating object as a member.
+
+Examples
+
+Car HAS-A Engine
+
+Computer HAS-A CPU
+
+House HAS-A Room
+
+Java Example
+
+class Engine{
+
+}
+
+class Car{
+
+    private Engine engine=new Engine();
+
+}
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+Which relationship does Inheritance represent?
+
+Correct Answer
+
+IS-A Relationship.
+
+Example
+
+Dog IS-A Animal.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Which relationship is represented by
+Composition?
+
+Correct Answer
+
+HAS-A Relationship.
+
+Example
+
+Car HAS-A Engine.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Does Java support Multiple Inheritance?
+
+Correct Answer
+
+Using Classes
+
+❌ No
+
+Using Interfaces
+
+✅ Yes
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Why doesn't Java support Multiple Inheritance
+using classes?
+
+Correct Answer
+
+Because of the Diamond Problem
+(Method Ambiguity).
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Does Java support Hierarchical Inheritance?
+
+Correct Answer
+
+Yes.
+
+Example
+
+        Animal
+       /   |   \
+    Dog   Cat  Lion
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Does Java support Multilevel Inheritance?
+
+Correct Answer
+
+Yes.
+
+Example
+
+Animal
+   |
+ Dog
+   |
+ Puppy
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Which keyword is used for Inheritance in Java?
+
+Correct Answer
+
+extends
+
+Example
+
+class Dog extends Animal{
+
+}
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+Can constructors be inherited?
+
+Correct Answer
+
+No.
+
+Constructors are not inherited.
+
+However, the parent constructor is executed
+using super() when a child object is created.
+
+---------------------------------------------------------------------
+
+Trap 9
+
+Question
+
+Can private members be inherited?
+
+Correct Answer
+
+No.
+
+Private members are not directly accessible
+in the child class.
+
+---------------------------------------------------------------------
+
+Trap 10
+
+Question
+
+Which is generally preferred in software design:
+Inheritance or Composition?
+
+Correct Answer
+
+Composition (HAS-A).
+
+It provides:
+
+• Loose Coupling
+• Better Flexibility
+• Easier Maintenance
+
+Design Principle
+
+"Favor Composition over Inheritance."
+
+======================================================================

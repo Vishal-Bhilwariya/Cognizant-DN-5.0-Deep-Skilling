@@ -1,0 +1,242 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 4 : ENCAPSULATION
+======================================================================
+
+Q1. What is Encapsulation? Why do we need it?
+
+Interview Ready Answer
+
+Encapsulation is the process of wrapping data (fields) and the methods
+that operate on that data into a single unit (class) while restricting
+direct access to the data using access modifiers.
+
+Why do we need it?
+
+• To achieve data hiding.
+• To provide controlled access to data.
+• To protect sensitive information.
+• To perform validation before modifying data.
+• To improve security.
+• To improve maintainability.
+• To make code more modular.
+
+Example
+
+class BankAccount{
+
+    private double balance;
+
+    public void deposit(double amount){
+
+        if(amount > 0)
+            balance += amount;
+    }
+
+    public void withdraw(double amount){
+
+        if(amount > 0 && amount <= balance)
+            balance -= amount;
+    }
+}
+
+Here, balance cannot be modified directly.
+The object controls all operations through methods.
+
+======================================================================
+
+Q2. What is the difference between Encapsulation and Data Hiding?
+
+Interview Ready Answer
+
+Encapsulation
+
+• Wraps data and methods into a single class.
+• Controls how data is accessed.
+• One of the four pillars of OOP.
+• Achieved using classes and access modifiers.
+
+Data Hiding
+
+• Restricts direct access to data.
+• Achieved mainly using access modifiers.
+• Focuses only on protecting data.
+• It is one of the benefits of Encapsulation.
+
+Example
+
+ATM Machine
+
+Encapsulation
+
+• ATM combines balance checking, withdrawal,
+  deposit and PIN verification into one system.
+
+Data Hiding
+
+• User cannot directly modify account balance.
+• Balance can only be changed through
+  deposit() or withdraw() methods.
+
+======================================================================
+
+Q3. Can we achieve Encapsulation without using
+getters and setters?
+
+Interview Ready Answer
+
+Yes.
+
+Getters and setters are optional.
+
+Encapsulation means controlling access to data,
+not necessarily exposing getters and setters.
+
+A class may expose only business methods.
+
+Example
+
+class BankAccount{
+
+    private double balance;
+
+    public void deposit(double amount){
+
+        if(amount > 0)
+            balance += amount;
+    }
+
+    public void withdraw(double amount){
+
+        if(amount > 0 && amount <= balance)
+            balance -= amount;
+    }
+}
+
+Notice
+
+• No Getter
+• No Setter
+
+Still,
+
+Encapsulation is achieved because direct access to
+balance is restricted and all modifications happen
+through controlled methods.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+Is Encapsulation simply making variables private
+and generating getters and setters?
+
+Correct Answer
+
+No.
+
+Encapsulation is the process of wrapping data and
+methods into one class while controlling access to
+the data.
+
+Getters and setters are only one possible way to
+provide controlled access.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Are getters and setters mandatory for Encapsulation?
+
+Correct Answer
+
+No.
+
+They are optional.
+
+Sometimes only business methods like
+
+• deposit()
+• withdraw()
+• transfer()
+
+are provided.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Is Data Hiding and Encapsulation the same?
+
+Correct Answer
+
+No.
+
+Encapsulation is the mechanism.
+
+Data Hiding is one of the benefits achieved through
+Encapsulation.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Can a private variable be modified without a setter?
+
+Correct Answer
+
+Yes.
+
+The class itself can modify its private variables
+through its own methods.
+
+Example
+
+deposit()
+
+withdraw()
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Which access modifier is most commonly used to
+achieve Encapsulation?
+
+Correct Answer
+
+private
+
+Private fields prevent direct access from outside
+the class.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Does Encapsulation mean data can never be accessed?
+
+Correct Answer
+
+No.
+
+Encapsulation provides controlled access, not
+complete inaccessibility.
+
+Authorized methods can read or modify the data.
+
+======================================================================

@@ -1,0 +1,574 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 7 : POLYMORPHISM
+======================================================================
+
+Q1. What is Polymorphism? Why do we need it?
+
+Interview Ready Answer
+
+Polymorphism means
+
+"One Name, Many Forms."
+
+It allows the same method, interface or reference
+to exhibit different behavior depending on the object
+or parameters.
+
+Why do we need it?
+
+• Code Reusability.
+• Flexibility.
+• Extensibility.
+• Reduce Code Duplication.
+• Runtime Decision Making.
+• Loose Coupling.
+
+Types of Polymorphism
+
+1. Compile-Time (Static) Polymorphism
+
+Achieved using
+
+• Method Overloading
+• Constructor Overloading
+
+Compiler decides which method/constructor to call.
+
+------------------------------------------------------------
+
+2. Runtime (Dynamic) Polymorphism
+
+Achieved using
+
+• Inheritance
+• Method Overriding
+• Upcasting
+
+JVM decides which overridden method executes.
+
+Real-Life Example
+
+One person can have multiple roles.
+
+• Teacher in school
+• Father at home
+• Customer in a shop
+
+Software Industry Example
+
+interface Payment{
+
+    void pay();
+}
+
+class UpiPayment implements Payment{
+
+    public void pay(){
+
+        System.out.println("UPI Payment");
+    }
+}
+
+class CardPayment implements Payment{
+
+    public void pay(){
+
+        System.out.println("Card Payment");
+    }
+}
+
+Payment p=new UpiPayment();
+
+p.pay();
+
+======================================================================
+
+Q2. Difference between Method Overloading and
+Method Overriding.
+
+Interview Ready Answer
+
+Method Overloading
+
+• Same method name.
+• Different parameter list.
+• Usually in same class.
+• Compile-Time Polymorphism.
+• Compiler decides method.
+• Constructors can be overloaded.
+
+------------------------------------------------------------
+
+Method Overriding
+
+• Same method signature.
+• Requires Inheritance.
+• Runtime Polymorphism.
+• JVM decides method.
+• Constructors cannot be overridden.
+
+Example
+
+Method Overloading
+
+class Calculator{
+
+    int add(int a,int b){
+
+        return a+b;
+    }
+
+    int add(int a,int b,int c){
+
+        return a+b+c;
+    }
+}
+
+------------------------------------------------------------
+
+Method Overriding
+
+class Animal{
+
+    void sound(){
+
+        System.out.println("Animal");
+    }
+}
+
+class Dog extends Animal{
+
+    @Override
+    void sound(){
+
+        System.out.println("Bark");
+    }
+}
+
+======================================================================
+
+Q3. Explain Runtime Polymorphism using
+
+Animal a = new Dog();
+
+Interview Ready Answer
+
+Runtime Polymorphism is achieved when a parent
+reference points to a child object.
+
+Example
+
+Animal a=new Dog();
+
+Internal Working
+
+Step 1
+
+Compiler checks reference type.
+
+Animal has sound().
+
+↓
+
+Step 2
+
+Heap memory allocated.
+
+↓
+
+Step 3
+
+Dog object created.
+
+↓
+
+Step 4
+
+Reference variable a stores Dog object's address.
+
+↓
+
+Step 5
+
+When
+
+a.sound();
+
+is executed,
+
+Compiler allows the call because Animal contains
+sound().
+
+↓
+
+JVM follows the reference to the actual object.
+
+↓
+
+Actual object is Dog.
+
+↓
+
+Dog overrides sound().
+
+↓
+
+Dog.sound() executes.
+
+This runtime decision is called
+
+Dynamic Method Dispatch.
+
+Memory
+
+Stack                     Heap
+
+a ---------------------> Dog Object
+
+Key Point
+
+Reference Type
+
+↓
+
+Compile-Time
+
+Actual Object
+
+↓
+
+Runtime
+
+======================================================================
+
+Q4. Can Runtime Polymorphism be achieved using
+static, private and final methods?
+
+Interview Ready Answer
+
+No.
+
+Runtime Polymorphism depends on Method Overriding.
+
+If overriding is not possible,
+
+Runtime Polymorphism is not possible.
+
+------------------------------------------------------------
+
+static Method
+
+Cannot be overridden.
+
+It is Method Hiding.
+
+Resolved by Compiler.
+
+No Runtime Polymorphism.
+
+------------------------------------------------------------
+
+private Method
+
+Not inherited.
+
+Cannot be overridden.
+
+No Runtime Polymorphism.
+
+------------------------------------------------------------
+
+final Method
+
+Cannot be overridden.
+
+No Runtime Polymorphism.
+
+Memory Trick
+
+No Overriding
+
+↓
+
+No Runtime Polymorphism
+
+======================================================================
+
+Q5. Can Constructors be overridden?
+Can they participate in Polymorphism?
+
+Interview Ready Answer
+
+Constructors cannot be overridden.
+
+Reason
+
+• Constructors are not inherited.
+• Overriding requires inheritance.
+
+Therefore,
+
+Constructor Overriding
+
+❌ Not Possible
+
+------------------------------------------------------------
+
+Constructors can be overloaded.
+
+Example
+
+class Student{
+
+    Student(){
+
+    }
+
+    Student(String name){
+
+    }
+
+    Student(String name,int age){
+
+    }
+}
+
+This is Compile-Time Polymorphism.
+
+------------------------------------------------------------
+
+Parent constructor executes using
+
+super()
+
+It is constructor chaining,
+
+NOT overriding.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+What is the meaning of Polymorphism?
+
+Correct Answer
+
+One Name
+
+↓
+
+Many Forms
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+How many types of Polymorphism exist in Java?
+
+Correct Answer
+
+1. Compile-Time (Static)
+
+2. Runtime (Dynamic)
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+How is Compile-Time Polymorphism achieved?
+
+Correct Answer
+
+• Method Overloading
+
+• Constructor Overloading
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+How is Runtime Polymorphism achieved?
+
+Correct Answer
+
+• Inheritance
+
+• Method Overriding
+
+• Upcasting
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Who decides overloaded methods?
+
+Correct Answer
+
+Compiler.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Who decides overridden methods?
+
+Correct Answer
+
+JVM
+
+using
+
+Dynamic Method Dispatch.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Can static methods be overridden?
+
+Correct Answer
+
+No.
+
+They are Method Hidden,
+not overridden.
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+Can private methods be overridden?
+
+Correct Answer
+
+No.
+
+Private methods are not inherited.
+
+---------------------------------------------------------------------
+
+Trap 9
+
+Question
+
+Can final methods be overridden?
+
+Correct Answer
+
+No.
+
+Overriding is prohibited.
+
+---------------------------------------------------------------------
+
+Trap 10
+
+Question
+
+Can constructors be overridden?
+
+Correct Answer
+
+No.
+
+Constructors are not inherited.
+
+---------------------------------------------------------------------
+
+Trap 11
+
+Question
+
+Can constructors be overloaded?
+
+Correct Answer
+
+Yes.
+
+Constructor Overloading is an example of
+Compile-Time Polymorphism.
+
+---------------------------------------------------------------------
+
+Trap 12
+
+Question
+
+In
+
+Animal a = new Dog();
+
+Which type decides accessible methods?
+
+Correct Answer
+
+Reference Type
+
+Animal
+
+---------------------------------------------------------------------
+
+Trap 13
+
+Question
+
+In
+
+Animal a = new Dog();
+
+Which type decides the overridden method?
+
+Correct Answer
+
+Actual Object Type
+
+Dog
+
+JVM performs
+
+Dynamic Method Dispatch.
+
+---------------------------------------------------------------------
+
+Trap 14
+
+Question
+
+Difference between Method Hiding and
+Method Overriding?
+
+Correct Answer
+
+Method Hiding
+
+• Applies to static methods.
+• Compile-Time Resolution.
+• No Runtime Polymorphism.
+
+Method Overriding
+
+• Applies to instance methods.
+• Runtime Resolution.
+• Achieves Runtime Polymorphism.
+
+======================================================================

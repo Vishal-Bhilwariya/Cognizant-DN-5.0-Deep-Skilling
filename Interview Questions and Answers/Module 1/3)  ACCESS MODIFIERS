@@ -1,0 +1,335 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 3 : ACCESS MODIFIERS
+======================================================================
+
+Q1. What are Access Modifiers in Java? Why do we need them?
+
+Interview Ready Answer
+
+Access Modifiers are keywords in Java that control the visibility and
+accessibility of classes, methods, constructors and variables.
+
+Java provides four access modifiers:
+
+• private
+• default (package-private)
+• protected
+• public
+
+Why do we need them?
+
+• To implement Encapsulation.
+• To protect sensitive data.
+• To restrict unauthorized access.
+• To improve security.
+• To improve maintainability.
+• To expose only the required members of a class.
+
+Example
+
+class BankAccount{
+
+    private double balance;
+
+    public String accountHolder;
+
+    protected void calculateInterest(){}
+
+    void printStatement(){}
+}
+
+======================================================================
+
+Q2. Explain the difference between private, default,
+protected and public using a package example.
+
+Interview Ready Answer
+
+Package Structure
+
+com.bank
+
+    Account.java
+    Customer.java
+
+com.payment
+
+    Payment.java
+    SavingsAccount.java extends Account
+
+------------------------------------------------------------
+
+private
+
+• Accessible only inside the same class.
+
+Example
+
+private double balance;
+
+Accessible By
+
+Account          ✔
+Customer         ✘
+Payment          ✘
+SavingsAccount   ✘
+
+------------------------------------------------------------
+
+default (Package-Private)
+
+• Accessible only within the same package.
+
+Example
+
+String accountType;
+
+Accessible By
+
+Account          ✔
+Customer         ✔
+Payment          ✘
+SavingsAccount   ✘
+
+------------------------------------------------------------
+
+protected
+
+• Accessible within the same package.
+• Accessible in subclasses outside the package
+  through inheritance.
+
+Example
+
+protected void calculateInterest(){}
+
+Accessible By
+
+Account          ✔
+Customer         ✔
+Payment          ✘
+SavingsAccount   ✔
+
+------------------------------------------------------------
+
+public
+
+• Accessible from anywhere.
+
+Example
+
+public void deposit(){}
+
+Accessible By
+
+Account          ✔
+Customer         ✔
+Payment          ✔
+SavingsAccount   ✔
+
+======================================================================
+
+Q3. Can a top-level Java class be declared as private
+or protected? Why or why not?
+
+Interview Ready Answer
+
+No.
+
+A top-level Java class cannot be declared as private
+or protected.
+
+It can only be declared as:
+
+• public
+• default (package-private)
+
+Reason
+
+A top-level class represents a complete type that must
+be accessible outside itself. If it were private or
+protected, it would not be usable according to Java's
+access rules.
+
+Example
+
+public class Student{
+
+}
+
+Valid
+
+----------------------------------------
+
+class Student{
+
+}
+
+Valid
+
+----------------------------------------
+
+private class Student{
+
+}
+
+Compilation Error
+
+----------------------------------------
+
+protected class Student{
+
+}
+
+Compilation Error
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+How many access modifiers are available in Java?
+
+Correct Answer
+
+Four
+
+• private
+• default (package-private)
+• protected
+• public
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Can a top-level class be private?
+
+Correct Answer
+
+No.
+
+Only nested (inner) classes can be private.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Can a top-level class be protected?
+
+Correct Answer
+
+No.
+
+Only nested classes can be protected.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Which access modifier provides the highest level of security?
+
+Correct Answer
+
+private
+
+Because it is accessible only within the same class.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Is default access modifier the same as public?
+
+Correct Answer
+
+No.
+
+Default (package-private) is accessible only within
+the same package.
+
+Public is accessible from anywhere.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Can a class in another package access a protected member
+without inheritance?
+
+Correct Answer
+
+No.
+
+Outside the package, protected members are accessible
+only through inheritance.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Can constructors have access modifiers?
+
+Correct Answer
+
+Yes.
+
+Constructors can be:
+
+• private
+• default
+• protected
+• public
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+Can methods and variables have all four access modifiers?
+
+Correct Answer
+
+Yes.
+
+Methods and variables can use:
+
+• private
+• default
+• protected
+• public
+
+---------------------------------------------------------------------
+
+Trap 9
+
+Question
+
+Which access modifier is used most frequently for
+instance variables?
+
+Correct Answer
+
+private
+
+It supports Encapsulation by preventing direct access
+to object data.
+
+======================================================================

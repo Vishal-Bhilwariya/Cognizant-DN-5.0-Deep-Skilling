@@ -1,0 +1,350 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 5 : ABSTRACTION
+======================================================================
+
+Q1. What is Abstraction? Why do we need it?
+
+Interview Ready Answer
+
+Abstraction is the process of hiding the implementation details and
+showing only the essential functionality to the user.
+
+It focuses on:
+
+"What an object does"
+rather than
+"How it does it."
+
+Why do we need it?
+
+• Reduce complexity.
+• Hide unnecessary implementation details.
+• Improve maintainability.
+• Improve flexibility.
+• Allow multiple implementations.
+• User only interacts with required features.
+
+Java achieves Abstraction using:
+
+• Abstract Class
+• Interface
+
+Real-Life Example
+
+ATM Machine
+
+The user can:
+
+• Withdraw Money
+• Deposit Money
+• Check Balance
+
+The user does not know:
+
+• How PIN is verified.
+• How the database is updated.
+• How cash is dispensed.
+
+Only the functionality is visible.
+
+======================================================================
+
+Q2. What is the difference between Abstraction and
+Encapsulation?
+
+Interview Ready Answer
+
+Abstraction
+
+• Hides implementation details.
+• Focuses on "What to do".
+• Achieved using Abstract Classes and Interfaces.
+• Reduces complexity.
+
+Example
+
+You call
+
+paymentService.pay();
+
+You don't know how payment processing works.
+
+------------------------------------------------------------
+
+Encapsulation
+
+• Hides data.
+• Controls access to data.
+• Achieved using private fields and access modifiers.
+• Improves security.
+
+Example
+
+private double balance;
+
+Balance cannot be accessed directly.
+
+It can only be accessed through controlled methods.
+
+======================================================================
+
+Q3. What is the difference between Abstract Class
+and Interface?
+
+Interview Ready Answer
+
+Abstract Class
+
+• Declared using abstract keyword.
+• Inherited using extends.
+• Can have abstract methods.
+• Can have concrete methods.
+• Can have constructors.
+• Can have instance variables.
+• Supports single inheritance.
+
+Example
+
+abstract class Animal{
+
+    void eat(){
+
+        System.out.println("Eating");
+    }
+
+    abstract void sound();
+}
+
+------------------------------------------------------------
+
+Interface
+
+• Declared using interface keyword.
+• Implemented using implements.
+• Defines a contract.
+• Supports multiple inheritance.
+• Can have abstract methods.
+• Since Java 8, can also have default and static methods.
+• Since Java 9, can also have private methods.
+• Cannot have constructors.
+• Can only contain public static final constants as fields.
+
+Example
+
+interface Payment{
+
+    void pay();
+}
+
+======================================================================
+
+Q4. Can an Abstract Class have constructors?
+Why?
+
+Interview Ready Answer
+
+Yes.
+
+An Abstract Class can have constructors.
+
+Although we cannot create an object of an Abstract Class,
+its constructor executes whenever a subclass object is created.
+
+Purpose
+
+• Initialize common fields.
+• Perform common initialization.
+• Ensure every subclass starts with a valid parent state.
+
+Example
+
+abstract class Animal{
+
+    String name;
+
+    Animal(String name){
+
+        this.name=name;
+    }
+}
+
+class Dog extends Animal{
+
+    Dog(){
+
+        super("Dog");
+    }
+}
+
+When
+
+new Dog();
+
+is executed,
+
+Execution Order
+
+Heap Memory Allocation
+
+↓
+
+Animal Constructor Executes
+
+↓
+
+Dog Constructor Executes
+
+↓
+
+Object Created
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+Does Abstraction hide data?
+
+Correct Answer
+
+No.
+
+Abstraction hides implementation details.
+
+Encapsulation hides data and controls access to it.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+How does Java achieve Abstraction?
+
+Correct Answer
+
+Using
+
+• Abstract Classes
+• Interfaces
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Can we create an object of an Abstract Class?
+
+Correct Answer
+
+No.
+
+Abstract Classes cannot be instantiated directly.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Can an Abstract Class have constructors?
+
+Correct Answer
+
+Yes.
+
+Its constructor is executed when a subclass object is created.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Can an Abstract Class contain concrete methods?
+
+Correct Answer
+
+Yes.
+
+It can contain both:
+
+• Abstract Methods
+• Concrete Methods
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Can an Interface have implemented methods?
+
+Correct Answer
+
+Yes.
+
+Since Java 8
+
+• default methods
+• static methods
+
+Since Java 9
+
+• private methods
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Can an Interface have constructors?
+
+Correct Answer
+
+No.
+
+Interfaces cannot have constructors because they
+cannot be instantiated.
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+Which supports multiple inheritance?
+
+Correct Answer
+
+Interface.
+
+A class can implement multiple interfaces but can
+extend only one class.
+
+---------------------------------------------------------------------
+
+Trap 9
+
+Question
+
+What is the biggest difference between
+Abstraction and Encapsulation?
+
+Correct Answer
+
+Abstraction
+
+→ Hides implementation details.
+
+Encapsulation
+
+→ Hides data and controls access to it.
+
+======================================================================
