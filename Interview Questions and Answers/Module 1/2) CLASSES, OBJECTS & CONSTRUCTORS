@@ -1,0 +1,581 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 2 : CLASSES, OBJECTS & CONSTRUCTORS
+======================================================================
+
+Q1. What is a Class?
+
+Interview Ready Answer
+
+A class is a user-defined blueprint or template used to create objects.
+It defines the state (fields/instance variables) and behavior (methods)
+that every object of that class will have.
+
+Key Points:
+
+• Class is a logical entity.
+• Defines state and behavior.
+• One class can create multiple objects.
+• Memory for instance variables is allocated only when an object is created.
+
+Example:
+
+class Student{
+    String name;
+    int age;
+
+    void display(){}
+}
+
+======================================================================
+
+Q2. What is an Object?
+
+Interview Ready Answer
+
+An object is an instance of a class. It represents an entity having
+its own state, behavior and identity.
+
+Key Points:
+
+• Created using new keyword.
+• Occupies Heap Memory.
+• Each object has its own copy of instance variables.
+• Multiple objects can be created from one class.
+
+Example:
+
+Student s1 = new Student();
+Student s2 = new Student();
+
+======================================================================
+
+Q3. What happens internally when we execute
+
+Student s = new Student();
+
+Interview Ready Answer
+
+Step 1
+JVM loads Student class (if not already loaded).
+
+↓
+
+Step 2
+Heap memory is allocated.
+
+↓
+
+Step 3
+Instance variables get default values.
+
+↓
+
+Step 4
+Constructor executes.
+
+↓
+
+Step 5
+Constructor initializes the object.
+
+↓
+
+Step 6
+Reference is returned.
+
+↓
+
+Step 7
+Reference variable s (stored in Stack) points to the object in Heap.
+
+======================================================================
+
+Q4. Can a class exist without an object?
+
+Interview Ready Answer
+
+Yes.
+
+A class can exist without creating any object.
+
+When JVM loads a class, its metadata is stored in Method Area
+(Metaspace). Objects are created later only when the new keyword
+is used.
+
+Example:
+
+class Student{
+
+    static void display(){
+
+    }
+}
+
+Student.display();
+
+No object is created.
+
+======================================================================
+
+Q5. Difference between Class and Object.
+
+Interview Ready Answer
+
+Class
+
+• Blueprint
+• Logical entity
+• Defines state and behavior
+• Loaded into Metaspace
+• Can exist without objects
+• One class can create many objects
+
+Object
+
+• Instance of class
+• Runtime entity
+• Stores actual data
+• Allocated in Heap
+• Cannot exist without class
+• Every object has its own state
+
+======================================================================
+
+Q6. What is a Constructor? Why do we need it?
+
+Interview Ready Answer
+
+A constructor is a special member of a class that is automatically
+invoked when an object is created.
+
+Purpose
+
+• Initialize object.
+• Assign initial values.
+• Prepare object for use.
+
+Properties
+
+• Same name as class.
+• No return type.
+• Automatically called.
+• Executes once for every object.
+
+Types
+
+1. No-Argument Constructor
+
+Student(){
+
+}
+
+2. Parameterized Constructor
+
+Student(String name,int age){
+
+    this.name=name;
+    this.age=age;
+}
+
+======================================================================
+
+Q7. Difference between Constructor and Method.
+
+Interview Ready Answer
+
+Constructor
+
+• Initializes object.
+• Same name as class.
+• No return type.
+• Automatically invoked.
+• Executes once per object.
+• Cannot be overridden.
+• Cannot be inherited.
+• Can be overloaded.
+
+Method
+
+• Defines behavior.
+• Any valid name.
+• Can return value or be void.
+• Called explicitly.
+• Can execute multiple times.
+• Can be inherited.
+• Can be overridden.
+• Can be overloaded.
+
+======================================================================
+
+Q8. If Java already provides a default constructor,
+why do developers write their own constructors?
+
+Interview Ready Answer
+
+Developers write constructors to:
+
+• Initialize object with required values.
+• Validate input.
+• Assign default values.
+• Support constructor overloading.
+• Ensure object is always in a valid state.
+
+Important Point
+
+If the programmer writes any constructor,
+Java DOES NOT generate the default constructor.
+
+Example
+
+class Student{
+
+    Student(String name){
+
+    }
+
+}
+
+Now,
+
+new Student();
+
+Compilation Error
+
+because default constructor is not generated.
+
+======================================================================
+
+Q9. Can a constructor be private? Why?
+
+Interview Ready Answer
+
+Yes.
+
+A constructor can be private.
+
+Purpose
+
+• Prevent object creation from outside the class.
+• Used in Singleton Design Pattern.
+• Used in Utility Classes.
+
+Example
+
+class Database{
+
+    private Database(){
+
+    }
+
+}
+
+Now,
+
+new Database();
+
+Compilation Error
+
+======================================================================
+
+Q10. Can we create an object without using new keyword?
+
+Interview Ready Answer
+
+Yes.
+
+Java allows object creation without explicitly writing new.
+
+Ways
+
+1. clone()
+
+Student s2=(Student)s1.clone();
+
+2. Deserialization
+
+readObject()
+
+3. Reflection
+
+Class.forName()
+
+getDeclaredConstructor().newInstance()
+
+4. Factory Methods
+
+Student.create();
+
+Common Frameworks
+
+• Spring
+• Hibernate
+• JUnit
+
+======================================================================
+
+Q11. What is Constructor Overloading?
+
+Interview Ready Answer
+
+Constructor overloading means defining multiple constructors in the
+same class with different parameter lists.
+
+Purpose
+
+• Initialize object in different ways.
+
+Example
+
+Student(){
+
+}
+
+Student(String name){
+
+}
+
+Student(String name,int age){
+
+}
+
+Java selects the constructor based on parameters passed during
+object creation.
+
+======================================================================
+
+Q12. Can a constructor call another constructor
+within the same class?
+
+Interview Ready Answer
+
+Yes.
+
+A constructor can call another constructor using
+
+this()
+
+This is called Constructor Chaining.
+
+Example
+
+class Student{
+
+    Student(){
+
+        this("Vishal");
+    }
+
+    Student(String name){
+
+        System.out.println(name);
+    }
+}
+
+Rules
+
+• this() must be first statement.
+• Used to avoid duplicate initialization code.
+
+======================================================================
+
+Q13. Difference between this() and super()
+
+Interview Ready Answer
+
+this()
+
+• Calls another constructor of same class.
+• Used for constructor chaining.
+• Must be first statement.
+
+Example
+
+Student(){
+
+    this("Vishal");
+}
+
+------------------------------------------------------------
+
+super()
+
+• Calls parent class constructor.
+• Used in inheritance.
+• Must be first statement.
+
+Example
+
+Student(){
+
+    super();
+}
+
+Important
+
+this() and super() cannot be used together in the same constructor.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+Is Constructor a Method?
+
+Correct Answer
+
+No.
+
+Constructor is a special member of a class used for object
+initialization.
+
+It is NOT a method.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Can Constructor have a return type?
+
+Correct Answer
+
+No.
+
+Not even void.
+
+If return type is written,
+it becomes a normal method.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Can Constructors be Overridden?
+
+Correct Answer
+
+No.
+
+Constructors cannot be inherited,
+therefore they cannot be overridden.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Can Constructors be Overloaded?
+
+Correct Answer
+
+Yes.
+
+Overloading is done by changing parameter list.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Can Constructor be static?
+
+Correct Answer
+
+No.
+
+Constructors belong to object creation.
+
+Only methods can be static.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+What happens if programmer writes any constructor?
+
+Correct Answer
+
+Compiler will NOT generate default constructor.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Can this() and super() be used together?
+
+Correct Answer
+
+No.
+
+Only one can be used,
+and it must be the first statement.
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+Difference between this and this()?
+
+Correct Answer
+
+this
+
+→ Refers to current object.
+
+this()
+
+→ Calls another constructor of same class.
+
+---------------------------------------------------------------------
+
+Trap 9
+
+Question
+
+Difference between super and super()?
+
+Correct Answer
+
+super
+
+→ Refers to parent class object.
+
+super()
+
+→ Calls parent class constructor.
+
+---------------------------------------------------------------------
+
+Trap 10
+
+Question
+
+Can we create object without new keyword?
+
+Correct Answer
+
+Yes.
+
+Using
+
+• clone()
+• Reflection
+• Deserialization
+• Factory Methods
+
+======================================================================
