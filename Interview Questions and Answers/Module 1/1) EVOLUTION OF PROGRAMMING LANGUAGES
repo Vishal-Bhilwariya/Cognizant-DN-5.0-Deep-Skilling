@@ -1,0 +1,259 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 1 : EVOLUTION OF PROGRAMMING LANGUAGES
+======================================================================
+
+Q1. Explain the evolution of programming languages.
+
+Interview Ready Answer
+
+Programming languages evolved to overcome the limitations of previous
+languages and make software development easier, faster, and more
+maintainable.
+
+1. Machine Language (1GL)
+   • Written in binary (0 and 1).
+   • Directly executed by the CPU.
+   • Very fast but extremely difficult for humans to understand.
+   • Machine dependent.
+
+2. Assembly Language (2GL)
+   • Uses mnemonic instructions like MOV, ADD, SUB.
+   • Converted into Machine Code using an Assembler.
+   • Easier than Machine Language but still hardware dependent.
+
+3. Procedural Programming (3GL)
+   • Example: C.
+   • Organizes code into functions/procedures.
+   • Improves readability and modularity.
+   • Still difficult to maintain very large applications.
+
+4. Object-Oriented Programming (OOP)
+   • Examples: Java, C++, C#.
+   • Organizes software using Classes and Objects.
+   • Provides Encapsulation, Inheritance, Polymorphism and Abstraction.
+   • Improves code reuse, maintainability, security and scalability.
+
+======================================================================
+
+Q2. What are the major limitations of Procedural Programming?
+
+Interview Ready Answer
+
+Procedural Programming is suitable for small applications but becomes
+difficult to manage as software grows.
+
+Major limitations:
+
+• Low code reusability.
+• No encapsulation (data and functions are separate).
+• Poor data security.
+• Tight coupling between functions.
+• Difficult maintenance.
+• Difficult scalability.
+• Difficult team collaboration.
+• No inheritance.
+• No polymorphism.
+
+These limitations led to the adoption of Object-Oriented Programming.
+
+======================================================================
+
+Q3. If Procedural Programming has many limitations, why is C still
+widely used?
+
+Interview Ready Answer
+
+C is still widely used because it provides:
+
+• High execution speed.
+• Low memory consumption.
+• Direct hardware access.
+• Pointer support.
+• Predictable performance.
+• Minimal runtime overhead.
+
+Common industry usage:
+
+• Linux Kernel
+• Embedded Systems
+• Device Drivers
+• Firmware
+• IoT Devices
+• Operating Systems
+
+OOP is preferred for large enterprise software, while C is preferred
+where performance and hardware control are important.
+
+======================================================================
+
+Q4. What is the difference between Machine Language and Assembly
+Language?
+
+Interview Ready Answer
+
+Machine Language
+
+• Binary instructions (0 and 1).
+• Executed directly by the CPU.
+• No translator required.
+• Very difficult for humans to write and debug.
+
+Assembly Language
+
+• Uses mnemonic instructions such as MOV, ADD and SUB.
+• Requires an Assembler.
+• Easier to read and write.
+• Still machine dependent.
+
+Key Difference
+
+Machine Language executes directly.
+
+Assembly Language is first converted into Machine Code by the Assembler.
+
+======================================================================
+
+Q5. Why was Assembly Language replaced by High-Level Languages
+like C?
+
+Interview Ready Answer
+
+Assembly Language had several limitations:
+
+• Machine dependent.
+• Difficult to write.
+• Difficult to debug.
+• Difficult to maintain.
+• Slow software development.
+• Limited language features.
+
+High-Level Languages introduced:
+
+• Functions
+• Loops
+• Arrays
+• Structures
+• Standard Libraries
+
+These features improved readability, maintainability, portability and
+developer productivity while still providing good performance.
+
+======================================================================
+
+Q6. Can a modern programming language support both Procedural and
+Object-Oriented Programming?
+
+Interview Ready Answer
+
+Yes.
+
+Many modern programming languages are multi-paradigm, meaning they
+support more than one programming paradigm.
+
+Examples:
+
+C++
+• Procedural
+• Object-Oriented
+• Generic Programming
+
+Python
+• Procedural
+• Object-Oriented
+• Functional Programming
+
+JavaScript
+• Procedural
+• Object-Oriented
+• Functional Programming
+
+Java is primarily an Object-Oriented language, but programs can still
+be written in a procedural style using methods and sequential execution.
+However, all methods in Java belong to a class.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question:
+Did OOP replace Procedural Programming?
+
+Correct Answer:
+
+No.
+
+Procedural Programming is still widely used in operating systems,
+embedded systems and performance-critical software.
+
+OOP is preferred for large and maintainable enterprise applications.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question:
+Is Assembly Language converted into Bytecode?
+
+Correct Answer:
+
+No.
+
+Assembly Language is converted into Machine Code by an Assembler.
+
+Bytecode is associated with Java.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question:
+Is C faster than Assembly Language?
+
+Correct Answer:
+
+No.
+
+Assembly provides the lowest-level control over hardware.
+
+C offers better readability and productivity while modern compilers
+generate highly optimized machine code.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question:
+Does Java have Functions?
+
+Correct Answer:
+
+No.
+
+Java has Methods.
+
+Every method belongs to a class.
+
+Java does not support standalone functions like C.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question:
+Why did Object-Oriented Programming become popular?
+
+Correct Answer:
+
+Because it solves major problems of Procedural Programming by providing:
+
+• Better code reuse.
+• Better security through encapsulation.
+• Better maintainability.
+• Better scalability.
+• Better modularity.
+• Easier team development.
+
+======================================================================
