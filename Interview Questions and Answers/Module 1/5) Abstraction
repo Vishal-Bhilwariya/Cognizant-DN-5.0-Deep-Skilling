@@ -11,7 +11,6 @@ Abstraction is the process of hiding the implementation details and
 showing only the essential functionality to the user.
 
 It focuses on:
-
 "What an object does"
 rather than
 "How it does it."

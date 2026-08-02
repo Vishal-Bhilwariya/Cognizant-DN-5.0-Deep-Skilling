@@ -12,7 +12,6 @@ that operate on that data into a single unit (class) while restricting
 direct access to the data using access modifiers.
 
 Why do we need it?
-
 • To achieve data hiding.
 • To provide controlled access to data.
 • To protect sensitive information.

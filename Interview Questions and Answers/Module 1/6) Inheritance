@@ -19,7 +19,6 @@ Java uses the
 extends
 
 keyword to achieve inheritance.
-
 Why do we need it?
 
 • Code Reusability.

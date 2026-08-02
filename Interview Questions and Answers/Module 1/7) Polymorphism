@@ -16,7 +16,6 @@ to exhibit different behavior depending on the object
 or parameters.
 
 Why do we need it?
-
 • Code Reusability.
 • Flexibility.
 • Extensibility.

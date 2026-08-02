@@ -564,7 +564,6 @@ super()
 Trap 10
 
 Question
-
 Can we create object without new keyword?
 
 Correct Answer
