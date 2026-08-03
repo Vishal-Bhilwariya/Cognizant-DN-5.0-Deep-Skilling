@@ -1,0 +1,489 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 12 : INTERFACE SEGREGATION PRINCIPLE (ISP)
+======================================================================
+
+Q1. What is the Interface Segregation Principle (ISP)?
+Why do we need it?
+
+Interview Ready Answer
+
+The Interface Segregation Principle (ISP) states that
+
+"Clients should not be forced to depend on
+interfaces they do not use."
+
+In simple words,
+
+A class should implement only those methods
+that it actually requires.
+
+Instead of creating one large interface,
+split it into multiple small,
+role-specific interfaces.
+
+Why do we need ISP?
+
+• Avoid unnecessary method implementation.
+• Reduce Coupling.
+• Improve Maintainability.
+• Improve Readability.
+• Increase Flexibility.
+• Prevent Empty or Unsupported Methods.
+
+Real-Life Example
+
+Restaurant
+
+You order only Tea.
+
+The waiter should bring only Tea,
+
+not Tea + Coffee + Biscuits.
+
+Similarly,
+
+A class should receive only the methods
+it actually needs.
+
+======================================================================
+
+Q2. Difference between SRP and ISP
+
+Interview Ready Answer
+
+Single Responsibility Principle (SRP)
+
+• Focuses on Classes.
+• A class should have only one responsibility.
+• A class should have only one reason to change.
+• Solves multiple responsibilities in a class.
+
+------------------------------------------------------------
+
+Interface Segregation Principle (ISP)
+
+• Focuses on Interfaces.
+• A class should not implement methods
+  it doesn't need.
+• Splits large interfaces into
+  smaller role-specific interfaces.
+• Solves fat interface problems.
+
+------------------------------------------------------------
+
+Example of SRP
+
+class Student{
+
+    void updateDetails(){}
+
+    void calculateGrade(){}
+}
+
+These methods belong to
+
+Student Management.
+
+Adding
+
+sendSMS()
+
+would violate SRP.
+
+------------------------------------------------------------
+
+Example of ISP
+
+interface Worker{
+
+    void work();
+
+    void eat();
+}
+
+Robot only works.
+
+It does not eat.
+
+Therefore,
+
+forcing Robot to implement eat()
+
+violates ISP.
+
+======================================================================
+
+Q3. Can implementing multiple interfaces
+violate ISP?
+
+Interview Ready Answer
+
+No.
+
+Implementing multiple interfaces does NOT
+violate ISP.
+
+In fact,
+
+ISP encourages multiple
+small role-specific interfaces.
+
+------------------------------------------------------------
+
+Bad Design
+
+interface Worker{
+
+    void work();
+
+    void eat();
+
+    void drive();
+}
+
+Robot implements Worker.
+
+Robot is forced to implement
+
+eat()
+
+drive()
+
+which are unnecessary.
+
+ISP is violated.
+
+------------------------------------------------------------
+
+Good Design
+
+interface Workable{
+
+    void work();
+}
+
+interface Eatable{
+
+    void eat();
+}
+
+interface Driveable{
+
+    void drive();
+}
+
+------------------------------------------------------------
+
+class Human implements Workable,Eatable{
+
+}
+
+class Driver implements Workable,Driveable{
+
+}
+
+class Robot implements Workable{
+
+}
+
+Each class implements only
+what it actually needs.
+
+ISP is followed.
+
+======================================================================
+
+Q4. How do SRP, OCP, LSP and ISP work together
+in a real-world application?
+
+Interview Ready Answer
+
+Example
+
+Online Payment System
+
+------------------------------------------------------------
+
+SRP
+
+Each class has one responsibility.
+
+PaymentService
+
+↓
+
+Processes Payment
+
+EmailService
+
+↓
+
+Sends Email
+
+PaymentRepository
+
+↓
+
+Stores Payment Details
+
+------------------------------------------------------------
+
+OCP
+
+New payment methods are added
+without modifying existing code.
+
+Payment
+
+↓
+
+UPIPayment
+
+↓
+
+CardPayment
+
+↓
+
+WalletPayment
+
+↓
+
+NetBankingPayment
+
+------------------------------------------------------------
+
+LSP
+
+Every payment implementation
+can replace another.
+
+Payment payment=new UpiPayment();
+
+↓
+
+Payment payment=new CardPayment();
+
+Client code remains unchanged.
+
+------------------------------------------------------------
+
+ISP
+
+Instead of one large interface,
+
+Split it into
+
+Payable
+
+↓
+
+pay()
+
+----------------
+
+Refundable
+
+↓
+
+refund()
+
+----------------
+
+InvoiceGenerator
+
+↓
+
+generateInvoice()
+
+Each class implements only
+the interfaces it requires.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+What is the official definition of ISP?
+
+Correct Answer
+
+Clients should not be forced to depend on
+interfaces they do not use.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Does ISP mean creating one interface
+for every method?
+
+Correct Answer
+
+No.
+
+Interfaces should represent
+related responsibilities,
+
+not individual methods.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Can implementing multiple interfaces
+violate ISP?
+
+Correct Answer
+
+No.
+
+Multiple small interfaces
+are encouraged in ISP.
+
+The problem is not the number
+of interfaces,
+
+but poorly designed interfaces.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Difference between SRP and ISP?
+
+Correct Answer
+
+SRP
+
+↓
+
+Focuses on Classes
+
+↓
+
+One Responsibility
+
+↓
+
+One Reason to Change
+
+----------------------------
+
+ISP
+
+↓
+
+Focuses on Interfaces
+
+↓
+
+Only Required Methods
+
+↓
+
+No unnecessary implementation.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+What is a Fat Interface?
+
+Correct Answer
+
+An interface containing
+many unrelated methods,
+
+forcing implementing classes
+to implement methods
+they don't actually need.
+
+This violates ISP.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Robot implements Worker.
+
+Worker contains
+
+work()
+
+eat()
+
+Does it follow ISP?
+
+Correct Answer
+
+No.
+
+Robot doesn't eat.
+
+The interface should be split into
+
+Workable
+
+and
+
+Eatable.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Which principle solves
+the Fat Interface problem?
+
+Correct Answer
+
+Interface Segregation Principle (ISP)
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+Can ISP improve Maintainability?
+
+Correct Answer
+
+Yes.
+
+Smaller interfaces
+
+↓
+
+Cleaner code
+
+↓
+
+Less coupling
+
+↓
+
+Better maintainability
+
+↓
+
+Better flexibility
+
+======================================================================
