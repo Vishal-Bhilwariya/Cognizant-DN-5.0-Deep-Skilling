@@ -1,183 +1,241 @@
 ======================================================================
 MODULE 1 : DESIGN PATTERNS & PRINCIPLES
-TOPIC 16 : FACTORY METHOD DESIGN PATTERN
+TOPIC 17 : BUILDER DESIGN PATTERN
 ======================================================================
 
-Q1. What is the Factory Method Design Pattern?
+Q1. What is the Builder Design Pattern?
 Why do we need it?
 
 Interview Ready Answer
 
-The Factory Method Pattern is a
-Creational Design Pattern that
-encapsulates object creation.
+The Builder Pattern is a
+Creational Design Pattern
+used to construct complex
+objects step by step.
 
-Instead of allowing the client to create
-objects directly using the new keyword,
-
-a Factory creates and returns
-the required object.
+It separates the construction
+process from the final object,
+making object creation more
+flexible and readable.
 
 ------------------------------------------------------------
 
-Why do we need Factory Method?
+Why do we need Builder Pattern?
 
-• Hides object creation logic.
-• Reduces Tight Coupling.
+• Solves the Telescoping Constructor Problem.
+• Handles objects with many fields.
+• Supports Optional Parameters.
+• Improves Readability.
 • Improves Maintainability.
-• Improves Scalability.
-• Makes code easier to extend.
-• Supports Open/Closed Principle.
+• Prevents confusion in constructor arguments.
 
 ------------------------------------------------------------
 
-Difference from new Keyword
+When should we use it?
 
-Without Factory
+Use Builder Pattern when
 
-Car car = new Car();
-
-The client directly knows
-the concrete class.
-
-------------------------------------------------------------
-
-With Factory
-
-Vehicle vehicle =
-VehicleFactory.getVehicle("Car");
-
-The client depends only on
-the Vehicle interface.
-
-The Factory decides
-which object to create.
+• A class has many fields.
+• Many fields are optional.
+• Constructors become too long.
+• Constructor overloading becomes difficult.
 
 ------------------------------------------------------------
 
 Real-Life Example
 
-Restaurant
+Making Tea
 
-Customer orders a Cold Drink.
+Water
 
-The customer does not prepare it.
+↓
 
-The Restaurant (Factory)
-creates and serves the required drink.
+Tea Leaves
+
+↓
+
+Sugar
+
+↓
+
+Milk
+
+↓
+
+Tea Ready
+
+Tea is prepared
+step by step.
 
 ------------------------------------------------------------
 
-Software Industry Examples
+Software Industry Example
 
-• Spring BeanFactory
-• JDBC DriverManager
-• Logger Factory
-• Notification Factory
+User user = User.builder()
+
+        .setName("Vishal")
+
+        .setAge(22)
+
+        .setEmail("vishal@gmail.com")
+
+        .build();
 
 ======================================================================
 
-Q2. Implement Factory Method Pattern
-using Vehicle Example.
+Q2. How does Builder Pattern solve the
+Telescoping Constructor Problem?
 
 Interview Ready Answer
 
-Step 1
+Telescoping Constructor Problem
 
-Create Product Interface
+When a class contains many fields,
 
-interface Vehicle{
+multiple overloaded constructors
+are created.
 
-    void start();
-}
+Example
 
-------------------------------------------------------------
+Student()
 
-Step 2
+Student(String name)
 
-Create Concrete Products
+Student(String name,int age)
 
-class Car implements Vehicle{
+Student(String name,int age,
+String email)
 
-    public void start(){
+Student(String name,int age,
+String email,String address)
 
-        System.out.println("Car Started");
-    }
-}
+As fields increase,
 
-------------------------------------------------------------
+constructors also increase,
 
-class Bike implements Vehicle{
-
-    public void start(){
-
-        System.out.println("Bike Started");
-    }
-}
+making the code difficult
+to understand and maintain.
 
 ------------------------------------------------------------
 
-class Truck implements Vehicle{
+Builder Solution
 
-    public void start(){
+Instead of remembering the
+order of constructor parameters,
 
-        System.out.println("Truck Started");
-    }
-}
+use Builder.
 
-------------------------------------------------------------
+Student student = Student.builder()
 
-Step 3
+        .setName("Vishal")
 
-Create Factory
+        .setAge(22)
 
-class VehicleFactory{
+        .setEmail("vishal@gmail.com")
 
-    public static Vehicle getVehicle(String type){
+        .setAddress("Agra")
 
-        if(type.equalsIgnoreCase("Car")){
-
-            return new Car();
-        }
-
-        else if(type.equalsIgnoreCase("Bike")){
-
-            return new Bike();
-        }
-
-        else if(type.equalsIgnoreCase("Truck")){
-
-            return new Truck();
-        }
-
-        return null;
-    }
-}
+        .build();
 
 ------------------------------------------------------------
 
-Step 4
+Benefits
 
-Client Code
+• No need to remember
+  parameter order.
+
+• Better Readability.
+
+• Better Maintainability.
+
+• Supports Optional Fields.
+
+• Reduces Constructor Overloading.
+
+------------------------------------------------------------
+
+Memory Trick
+
+Many Fields
+
+↓
+
+Many Constructors
+
+↓
+
+Telescoping Constructor Problem
+
+↓
+
+Builder Pattern
+
+↓
+
+Step-by-Step Object Construction
+
+======================================================================
+
+Q3. Difference between Factory Method
+and Builder Pattern
+
+Interview Ready Answer
+
+Factory Method Pattern
+
+• Creates objects without exposing
+  the concrete class.
+
+• Solves
+
+  "Which object should be created?"
+
+• Returns different object types.
+
+• Hides Object Creation Logic.
+
+Example
 
 Vehicle vehicle =
 VehicleFactory.getVehicle("Car");
 
-vehicle.start();
+------------------------------------------------------------
+
+Builder Pattern
+
+• Builds complex objects
+  step by step.
+
+• Solves
+
+  "How should the object be built?"
+
+• Usually constructs one
+  complex object.
+
+• Hides Object Construction Logic.
+
+Example
+
+Student student = Student.builder()
+
+        .setName("Vishal")
+
+        .setAge(22)
+
+        .setEmail("vishal@gmail.com")
+
+        .build();
 
 ------------------------------------------------------------
 
-Roles
+Memory Trick
 
-Product
+Factory
 
 ↓
 
-Vehicle Interface
-
-----------------------------
-
-Concrete Products
+WHICH Object?
 
 ↓
 
@@ -189,97 +247,27 @@ Truck
 
 ----------------------------
 
-Factory
+Builder
 
 ↓
 
-VehicleFactory
-
-----------------------------
-
-Client
+HOW to Build?
 
 ↓
 
-Main Class
-
-------------------------------------------------------------
-
-Benefits
-
-• Loose Coupling.
-• Easy Maintenance.
-• Easy Extension.
-• Centralized Object Creation.
-• Client doesn't know
-  concrete implementation.
-
-======================================================================
-
-Q3. Difference between Singleton Pattern
-and Factory Method Pattern
-
-Interview Ready Answer
-
-Singleton Pattern
-
-• Ensures only one object exists.
-• Returns the same object every time.
-• Controls the number of objects.
-• Uses
-  - Private Constructor
-  - Private Static Instance
-  - Public Static getInstance()
-
-Examples
-
-• Logger
-• Database Connection
-• Configuration Manager
-
-------------------------------------------------------------
-
-Factory Method Pattern
-
-• Creates objects based on requirement.
-• May return different objects.
-• Encapsulates object creation logic.
-• Client doesn't know the
-  concrete implementation.
-
-Examples
-
-• Vehicle Factory
-• Notification Factory
-• Spring BeanFactory
-
-------------------------------------------------------------
-
-Memory Trick
-
-Singleton
+Name
 
 ↓
 
-One Object
+Age
 
 ↓
 
-Same Instance
-
-----------------------------
-
-Factory Method
+Email
 
 ↓
 
-Many Objects
-
-↓
-
-Factory Decides
-
-Which Object
+Build()
 
 ======================================================================
 INTERVIEW TRAP QUESTIONS
@@ -289,14 +277,13 @@ Trap 1
 
 Question
 
-What is the Factory Method Pattern?
+What is the Builder Pattern?
 
 Correct Answer
 
 A Creational Design Pattern
-that encapsulates object creation
-and hides object creation logic
-from the client.
+used to construct complex
+objects step by step.
 
 ---------------------------------------------------------------------
 
@@ -304,18 +291,12 @@ Trap 2
 
 Question
 
-Does Factory Method eliminate
-the new keyword?
+What problem does Builder
+Pattern solve?
 
 Correct Answer
 
-No.
-
-The new keyword is still used,
-
-but inside the Factory,
-
-not inside the client code.
+The Telescoping Constructor Problem.
 
 ---------------------------------------------------------------------
 
@@ -323,15 +304,17 @@ Trap 3
 
 Question
 
-What are the four main components
-of Factory Method?
+When should Builder Pattern
+be used?
 
 Correct Answer
 
-• Product
-• Concrete Products
-• Factory
-• Client
+When
+
+• A class has many fields.
+• Constructors become lengthy.
+• Many fields are optional.
+• Better readability is required.
 
 ---------------------------------------------------------------------
 
@@ -339,16 +322,16 @@ Trap 4
 
 Question
 
-Why is Factory Method better
-than directly using new?
+What is the Telescoping
+Constructor Problem?
 
 Correct Answer
 
-• Reduces Tight Coupling.
-• Centralizes Object Creation.
-• Improves Maintainability.
-• Improves Scalability.
-• Supports Open/Closed Principle.
+When multiple overloaded
+constructors are created
+because a class has many fields,
+making object creation difficult
+to understand and maintain.
 
 ---------------------------------------------------------------------
 
@@ -356,24 +339,16 @@ Trap 5
 
 Question
 
-Can Factory Method return
-different objects?
+What is the biggest advantage
+of Builder Pattern?
 
 Correct Answer
 
-Yes.
-
-Depending on the client's request,
-
-the Factory can return
-
-Car
-
-Bike
-
-Truck
-
-or any other implementation.
+It eliminates the need
+to remember constructor
+parameter order and provides
+readable step-by-step
+object construction.
 
 ---------------------------------------------------------------------
 
@@ -381,21 +356,17 @@ Trap 6
 
 Question
 
-Can Singleton and Factory Method
-be used together?
+Can Builder Pattern replace
+constructors completely?
 
 Correct Answer
 
-Yes.
+No.
 
-Example
+Constructors still exist internally.
 
-A DatabaseConnectionFactory
-can itself be implemented as
-a Singleton,
-
-ensuring only one Factory instance
-creates database connections.
+Builder provides a cleaner way
+to create objects.
 
 ---------------------------------------------------------------------
 
@@ -403,17 +374,32 @@ Trap 7
 
 Question
 
-What is the biggest advantage
-of Factory Method?
+Difference between Factory
+Method and Builder?
 
 Correct Answer
 
-The client depends on an
-abstraction,
+Factory Method
 
-not on concrete classes.
+↓
 
-This reduces Tight Coupling.
+Which Object?
+
+↓
+
+Object Creation
+
+----------------------------
+
+Builder
+
+↓
+
+How to Build?
+
+↓
+
+Object Construction
 
 ---------------------------------------------------------------------
 
@@ -421,11 +407,12 @@ Trap 8
 
 Question
 
-Factory Method belongs to
-which category of Design Patterns?
+Builder Pattern belongs to
+which Design Pattern category?
 
 Correct Answer
 
 Creational Design Pattern.
 
 ======================================================================
+```
