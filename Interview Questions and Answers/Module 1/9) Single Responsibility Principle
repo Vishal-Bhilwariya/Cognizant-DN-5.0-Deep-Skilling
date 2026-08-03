@@ -1,0 +1,353 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 9 : SINGLE RESPONSIBILITY PRINCIPLE (SRP)
+======================================================================
+
+Q1. What is the Single Responsibility Principle (SRP)?
+Why do we need it?
+
+Interview Ready Answer
+
+The Single Responsibility Principle (SRP) states that
+
+"A class should have only one responsibility
+or one reason to change."
+
+It means a class should perform only one specific task.
+If a class has multiple unrelated responsibilities,
+any change in one responsibility may affect the others.
+
+Why do we need SRP?
+
+• Improves Maintainability.
+• Reduces Code Duplication.
+• Improves Readability.
+• Makes Testing Easier.
+• Reduces Coupling.
+• Makes code easier to extend.
+
+Real-Life Example
+
+Restaurant
+
+Chef
+↓
+
+Only cooks food.
+
+Cashier
+↓
+
+Only handles billing.
+
+Cleaner
+↓
+
+Only cleans.
+
+Each person has one responsibility.
+
+======================================================================
+
+Q2. Can a class have multiple methods and still
+follow SRP?
+
+Interview Ready Answer
+
+Yes.
+
+A class can have multiple methods as long as
+all methods belong to the same responsibility.
+
+SRP is about
+
+"One Responsibility"
+
+NOT
+
+"One Method"
+
+Example
+
+class BankAccount{
+
+    void deposit(){}
+
+    void withdraw(){}
+
+    double getBalance(){
+
+        return 0;
+    }
+}
+
+All methods are related to
+
+Bank Account Management.
+
+Therefore,
+
+SRP is NOT violated.
+
+------------------------------------------------------------
+
+Example (Violates SRP)
+
+class UserService{
+
+    void registerUser(){}
+
+    void sendEmail(){}
+
+    void generateReport(){}
+
+    void saveToDatabase(){}
+}
+
+This class has multiple unrelated responsibilities.
+
+======================================================================
+
+Q3. How do you identify that a class is violating SRP
+in a real project?
+
+Interview Ready Answer
+
+A class is likely violating SRP if
+
+• It performs multiple unrelated tasks.
+• It has more than one reason to change.
+• Different developers modify it for different reasons.
+• It becomes too large.
+• It becomes difficult to test.
+• It becomes difficult to maintain.
+
+Example
+
+class UserService{
+
+    registerUser();
+
+    sendEmail();
+
+    generateReport();
+
+    saveToDatabase();
+}
+
+This class has
+
+• Registration Responsibility
+
+• Email Responsibility
+
+• Report Responsibility
+
+• Database Responsibility
+
+Therefore,
+
+It violates SRP.
+
+======================================================================
+
+Q4. Does SRP improve Maintainability and Testability?
+
+Interview Ready Answer
+
+Yes.
+
+SRP improves Maintainability because
+
+• Bugs are easier to locate.
+• Changes are isolated.
+• Code becomes easier to understand.
+• Only one class needs modification.
+
+SRP improves Testability because
+
+• Each class can be tested independently.
+• Unit testing becomes easier.
+• Less mocking is required.
+• Fewer side effects occur.
+
+Real Project Example
+
+Without SRP
+
+class UserService{
+
+    registerUser();
+
+    sendEmail();
+
+    generateReport();
+
+    saveToDatabase();
+}
+
+If email functionality changes,
+
+UserService must be modified,
+which increases the risk of affecting
+registration or report generation.
+
+------------------------------------------------------------
+
+With SRP
+
+UserService
+
+↓
+
+Handles User Registration
+
+EmailService
+
+↓
+
+Handles Email Sending
+
+ReportService
+
+↓
+
+Generates Reports
+
+UserRepository
+
+↓
+
+Stores User Data
+
+Now
+
+• Email changes only affect EmailService.
+• Database changes only affect UserRepository.
+• Each class can be tested independently.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+What is the official definition of SRP?
+
+Correct Answer
+
+"A class should have only one responsibility
+or one reason to change."
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Does SRP mean one class should contain only one method?
+
+Correct Answer
+
+No.
+
+A class can have many methods as long as
+they all belong to the same responsibility.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Can a class with 20 methods still follow SRP?
+
+Correct Answer
+
+Yes.
+
+If all methods contribute to one responsibility,
+SRP is satisfied.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Does SRP reduce the number of classes?
+
+Correct Answer
+
+No.
+
+SRP often increases the number of classes,
+but each class becomes smaller,
+more maintainable,
+and easier to test.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+What happens if SRP is violated?
+
+Correct Answer
+
+• Difficult Maintenance.
+• Difficult Testing.
+• High Coupling.
+• More Bugs.
+• Lower Reusability.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+How do you identify an SRP violation?
+
+Correct Answer
+
+Ask this question:
+
+"Does this class have more than one reason to change?"
+
+If YES,
+
+SRP is violated.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Can multiple methods exist in one class
+without violating SRP?
+
+Correct Answer
+
+Yes.
+
+As long as all methods belong to
+the same responsibility.
+
+Example
+
+BankAccount
+
+deposit()
+
+withdraw()
+
+getBalance()
+
+All belong to Bank Account Management.
+
+======================================================================
