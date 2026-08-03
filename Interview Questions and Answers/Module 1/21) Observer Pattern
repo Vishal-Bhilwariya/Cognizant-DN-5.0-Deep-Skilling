@@ -1,0 +1,402 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 21 : OBSERVER DESIGN PATTERN
+======================================================================
+
+Q1. What is the Observer Design Pattern?
+Why do we need it?
+
+Interview Ready Answer
+
+The Observer Pattern is a
+Behavioral Design Pattern
+that establishes a
+one-to-many relationship
+between objects.
+
+When the state of one object
+(Subject) changes,
+
+all registered observers are
+automatically notified
+and updated.
+
+------------------------------------------------------------
+
+Why do we need Observer Pattern?
+
+• Automatic Notification.
+• Loose Coupling.
+• One-to-Many Communication.
+• Easy to add/remove observers.
+• Event-driven communication.
+
+------------------------------------------------------------
+
+How does it work?
+
+Subject (Publisher)
+
+↓
+
+State Changes
+
+↓
+
+Notify All Observers
+
+↓
+
+Observer1
+
+Observer2
+
+Observer3
+
+↓
+
+Observers Update
+
+------------------------------------------------------------
+
+Real-Life Example
+
+YouTube Channel
+
+↓
+
+Uploads New Video
+
+↓
+
+Subscribers
+
+↓
+
+Receive Notification
+
+------------------------------------------------------------
+
+Software Industry Examples
+
+• Stock Market Application
+• Weather Station
+• Java Event Listeners
+• Spring Event Listeners
+
+======================================================================
+
+Q2. What are the roles of Subject
+and Observer?
+
+Interview Ready Answer
+
+Subject (Publisher)
+
+Responsibilities
+
+• Maintains a list of observers.
+• Allows observers to Subscribe.
+• Allows observers to Unsubscribe.
+• Notifies all observers when
+  its state changes.
+
+------------------------------------------------------------
+
+Observer (Subscriber)
+
+Responsibilities
+
+• Registers with the Subject.
+• Receives notifications.
+• Updates itself whenever
+  the Subject changes.
+
+------------------------------------------------------------
+
+Communication Flow
+
+Observer1
+
+Observer2
+
+Observer3
+
+        │
+        │ Subscribe
+        ▼
+
+Subject (Publisher)
+
+        │
+
+State Changes
+
+        │
+
+Notify All Observers
+
+        ▼
+
+Observer1 Updated
+
+Observer2 Updated
+
+Observer3 Updated
+
+------------------------------------------------------------
+
+Example
+
+Subject
+
+↓
+
+YouTube Channel
+
+Observers
+
+↓
+
+Subscribers
+
+When a new video is uploaded,
+
+all subscribers receive
+a notification automatically.
+
+======================================================================
+
+Q3. Difference between Observer Pattern
+and Strategy Pattern
+
+Interview Ready Answer
+
+Observer Pattern
+
+• Behavioral Design Pattern.
+• One-to-Many Relationship.
+• Subject notifies all registered
+  observers.
+• Focuses on Event Notification.
+• Used when state changes
+  need to be communicated.
+
+Example
+
+YouTube Channel
+
+↓
+
+Subscribers
+
+↓
+
+Notification
+
+------------------------------------------------------------
+
+Strategy Pattern
+
+• Behavioral Design Pattern.
+• Defines multiple algorithms
+  for the same task.
+• Client selects one strategy
+  at runtime.
+• Focuses on changing behavior.
+• Removes tight coupling
+  between algorithms.
+
+Example
+
+Payment
+
+↓
+
+UPI Strategy
+
+Credit Card Strategy
+
+Net Banking Strategy
+
+------------------------------------------------------------
+
+Memory Trick
+
+Observer
+
+↓
+
+One Subject
+
+↓
+
+Many Observers
+
+↓
+
+Notify Everyone
+
+----------------------------
+
+Strategy
+
+↓
+
+Many Algorithms
+
+↓
+
+Choose One
+
+↓
+
+Execute
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+What is the Observer Pattern?
+
+Correct Answer
+
+A Behavioral Design Pattern
+that establishes a
+one-to-many relationship
+where a Subject notifies all
+registered Observers
+whenever its state changes.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Who maintains the list
+of Observers?
+
+Correct Answer
+
+The Subject (Publisher).
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Can an Observer unsubscribe?
+
+Correct Answer
+
+Yes.
+
+Observers can Subscribe
+or Unsubscribe at any time.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Does the Subject know
+the implementation details
+of the Observers?
+
+Correct Answer
+
+No.
+
+The Subject only knows that
+they implement the
+Observer interface.
+
+This keeps the system
+loosely coupled.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+What is the biggest advantage
+of Observer Pattern?
+
+Correct Answer
+
+Automatic notification of
+multiple dependent objects
+while maintaining
+Loose Coupling.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Observer Pattern belongs
+to which category?
+
+Correct Answer
+
+Behavioral Design Pattern.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Difference between Observer
+and Strategy Pattern?
+
+Correct Answer
+
+Observer
+
+↓
+
+Notification
+
+↓
+
+One-to-Many
+
+----------------------------
+
+Strategy
+
+↓
+
+Algorithm Selection
+
+↓
+
+Choose One
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+Give one real-life example
+of Observer Pattern.
+
+Correct Answer
+
+• YouTube Notifications
+• WhatsApp Group Notifications
+• Stock Price Alerts
+• Weather App Notifications
+
+======================================================================
