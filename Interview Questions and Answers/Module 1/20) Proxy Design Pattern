@@ -1,0 +1,377 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 20 : PROXY DESIGN PATTERN
+======================================================================
+
+Q1. What is the Proxy Design Pattern?
+Why do we need it?
+
+Interview Ready Answer
+
+The Proxy Pattern is a
+Structural Design Pattern
+that provides a placeholder
+or surrogate for another object
+to control access to it.
+
+The client communicates
+with the Proxy,
+
+and the Proxy decides
+whether and when to
+forward the request
+to the real object.
+
+------------------------------------------------------------
+
+Why do we need Proxy Pattern?
+
+• Control access to objects.
+• Improve Security.
+• Perform Authentication.
+• Perform Authorization.
+• Implement Lazy Loading.
+• Add Logging.
+• Add Caching.
+• Access Remote Objects.
+
+------------------------------------------------------------
+
+How does it work?
+
+Client
+
+↓
+
+Proxy
+
+↓
+
+Real Object
+
+The Proxy performs checks such as
+
+• Authentication
+• Authorization
+• Logging
+• Caching
+
+After the checks,
+
+it forwards the request
+to the real object.
+
+------------------------------------------------------------
+
+Real-Life Example
+
+ATM Machine
+
+Customer
+
+↓
+
+ATM (Proxy)
+
+↓
+
+Bank Server
+
+The ATM verifies
+
+• PIN
+• Card
+• Balance
+
+before communicating
+with the Bank Server.
+
+------------------------------------------------------------
+
+Software Industry Example
+
+Application
+
+↓
+
+Security Proxy
+
+↓
+
+Database
+
+The Security Proxy checks
+whether the user has
+permission before allowing
+access to the Database.
+
+======================================================================
+
+Q2. Difference between Proxy Pattern
+and Decorator Pattern
+
+Interview Ready Answer
+
+Proxy Pattern
+
+• Structural Design Pattern.
+• Controls access to
+  an existing object.
+• Focuses on Security,
+  Authentication,
+  Authorization,
+  Logging,
+  Caching,
+  Lazy Loading.
+• May allow or deny access
+  after performing checks.
+
+------------------------------------------------------------
+
+Decorator Pattern
+
+• Structural Design Pattern.
+• Adds new functionality
+  to an existing object.
+• Focuses on adding
+  responsibilities dynamically.
+• Does not control access.
+
+------------------------------------------------------------
+
+Examples
+
+Decorator
+
+Coffee
+
+↓
+
+MilkDecorator
+
+↓
+
+SugarDecorator
+
+↓
+
+ChocolateDecorator
+
+Each decorator adds
+a new feature.
+
+------------------------------------------------------------
+
+Proxy
+
+Client
+
+↓
+
+SecurityProxy
+
+↓
+
+Database
+
+The Proxy authenticates
+the user before forwarding
+the request.
+
+------------------------------------------------------------
+
+Memory Trick
+
+Decorator
+
+↓
+
+Adds Features
+
+↓
+
+Enhancement
+
+↓
+
+Runtime
+
+----------------------------
+
+Proxy
+
+↓
+
+Controls Access
+
+↓
+
+Authentication
+
+↓
+
+Security
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+What is the Proxy Pattern?
+
+Correct Answer
+
+A Structural Design Pattern
+that provides a placeholder
+or surrogate for another object
+to control access to it.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Does Proxy Pattern
+perform the real work?
+
+Correct Answer
+
+No.
+
+The Real Object performs
+the actual work.
+
+The Proxy only controls
+access before forwarding
+the request.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Why do we use Proxy Pattern?
+
+Correct Answer
+
+• Authentication
+• Authorization
+• Security
+• Logging
+• Caching
+• Lazy Loading
+• Remote Access
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Proxy Pattern belongs
+to which category?
+
+Correct Answer
+
+Structural Design Pattern.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Difference between Proxy
+and Decorator?
+
+Correct Answer
+
+Decorator
+
+↓
+
+Adds Functionality
+
+----------------------------
+
+Proxy
+
+↓
+
+Controls Access
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Do both Proxy and Decorator
+wrap another object?
+
+Correct Answer
+
+Yes.
+
+Both use composition
+and wrap another object.
+
+Difference
+
+Decorator
+
+↓
+
+Adds Features
+
+Proxy
+
+↓
+
+Controls Access
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Does Proxy replace
+the Real Object?
+
+Correct Answer
+
+No.
+
+The Real Object still performs
+the actual work.
+
+The Proxy simply controls
+how and when the client
+can access it.
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+Give one real-life example
+of Proxy Pattern.
+
+Correct Answer
+
+• ATM Machine
+• Security Guard
+• Credit Card
+• ID Card at an Office
+
+Each controls access
+to the actual resource.
+
+======================================================================
