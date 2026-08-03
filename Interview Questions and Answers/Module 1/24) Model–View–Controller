@@ -1,0 +1,480 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 24 : MVC (MODEL - VIEW - CONTROLLER)
+======================================================================
+
+Q1. What is MVC Architecture?
+Why do we need it?
+
+Interview Ready Answer
+
+MVC (Model-View-Controller)
+is an Architectural Pattern
+that separates an application
+into three independent components.
+
+• Model
+• View
+• Controller
+
+This separation makes the
+application easier to understand,
+maintain and scale.
+
+------------------------------------------------------------
+
+Why do we need MVC?
+
+• Separation of Concerns.
+• Better Code Organization.
+• Easy Maintenance.
+• Better Readability.
+• Easy Testing.
+• Scalability.
+• Frontend and Backend teams
+  can work independently.
+
+------------------------------------------------------------
+
+Components of MVC
+
+1. Model
+
+• Represents application data.
+• Contains Business Logic.
+• Interacts with Database.
+
+------------------------------------------------------------
+
+2. View
+
+• User Interface (UI).
+• Displays data to the user.
+• Does not contain
+  business logic.
+
+------------------------------------------------------------
+
+3. Controller
+
+• Receives user requests.
+• Calls the Model.
+• Returns the appropriate
+  View or Response.
+• Acts as a bridge between
+  Model and View.
+
+------------------------------------------------------------
+
+General Request Flow
+
+User
+
+↓
+
+Controller
+
+↓
+
+Model
+
+↓
+
+Database
+
+↑
+
+Model
+
+↑
+
+Controller
+
+↓
+
+View
+
+↓
+
+User
+
+------------------------------------------------------------
+
+Real-Life Example
+
+Restaurant
+
+Customer
+
+↓
+
+Waiter (Controller)
+
+↓
+
+Chef (Model)
+
+↓
+
+Food
+
+↓
+
+Waiter
+
+↓
+
+Customer
+
+The customer never
+communicates directly
+with the Chef.
+
+======================================================================
+
+Q2. Difference between MVC
+and Three-Tier Architecture
+
+Interview Ready Answer
+
+MVC Architecture
+
+• Architectural Pattern.
+• Separates application
+  by responsibilities.
+• Focuses on request handling
+  and UI interaction.
+
+Components
+
+• Model
+• View
+• Controller
+
+------------------------------------------------------------
+
+Three-Tier Architecture
+
+• Software Architecture.
+• Separates application
+  into logical layers.
+• Focuses on complete
+  application structure.
+
+Layers
+
+• Presentation Layer
+• Business Layer
+• Data Layer
+
+------------------------------------------------------------
+
+Difference
+
+MVC
+
+↓
+
+Who does the work?
+
+↓
+
+Model
+
+View
+
+Controller
+
+----------------------------
+
+Three-Tier
+
+↓
+
+Where does the work belong?
+
+↓
+
+Presentation Layer
+
+↓
+
+Business Layer
+
+↓
+
+Data Layer
+
+------------------------------------------------------------
+
+Relationship
+
+MVC and Three-Tier
+are not competitors.
+
+They are commonly
+used together.
+
+Example
+
+Presentation Layer
+
+↓
+
+Controller
+
+↓
+
+Business Layer
+
+↓
+
+Service
+
+↓
+
+Data Layer
+
+↓
+
+Repository
+
+↓
+
+Database
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+What is MVC?
+
+Correct Answer
+
+MVC is an Architectural Pattern
+that separates an application
+into Model, View and Controller
+to improve maintainability,
+readability and scalability.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Which component handles
+user requests?
+
+Correct Answer
+
+Controller.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Which component contains
+business logic?
+
+Correct Answer
+
+Model.
+
+(Note:
+In Spring Boot, business logic
+is typically implemented in
+the Service layer, while the
+Model represents application
+data.)
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Can the View directly
+access the Database?
+
+Correct Answer
+
+No.
+
+The View communicates
+with the Controller,
+
+which interacts with the
+Model to access data.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Why do we use MVC?
+
+Correct Answer
+
+• Separation of Concerns.
+• Better Maintainability.
+• Better Readability.
+• Easy Testing.
+• Scalability.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Difference between MVC
+and Three-Tier?
+
+Correct Answer
+
+MVC
+
+↓
+
+Separates Responsibilities
+
+(Model, View, Controller)
+
+----------------------------
+
+Three-Tier
+
+↓
+
+Separates Layers
+
+(Presentation,
+Business,
+Data)
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Can MVC and Three-Tier
+be used together?
+
+Correct Answer
+
+Yes.
+
+MVC is commonly used
+inside the Presentation Layer
+of a Three-Tier Architecture.
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+Give one real-life example
+of MVC.
+
+Correct Answer
+
+Restaurant
+
+Customer
+
+↓
+
+Waiter (Controller)
+
+↓
+
+Chef (Model)
+
+↓
+
+Food
+
+↓
+
+Customer
+
+======================================================================
+
+⭐ QUICK REVISION (MODULE 1)
+
+SRP
+→ One Responsibility.
+
+OCP
+→ Open for Extension,
+Closed for Modification.
+
+LSP
+→ Child should replace Parent.
+
+ISP
+→ Don't force unnecessary methods.
+
+DIP
+→ Depend on Abstractions,
+not Implementations.
+
+------------------------------------------------------------
+
+Singleton
+→ One Object.
+
+Factory Method
+→ Create Object.
+
+Builder
+→ Build Complex Object
+Step by Step.
+
+------------------------------------------------------------
+
+Adapter
+→ Connect Incompatible Interfaces.
+
+Decorator
+→ Add Features at Runtime.
+
+Proxy
+→ Control Access.
+
+------------------------------------------------------------
+
+Observer
+→ One Subject,
+Many Observers.
+
+Strategy
+→ Many Algorithms,
+Choose One.
+
+Command
+→ Encapsulate Request
+as an Object.
+
+------------------------------------------------------------
+
+MVC
+→ Separate
+
+Model
+
+View
+
+Controller
+
+======================================================================
