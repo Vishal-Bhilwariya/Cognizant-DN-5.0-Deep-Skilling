@@ -1,0 +1,492 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 23 : COMMAND DESIGN PATTERN
+======================================================================
+
+Q1. What is the Command Design Pattern?
+Why do we need it?
+
+Interview Ready Answer
+
+The Command Pattern is a
+Behavioral Design Pattern
+that encapsulates a request
+or action as an object.
+
+Instead of executing an action
+directly,
+
+the request is wrapped inside
+a Command object,
+
+which can later be executed,
+queued, logged or undone.
+
+------------------------------------------------------------
+
+Why do we need Command Pattern?
+
+• Reduce Tight Coupling.
+• Encapsulate Requests.
+• Support Undo/Redo.
+• Support Command Queue.
+• Support Logging.
+• Support Remote Execution.
+• Improve Maintainability.
+
+------------------------------------------------------------
+
+What problem does it solve?
+
+Without Command Pattern
+
+Remote
+
+↓
+
+if(TV)
+
+↓
+
+turnOnTV()
+
+else if(Fan)
+
+↓
+
+turnOnFan()
+
+else if(AC)
+
+↓
+
+turnOnAC()
+
+Problems
+
+• Tight Coupling.
+• Difficult to Extend.
+• Difficult to Maintain.
+
+------------------------------------------------------------
+
+With Command Pattern
+
+Remote
+
+↓
+
+Command Interface
+
+↓
+
+TVOnCommand
+
+FanOnCommand
+
+ACOnCommand
+
+↓
+
+Receiver
+
+The Remote only executes
+
+command.execute();
+
+without knowing
+the actual implementation.
+
+------------------------------------------------------------
+
+Real-Life Example
+
+TV Remote
+
+Remote
+
+↓
+
+Power Button
+
+↓
+
+TVOnCommand
+
+↓
+
+TV
+
+↓
+
+TV Turns ON
+
+------------------------------------------------------------
+
+Software Industry Example
+
+Text Editor
+
+↓
+
+CopyCommand
+
+PasteCommand
+
+CutCommand
+
+↓
+
+Document
+
+Supports
+
+• Undo
+• Redo
+
+======================================================================
+
+Q2. Roles of Client, Invoker,
+Command, Concrete Command
+and Receiver
+
+Interview Ready Answer
+
+1. Client
+
+Creates the Command object
+and assigns it to the Invoker.
+
+Example
+
+Person using the Remote.
+
+------------------------------------------------------------
+
+2. Invoker
+
+Triggers the Command.
+
+Example
+
+Remote Control.
+
+It simply calls
+
+command.execute();
+
+------------------------------------------------------------
+
+3. Command
+
+An interface that declares
+
+execute();
+
+------------------------------------------------------------
+
+4. Concrete Command
+
+Implements the Command interface.
+
+• Stores a reference
+  to the Receiver.
+
+• Calls the appropriate
+  method on the Receiver.
+
+Example
+
+TVOnCommand
+
+------------------------------------------------------------
+
+5. Receiver
+
+Performs the actual work.
+
+Example
+
+TV
+
+↓
+
+turnOn()
+
+------------------------------------------------------------
+
+Working Flow
+
+Client
+
+↓
+
+Invoker (Remote)
+
+↓
+
+Command Interface
+
+↓
+
+Concrete Command
+
+↓
+
+Receiver
+
+↓
+
+Actual Work
+
+======================================================================
+
+Q3. Difference between Command Pattern
+and Strategy Pattern
+
+Interview Ready Answer
+
+Command Pattern
+
+• Behavioral Design Pattern.
+• Encapsulates a request
+  as an object.
+• Focuses on executing actions.
+• Supports Undo/Redo,
+  Logging,
+  Queue,
+  Remote Execution.
+
+Example
+
+Remote
+
+↓
+
+TVOnCommand
+
+↓
+
+TV
+
+------------------------------------------------------------
+
+Strategy Pattern
+
+• Behavioral Design Pattern.
+• Encapsulates multiple
+  interchangeable algorithms.
+• Focuses on selecting
+  one algorithm at runtime.
+• Removes if-else/switch.
+• Reduces Tight Coupling.
+
+Example
+
+Payment
+
+↓
+
+UPIStrategy
+
+CardStrategy
+
+NetBankingStrategy
+
+↓
+
+Client Chooses One
+
+------------------------------------------------------------
+
+Memory Trick
+
+Command
+
+↓
+
+WHAT to Execute?
+
+↓
+
+Action
+
+↓
+
+TV ON
+
+Copy
+
+Paste
+
+Undo
+
+----------------------------
+
+Strategy
+
+↓
+
+HOW to Execute?
+
+↓
+
+Algorithm
+
+↓
+
+UPI
+
+Card
+
+Net Banking
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+What is the Command Pattern?
+
+Correct Answer
+
+A Behavioral Design Pattern
+that encapsulates a request
+or action as an object.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Who performs the actual work
+in the Command Pattern?
+
+Correct Answer
+
+The Receiver.
+
+The Command only forwards
+the request to the Receiver.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+What is the responsibility
+of the Invoker?
+
+Correct Answer
+
+The Invoker triggers
+the Command by calling
+
+execute().
+
+It does not know
+how the command
+is implemented.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+What is the responsibility
+of the Concrete Command?
+
+Correct Answer
+
+It implements the
+Command interface,
+holds a reference to
+the Receiver,
+and calls the Receiver's
+method inside execute().
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Why is Command Pattern used?
+
+Correct Answer
+
+• Reduce Tight Coupling.
+• Support Undo/Redo.
+• Queue Requests.
+• Logging.
+• Remote Execution.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Difference between
+Command and Strategy?
+
+Correct Answer
+
+Command
+
+↓
+
+Action / Request
+
+↓
+
+WHAT to Execute?
+
+----------------------------
+
+Strategy
+
+↓
+
+Algorithm / Behavior
+
+↓
+
+HOW to Execute?
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Command Pattern belongs
+to which category?
+
+Correct Answer
+
+Behavioral Design Pattern.
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+Give one real-life example
+of the Command Pattern.
+
+Correct Answer
+
+• TV Remote
+• Elevator Button
+• Printer Queue
+• Text Editor (Copy/Paste/Undo)
+
+======================================================================
