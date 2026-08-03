@@ -1,0 +1,379 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 11 : LISKOV SUBSTITUTION PRINCIPLE (LSP)
+======================================================================
+
+Q1. What is the Liskov Substitution Principle (LSP)?
+Why do we need it?
+
+Interview Ready Answer
+
+The Liskov Substitution Principle (LSP) states that
+
+"Objects of a subclass should be replaceable
+with objects of the superclass without affecting
+the correctness of the program."
+
+In simple words,
+
+A child class should behave like its parent
+so that it can safely replace the parent
+without breaking the application.
+
+Why do we need LSP?
+
+• Ensures correct runtime behavior.
+• Makes Runtime Polymorphism reliable.
+• Prevents unexpected runtime errors.
+• Improves Maintainability.
+• Improves Extensibility.
+
+Real-Life Example
+
+A wall socket works with different chargers.
+
+Phone Charger
+
+↓
+
+Laptop Charger
+
+↓
+
+TV Charger
+
+All chargers can be substituted because
+they follow the same standard.
+
+======================================================================
+
+Q2. Why does Rectangle-Square violate LSP?
+
+Interview Ready Answer
+
+Suppose
+
+Rectangle allows
+
+Width = 5
+
+Height = 10
+
+Area = 50
+
+------------------------------------------------------------
+
+Now,
+
+Square extends Rectangle.
+
+Square forces
+
+Width = Height
+
+Client Code
+
+Rectangle r = new Square();
+
+r.setWidth(5);
+
+r.setHeight(10);
+
+Expected
+
+Area = 50
+
+Actual
+
+Width = 10
+
+Height = 10
+
+Area = 100
+
+The program behavior changes after replacing
+Rectangle with Square.
+
+Therefore,
+
+Square cannot safely replace Rectangle.
+
+LSP is violated.
+
+======================================================================
+
+Q3. How should Rectangle and Square be designed
+to follow LSP?
+
+Interview Ready Answer
+
+Wrong Design
+
+Rectangle
+
+    ▲
+
+    │
+
+Square
+
+Square changes the expected behavior
+of Rectangle.
+
+Therefore,
+
+LSP is violated.
+
+------------------------------------------------------------
+
+Correct Design
+
+              Shape
+
+             /     \
+
+            /       \
+
+     Rectangle     Square
+
+Both implement the same abstraction.
+
+Neither inherits from the other.
+
+Example
+
+interface Shape{
+
+    int getArea();
+}
+
+------------------------------------------------------------
+
+class Rectangle implements Shape{
+
+    private int length;
+
+    private int breadth;
+
+    public int getArea(){
+
+        return length*breadth;
+    }
+}
+
+------------------------------------------------------------
+
+class Square implements Shape{
+
+    private int side;
+
+    public int getArea(){
+
+        return side*side;
+    }
+}
+
+Both classes have independent behavior.
+
+LSP is satisfied.
+
+======================================================================
+
+Q4. Difference between Inheritance and LSP
+
+Interview Ready Answer
+
+Inheritance
+
+• Used for Code Reuse.
+• Establishes an IS-A relationship.
+• Child inherits parent's properties and methods.
+• Does NOT guarantee correct behavior.
+
+------------------------------------------------------------
+
+Liskov Substitution Principle
+
+• Child object should safely replace parent object.
+• Focuses on Behavior Preservation.
+• Validates whether inheritance is appropriate.
+• Guarantees Runtime Polymorphism behaves correctly.
+
+Memory Trick
+
+Inheritance
+
+↓
+
+Code Reuse
+
+--------------------------------
+
+LSP
+
+↓
+
+Behavior Preservation
+
+--------------------------------
+
+Every LSP uses Inheritance.
+
+BUT
+
+Not every Inheritance follows LSP.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+What is the official definition of LSP?
+
+Correct Answer
+
+Objects of a subclass should be replaceable
+with objects of the superclass without
+affecting the correctness of the program.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+What does "Substitution" mean?
+
+Correct Answer
+
+A child object should safely replace
+its parent object without changing
+the expected behavior of the application.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Does every inheritance relationship
+follow LSP?
+
+Correct Answer
+
+No.
+
+Inheritance only establishes an
+IS-A relationship.
+
+LSP checks whether the child preserves
+the parent's expected behavior.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+What is the most famous example
+of LSP violation?
+
+Correct Answer
+
+Rectangle
+
+↓
+
+Square
+
+Square changes the expected behavior
+of Rectangle.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Why does Rectangle-Square violate LSP?
+
+Correct Answer
+
+Rectangle allows
+
+Length ≠ Breadth
+
+Square requires
+
+Length = Breadth
+
+Replacing Rectangle with Square
+changes the program behavior.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+How can Rectangle-Square be redesigned?
+
+Correct Answer
+
+Create a common abstraction.
+
+Shape
+
+↓
+
+Rectangle
+
+↓
+
+Square
+
+Rectangle and Square should not inherit
+from each other.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Difference between Inheritance and LSP?
+
+Correct Answer
+
+Inheritance
+
+↓
+
+Code Reuse
+
+LSP
+
+↓
+
+Behavior Preservation
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+What is the biggest goal of LSP?
+
+Correct Answer
+
+Ensure that Runtime Polymorphism
+does not break the application.
+
+A child class should preserve
+the parent's expected behavior.
+
+======================================================================
