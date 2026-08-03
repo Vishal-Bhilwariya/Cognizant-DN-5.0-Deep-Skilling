@@ -1,0 +1,444 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 22 : STRATEGY DESIGN PATTERN
+======================================================================
+
+Q1. What is the Strategy Design Pattern?
+Why do we need it?
+
+Interview Ready Answer
+
+The Strategy Pattern is a
+Behavioral Design Pattern
+that defines a family of
+interchangeable algorithms
+and allows the client to
+select one algorithm at runtime.
+
+Each algorithm is encapsulated
+inside its own class.
+
+------------------------------------------------------------
+
+Why do we need Strategy Pattern?
+
+• Select algorithms at runtime.
+• Remove long if-else/switch statements.
+• Reduce Tight Coupling.
+• Improve Maintainability.
+• Improve Extensibility.
+• Follow Open/Closed Principle.
+
+------------------------------------------------------------
+
+What problem does it solve?
+
+Without Strategy,
+
+multiple algorithms are written
+inside one class using
+if-else or switch statements.
+
+As new algorithms are added,
+
+the code becomes difficult
+to maintain.
+
+Strategy separates each
+algorithm into its own class.
+
+------------------------------------------------------------
+
+How does it work?
+
+Client
+
+↓
+
+Strategy Interface
+
+↓
+
+UPIStrategy
+
+CardStrategy
+
+NetBankingStrategy
+
+↓
+
+Client Chooses One
+
+↓
+
+Execute()
+
+------------------------------------------------------------
+
+Real-Life Example
+
+Cricket
+
+Batsman
+
+↓
+
+Cover Drive
+
+Pull Shot
+
+Cut Shot
+
+Straight Drive
+
+↓
+
+Chooses One Shot
+depending on the ball.
+
+------------------------------------------------------------
+
+Software Industry Example
+
+Payment System
+
+↓
+
+UPIStrategy
+
+CreditCardStrategy
+
+NetBankingStrategy
+
+↓
+
+User selects one payment method.
+
+======================================================================
+
+Q2. How does Strategy Pattern
+remove if-else statements?
+
+Interview Ready Answer
+
+Without Strategy Pattern
+
+Payment
+
+↓
+
+if(UPI)
+
+↓
+
+UPI Logic
+
+else if(Card)
+
+↓
+
+Card Logic
+
+else if(Net Banking)
+
+↓
+
+Net Banking Logic
+
+Problems
+
+• Tight Coupling.
+• Difficult to Maintain.
+• Difficult to Extend.
+• Every new payment method
+  requires modifying
+  existing code.
+
+------------------------------------------------------------
+
+With Strategy Pattern
+
+Payment Context
+
+↓
+
+PaymentStrategy
+
+        ▲
+        │
+ ┌──────┼───────────┐
+ │      │           │
+UPI   Card   Net Banking
+
+↓
+
+Client selects one strategy
+
+↓
+
+pay()
+
+Each payment method is
+implemented separately.
+
+The Payment Context delegates
+the request to the selected strategy.
+
+------------------------------------------------------------
+
+Benefits
+
+• Removes if-else/switch.
+• Loose Coupling.
+• Easy to add new algorithms.
+• Better Readability.
+• Better Maintainability.
+• Better Scalability.
+
+======================================================================
+
+Q3. Difference between Strategy Pattern
+and Factory Method Pattern
+
+Interview Ready Answer
+
+Strategy Pattern
+
+• Behavioral Design Pattern.
+• Focuses on Algorithm Selection.
+• Defines multiple
+  interchangeable algorithms.
+• Client selects one strategy
+  at runtime.
+• Removes if-else statements.
+
+------------------------------------------------------------
+
+Factory Method Pattern
+
+• Creational Design Pattern.
+• Focuses on Object Creation.
+• Creates objects without
+  exposing the concrete class.
+• Factory decides which object
+  to create.
+• Encapsulates object creation logic.
+
+------------------------------------------------------------
+
+Examples
+
+Strategy
+
+Payment
+
+↓
+
+PaymentStrategy
+
+↓
+
+UPI
+
+Card
+
+Net Banking
+
+↓
+
+Client Chooses One
+
+------------------------------------------------------------
+
+Factory Method
+
+VehicleFactory
+
+↓
+
+Car
+
+Bike
+
+Truck
+
+↓
+
+Factory Creates Object
+
+------------------------------------------------------------
+
+Memory Trick
+
+Strategy
+
+↓
+
+Choose Algorithm
+
+↓
+
+HOW?
+
+----------------------------
+
+Factory
+
+↓
+
+Create Object
+
+↓
+
+WHAT?
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+What is the Strategy Pattern?
+
+Correct Answer
+
+A Behavioral Design Pattern
+that defines a family of
+interchangeable algorithms
+and allows one to be selected
+at runtime.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+What problem does Strategy
+Pattern solve?
+
+Correct Answer
+
+It removes long if-else
+or switch statements by
+encapsulating each algorithm
+into a separate class.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Can new algorithms be added
+without modifying existing code?
+
+Correct Answer
+
+Yes.
+
+Create a new class implementing
+the Strategy interface.
+
+This follows the
+Open/Closed Principle (OCP).
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Who selects the strategy?
+
+Correct Answer
+
+The Client (or Context)
+selects the required strategy
+at runtime based on the
+user's choice or configuration.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Difference between Strategy
+and Factory Method?
+
+Correct Answer
+
+Strategy
+
+↓
+
+Algorithm Selection
+
+↓
+
+Behavior
+
+----------------------------
+
+Factory
+
+↓
+
+Object Creation
+
+↓
+
+Instantiation
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Can Factory Method and
+Strategy Pattern be used together?
+
+Correct Answer
+
+Yes.
+
+A Factory can create
+the required Strategy object,
+
+and the Strategy Pattern
+executes the selected algorithm.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Strategy Pattern belongs
+to which category?
+
+Correct Answer
+
+Behavioral Design Pattern.
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+Give one real-life example
+of Strategy Pattern.
+
+Correct Answer
+
+• Cricket Shot Selection
+• Google Maps Route Selection
+• Payment Method Selection
+• Navigation Mode (Car, Bike, Walk)
+
+======================================================================
