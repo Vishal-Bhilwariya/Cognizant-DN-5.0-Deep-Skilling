@@ -1,0 +1,323 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 18 : ADAPTER DESIGN PATTERN
+======================================================================
+
+Q1. What is the Adapter Design Pattern?
+Why do we need it?
+
+Interview Ready Answer
+
+The Adapter Pattern is a
+Structural Design Pattern
+that allows two incompatible
+interfaces to work together.
+
+It converts one interface into
+another interface that the
+client expects.
+
+------------------------------------------------------------
+
+Why do we need Adapter Pattern?
+
+• Connect incompatible interfaces.
+• Integrate third-party libraries.
+• Reuse existing code.
+• Avoid modifying existing classes.
+• Improve compatibility.
+• Reduce development effort.
+
+------------------------------------------------------------
+
+When should we use it?
+
+Use Adapter Pattern when
+
+• Two classes cannot communicate
+  because their interfaces
+  are different.
+
+• Integrating legacy code.
+
+• Integrating third-party APIs.
+
+------------------------------------------------------------
+
+Real-Life Example
+
+Hindi Speaker
+
+↓
+
+Translator (Adapter)
+
+↓
+
+English Speaker
+
+The Translator converts one
+language into another,
+allowing both people
+to communicate.
+
+------------------------------------------------------------
+
+Software Industry Example
+
+Application
+
+↓
+
+PaymentAdapter
+
+↓
+
+Stripe API
+
+The Adapter converts the
+application's request into the
+format understood by Stripe API.
+
+======================================================================
+
+Q2. Difference between Adapter Pattern
+and Factory Method Pattern
+
+Interview Ready Answer
+
+Adapter Pattern
+
+• Structural Design Pattern.
+• Connects incompatible interfaces.
+• Solves
+
+  "How can two incompatible
+   classes communicate?"
+
+• Does not create objects.
+
+• Used for compatibility and
+  integration.
+
+------------------------------------------------------------
+
+Factory Method Pattern
+
+• Creational Design Pattern.
+• Creates objects without exposing
+  the concrete class.
+• Solves
+
+  "Which object should be created?"
+
+• Creates objects.
+
+• Used for object creation and
+  loose coupling.
+
+------------------------------------------------------------
+
+Examples
+
+Adapter
+
+Application
+
+↓
+
+PaymentAdapter
+
+↓
+
+Stripe API
+
+------------------------------------------------------------
+
+Factory Method
+
+Vehicle vehicle =
+
+VehicleFactory.getVehicle("Car");
+
+------------------------------------------------------------
+
+Memory Trick
+
+Adapter
+
+↓
+
+Connects Existing Objects
+
+↓
+
+Compatibility
+
+----------------------------
+
+Factory Method
+
+↓
+
+Creates New Objects
+
+↓
+
+Object Creation
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+What is the Adapter Pattern?
+
+Correct Answer
+
+A Structural Design Pattern
+that allows two incompatible
+interfaces to work together
+by converting one interface
+into another.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+What problem does Adapter
+Pattern solve?
+
+Correct Answer
+
+It solves compatibility problems
+between two incompatible
+interfaces or classes.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Does Adapter Pattern modify
+existing classes?
+
+Correct Answer
+
+No.
+
+The Adapter acts as a bridge.
+
+The existing classes remain
+unchanged.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Can Adapter Pattern create
+objects?
+
+Correct Answer
+
+No.
+
+It only adapts existing objects.
+
+Object creation is handled by
+Creational Patterns like
+Factory Method.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+When should Adapter Pattern
+be used?
+
+Correct Answer
+
+• Integrating third-party libraries.
+• Integrating legacy systems.
+• Connecting incompatible interfaces.
+• Reusing existing code.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Difference between Adapter
+and Factory Method?
+
+Correct Answer
+
+Adapter
+
+↓
+
+Connects Existing Objects
+
+↓
+
+Compatibility
+
+----------------------------
+
+Factory Method
+
+↓
+
+Creates New Objects
+
+↓
+
+Object Creation
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Adapter Pattern belongs to
+which category?
+
+Correct Answer
+
+Structural Design Pattern.
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+Give one real-life example
+of Adapter Pattern.
+
+Correct Answer
+
+Language Translator
+
+OR
+
+Mobile Charger Adapter
+
+Both convert one interface
+into another so two
+incompatible systems
+can work together.
+
+======================================================================
