@@ -1,0 +1,431 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 16 : FACTORY METHOD DESIGN PATTERN
+======================================================================
+
+Q1. What is the Factory Method Design Pattern?
+Why do we need it?
+
+Interview Ready Answer
+
+The Factory Method Pattern is a
+Creational Design Pattern that
+encapsulates object creation.
+
+Instead of allowing the client to create
+objects directly using the new keyword,
+
+a Factory creates and returns
+the required object.
+
+------------------------------------------------------------
+
+Why do we need Factory Method?
+
+• Hides object creation logic.
+• Reduces Tight Coupling.
+• Improves Maintainability.
+• Improves Scalability.
+• Makes code easier to extend.
+• Supports Open/Closed Principle.
+
+------------------------------------------------------------
+
+Difference from new Keyword
+
+Without Factory
+
+Car car = new Car();
+
+The client directly knows
+the concrete class.
+
+------------------------------------------------------------
+
+With Factory
+
+Vehicle vehicle =
+VehicleFactory.getVehicle("Car");
+
+The client depends only on
+the Vehicle interface.
+
+The Factory decides
+which object to create.
+
+------------------------------------------------------------
+
+Real-Life Example
+
+Restaurant
+
+Customer orders a Cold Drink.
+
+The customer does not prepare it.
+
+The Restaurant (Factory)
+creates and serves the required drink.
+
+------------------------------------------------------------
+
+Software Industry Examples
+
+• Spring BeanFactory
+• JDBC DriverManager
+• Logger Factory
+• Notification Factory
+
+======================================================================
+
+Q2. Implement Factory Method Pattern
+using Vehicle Example.
+
+Interview Ready Answer
+
+Step 1
+
+Create Product Interface
+
+interface Vehicle{
+
+    void start();
+}
+
+------------------------------------------------------------
+
+Step 2
+
+Create Concrete Products
+
+class Car implements Vehicle{
+
+    public void start(){
+
+        System.out.println("Car Started");
+    }
+}
+
+------------------------------------------------------------
+
+class Bike implements Vehicle{
+
+    public void start(){
+
+        System.out.println("Bike Started");
+    }
+}
+
+------------------------------------------------------------
+
+class Truck implements Vehicle{
+
+    public void start(){
+
+        System.out.println("Truck Started");
+    }
+}
+
+------------------------------------------------------------
+
+Step 3
+
+Create Factory
+
+class VehicleFactory{
+
+    public static Vehicle getVehicle(String type){
+
+        if(type.equalsIgnoreCase("Car")){
+
+            return new Car();
+        }
+
+        else if(type.equalsIgnoreCase("Bike")){
+
+            return new Bike();
+        }
+
+        else if(type.equalsIgnoreCase("Truck")){
+
+            return new Truck();
+        }
+
+        return null;
+    }
+}
+
+------------------------------------------------------------
+
+Step 4
+
+Client Code
+
+Vehicle vehicle =
+VehicleFactory.getVehicle("Car");
+
+vehicle.start();
+
+------------------------------------------------------------
+
+Roles
+
+Product
+
+↓
+
+Vehicle Interface
+
+----------------------------
+
+Concrete Products
+
+↓
+
+Car
+
+Bike
+
+Truck
+
+----------------------------
+
+Factory
+
+↓
+
+VehicleFactory
+
+----------------------------
+
+Client
+
+↓
+
+Main Class
+
+------------------------------------------------------------
+
+Benefits
+
+• Loose Coupling.
+• Easy Maintenance.
+• Easy Extension.
+• Centralized Object Creation.
+• Client doesn't know
+  concrete implementation.
+
+======================================================================
+
+Q3. Difference between Singleton Pattern
+and Factory Method Pattern
+
+Interview Ready Answer
+
+Singleton Pattern
+
+• Ensures only one object exists.
+• Returns the same object every time.
+• Controls the number of objects.
+• Uses
+  - Private Constructor
+  - Private Static Instance
+  - Public Static getInstance()
+
+Examples
+
+• Logger
+• Database Connection
+• Configuration Manager
+
+------------------------------------------------------------
+
+Factory Method Pattern
+
+• Creates objects based on requirement.
+• May return different objects.
+• Encapsulates object creation logic.
+• Client doesn't know the
+  concrete implementation.
+
+Examples
+
+• Vehicle Factory
+• Notification Factory
+• Spring BeanFactory
+
+------------------------------------------------------------
+
+Memory Trick
+
+Singleton
+
+↓
+
+One Object
+
+↓
+
+Same Instance
+
+----------------------------
+
+Factory Method
+
+↓
+
+Many Objects
+
+↓
+
+Factory Decides
+
+Which Object
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+What is the Factory Method Pattern?
+
+Correct Answer
+
+A Creational Design Pattern
+that encapsulates object creation
+and hides object creation logic
+from the client.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Does Factory Method eliminate
+the new keyword?
+
+Correct Answer
+
+No.
+
+The new keyword is still used,
+
+but inside the Factory,
+
+not inside the client code.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+What are the four main components
+of Factory Method?
+
+Correct Answer
+
+• Product
+• Concrete Products
+• Factory
+• Client
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Why is Factory Method better
+than directly using new?
+
+Correct Answer
+
+• Reduces Tight Coupling.
+• Centralizes Object Creation.
+• Improves Maintainability.
+• Improves Scalability.
+• Supports Open/Closed Principle.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Can Factory Method return
+different objects?
+
+Correct Answer
+
+Yes.
+
+Depending on the client's request,
+
+the Factory can return
+
+Car
+
+Bike
+
+Truck
+
+or any other implementation.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Can Singleton and Factory Method
+be used together?
+
+Correct Answer
+
+Yes.
+
+Example
+
+A DatabaseConnectionFactory
+can itself be implemented as
+a Singleton,
+
+ensuring only one Factory instance
+creates database connections.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+What is the biggest advantage
+of Factory Method?
+
+Correct Answer
+
+The client depends on an
+abstraction,
+
+not on concrete classes.
+
+This reduces Tight Coupling.
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+Factory Method belongs to
+which category of Design Patterns?
+
+Correct Answer
+
+Creational Design Pattern.
+
+======================================================================
