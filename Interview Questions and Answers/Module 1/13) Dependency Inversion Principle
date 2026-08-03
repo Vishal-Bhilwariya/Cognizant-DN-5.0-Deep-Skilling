@@ -1,0 +1,490 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 13 : DEPENDENCY INVERSION PRINCIPLE (DIP)
+======================================================================
+
+Q1. What is the Dependency Inversion Principle (DIP)?
+Why do we need it?
+
+Interview Ready Answer
+
+The Dependency Inversion Principle (DIP) states that
+
+"High-level modules should not depend on
+low-level modules.
+
+Both should depend on abstractions.
+
+Abstractions should not depend on details.
+
+Details should depend on abstractions."
+
+------------------------------------------------------------
+
+What is a High-Level Module?
+
+A High-Level Module contains the
+Business Logic of the application.
+
+Examples
+
+• PaymentService
+• UserService
+• OrderService
+
+------------------------------------------------------------
+
+What is a Low-Level Module?
+
+A Low-Level Module contains the
+actual implementation.
+
+Examples
+
+• MySQLDatabase
+• MongoDatabase
+• StripePayment
+• RazorpayPayment
+
+------------------------------------------------------------
+
+What is an Abstraction?
+
+An Abstraction is usually an
+Interface or an Abstract Class
+that defines a common contract.
+
+Example
+
+interface Payment{
+
+    void pay();
+}
+
+Why do we need DIP?
+
+• Reduces Coupling.
+• Improves Maintainability.
+• Improves Flexibility.
+• Makes Testing Easier.
+• Supports Dependency Injection.
+• Makes applications Scalable.
+
+Real-Life Example
+
+A person uses a Switch
+to turn on a Light.
+
+The person interacts with the Switch
+(abstraction),
+
+not with the electrical wiring
+(implementation).
+
+======================================================================
+
+Q2. Explain Dependency Inversion Principle
+using PaymentService.
+
+Interview Ready Answer
+
+Without DIP
+
+class PaymentService{
+
+    StripePayment payment=new StripePayment();
+
+    void makePayment(){
+
+        payment.pay();
+    }
+}
+
+Problem
+
+PaymentService directly depends on
+StripePayment.
+
+If Stripe is replaced with Razorpay,
+
+PaymentService must be modified.
+
+This creates
+
+Tight Coupling.
+
+------------------------------------------------------------
+
+With DIP
+
+interface Payment{
+
+    void pay();
+}
+
+------------------------------------------------------------
+
+class StripePayment implements Payment{
+
+    public void pay(){
+
+        System.out.println("Stripe Payment");
+    }
+}
+
+------------------------------------------------------------
+
+class RazorpayPayment implements Payment{
+
+    public void pay(){
+
+        System.out.println("Razorpay Payment");
+    }
+}
+
+------------------------------------------------------------
+
+class PaymentService{
+
+    private Payment payment;
+
+    PaymentService(Payment payment){
+
+        this.payment=payment;
+    }
+
+    void makePayment(){
+
+        payment.pay();
+    }
+}
+
+------------------------------------------------------------
+
+Client Code
+
+Payment payment=new StripePayment();
+
+PaymentService service=
+new PaymentService(payment);
+
+service.makePayment();
+
+------------------------------------------------------------
+
+Later
+
+Payment payment=new RazorpayPayment();
+
+PaymentService service=
+new PaymentService(payment);
+
+service.makePayment();
+
+PaymentService remains unchanged.
+
+Only the implementation changes.
+
+This is Dependency Inversion Principle.
+
+======================================================================
+
+Q3. Difference between Dependency Inversion
+Principle (DIP) and Dependency Injection (DI)
+
+Interview Ready Answer
+
+Dependency Inversion Principle (DIP)
+
+• Design Principle.
+• High-Level modules depend on Abstractions.
+• Reduces Coupling.
+• Describes WHAT should happen.
+
+------------------------------------------------------------
+
+Dependency Injection (DI)
+
+• Design Technique.
+• Dependencies are provided from outside
+  the class.
+• Implements DIP.
+• Describes HOW to achieve DIP.
+
+------------------------------------------------------------
+
+Without DI
+
+class PaymentService{
+
+    Payment payment=new StripePayment();
+}
+
+PaymentService creates its own dependency.
+
+------------------------------------------------------------
+
+With DI
+
+Payment payment=new StripePayment();
+
+PaymentService service=
+new PaymentService(payment);
+
+Dependency is created outside
+and injected into the class.
+
+Memory Trick
+
+DIP
+
+↓
+
+Principle
+
+↓
+
+"What should happen?"
+
+----------------------------
+
+DI
+
+↓
+
+Technique
+
+↓
+
+"How to achieve it?"
+
+======================================================================
+
+Q4. What are the advantages of
+Dependency Inversion Principle (DIP)?
+
+Interview Ready Answer
+
+• Reduces Coupling.
+• Improves Maintainability.
+• Makes Unit Testing Easier.
+• Improves Flexibility.
+• Makes implementations replaceable.
+• Improves Reusability.
+• Supports Scalable Applications.
+• Works well with Spring Dependency Injection.
+
+Memory Trick
+
+DIP Benefits
+
+↓
+
+Loose Coupling
+
+↓
+
+Easy Maintenance
+
+↓
+
+Easy Testing
+
+↓
+
+Easy Extension
+
+↓
+
+High Flexibility
+
+↓
+
+Scalable Applications
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+What is the official definition of DIP?
+
+Correct Answer
+
+High-level modules should not depend
+on low-level modules.
+
+Both should depend on Abstractions.
+
+Abstractions should not depend on Details.
+
+Details should depend on Abstractions.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+What is a High-Level Module?
+
+Correct Answer
+
+A High-Level Module contains the
+Business Logic of the application.
+
+Example
+
+PaymentService
+
+OrderService
+
+UserService
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+What is a Low-Level Module?
+
+Correct Answer
+
+A Low-Level Module contains the
+actual implementation.
+
+Example
+
+StripePayment
+
+MySQLDatabase
+
+MongoDatabase
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+What is the difference between
+DIP and DI?
+
+Correct Answer
+
+DIP
+
+↓
+
+Design Principle
+
+↓
+
+What should happen
+
+----------------------------
+
+DI
+
+↓
+
+Design Technique
+
+↓
+
+How to achieve it
+
+DI is one of the most common
+ways to implement DIP.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Does DIP remove dependency
+between classes?
+
+Correct Answer
+
+No.
+
+DIP does not remove dependency.
+
+It changes the dependency so that
+
+High-Level Module
+
+↓
+
+Abstraction
+
+↓
+
+Low-Level Module
+
+instead of
+
+High-Level Module
+
+↓
+
+Concrete Implementation
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Why is DIP better than directly creating
+a StripePayment object?
+
+Correct Answer
+
+Because the business logic depends on
+an Interface instead of a concrete class.
+
+Implementations can be replaced
+without modifying the business logic.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Can DIP exist without Dependency Injection?
+
+Correct Answer
+
+Yes.
+
+DIP is a Design Principle.
+
+Dependency Injection is only one technique
+used to implement it.
+
+DIP can also be implemented manually.
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+Which Spring feature is based on DIP?
+
+Correct Answer
+
+Spring Dependency Injection (DI)
+and the IoC Container
+are based on the Dependency
+Inversion Principle.
+
+======================================================================

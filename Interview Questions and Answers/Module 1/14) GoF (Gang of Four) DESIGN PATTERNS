@@ -1,0 +1,324 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 14 : GoF (Gang of Four) DESIGN PATTERNS - INTRODUCTION
+======================================================================
+
+Q1. What are Design Patterns?
+Why do we need them?
+
+Interview Ready Answer
+
+Design Patterns are proven and reusable
+design solutions for commonly occurring
+software design problems.
+
+They are NOT ready-made code.
+
+They are templates or guidelines
+that help developers design software
+efficiently.
+
+------------------------------------------------------------
+
+Why were Design Patterns introduced?
+
+Developers were solving the same software
+design problems repeatedly.
+
+Instead of reinventing the solution every time,
+
+the Gang of Four (GoF) documented
+proven solutions that can be reused
+across different projects.
+
+------------------------------------------------------------
+
+Why do we need Design Patterns?
+
+• Reduce Tight Coupling.
+• Improve Maintainability.
+• Improve Reusability.
+• Improve Scalability.
+• Improve Readability.
+• Make Testing Easier.
+• Provide Standardized Solutions.
+
+------------------------------------------------------------
+
+Real-Life Example
+
+Architects use building blueprints
+instead of designing every building
+from scratch.
+
+Similarly,
+
+Developers use Design Patterns
+as proven blueprints for software design.
+
+------------------------------------------------------------
+
+Software Examples
+
+Singleton Pattern
+
+↓
+
+Only one Logger or Database Connection.
+
+Factory Pattern
+
+↓
+
+Creates objects without exposing
+object creation logic.
+
+Builder Pattern
+
+↓
+
+Creates complex objects step by step.
+
+======================================================================
+
+Q2. Who are the Gang of Four (GoF)?
+How are Design Patterns classified?
+
+Interview Ready Answer
+
+The Gang of Four (GoF) are four software
+engineers who published the famous book
+
+"Design Patterns:
+Elements of Reusable Object-Oriented Software"
+
+in 1994.
+
+The four authors are
+
+• Erich Gamma
+• Richard Helm
+• Ralph Johnson
+• John Vlissides
+
+They documented
+
+23 Design Patterns
+
+which are divided into
+
+3 Categories.
+
+------------------------------------------------------------
+
+1. Creational Patterns
+
+Purpose
+
+Object Creation.
+
+Examples
+
+• Singleton
+• Factory Method
+• Builder
+
+------------------------------------------------------------
+
+2. Structural Patterns
+
+Purpose
+
+Combining Classes and Objects.
+
+Examples
+
+• Adapter
+• Decorator
+• Proxy
+
+------------------------------------------------------------
+
+3. Behavioral Patterns
+
+Purpose
+
+Communication between Objects.
+
+Examples
+
+• Observer
+• Strategy
+• Command
+
+------------------------------------------------------------
+
+Memory Trick
+
+Creational
+
+↓
+
+Create Objects
+
+----------------------------
+
+Structural
+
+↓
+
+Connect Objects
+
+----------------------------
+
+Behavioral
+
+↓
+
+Communicate Objects
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+Are Design Patterns ready-made code?
+
+Correct Answer
+
+No.
+
+Design Patterns are reusable design
+solutions or templates.
+
+Different developers can implement
+the same Design Pattern differently.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Who introduced Design Patterns?
+
+Correct Answer
+
+The Gang of Four (GoF)
+
+• Erich Gamma
+• Richard Helm
+• Ralph Johnson
+• John Vlissides
+
+They published the famous Design Patterns
+book in 1994.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+How many Design Patterns did GoF introduce?
+
+Correct Answer
+
+23 Design Patterns.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Into how many categories are
+GoF Design Patterns divided?
+
+Correct Answer
+
+Three Categories
+
+• Creational
+• Structural
+• Behavioral
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Which Design Pattern category
+focuses on Object Creation?
+
+Correct Answer
+
+Creational Patterns.
+
+Examples
+
+• Singleton
+• Factory Method
+• Builder
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Which Design Pattern category
+focuses on Class/Object Composition?
+
+Correct Answer
+
+Structural Patterns.
+
+Examples
+
+• Adapter
+• Decorator
+• Proxy
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Which Design Pattern category
+focuses on Object Communication?
+
+Correct Answer
+
+Behavioral Patterns.
+
+Examples
+
+• Observer
+• Strategy
+• Command
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+Why do we use Design Patterns?
+
+Correct Answer
+
+• Reduce Tight Coupling.
+• Improve Maintainability.
+• Improve Reusability.
+• Improve Scalability.
+• Improve Readability.
+• Improve Testing.
+• Provide Proven Software Design Solutions.
+
+======================================================================
