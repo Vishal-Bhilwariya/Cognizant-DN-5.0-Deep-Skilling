@@ -1,0 +1,446 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 19 : DECORATOR DESIGN PATTERN
+======================================================================
+
+Q1. What is the Decorator Design Pattern?
+Why do we need it?
+
+Interview Ready Answer
+
+The Decorator Pattern is a
+Structural Design Pattern
+that allows us to add new
+functionality to an existing object
+dynamically (at runtime)
+without modifying its original class.
+
+It wraps the existing object
+with another object (Decorator)
+that adds additional behavior.
+
+------------------------------------------------------------
+
+Why do we need Decorator Pattern?
+
+• Add new functionality at runtime.
+• Avoid modifying existing classes.
+• Follow Open/Closed Principle (OCP).
+• Avoid subclass explosion.
+• Improve flexibility and maintainability.
+
+------------------------------------------------------------
+
+What problem does it solve?
+
+Without Decorator,
+
+adding multiple features requires
+creating many subclasses.
+
+Decorator allows adding
+features dynamically by
+wrapping the object.
+
+------------------------------------------------------------
+
+Real-Life Example
+
+Gift Wrapping
+
+Mobile
+
+↓
+
+Gift Paper
+
+↓
+
+Ribbon
+
+↓
+
+Greeting Card
+
+The Mobile remains the same.
+
+Each wrapper adds
+a new feature.
+
+------------------------------------------------------------
+
+Software Industry Example
+
+Notification
+
+↓
+
+EmailDecorator
+
+↓
+
+SMSDecorator
+
+↓
+
+WhatsAppDecorator
+
+Each decorator adds
+a new notification channel
+without modifying
+the original Notification class.
+
+======================================================================
+
+Q2. Difference between Decorator Pattern
+and Inheritance
+
+Interview Ready Answer
+
+Inheritance
+
+• Uses extends.
+• Adds functionality
+  through subclasses.
+• Behavior is fixed
+  at compile time.
+• Can create many subclasses.
+
+------------------------------------------------------------
+
+Decorator Pattern
+
+• Uses object composition.
+• Wraps an existing object.
+• Adds functionality
+  at runtime.
+• Avoids subclass explosion.
+• More flexible.
+
+------------------------------------------------------------
+
+Coffee Example
+
+Without Decorator
+
+Coffee
+
+↓
+
+MilkCoffee
+
+↓
+
+SugarCoffee
+
+↓
+
+MilkSugarCoffee
+
+↓
+
+ChocolateCoffee
+
+Many subclasses are created.
+
+------------------------------------------------------------
+
+With Decorator
+
+Coffee
+
+↓
+
+MilkDecorator
+
+↓
+
+SugarDecorator
+
+↓
+
+ChocolateDecorator
+
+Features are added
+dynamically.
+
+------------------------------------------------------------
+
+Memory Trick
+
+Inheritance
+
+↓
+
+extends
+
+↓
+
+Compile Time
+
+↓
+
+Many Subclasses
+
+----------------------------
+
+Decorator
+
+↓
+
+Wrap Object
+
+↓
+
+Runtime
+
+↓
+
+Flexible Features
+
+======================================================================
+
+Q3. What are the advantages
+of the Decorator Pattern?
+
+Interview Ready Answer
+
+Advantages
+
+• Adds new functionality
+  at runtime.
+
+• Does not modify
+  existing classes.
+
+• Follows the
+  Open/Closed Principle.
+
+• Avoids the
+  Subclass Explosion Problem.
+
+• Improves Code Reusability.
+
+• Allows flexible
+  feature combinations.
+
+• Improves Maintainability.
+
+------------------------------------------------------------
+
+Why is it preferred
+over Inheritance?
+
+Inheritance creates
+many subclasses
+for different feature combinations.
+
+Decorator wraps
+the existing object
+and adds only
+the required features.
+
+------------------------------------------------------------
+
+Example
+
+Instead of creating
+
+MilkCoffee
+
+SugarCoffee
+
+MilkSugarCoffee
+
+ChocolateCoffee
+
+MilkChocolateCoffee
+
+Use
+
+Coffee
+
+↓
+
+MilkDecorator
+
+↓
+
+SugarDecorator
+
+↓
+
+ChocolateDecorator
+
+Each decorator adds
+one responsibility
+without creating
+new subclasses.
+
+------------------------------------------------------------
+
+Memory Trick
+
+Decorator
+
+↓
+
+Wrap Existing Object
+
+↓
+
+Add New Feature
+
+↓
+
+Runtime
+
+↓
+
+No Class Modification
+
+↓
+
+No Subclass Explosion
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+What is the Decorator Pattern?
+
+Correct Answer
+
+A Structural Design Pattern
+that adds new functionality
+to an existing object
+dynamically by wrapping it,
+without modifying
+its original class.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Does Decorator Pattern
+modify the original object?
+
+Correct Answer
+
+No.
+
+It wraps the object
+and adds extra behavior.
+
+The original object
+remains unchanged.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Decorator Pattern belongs
+to which category?
+
+Correct Answer
+
+Structural Design Pattern.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Why is Decorator preferred
+over Inheritance?
+
+Correct Answer
+
+Because it avoids the
+Subclass Explosion Problem
+and allows features
+to be added dynamically
+at runtime.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+What problem does
+Decorator Pattern solve?
+
+Correct Answer
+
+It solves the need
+to add multiple features
+without creating
+many subclasses.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Does Decorator Pattern
+replace Inheritance?
+
+Correct Answer
+
+No.
+
+Inheritance is still useful
+for IS-A relationships.
+
+Decorator is used when
+responsibilities need to be
+added dynamically.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Which principle is followed
+by Decorator Pattern?
+
+Correct Answer
+
+Open/Closed Principle (OCP)
+
+Open for Extension
+
+Closed for Modification.
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+Give one real-life example
+of Decorator Pattern.
+
+Correct Answer
+
+Gift Wrapping
+
+OR
+
+Coffee with Milk,
+Sugar and Chocolate
+added step by step.
+
+======================================================================
