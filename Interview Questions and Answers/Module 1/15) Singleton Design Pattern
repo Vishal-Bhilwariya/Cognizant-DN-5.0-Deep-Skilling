@@ -1,0 +1,365 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 15 : SINGLETON DESIGN PATTERN
+======================================================================
+
+Q1. What is the Singleton Design Pattern?
+Why do we need it?
+
+Interview Ready Answer
+
+Singleton is a Creational Design Pattern
+that ensures
+
+• A class has only one instance.
+• It provides a global point of access
+  to that instance.
+
+------------------------------------------------------------
+
+Why do we need Singleton?
+
+We use Singleton when only one object
+should exist throughout the application.
+
+Benefits
+
+• Prevents unnecessary object creation.
+• Saves Memory.
+• Maintains a single shared state.
+• Ensures consistency.
+• Improves resource management.
+
+------------------------------------------------------------
+
+Real-Life Example
+
+President of a Country.
+
+At a given time,
+
+there is only one President.
+
+Everyone refers to the same person.
+
+------------------------------------------------------------
+
+Software Industry Examples
+
+• Database Connection Manager
+• Logger
+• Configuration Manager
+• Cache Manager
+• Thread Pool Manager
+
+======================================================================
+
+Q2. How is Singleton implemented in Java?
+
+Interview Ready Answer
+
+Singleton is implemented using
+three components.
+
+------------------------------------------------------------
+
+1. Private Static Instance Variable
+
+Stores the only object
+of the class.
+
+private static Singleton instance;
+
+------------------------------------------------------------
+
+2. Private Constructor
+
+Prevents object creation
+using the new keyword.
+
+private Singleton(){
+
+}
+
+------------------------------------------------------------
+
+3. Public Static getInstance() Method
+
+Returns the same object every time.
+
+If the object doesn't exist,
+
+it creates it.
+
+public static Singleton getInstance(){
+
+    if(instance==null){
+
+        instance=new Singleton();
+    }
+
+    return instance;
+}
+
+------------------------------------------------------------
+
+Complete Code
+
+class Singleton{
+
+    private static Singleton instance;
+
+    private Singleton(){
+
+    }
+
+    public static Singleton getInstance(){
+
+        if(instance==null){
+
+            instance=new Singleton();
+        }
+
+        return instance;
+    }
+}
+
+------------------------------------------------------------
+
+Memory Trick
+
+Singleton
+
+↓
+
+1. private static instance
+
+↓
+
+2. private constructor
+
+↓
+
+3. public static getInstance()
+
+↓
+
+Only One Object
+
+======================================================================
+
+Q3. Is the basic Singleton implementation
+thread-safe?
+
+Interview Ready Answer
+
+No.
+
+The basic Singleton implementation
+(Lazy Initialization)
+
+is NOT Thread-Safe.
+
+Reason
+
+If multiple threads call
+getInstance() simultaneously,
+
+both may find
+
+instance == null
+
+and both can create
+separate objects.
+
+This violates the Singleton Pattern.
+
+------------------------------------------------------------
+
+Thread-Safe Solution
+
+Use synchronized.
+
+public static synchronized Singleton getInstance(){
+
+    if(instance==null){
+
+        instance=new Singleton();
+    }
+
+    return instance;
+}
+
+The synchronized keyword ensures
+that only one thread can execute
+the method at a time.
+
+------------------------------------------------------------
+
+Note
+
+Although synchronized makes
+Singleton thread-safe,
+
+it may reduce performance because
+every call acquires a lock.
+
+For better performance,
+
+Java provides
+
+• Double Checked Locking
+• Enum Singleton
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+What is the Singleton Design Pattern?
+
+Correct Answer
+
+A Creational Design Pattern that ensures
+
+• Only one instance of a class exists.
+• A global point of access to that instance.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Which three components are required
+to implement Singleton?
+
+Correct Answer
+
+• Private Static Instance Variable
+• Private Constructor
+• Public Static getInstance() Method
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Why is the constructor private?
+
+Correct Answer
+
+To prevent object creation
+using the new keyword.
+
+Objects can only be created
+through getInstance().
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Why is getInstance() static?
+
+Correct Answer
+
+Initially, no object exists.
+
+A static method can be called
+using the class name.
+
+Example
+
+Singleton.getInstance();
+
+If it were non-static,
+
+an object would be required
+to call it,
+
+which defeats the purpose
+of Singleton.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Is the basic Singleton
+thread-safe?
+
+Correct Answer
+
+No.
+
+If multiple threads execute
+getInstance() simultaneously,
+
+multiple objects may be created.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+How can Singleton
+be made thread-safe?
+
+Correct Answer
+
+Use the synchronized keyword
+on the getInstance() method.
+
+For high-performance applications,
+
+use
+
+• Double Checked Locking
+• Enum Singleton
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Does Singleton prevent object
+creation completely?
+
+Correct Answer
+
+No.
+
+It prevents multiple objects
+from being created through
+normal object creation.
+
+The object is created
+through getInstance().
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+Where is Singleton used
+in real applications?
+
+Correct Answer
+
+• Database Connection Manager
+• Logger
+• Configuration Manager
+• Cache Manager
+• Thread Pool Manager
+
+======================================================================
