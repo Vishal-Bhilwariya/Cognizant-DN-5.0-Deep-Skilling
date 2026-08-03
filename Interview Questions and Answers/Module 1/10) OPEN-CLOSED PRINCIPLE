@@ -1,0 +1,456 @@
+======================================================================
+MODULE 1 : DESIGN PATTERNS & PRINCIPLES
+TOPIC 10 : OPEN/CLOSED PRINCIPLE (OCP)
+======================================================================
+
+Q1. What is the Open/Closed Principle (OCP)?
+Why do we need it?
+
+Interview Ready Answer
+
+The Open/Closed Principle (OCP) states that
+
+"Software entities (classes, modules, functions)
+should be Open for Extension but Closed for Modification."
+
+Meaning
+
+Open for Extension
+
+• New functionality can be added.
+
+Closed for Modification
+
+• Existing tested code should not be modified
+  while adding new business features.
+
+Why do we need OCP?
+
+• Prevents breaking existing functionality.
+• Reduces Regression Bugs.
+• Improves Maintainability.
+• Improves Scalability.
+• Makes software easier to extend.
+
+Real-Life Example
+
+Smartphone
+
+When a new application is installed,
+
+the phone gains new functionality without
+modifying the operating system.
+
+The phone is
+
+Open for Extension
+
+Closed for Modification.
+
+======================================================================
+
+Q2. How do Interfaces and Polymorphism help
+implement OCP?
+
+Interview Ready Answer
+
+Interfaces
+
+• Define a common contract.
+• Existing interface remains unchanged.
+• New classes implement the interface.
+
+Example
+
+interface Payment{
+
+    void pay();
+}
+
+class UpiPayment implements Payment{
+
+    public void pay(){
+
+        System.out.println("UPI Payment");
+    }
+}
+
+Later,
+
+class CardPayment implements Payment{
+
+    public void pay(){
+
+        System.out.println("Card Payment");
+    }
+}
+
+No modification is made to the interface.
+
+------------------------------------------------------------
+
+Polymorphism
+
+Client code works with the interface reference.
+
+Payment payment = new UpiPayment();
+
+payment.pay();
+
+Later,
+
+payment = new CardPayment();
+
+payment.pay();
+
+Later,
+
+payment = new WalletPayment();
+
+payment.pay();
+
+The same statement
+
+payment.pay();
+
+works for every payment method.
+
+JVM executes the correct implementation
+using Runtime Polymorphism.
+
+Memory Trick
+
+Interface
+
+↓
+
+Defines WHAT should be done.
+
+Polymorphism
+
+↓
+
+Decides WHO will do it.
+
+OCP
+
+↓
+
+Add NEW implementations
+
+without modifying
+
+EXISTING code.
+
+======================================================================
+
+Q3. Design a Payment System using OCP.
+
+Interview Ready Answer
+
+Step 1
+
+Create Interface
+
+interface Payment{
+
+    void pay();
+}
+
+------------------------------------------------------------
+
+Step 2
+
+Create Separate Implementations
+
+class UpiPayment implements Payment{
+
+    public void pay(){
+
+        System.out.println("UPI");
+    }
+}
+
+class CardPayment implements Payment{
+
+    public void pay(){
+
+        System.out.println("CARD");
+    }
+}
+
+class NetBankingPayment implements Payment{
+
+    public void pay(){
+
+        System.out.println("NET BANKING");
+    }
+}
+
+------------------------------------------------------------
+
+Step 3
+
+Client Code
+
+Payment payment=new UpiPayment();
+
+payment.pay();
+
+payment=new CardPayment();
+
+payment.pay();
+
+payment=new NetBankingPayment();
+
+payment.pay();
+
+------------------------------------------------------------
+
+Benefits
+
+• No modification of existing classes.
+• Easy Bug Fixing.
+• Easy Testing.
+• Easy Maintenance.
+• Easy Extension.
+• Low Risk of Regression Bugs.
+
+======================================================================
+
+Q4. Does OCP mean we should never modify
+existing code?
+
+Interview Ready Answer
+
+No.
+
+OCP does NOT mean existing code should never
+be modified.
+
+It means
+
+New business features should be added by
+extending the system instead of modifying
+stable existing code.
+
+Existing code can still be modified for
+
+• Bug Fixes.
+• Security Updates.
+• Performance Improvements.
+• Refactoring.
+• API Upgrades.
+
+Example
+
+Current System
+
+Payment
+
+↓
+
+UPI Payment
+
+New Requirement
+
+↓
+
+Card Payment
+
+↓
+
+Wallet Payment
+
+↓
+
+Net Banking
+
+Instead of modifying UPI Payment,
+
+Create
+
+CardPayment
+
+WalletPayment
+
+NetBankingPayment
+
+Existing implementation remains unchanged.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+What is the official definition of OCP?
+
+Correct Answer
+
+Software entities should be
+
+Open for Extension
+
+and
+
+Closed for Modification.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Does OCP mean existing code should never
+be modified?
+
+Correct Answer
+
+No.
+
+Bug Fixes
+
+Security Fixes
+
+Performance Improvements
+
+Refactoring
+
+are acceptable.
+
+OCP mainly applies while adding
+new business functionality.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Which Java features are commonly used
+to implement OCP?
+
+Correct Answer
+
+• Interfaces
+
+• Abstract Classes
+
+• Runtime Polymorphism
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Why is Runtime Polymorphism important
+for OCP?
+
+Correct Answer
+
+Client code works with an Interface Reference.
+
+JVM decides the correct implementation
+at runtime.
+
+Therefore,
+
+new implementations can be added
+without changing client code.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Why is an Interface used in OCP?
+
+Correct Answer
+
+Interface defines a common contract.
+
+New implementations can be added without
+changing the existing contract.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Which design violates OCP?
+
+Correct Answer
+
+if(payment.equals("UPI")){
+
+}
+
+else if(payment.equals("CARD")){
+
+}
+
+else if(payment.equals("NETBANKING")){
+
+}
+
+Every new payment method requires modifying
+existing code.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Which design follows OCP?
+
+Correct Answer
+
+interface Payment{
+
+    void pay();
+}
+
+↓
+
+UpiPayment
+
+↓
+
+CardPayment
+
+↓
+
+WalletPayment
+
+↓
+
+NetBankingPayment
+
+Each new payment method is added as a new class.
+
+No existing class is modified.
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+What is the biggest benefit of OCP?
+
+Correct Answer
+
+New functionality can be added without
+breaking stable existing code.
+
+This reduces regression bugs and
+improves maintainability.
+
+======================================================================
