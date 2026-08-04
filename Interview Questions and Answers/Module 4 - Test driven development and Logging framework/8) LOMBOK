@@ -1,0 +1,338 @@
+======================================================================
+MODULE 4 : TEST DRIVEN DEVELOPMENT (TDD)
+TOPIC 8 : LOMBOK
+======================================================================
+
+Q1. What is Lombok?
+
+Interview Ready Answer
+
+Lombok is a Java library that automatically generates boilerplate
+code during compilation using annotations.
+
+It reduces the need to manually write getters, setters,
+constructors, toString(), equals(), and hashCode() methods.
+
+Key Points
+
+• Java library.
+• Reduces boilerplate code.
+• Uses annotations.
+• Generates code during compilation.
+• Improves code readability and productivity.
+
+======================================================================
+
+Q2. Why do we need Lombok?
+
+Interview Ready Answer
+
+Lombok reduces repetitive code, improves readability, and increases
+developer productivity by automatically generating commonly used
+methods.
+
+Advantages
+
+• Less boilerplate code.
+• Cleaner classes.
+• Better readability.
+• Faster development.
+• Easier maintenance.
+• Widely used in Spring Boot projects.
+
+Real-Life Example
+
+Without Lombok
+
+↓
+
+Write Getter
+
+↓
+
+Write Setter
+
+↓
+
+Write Constructor
+
+↓
+
+Write toString()
+
+↓
+
+Write equals()
+
+↓
+
+Write hashCode()
+
+------------------------------------------------------------
+
+With Lombok
+
+↓
+
+@Data
+
+↓
+
+Done
+
+======================================================================
+
+Q3. What is @Getter?
+
+Interview Ready Answer
+
+@Getter is a Lombok annotation that automatically generates Getter
+methods for all or selected fields during compilation.
+
+Purpose
+
+• Eliminates manual getter methods.
+• Improves code readability.
+
+======================================================================
+
+Q4. What is @Setter?
+
+Interview Ready Answer
+
+@Setter is a Lombok annotation that automatically generates Setter
+methods for fields during compilation.
+
+Purpose
+
+• Eliminates manual setter methods.
+• Reduces boilerplate code.
+
+======================================================================
+
+Q5. What is @Data?
+
+Interview Ready Answer
+
+@Data is the most commonly used Lombok annotation.
+
+It combines multiple Lombok annotations into a single annotation.
+
+@Data automatically generates:
+
+• @Getter
+• @Setter
+• toString()
+• equals()
+• hashCode()
+• @RequiredArgsConstructor
+
+Benefits
+
+• Less code.
+• Cleaner classes.
+• Easier maintenance.
+
+======================================================================
+
+Q6. What is @Builder?
+
+Interview Ready Answer
+
+@Builder is a Lombok annotation that implements the Builder Design
+Pattern.
+
+It provides a flexible and readable way to create objects,
+especially when a class has many fields.
+
+Advantages
+
+• Readable object creation.
+• Handles optional fields easily.
+• Improves maintainability.
+
+======================================================================
+
+Q7. What is @Slf4j?
+
+Interview Ready Answer
+
+@Slf4j is a Lombok annotation that automatically creates an SLF4J
+Logger object.
+
+It removes the need to manually declare and initialize a Logger.
+
+Purpose
+
+• Automatic Logger creation.
+• Reduces logging boilerplate code.
+
+======================================================================
+
+Q8. What is @Value?
+
+Interview Ready Answer
+
+@Value is a Lombok annotation used to create Immutable Classes.
+
+It makes all fields final, generates getters, and does not generate
+setters, preventing object modification after creation.
+
+Use Cases
+
+• DTOs
+• Configuration Classes
+• Constants
+
+======================================================================
+
+Q9. Difference between @Getter, @Setter, @Data, @Builder and @Value.
+
+Interview Ready Answer
+
+@Getter
+
+• Generates Getter methods.
+
+------------------------------------------------------------
+
+@Setter
+
+• Generates Setter methods.
+
+------------------------------------------------------------
+
+@Data
+
+• Generates Getter, Setter, toString(), equals(),
+  hashCode(), and RequiredArgsConstructor.
+
+------------------------------------------------------------
+
+@Builder
+
+• Implements Builder Design Pattern.
+• Provides readable object creation.
+
+------------------------------------------------------------
+
+@Value
+
+• Creates Immutable Classes.
+• Generates Getters only.
+• No Setters.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+Does Lombok execute at runtime?
+
+Correct Answer
+
+No.
+
+Lombok generates code during compilation.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Is Lombok part of Java?
+
+Correct Answer
+
+No.
+
+Lombok is an external Java library.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Does @Data generate Constructors?
+
+Correct Answer
+
+Yes.
+
+@Data generates @RequiredArgsConstructor.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Does @Value generate Setter methods?
+
+Correct Answer
+
+No.
+
+@Value creates immutable classes and does not generate setters.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Which annotation automatically creates a Logger?
+
+Correct Answer
+
+@Slf4j
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Which annotation is best for object creation with many fields?
+
+Correct Answer
+
+@Builder
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Can @Builder replace Constructors?
+
+Correct Answer
+
+No.
+
+@Builder provides an alternative and more readable way to create
+objects, but constructors can still exist.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+• Lombok is a Java library.
+• Generates boilerplate code during compilation.
+• @Getter → Generates Getter methods.
+• @Setter → Generates Setter methods.
+• @Data → Getter + Setter + toString() + equals() +
+  hashCode() + RequiredArgsConstructor.
+• @Builder → Builder Design Pattern.
+• @Slf4j → Generates SLF4J Logger.
+• @Value → Creates Immutable Class.
+• Lombok improves readability and reduces repetitive code.
+• Widely used in Spring Boot projects.
+
+======================================================================
