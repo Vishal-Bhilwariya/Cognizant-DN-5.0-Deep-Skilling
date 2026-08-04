@@ -1,0 +1,273 @@
+======================================================================
+MODULE 3 : PL/SQL PROGRAMMING
+TOPIC 9 : TRIGGERS
+======================================================================
+
+Q1. What is a Trigger in PL/SQL?
+
+Interview Ready Answer
+
+A Trigger is a stored PL/SQL program (database object) that
+automatically executes when a specified event occurs on a table,
+view or database.
+
+Purpose
+
+• Automate tasks.
+• Enforce business rules.
+• Maintain audit logs.
+• Validate data.
+• Synchronize related tables.
+
+======================================================================
+
+Q2. Why do we need Triggers?
+
+Interview Ready Answer
+
+Triggers are used to automatically execute business logic whenever
+a database event occurs without explicitly calling the trigger.
+
+Advantages
+
+• Automatic execution.
+• Data integrity.
+• Business rule enforcement.
+• Audit logging.
+• Reduces manual work.
+
+Real-Life Example
+
+Employee Audit System
+
+Whenever a new employee is inserted into the Employee table,
+
+↓
+
+Automatically insert the employee details into the Employee_Audit
+table.
+
+======================================================================
+
+Q3. What are the Types of Triggers in PL/SQL?
+
+Interview Ready Answer
+
+PL/SQL mainly provides four commonly used trigger types.
+
+1. BEFORE Trigger
+2. AFTER Trigger
+3. Statement-Level Trigger
+4. Row-Level Trigger
+
+======================================================================
+
+Q4. What is a BEFORE Trigger?
+
+Interview Ready Answer
+
+A BEFORE Trigger executes before the INSERT, UPDATE or DELETE
+operation is performed.
+
+Uses
+
+• Validate data.
+• Prevent invalid operations.
+• Modify values before storing.
+
+======================================================================
+
+Q5. What is an AFTER Trigger?
+
+Interview Ready Answer
+
+An AFTER Trigger executes after the INSERT, UPDATE or DELETE
+operation has completed successfully.
+
+Uses
+
+• Audit logging.
+• Notifications.
+• Maintain history tables.
+
+======================================================================
+
+Q6. What is a Statement-Level Trigger?
+
+Interview Ready Answer
+
+A Statement-Level Trigger executes once for an entire SQL statement,
+regardless of the number of rows affected.
+
+Example
+
+UPDATE Employee
+SET Salary = Salary + 1000;
+
+If 100 rows are updated,
+
+↓
+
+Statement Trigger executes only once.
+
+======================================================================
+
+Q7. What is a Row-Level Trigger?
+
+Interview Ready Answer
+
+A Row-Level Trigger executes once for every row affected by an SQL
+statement.
+
+Example
+
+UPDATE Employee
+SET Salary = Salary + 1000;
+
+If 100 rows are updated,
+
+↓
+
+Row-Level Trigger executes 100 times.
+
+======================================================================
+
+Q8. Difference between Statement-Level Trigger and Row-Level Trigger.
+
+Interview Ready Answer
+
+Statement-Level Trigger
+
+• Executes once.
+• Independent of affected rows.
+• Faster for statement-based logic.
+
+------------------------------------------------------------
+
+Row-Level Trigger
+
+• Executes once per affected row.
+• Used for row validation.
+• Suitable for row-specific business logic.
+
+======================================================================
+
+Q9. Difference between BEFORE Trigger and AFTER Trigger.
+
+Interview Ready Answer
+
+BEFORE Trigger
+
+• Executes before DML operation.
+• Used for validation.
+• Can modify values before insert/update.
+
+------------------------------------------------------------
+
+AFTER Trigger
+
+• Executes after successful DML operation.
+• Used for auditing.
+• Used for logging and notifications.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+Does a Trigger execute automatically?
+
+Correct Answer
+
+Yes.
+
+Triggers execute automatically when the specified event occurs.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Can we call a Trigger manually?
+
+Correct Answer
+
+No.
+
+Triggers are fired automatically by Oracle.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Which Trigger executes once for every affected row?
+
+Correct Answer
+
+Row-Level Trigger.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Which Trigger executes only once for an SQL statement?
+
+Correct Answer
+
+Statement-Level Trigger.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Which Trigger is generally used for validation?
+
+Correct Answer
+
+BEFORE Trigger.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Which Trigger is generally used for audit logging?
+
+Correct Answer
+
+AFTER Trigger.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+• Trigger = Stored PL/SQL program.
+• Executes automatically.
+• Fired on database events.
+• Used for:
+  • Data validation.
+  • Audit logging.
+  • Business rule enforcement.
+  • Automatic actions.
+• Types:
+  • BEFORE Trigger.
+  • AFTER Trigger.
+  • Statement-Level Trigger.
+  • Row-Level Trigger.
+• Statement Trigger → Executes once.
+• Row Trigger → Executes once per affected row.
+• BEFORE Trigger → Validation.
+• AFTER Trigger → Auditing & Logging.
+
+======================================================================
