@@ -1,0 +1,351 @@
+======================================================================
+MODULE 3 : PL/SQL PROGRAMMING
+TOPIC 5 : PL/SQL EXCEPTION HANDLING
+======================================================================
+
+Q1. What is Exception Handling in PL/SQL?
+
+Interview Ready Answer
+
+Exception Handling is a mechanism in PL/SQL used to handle runtime
+errors that occur during program execution.
+
+Instead of terminating the program abnormally, it allows the program
+to handle the error gracefully.
+
+Key Points
+
+• Handles runtime errors.
+• Improves program reliability.
+• Prevents abnormal termination of PL/SQL block.
+• Executed through the EXCEPTION section.
+
+======================================================================
+
+Q2. Why do we need Exception Handling?
+
+Interview Ready Answer
+
+Exception Handling is required to handle unexpected runtime errors
+without terminating the PL/SQL block abruptly.
+
+Advantages
+
+• Prevents abnormal program termination.
+• Displays meaningful error messages.
+• Improves application reliability.
+• Allows alternative actions after an error.
+
+Real-Life Example
+
+Bank Withdrawal
+
+If withdrawal amount > available balance
+
+↓
+
+Raise Exception
+
+↓
+
+Display
+
+"Insufficient Balance"
+
+Instead of terminating the transaction.
+
+======================================================================
+
+Q3. Difference between Compile-Time Error and Runtime Error.
+
+Interview Ready Answer
+
+Compile-Time Error
+
+• Occurs during compilation.
+• Caused by syntax or semantic mistakes.
+• Program cannot execute until fixed.
+
+Examples
+
+• Missing semicolon.
+• Misspelled keyword.
+• Invalid syntax.
+
+------------------------------------------------------------
+
+Runtime Error
+
+• Occurs during execution.
+• Program compiles successfully.
+• Can be handled using EXCEPTION block.
+
+Examples
+
+• ZERO_DIVIDE
+• NO_DATA_FOUND
+• TOO_MANY_ROWS
+• VALUE_ERROR
+
+======================================================================
+
+Q4. What are the Types of Exceptions in PL/SQL?
+
+Interview Ready Answer
+
+PL/SQL provides two types of exceptions.
+
+1. Predefined Exceptions
+2. User-Defined Exceptions
+
+======================================================================
+
+Q5. What are Predefined Exceptions?
+
+Interview Ready Answer
+
+Predefined exceptions are built-in exceptions provided by Oracle.
+
+They are automatically raised by the PL/SQL runtime system whenever
+a specific runtime error occurs.
+
+Examples
+
+• ZERO_DIVIDE
+• NO_DATA_FOUND
+• TOO_MANY_ROWS
+• VALUE_ERROR
+• INVALID_NUMBER
+
+======================================================================
+
+Q6. What are User-Defined Exceptions?
+
+Interview Ready Answer
+
+User-defined exceptions are custom exceptions created by the
+programmer to handle application-specific business rules.
+
+They are explicitly raised using the RAISE statement.
+
+Examples
+
+• Age must be greater than 18.
+• Salary cannot be negative.
+• Account balance below minimum balance.
+
+======================================================================
+
+Q7. Difference between Predefined Exception and User-Defined Exception.
+
+Interview Ready Answer
+
+Predefined Exception
+
+• Provided by Oracle.
+• Automatically raised.
+• Handles standard runtime errors.
+
+Examples
+
+• ZERO_DIVIDE
+• NO_DATA_FOUND
+
+------------------------------------------------------------
+
+User-Defined Exception
+
+• Created by programmer.
+• Raised using RAISE statement.
+• Handles business-specific rules.
+
+Examples
+
+• Invalid Age.
+• Invalid Salary.
+• Duplicate Registration.
+
+======================================================================
+
+Q8. What is the Purpose of EXCEPTION Block?
+
+Interview Ready Answer
+
+The EXCEPTION block is used to handle runtime errors that occur
+during execution of the BEGIN section.
+
+When an exception occurs, control is transferred to the matching
+exception handler.
+
+Purpose
+
+• Handle runtime errors.
+• Display meaningful messages.
+• Execute alternative logic.
+• Prevent abnormal termination.
+
+======================================================================
+
+Q9. What happens if there is no EXCEPTION Block?
+
+Interview Ready Answer
+
+If a runtime exception occurs and no matching EXCEPTION handler
+exists, the PL/SQL block terminates abnormally and Oracle returns
+the error to the calling program or application.
+
+Important
+
+The PL/SQL block terminates.
+
+The Oracle Database does NOT crash.
+
+======================================================================
+
+Q10. What is the RAISE Statement?
+
+Interview Ready Answer
+
+RAISE is a PL/SQL statement used to explicitly raise a user-defined
+exception.
+
+Purpose
+
+• Trigger custom exceptions.
+• Implement business rules.
+• Transfer control to EXCEPTION block.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+Does Exception Handling handle compile-time errors?
+
+Correct Answer
+
+No.
+
+It handles only runtime errors.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+What are the two types of exceptions in PL/SQL?
+
+Correct Answer
+
+1. Predefined Exceptions.
+2. User-Defined Exceptions.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Who raises predefined exceptions?
+
+Correct Answer
+
+Oracle Runtime System.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Who raises user-defined exceptions?
+
+Correct Answer
+
+Programmer using RAISE statement.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Does ZERO_DIVIDE occur when dividing 0 by 0?
+
+Correct Answer
+
+No.
+
+It occurs whenever any number is divided by zero.
+
+Example
+
+10 / 0
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+What does NO_DATA_FOUND mean?
+
+Correct Answer
+
+A SELECT...INTO statement did not return any row.
+
+It does NOT mean a variable is empty.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+What happens if no EXCEPTION block exists?
+
+Correct Answer
+
+The PL/SQL block terminates abnormally and Oracle returns the error
+to the calling program.
+
+The database does NOT crash.
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+Can predefined exceptions be raised manually?
+
+Correct Answer
+
+Yes.
+
+They can be raised explicitly using the RAISE statement, although
+they are normally raised automatically by Oracle.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+• Exception Handling handles runtime errors.
+• Improves reliability of PL/SQL programs.
+• Compile-Time Error → During compilation.
+• Runtime Error → During execution.
+• Two Types of Exceptions:
+  • Predefined Exception.
+  • User-Defined Exception.
+• Predefined Exceptions are raised automatically by Oracle.
+• User-Defined Exceptions are raised using RAISE.
+• EXCEPTION block handles runtime errors.
+• Without EXCEPTION block, PL/SQL block terminates abnormally.
+• ZERO_DIVIDE → Divide any number by zero.
+• NO_DATA_FOUND → SELECT...INTO returns no rows.
+
+======================================================================
