@@ -1,0 +1,346 @@
+======================================================================
+MODULE 4 : TEST DRIVEN DEVELOPMENT (TDD)
+TOPIC 4 : MOCKITO
+======================================================================
+
+Q1. What is Mockito?
+
+Interview Ready Answer
+
+Mockito is an open-source Java Mocking Framework used with JUnit for
+Unit Testing.
+
+It creates mock (fake) objects to replace real dependencies such as
+databases, repositories, REST APIs, or external services, allowing
+classes to be tested independently.
+
+Key Points
+
+• Java Mocking Framework.
+• Used with JUnit.
+• Creates fake (mock) objects.
+• Enables isolated Unit Testing.
+• Eliminates dependency on external systems.
+
+======================================================================
+
+Q2. Why do we need Mockito?
+
+Interview Ready Answer
+
+Mockito is used to isolate the class under test by replacing external
+dependencies with mock objects.
+
+This makes unit tests faster, independent, reliable, and easier to
+execute because they do not require real databases, APIs, or network
+connections.
+
+Advantages
+
+• Fast execution.
+• No database required.
+• No external API required.
+• Independent Unit Testing.
+• Easier debugging.
+• Reliable test execution.
+
+Real-Life Example
+
+UserService
+
+↓
+
+UserRepository
+
+↓
+
+Database
+
+Instead of connecting to the real database,
+
+Mockito creates a Mock Repository that returns predefined data.
+
+======================================================================
+
+Q3. What is Mocking?
+
+Interview Ready Answer
+
+Mocking is the process of creating fake objects that replace real
+dependencies during Unit Testing.
+
+These mock objects simulate the behavior of real objects without
+performing actual operations.
+
+Example
+
+Real Database
+
+↓
+
+Mock Database
+
+No real database connection is established.
+
+======================================================================
+
+Q4. What is Stubbing?
+
+Interview Ready Answer
+
+Stubbing is the process of defining the behavior of a mock object.
+
+It specifies what value or response the mock object should return
+when one of its methods is called.
+
+Example
+
+Mock Repository
+
+↓
+
+findUser(1)
+
+↓
+
+Return "Vishal"
+
+No database is accessed.
+
+======================================================================
+
+Q5. Difference between Mocking and Stubbing.
+
+Interview Ready Answer
+
+Mocking
+
+• Creates a fake object.
+• Replaces a real dependency.
+• First step in Mockito.
+
+------------------------------------------------------------
+
+Stubbing
+
+• Defines the behavior of the mock object.
+• Specifies predefined return values.
+• Performed after creating the mock.
+
+Memory Trick
+
+Mock
+
+↓
+
+Create Fake Object
+
+Stub
+
+↓
+
+Teach Fake Object
+what to return.
+
+======================================================================
+
+Q6. What is verify() in Mockito?
+
+Interview Ready Answer
+
+verify() is a Mockito method used to verify whether a particular
+method on a mock object was invoked during test execution.
+
+It can also verify how many times that method was called.
+
+Purpose
+
+• Verify method invocation.
+• Verify interaction with dependencies.
+• Verify invocation count.
+
+======================================================================
+
+Q7. What is @Mock?
+
+Interview Ready Answer
+
+@Mock is a Mockito annotation used to create a mock (fake) object.
+
+It replaces a real dependency such as a Repository or Service with
+a fake implementation during Unit Testing.
+
+======================================================================
+
+Q8. What is @InjectMocks?
+
+Interview Ready Answer
+
+@InjectMocks is a Mockito annotation that injects all created mock
+objects into the class being tested.
+
+It allows the class under test to use mock dependencies instead of
+real implementations.
+
+======================================================================
+
+Q9. What is @MockBean?
+
+Interview Ready Answer
+
+@MockBean is a Spring Boot testing annotation that replaces a real
+Spring Bean with a mock object inside the Spring Application Context.
+
+It is mainly used during Spring Boot Testing.
+
+======================================================================
+
+Q10. Difference between @Mock, @InjectMocks and @MockBean.
+
+Interview Ready Answer
+
+@Mock
+
+• Creates a Mockito mock object.
+• Used in Unit Testing.
+• Does not load Spring Context.
+
+------------------------------------------------------------
+
+@InjectMocks
+
+• Injects mock objects into the class under test.
+• Used together with @Mock.
+
+------------------------------------------------------------
+
+@MockBean
+
+• Creates a mock Spring Bean.
+• Replaces a real bean in Spring Application Context.
+• Used in Spring Boot Tests.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+Is Mockito a Testing Framework?
+
+Correct Answer
+
+No.
+
+Mockito is a Mocking Framework.
+
+JUnit is the Testing Framework.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Does Mockito replace JUnit?
+
+Correct Answer
+
+No.
+
+Mockito works together with JUnit.
+
+JUnit executes the tests.
+
+Mockito creates mock objects.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+What comes first: Mocking or Stubbing?
+
+Correct Answer
+
+First create the Mock object.
+
+Then define its behavior using Stubbing.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Does Mocking connect to a real database?
+
+Correct Answer
+
+No.
+
+Mock objects never connect to real external systems.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+What does verify() check?
+
+Correct Answer
+
+It checks whether a particular method on a mock object was called.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Does @InjectMocks create mock objects?
+
+Correct Answer
+
+No.
+
+@Mock creates mock objects.
+
+@InjectMocks only injects them into the class under test.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Can @MockBean be used in plain JUnit tests?
+
+Correct Answer
+
+No.
+
+@MockBean is a Spring Boot testing annotation and works with the
+Spring Application Context.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+• Mockito is a Java Mocking Framework.
+• Used together with JUnit.
+• Creates fake objects for Unit Testing.
+• Mocking = Create fake object.
+• Stubbing = Define fake object's behavior.
+• verify() checks whether a method was invoked.
+• @Mock creates a mock object.
+• @InjectMocks injects mock objects into the class under test.
+• @MockBean replaces a Spring Bean with a mock.
+• @Mock → Unit Testing.
+• @MockBean → Spring Boot Testing.
+
+======================================================================
