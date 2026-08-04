@@ -1,0 +1,211 @@
+======================================================================
+MODULE 4 : TEST DRIVEN DEVELOPMENT (TDD)
+TOPIC 2 : UNIT TESTING
+======================================================================
+
+Q1. What is Unit Testing?
+
+Interview Ready Answer
+
+Unit Testing is a software testing technique in which the smallest
+testable unit of an application, such as a method, function, or small
+class, is tested independently to verify that it works correctly.
+
+It is usually performed by developers before integration testing to
+detect bugs early.
+
+Key Points
+
+• Tests the smallest unit of code.
+• Performed independently.
+• Usually done by developers.
+• Detects bugs early.
+• Improves code quality.
+
+======================================================================
+
+Q2. Why do we need Unit Testing?
+
+Interview Ready Answer
+
+Unit Testing is required to verify that each individual unit of code
+works correctly before integrating it with other modules.
+
+It helps detect defects early, making debugging, maintenance, and
+future code changes much easier.
+
+Advantages
+
+• Detects bugs at an early stage.
+• Improves software quality.
+• Easier debugging.
+• Easier maintenance.
+• Safer refactoring.
+• Gives developers confidence while modifying code.
+
+Real-Life Example
+
+Banking Application
+
+Transfer Money
+
+↓
+
+Validate Account
+
+↓
+
+Check Balance
+
+↓
+
+Deduct Amount
+
+↓
+
+Send Notification
+
+If the Check Balance() method has a bug, Unit Testing detects it
+before the complete application is integrated.
+
+======================================================================
+
+Q3. Difference between Unit Testing and Integration Testing.
+
+Interview Ready Answer
+
+Unit Testing
+
+• Tests a single method, function, or class.
+• Checks individual business logic.
+• Performed before Integration Testing.
+• Fast execution.
+• Easier to debug.
+
+Example
+
+Testing calculateSalary() method.
+
+------------------------------------------------------------
+
+Integration Testing
+
+• Tests multiple modules together.
+• Checks communication between modules.
+• Performed after Unit Testing.
+• Slower than Unit Testing.
+• Harder to debug.
+
+Example
+
+Testing Login Module → Service → Database.
+
+======================================================================
+
+Q4. What is a Unit in Unit Testing?
+
+Interview Ready Answer
+
+A Unit is the smallest testable part of an application.
+
+It is usually:
+
+• A method
+• A function
+• A small class
+
+Each unit is tested independently without depending on other modules.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+Who usually performs Unit Testing?
+
+Correct Answer
+
+Developers.
+
+Not the QA team.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+What is a Unit?
+
+Correct Answer
+
+The smallest testable part of an application, usually a method,
+function, or small class.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Does Unit Testing verify communication between modules?
+
+Correct Answer
+
+No.
+
+It verifies only an individual unit.
+
+Communication between modules is verified during Integration Testing.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Which testing is performed first?
+
+Correct Answer
+
+Unit Testing.
+
+Integration Testing is performed after Unit Testing.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Can Unit Testing completely replace Integration Testing?
+
+Correct Answer
+
+No.
+
+Unit Testing checks individual units.
+
+Integration Testing verifies that different modules work together
+correctly.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+• Unit Testing tests the smallest unit of code.
+• A Unit = Method / Function / Small Class.
+• Performed independently.
+• Usually performed by developers.
+• Detects bugs early.
+• Improves code quality.
+• Makes debugging easier.
+• Gives confidence during refactoring.
+• Unit Testing is performed before Integration Testing.
+• Unit Testing → Individual logic.
+• Integration Testing → Communication between modules.
+
+======================================================================

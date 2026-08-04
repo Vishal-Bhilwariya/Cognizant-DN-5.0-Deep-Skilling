@@ -1,0 +1,273 @@
+======================================================================
+MODULE 4 : TEST DRIVEN DEVELOPMENT (TDD)
+TOPIC 3 : JUNIT
+======================================================================
+
+Q1. What is JUnit?
+
+Interview Ready Answer
+
+JUnit is an open-source Java testing framework used to write and
+execute Unit Tests.
+
+It helps developers automatically verify that individual methods or
+classes work correctly by executing test cases.
+
+Key Points
+
+• Open-source Java testing framework.
+• Used for Unit Testing.
+• Automates test execution.
+• Supports Test-Driven Development (TDD).
+• Displays test results as PASS or FAIL.
+
+======================================================================
+
+Q2. Why do we need JUnit?
+
+Interview Ready Answer
+
+JUnit is used to automate Unit Testing, detect bugs early, reduce
+manual testing effort, and improve software quality.
+
+It also provides confidence that code changes do not break existing
+functionality.
+
+Advantages
+
+• Automates testing.
+• Detects bugs early.
+• Saves development time.
+• Supports TDD.
+• Simplifies regression testing.
+• Improves software quality.
+
+Real-Life Example
+
+Calculator
+
+Expected
+
+2 + 3 = 5
+
+↓
+
+JUnit automatically executes the test.
+
+↓
+
+PASS or FAIL is displayed.
+
+Instead of checking the result manually.
+
+======================================================================
+
+Q3. What is the purpose of @Test annotation?
+
+Interview Ready Answer
+
+@Test is a JUnit annotation used to mark a method as a test case.
+
+JUnit executes only those methods that are annotated with @Test.
+
+Important
+
+Without @Test,
+
+JUnit does NOT recognize the method as a test case.
+
+======================================================================
+
+Q4. What are Assertions in JUnit?
+
+Interview Ready Answer
+
+Assertions are methods used to verify whether the actual output
+matches the expected output.
+
+If both values are equal, the test passes.
+Otherwise, the test fails.
+
+Most Common Assertion
+
+assertEquals(expected, actual)
+
+Purpose
+
+Compares the expected result with the actual result.
+
+======================================================================
+
+Q5. What is the Arrange-Act-Assert (AAA) Pattern?
+
+Interview Ready Answer
+
+The Arrange-Act-Assert (AAA) Pattern is a standard structure for
+writing Unit Test cases.
+
+Arrange
+
+Prepare objects and test data.
+
+↓
+
+Act
+
+Execute the method under test.
+
+↓
+
+Assert
+
+Verify the result using assertions.
+
+Benefits
+
+• Improves readability.
+• Makes test cases easy to understand.
+• Provides a standard testing structure.
+
+======================================================================
+
+Q6. What are @BeforeEach and @AfterEach?
+
+Interview Ready Answer
+
+@BeforeEach
+
+Runs before every test case.
+
+Used to initialize objects, resources, or test data required for the
+test.
+
+------------------------------------------------------------
+
+@AfterEach
+
+Runs after every test case.
+
+Used to clean up resources or reset the test environment after the
+test finishes.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+Is JUnit a testing framework or a programming language?
+
+Correct Answer
+
+JUnit is a Java Testing Framework.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Can JUnit execute a method without the @Test annotation?
+
+Correct Answer
+
+No.
+
+JUnit executes only methods marked with @Test.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+What happens if an assertion fails?
+
+Correct Answer
+
+The test case fails immediately.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+What is the purpose of assertEquals()?
+
+Correct Answer
+
+It compares the expected value with the actual value.
+
+If both are equal, the test passes.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Does @BeforeEach execute only once for the entire test class?
+
+Correct Answer
+
+No.
+
+It executes before EVERY test method.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Does @AfterEach execute before the test method?
+
+Correct Answer
+
+No.
+
+It executes after every test method.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+What is the correct order in the AAA Pattern?
+
+Correct Answer
+
+Arrange
+
+↓
+
+Act
+
+↓
+
+Assert
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+• JUnit is an open-source Java Unit Testing framework.
+• Used to write and execute Unit Tests.
+• Supports Test-Driven Development (TDD).
+• @Test marks a method as a test case.
+• Assertions verify expected vs actual results.
+• Most common assertion:
+  • assertEquals(expected, actual)
+• AAA Pattern:
+  • Arrange
+  • Act
+  • Assert
+• @BeforeEach runs before every test.
+• @AfterEach runs after every test.
+• JUnit automates testing and displays PASS/FAIL.
+
+======================================================================
