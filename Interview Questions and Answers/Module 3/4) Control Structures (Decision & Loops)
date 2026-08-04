@@ -1,0 +1,337 @@
+======================================================================
+MODULE 3 : PL/SQL PROGRAMMING
+TOPIC 4 : PL/SQL CONTROL STRUCTURES (DECISION & LOOPS)
+======================================================================
+
+Q1. What are Control Structures in PL/SQL?
+
+Interview Ready Answer
+
+Control structures are programming constructs that control the flow
+of execution of a PL/SQL program.
+
+They allow the program to make decisions and execute statements
+repeatedly based on conditions.
+
+Key Points
+
+• Controls program flow.
+• Implements business logic.
+• Avoids repetitive code.
+• Makes programs dynamic.
+
+Types
+
+1. Decision Making Statements
+2. Looping Statements
+
+======================================================================
+
+Q2. Why do we need Control Structures?
+
+Interview Ready Answer
+
+Control structures are used to make decisions and repeat a block of
+code based on business requirements.
+
+Uses
+
+• Implement business logic.
+• Execute code conditionally.
+• Repeat tasks automatically.
+• Reduce duplicate code.
+• Improve readability.
+
+Real-Life Example
+
+ATM Machine
+
+IF balance >= withdrawal amount
+
+→ Allow withdrawal
+
+ELSE
+
+→ Show "Insufficient Balance"
+
+======================================================================
+
+Q3. What are Decision Making Statements?
+
+Interview Ready Answer
+
+Decision making statements execute different blocks of code based on
+whether a condition is true or false.
+
+Types
+
+• IF
+• IF-ELSE
+• IF-ELSIF
+• CASE
+
+Purpose
+
+• Choose one execution path.
+• Execute code conditionally.
+
+======================================================================
+
+Q4. What are Looping Statements?
+
+Interview Ready Answer
+
+Looping statements repeatedly execute a block of code until a
+condition becomes false or for a fixed number of iterations.
+
+Types
+
+• Simple LOOP
+• WHILE LOOP
+• FOR LOOP
+
+Purpose
+
+• Repeat code.
+• Reduce duplicate statements.
+• Automate repetitive tasks.
+
+======================================================================
+
+Q5. Difference between Decision Making Statements and Looping
+Statements.
+
+Interview Ready Answer
+
+Decision Making Statements
+
+• Used to make decisions.
+• Executes one matching block.
+• Based on conditions.
+
+Examples
+
+• IF
+• IF-ELSE
+• CASE
+
+------------------------------------------------------------
+
+Looping Statements
+
+• Used to repeat execution.
+• Executes the same block multiple times.
+• Stops after condition becomes false or loop completes.
+
+Examples
+
+• LOOP
+• WHILE LOOP
+• FOR LOOP
+
+======================================================================
+
+Q6. Difference between IF and CASE.
+
+Interview Ready Answer
+
+IF
+
+• Used for simple and complex conditions.
+• Supports logical operators.
+• Suitable for range-based conditions.
+• More flexible.
+
+------------------------------------------------------------
+
+CASE
+
+• Used when comparing one expression with multiple values.
+• More readable than multiple IF-ELSE statements.
+• Automatically exits after executing the matching branch.
+• Does NOT require BREAK.
+
+======================================================================
+
+Q7. What are the Looping Statements available in PL/SQL?
+
+Interview Ready Answer
+
+PL/SQL provides three looping statements.
+
+1. Simple LOOP
+2. WHILE LOOP
+3. FOR LOOP
+
+======================================================================
+
+Q8. Difference between FOR LOOP and WHILE LOOP.
+
+Interview Ready Answer
+
+FOR LOOP
+
+• Number of iterations is known.
+• Iterates over a predefined range.
+• Counter is managed automatically.
+
+------------------------------------------------------------
+
+WHILE LOOP
+
+• Number of iterations is unknown.
+• Executes until condition becomes false.
+• Condition is checked before every iteration.
+
+======================================================================
+
+Q9. When should we use FOR LOOP?
+
+Interview Ready Answer
+
+FOR LOOP should be used when the number of iterations is known in
+advance.
+
+Examples
+
+• Print numbers from 1 to 100.
+• Process fixed number of records.
+• Fixed range iteration.
+
+======================================================================
+
+Q10. When should we use WHILE LOOP?
+
+Interview Ready Answer
+
+WHILE LOOP should be used when the number of iterations is not known
+in advance and execution depends on a condition.
+
+Examples
+
+• Read data until user exits.
+• Process records until no data remains.
+• Execute until a condition becomes false.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+Does PL/SQL support switch statement?
+
+Correct Answer
+
+No.
+
+PL/SQL provides CASE statement, not SWITCH.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Does CASE require BREAK like Java?
+
+Correct Answer
+
+No.
+
+PL/SQL CASE automatically exits after executing the matching branch.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Does PL/SQL support DO-WHILE loop?
+
+Correct Answer
+
+No.
+
+PL/SQL supports
+
+• Simple LOOP
+• WHILE LOOP
+• FOR LOOP
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Which loop is used when number of iterations is known?
+
+Correct Answer
+
+FOR LOOP.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Which loop is used when number of iterations is unknown?
+
+Correct Answer
+
+WHILE LOOP.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Can IF handle complex conditions?
+
+Correct Answer
+
+Yes.
+
+IF supports comparison and logical operators such as AND, OR and NOT.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Which is more readable for multiple values: IF or CASE?
+
+Correct Answer
+
+CASE.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+• Control Structures control the flow of execution.
+• Two Categories:
+  • Decision Making
+  • Looping
+• Decision Statements:
+  • IF
+  • IF-ELSE
+  • IF-ELSIF
+  • CASE
+• Looping Statements:
+  • Simple LOOP
+  • WHILE LOOP
+  • FOR LOOP
+• CASE does not require BREAK.
+• PL/SQL does not support SWITCH.
+• PL/SQL does not support DO-WHILE.
+• FOR LOOP → Known iterations.
+• WHILE LOOP → Unknown iterations.
+
+======================================================================
