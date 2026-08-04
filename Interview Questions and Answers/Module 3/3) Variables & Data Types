@@ -1,0 +1,341 @@
+======================================================================
+MODULE 3 : PL/SQL PROGRAMMING
+TOPIC 3 : PL/SQL VARIABLES & DATA TYPES
+======================================================================
+
+Q1. What is a Variable in PL/SQL?
+
+Interview Ready Answer
+
+A variable is a named memory location used to store data temporarily
+during the execution of a PL/SQL program.
+
+Variables are used to store input values, query results, intermediate
+calculations and other temporary data required during execution.
+
+Key Points
+
+• Stores data temporarily.
+• Declared in the DECLARE section.
+• Has a name and data type.
+• Can be assigned and modified during execution.
+
+======================================================================
+
+Q2. Why do we need Variables in PL/SQL?
+
+Interview Ready Answer
+
+Variables are used to store and manipulate data during program
+execution. They make PL/SQL programs dynamic and reusable.
+
+Uses
+
+• Store user input.
+• Store values fetched from database.
+• Perform calculations.
+• Pass values between statements.
+• Improve code readability.
+
+======================================================================
+
+Q3. What is Variable Declaration?
+
+Interview Ready Answer
+
+Variable declaration is the process of defining a variable by
+specifying its name and data type.
+
+At this stage, memory is allocated for the variable.
+
+Example
+
+v_salary NUMBER;
+
+======================================================================
+
+Q4. What is Variable Initialization?
+
+Interview Ready Answer
+
+Variable initialization is the process of assigning an initial value
+to a declared variable before it is used.
+
+Example
+
+v_salary NUMBER := 50000;
+
+Important
+
+Declaration
+
+↓
+
+Initialization
+
+======================================================================
+
+Q5. Difference between Variable Declaration and Initialization.
+
+Interview Ready Answer
+
+Variable Declaration
+
+• Defines variable.
+• Specifies data type.
+• Memory is allocated.
+• Value may or may not be assigned.
+
+Variable Initialization
+
+• Assigns value to variable.
+• Done after declaration or during declaration.
+• Variable becomes ready for use.
+
+======================================================================
+
+Q6. What is %TYPE?
+
+Interview Ready Answer
+
+%TYPE is a PL/SQL attribute that allows a variable to inherit the
+data type of a table column or another variable.
+
+Purpose
+
+• Avoid hardcoding data types.
+• Prevent data type mismatch.
+• Improve maintainability.
+• Automatically reflects changes in database schema.
+
+Example
+
+v_salary employees.salary%TYPE;
+
+Important
+
+If the data type of employees.salary changes, the variable
+v_salary automatically adopts the new data type.
+
+======================================================================
+
+Q7. Why do we use %TYPE instead of manually specifying the data type?
+
+Interview Ready Answer
+
+%TYPE is used to avoid manually writing data types.
+
+Advantages
+
+• Automatic data type inheritance.
+• Less maintenance.
+• Prevents data type mismatch.
+• Code automatically adapts if column data type changes.
+• Better code readability.
+
+======================================================================
+
+Q8. What is %ROWTYPE?
+
+Interview Ready Answer
+
+%ROWTYPE is a PL/SQL attribute that allows a record variable to
+inherit the structure of an entire table row or cursor row.
+
+Instead of storing a single value, it stores all columns of a row.
+
+Example
+
+emp_rec employees%ROWTYPE;
+
+Suppose Employees table contains
+
+• employee_id
+• name
+• salary
+• department_id
+
+Then emp_rec contains all four fields.
+
+======================================================================
+
+Q9. Difference between %TYPE and %ROWTYPE.
+
+Interview Ready Answer
+
+%TYPE
+
+• Inherits one column's data type.
+• Stores one value.
+• Used for normal variables.
+
+Example
+
+salary employees.salary%TYPE;
+
+------------------------------------------------------------
+
+%ROWTYPE
+
+• Inherits entire row structure.
+• Stores multiple values.
+• Used for record variables.
+
+Example
+
+emp employees%ROWTYPE;
+
+======================================================================
+
+Q10. Difference between SQL and PL/SQL Variables.
+
+Interview Ready Answer
+
+SQL
+
+• Standard SQL does not support procedural variables.
+• Uses table aliases and column aliases (not variables).
+• Used only for database operations.
+
+PL/SQL
+
+• Supports variables.
+• Stores temporary data.
+• Used for calculations and business logic.
+• Variables exist during program execution.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+Can a variable be declared without initialization?
+
+Correct Answer
+
+Yes.
+
+A variable can be declared without assigning an initial value.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Can a variable be initialized without declaration?
+
+Correct Answer
+
+No.
+
+A variable must be declared before it can be initialized.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+What is the difference between declaration and initialization?
+
+Correct Answer
+
+Declaration
+
+→ Defines variable and data type.
+
+Initialization
+
+→ Assigns value to the variable.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Does %TYPE store the value of a database column?
+
+Correct Answer
+
+No.
+
+It inherits only the data type, not the value.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+If the data type of a database column changes, do we need to modify
+a variable declared using %TYPE?
+
+Correct Answer
+
+No.
+
+The variable automatically inherits the updated data type.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Does %ROWTYPE store one column or the entire row?
+
+Correct Answer
+
+Entire row.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Can %TYPE be used with another variable?
+
+Correct Answer
+
+Yes.
+
+It can inherit the data type of another variable as well as a table
+column.
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+Are table aliases in SQL variables?
+
+Correct Answer
+
+No.
+
+Table aliases and column aliases are not variables.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+• Variable = Named memory location.
+• Stores temporary data during execution.
+• Variables are declared in DECLARE section.
+• Declaration → Defines variable and data type.
+• Initialization → Assigns initial value.
+• %TYPE → Inherits one column's data type.
+• %ROWTYPE → Inherits entire row structure.
+• %TYPE improves maintainability.
+• %ROWTYPE is mainly used with SELECT INTO.
+• SQL does not support procedural variables.
+• PL/SQL supports variables for business logic.
+
+======================================================================
