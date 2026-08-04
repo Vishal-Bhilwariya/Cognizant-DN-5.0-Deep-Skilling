@@ -319,3 +319,67 @@ QUICK REVISION
 • Remote = Collaboration.
 • Commits happen locally.
 • Push/Pull synchronize both repositories.
+
+====================================================================
+QUESTION 6 : Why do software development teams create branches instead
+of working directly on the main branch?
+====================================================================
+
+Interview Ready Answer
+
+Software development teams create branches to isolate feature
+development from the main branch. Each developer works on a
+separate branch, allowing multiple features to be developed
+independently without affecting the stable codebase. After the
+feature is completed, tested, and reviewed, it is merged into
+the main branch.
+
+Definition
+
+Branch:
+An independent line of development used to implement features,
+bug fixes, or experiments without affecting the main branch.
+
+Purpose
+
+• Isolate feature development
+• Protect the main branch
+• Enable parallel development
+• Reduce merge conflicts
+• Allow code review before merging
+
+Important Keywords
+
+• Feature Branch
+• Stable Main Branch
+• Parallel Development
+• Pull Request
+• Merge
+
+Memory Trick
+
+Main = Stable
+
+Feature Branch = Development
+
+====================================================================
+INTERVIEW TRAP
+====================================================================
+
+Q:
+Should developers work directly on the main branch?
+
+Answer:
+No.
+
+Developers should work on feature branches. Only tested and
+reviewed code should be merged into the main branch.
+
+====================================================================
+QUICK REVISION
+====================================================================
+
+• Never develop directly on main.
+• Each feature gets its own branch.
+• Main should remain stable.
+• Merge only after testing and review.
