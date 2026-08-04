@@ -107,3 +107,71 @@ QUICK REVISION
 • Version = Project snapshots.
 • Control = Manage source code versions.
 • Git works offline because the repository is local.
+
+====================================================================
+QUESTION 3 : What is the difference between Git and GitHub?
+====================================================================
+
+Interview Ready Answer
+
+Git is a Distributed Version Control System (DVCS) installed on
+the local machine. It tracks source code changes, maintains
+version history, manages branches, and supports offline work.
+
+GitHub is a cloud-based hosting platform for Git repositories.
+It stores repositories online, enables collaboration, code
+reviews, Pull Requests, and acts as a central backup.
+
+Definition
+
+Git
+• Software
+• Installed locally
+• Version Control System
+• Works offline
+
+GitHub
+• Cloud platform
+• Hosts Git repositories
+• Collaboration
+• Pull Requests
+• Backup
+
+Important Keywords
+
+• DVCS
+• Local
+• Cloud Platform
+• Repository Hosting
+• Collaboration
+
+Memory Trick
+
+Git = Manage
+
+GitHub = Share
+
+====================================================================
+INTERVIEW TRAP
+====================================================================
+
+Q:
+Can Git work without GitHub?
+
+Answer:
+Yes.
+
+Git works completely on the local machine.
+GitHub is only required for remote collaboration and repository hosting.
+
+====================================================================
+QUICK REVISION
+====================================================================
+
+• Git is software.
+• GitHub is a cloud platform.
+• Git tracks versions.
+• GitHub hosts repositories.
+• Git works offline.
+• GitHub enables collaboration.
+
