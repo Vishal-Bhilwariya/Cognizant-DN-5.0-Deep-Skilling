@@ -1,0 +1,340 @@
+======================================================================
+MODULE 3 : PL/SQL PROGRAMMING
+TOPIC 6 : PL/SQL CURSORS
+======================================================================
+
+Q1. What is a Cursor in PL/SQL?
+
+Interview Ready Answer
+
+A cursor is a pointer to the context area that stores the result set
+of an SQL statement.
+
+It allows PL/SQL to process query results one row at a time.
+
+Key Points
+
+• Pointer to the context area.
+• Used for row-by-row processing.
+• Processes query results.
+• Mainly used with SELECT statements returning multiple rows.
+
+======================================================================
+
+Q2. Why do we need a Cursor?
+
+Interview Ready Answer
+
+A cursor is required when a query returns multiple rows and each row
+needs to be processed individually.
+
+SQL retrieves the complete result set, whereas a cursor allows
+PL/SQL to process one row at a time.
+
+Uses
+
+• Row-by-row processing.
+• Apply business logic on each row.
+• Perform calculations.
+• Validate each record individually.
+
+======================================================================
+
+Q3. What are the Types of Cursors?
+
+Interview Ready Answer
+
+PL/SQL provides two types of cursors.
+
+1. Implicit Cursor
+2. Explicit Cursor
+
+======================================================================
+
+Q4. What is an Implicit Cursor?
+
+Interview Ready Answer
+
+An implicit cursor is automatically created and managed by Oracle
+whenever an SQL statement is executed.
+
+Programmer does not create or manage it.
+
+Used With
+
+• INSERT
+• UPDATE
+• DELETE
+• SELECT...INTO (Single Row)
+
+Key Points
+
+• Created automatically.
+• Managed by Oracle.
+• No OPEN, FETCH or CLOSE required.
+
+======================================================================
+
+Q5. What is an Explicit Cursor?
+
+Interview Ready Answer
+
+An explicit cursor is a cursor created by the programmer to process
+multiple rows returned by a SELECT statement.
+
+The programmer is responsible for opening, fetching and closing
+the cursor.
+
+Key Points
+
+• Created manually.
+• Used for multiple-row queries.
+• Supports row-by-row processing.
+• Requires OPEN, FETCH and CLOSE.
+
+======================================================================
+
+Q6. Difference between Implicit Cursor and Explicit Cursor.
+
+Interview Ready Answer
+
+Implicit Cursor
+
+• Automatically created by Oracle.
+• No programmer control.
+• Used for single-row queries and DML statements.
+• OPEN, FETCH and CLOSE handled automatically.
+
+------------------------------------------------------------
+
+Explicit Cursor
+
+• Created by programmer.
+• Programmer controls execution.
+• Used for multiple-row queries.
+• Requires OPEN, FETCH and CLOSE statements.
+
+======================================================================
+
+Q7. Why can't SELECT...INTO be used for multiple rows?
+
+Interview Ready Answer
+
+SELECT...INTO is designed to retrieve exactly one row.
+
+If the query returns
+
+• No rows → NO_DATA_FOUND
+• More than one row → TOO_MANY_ROWS
+
+Therefore, SELECT...INTO cannot be used for multiple-row queries.
+
+For multiple rows, an Explicit Cursor should be used.
+
+======================================================================
+
+Q8. Why do we use Explicit Cursor?
+
+Interview Ready Answer
+
+Explicit cursors are used when a SELECT statement returns multiple
+rows and each row needs to be processed individually.
+
+Advantages
+
+• Processes one row at a time.
+• Suitable for business logic.
+• Gives programmer complete control.
+• Handles multiple-row result sets.
+
+======================================================================
+
+Q9. What are the basic operations performed on an Explicit Cursor?
+
+Interview Ready Answer
+
+An explicit cursor performs four operations.
+
+1. Declare Cursor
+2. OPEN Cursor
+3. FETCH Rows
+4. CLOSE Cursor
+
+Purpose
+
+DECLARE
+
+→ Defines the cursor.
+
+OPEN
+
+→ Executes the query.
+
+FETCH
+
+→ Retrieves one row at a time.
+
+CLOSE
+
+→ Releases cursor resources.
+
+======================================================================
+
+Q10. When should we use Cursor instead of SQL?
+
+Interview Ready Answer
+
+A cursor should be used when row-by-row processing is required.
+
+Use SQL
+
+• Bulk operations.
+• Set-based processing.
+• Simple data retrieval.
+
+Use Cursor
+
+• Business logic on each row.
+• Validation for each record.
+• Processing multiple rows individually.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+Is Cursor a table?
+
+Correct Answer
+
+No.
+
+A cursor is a pointer to the context area that stores the result set.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Can SELECT...INTO return multiple rows?
+
+Correct Answer
+
+No.
+
+It must return exactly one row.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+What happens if SELECT...INTO returns no rows?
+
+Correct Answer
+
+NO_DATA_FOUND exception is raised.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+What happens if SELECT...INTO returns multiple rows?
+
+Correct Answer
+
+TOO_MANY_ROWS exception is raised.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Who creates an Implicit Cursor?
+
+Correct Answer
+
+Oracle automatically creates and manages it.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Who creates an Explicit Cursor?
+
+Correct Answer
+
+Programmer.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Does an Explicit Cursor require OPEN, FETCH and CLOSE?
+
+Correct Answer
+
+Yes.
+
+Programmer must explicitly perform these operations.
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+Can an Implicit Cursor process multiple rows?
+
+Correct Answer
+
+No.
+
+For multiple-row processing, use an Explicit Cursor.
+
+---------------------------------------------------------------------
+
+Trap 9
+
+Question
+
+Which cursor gives more control to the programmer?
+
+Correct Answer
+
+Explicit Cursor.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+• Cursor = Pointer to context area.
+• Used for row-by-row processing.
+• Two Types:
+  • Implicit Cursor
+  • Explicit Cursor
+• Implicit Cursor → Created automatically by Oracle.
+• Explicit Cursor → Created manually by programmer.
+• SELECT...INTO returns exactly one row.
+• NO_DATA_FOUND → No row returned.
+• TOO_MANY_ROWS → More than one row returned.
+• Explicit Cursor Operations:
+  • DECLARE
+  • OPEN
+  • FETCH
+  • CLOSE
+• Use Explicit Cursor for multiple-row queries.
+
+======================================================================
