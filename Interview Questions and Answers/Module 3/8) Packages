@@ -383,3 +383,64 @@ QUICK REVISION
 • Each feature gets its own branch.
 • Main should remain stable.
 • Merge only after testing and review.
+
+====================================================================
+QUESTION 7 : What is a Pull Request, and why is it used?
+====================================================================
+
+Interview Ready Answer
+
+A Pull Request is a GitHub feature used to request merging
+changes from one branch into another. It allows team members
+to review the code, discuss changes, identify issues, and
+approve the implementation before merging into the main branch.
+
+Definition
+
+Pull Request:
+A request to merge code from one branch into another after
+review and approval.
+
+Purpose
+
+• Request code merge
+• Code review
+• Team collaboration
+• Improve code quality
+• Detect bugs before merge
+• Approval before merging
+
+Important Keywords
+
+• GitHub Feature
+• Code Review
+• Approval
+• Merge
+• Collaboration
+
+Memory Trick
+
+PR = Review First, Merge Later
+
+====================================================================
+INTERVIEW TRAP
+====================================================================
+
+Q:
+Is Pull Request a Git command?
+
+Answer:
+No.
+
+A Pull Request is a GitHub (or Git hosting platform) feature.
+Git itself does not have a `git pull-request` command.
+
+====================================================================
+QUICK REVISION
+====================================================================
+
+• Pull Request = Request to merge code.
+• Happens on GitHub.
+• Includes code review.
+• Requires approval before merge.
+• Improves code quality.
