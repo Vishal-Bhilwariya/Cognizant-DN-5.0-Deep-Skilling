@@ -1,0 +1,341 @@
+======================================================================
+MODULE : DATA STRUCTURES & ALGORITHMS
+TOPIC : ANALYSIS OF ALGORITHMS
+======================================================================
+
+1. INTERVIEW READY ANSWERS
+======================================================================
+
+Q1. What is an Algorithm?
+
+Answer:
+An algorithm is a finite, well-defined, step-by-step procedure used to solve a specific problem. It takes input, processes it, produces the required output, and terminates after a finite number of steps.
+
+------------------------------------------------------------
+
+Q2. What are the characteristics of a good algorithm?
+
+Answer:
+• Input (0 or more inputs)
+• Output (At least one output)
+• Definiteness (Every step is clear and unambiguous)
+• Finiteness (Terminates after finite steps)
+• Effectiveness (Each instruction is executable)
+
+------------------------------------------------------------
+
+Q3. Why do we analyze an algorithm?
+
+Answer:
+Algorithm analysis helps compare the efficiency of different algorithms based on time and space complexity. It is machine-independent and helps choose the most scalable solution.
+
+------------------------------------------------------------
+
+Q4. Algorithm vs Program
+
+Algorithm
+• Language independent
+• Describes WHAT to do
+• Logical solution
+
+Program
+• Language dependent
+• Describes HOW to do it
+• Executable implementation
+
+------------------------------------------------------------
+
+Q5. What is Time Complexity?
+
+Answer:
+Time complexity measures how the number of operations performed by an algorithm grows as the input size (n) increases. It does not measure execution time in seconds.
+
+------------------------------------------------------------
+
+Q6. What is Space Complexity?
+
+Answer:
+Space complexity is the total memory required by an algorithm.
+
+Space Complexity
+=
+Input Space
++
+Auxiliary Space
+
+Input Space
+→ Memory required for input.
+
+Auxiliary Space
+→ Extra memory used by the algorithm.
+
+------------------------------------------------------------
+
+Q7. Time Complexity vs Space Complexity
+
+Time Complexity
+• Measures operations
+• Goal → Faster execution
+• Unit → Operations
+
+Space Complexity
+• Measures memory
+• Goal → Less memory usage
+• Unit → Memory
+
+------------------------------------------------------------
+
+Q8. What is Big O Notation?
+
+Answer:
+Big O notation represents the upper bound (worst-case growth) of an algorithm. It describes how the running time grows as input size increases.
+
+------------------------------------------------------------
+
+Q9. Big O vs Big Ω vs Big Θ
+
+Big O (O)
+→ Upper Bound
+→ Commonly used for Worst Case
+
+Big Ω (Omega)
+→ Lower Bound
+→ Commonly used for Best Case
+
+Big Θ (Theta)
+→ Tight Bound
+→ Exact asymptotic growth
+(Not Average Case)
+
+------------------------------------------------------------
+
+Q10. Best, Average and Worst Case
+
+Best Case
+→ Minimum operations
+
+Average Case
+→ Expected operations over all possible inputs
+
+Worst Case
+→ Maximum operations
+
+Example (Linear Search)
+
+Best
+→ Element at first position
+→ O(1)
+
+Average
+→ Element somewhere in the middle
+→ O(n)
+
+Worst
+→ Element at last position or absent
+→ O(n)
+
+------------------------------------------------------------
+
+Q11. Why do we ignore constants and lower-order terms?
+
+Answer:
+Big O focuses on the growth rate of an algorithm for very large inputs. Constants and lower-order terms become insignificant as n increases.
+
+Examples
+
+3n + 5
+→ O(n)
+
+5n² + 2n + 10
+→ O(n²)
+
+======================================================================
+2. ADVANTAGES
+======================================================================
+
+• Helps compare algorithms objectively.
+• Machine-independent analysis.
+• Predicts scalability for large inputs.
+• Assists in selecting efficient algorithms.
+• Improves performance optimization.
+
+======================================================================
+3. DISADVANTAGES
+======================================================================
+
+• Big O ignores constant factors.
+• Does not represent actual execution time.
+• Worst-case analysis may overestimate practical performance.
+• Average-case analysis is often difficult to compute.
+
+======================================================================
+4. REAL-LIFE EXAMPLE
+======================================================================
+
+Google Maps
+
+Two routes reach the same destination.
+
+Algorithm A
+→ 20 minutes
+
+Algorithm B
+→ 2 hours
+
+Both are correct, but the algorithm with lower time complexity is preferred.
+
+======================================================================
+5. SOFTWARE / INDUSTRY EXAMPLE
+======================================================================
+
+• Google Search → Optimized searching algorithms
+• Database Indexing → Binary Search, B-Trees
+• Java Collections → Efficient algorithms for sorting/searching
+• Routing Systems → Shortest path algorithms
+• E-commerce → Product search optimization
+
+======================================================================
+6. IMPORTANT DIFFERENCES
+======================================================================
+
+Algorithm vs Program
+
+Algorithm
+• Logic
+• Language independent
+• Problem solving steps
+
+Program
+• Implementation
+• Language dependent
+• Executable code
+
+------------------------------------------------------------
+
+Time Complexity vs Space Complexity
+
+Time
+• Number of operations
+• Faster execution
+
+Space
+• Memory usage
+• Less memory
+
+------------------------------------------------------------
+
+Big O vs Big Ω vs Big Θ
+
+Big O
+→ Upper Bound
+
+Big Ω
+→ Lower Bound
+
+Big Θ
+→ Tight Bound
+
+======================================================================
+7. MEMORY TRICKS
+======================================================================
+
+Algorithm Properties
+
+I O D F E
+
+I → Input
+O → Output
+D → Definiteness
+F → Finiteness
+E → Effectiveness
+
+------------------------------------------------------------
+
+Asymptotic Notations
+
+O
+→ Over Limit (Upper Bound)
+
+Ω
+→ Under Limit (Lower Bound)
+
+Θ
+→ Exact Limit (Tight Bound)
+
+------------------------------------------------------------
+
+Space Complexity
+
+Space
+=
+Input
++
+Auxiliary
+
+======================================================================
+8. INTERVIEW TRAP QUESTIONS
+======================================================================
+
+❓ Is Big O actual execution time?
+✔ No. It measures growth rate, not seconds.
+
+------------------------------------------------------------
+
+❓ Does Big O always mean Worst Case?
+
+✔ Technically, Big O is the upper bound.
+It is commonly used for worst-case analysis.
+
+------------------------------------------------------------
+
+❓ Is Big Θ Average Case?
+
+✘ No.
+
+Big Θ = Tight Bound
+
+Average Case is a separate concept.
+
+------------------------------------------------------------
+
+❓ Is Average Case = (Best + Worst) / 2 ?
+
+✘ No.
+
+Average Case = Expected complexity over all possible inputs.
+
+------------------------------------------------------------
+
+❓ Why ignore constants?
+
+✔ Because Big O measures asymptotic growth, and constants become insignificant for large inputs.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+✔ Algorithm = Step-by-step finite procedure.
+
+✔ Good Algorithm = Input, Output, Definiteness, Finiteness, Effectiveness.
+
+✔ Time Complexity = Growth of operations.
+
+✔ Space Complexity = Input Space + Auxiliary Space.
+
+✔ Big O = Upper Bound.
+
+✔ Big Ω = Lower Bound.
+
+✔ Big Θ = Tight Bound.
+
+✔ Best Case = Minimum operations.
+
+✔ Average Case = Expected operations.
+
+✔ Worst Case = Maximum operations.
+
+✔ Ignore constants and lower-order terms because only the dominant growth matters.
+
+✔ Remember:
+Big O compares growth, NOT actual execution time.
+======================================================================

@@ -1,0 +1,311 @@
+======================================================================
+MODULE : DATA STRUCTURES & ALGORITHMS
+TOPIC : LINKED LIST
+======================================================================
+
+1. INTERVIEW READY ANSWERS
+======================================================================
+
+Q1. Why was Linked List introduced?
+
+Answer:
+Linked List was introduced to overcome the limitations of arrays.
+
+Problems with Arrays
+• Fixed size
+• Memory wastage
+• Costly insertion and deletion due to shifting
+
+Linked List provides
+• Dynamic memory allocation
+• Efficient insertion and deletion
+• No fixed size limitation
+
+------------------------------------------------------------
+
+Q2. What is a Linked List?
+
+Answer:
+A Linked List is a linear data structure consisting of nodes. Each node contains data and a reference (pointer) to the next node. Nodes are stored in non-contiguous memory locations and are connected using references.
+
+------------------------------------------------------------
+
+Q3. Array vs Linked List
+
+Feature               Array                    Linked List
+
+Memory                Contiguous               Non-Contiguous
+
+Size                  Fixed                    Dynamic
+
+Random Access         O(1)                     O(n)
+
+Insertion             O(n)                     O(1)*
+
+Deletion              O(n)                     O(1)*
+
+Memory                Less                     More
+
+*After reaching the required position.
+
+------------------------------------------------------------
+
+Q4. Why doesn't Linked List support Random Access?
+
+Answer:
+Linked List nodes are stored in non-contiguous memory locations. Since the address of the next node is known only through the current node's reference, we must traverse the list from the head until the required node is reached.
+
+Time Complexity
+
+Access
+→ O(n)
+
+------------------------------------------------------------
+
+Q5. Advantages of Linked List
+
+Answer:
+• Dynamic size
+• Memory allocated only when required
+• Efficient insertion
+• Efficient deletion
+• No memory wastage due to fixed size
+
+------------------------------------------------------------
+
+Q6. Disadvantages of Linked List
+
+Answer:
+• No random access
+• O(n) traversal for access/search
+• Extra memory for reference pointer
+• Not cache friendly
+
+------------------------------------------------------------
+
+Q7. Time Complexity of Operations
+
+Operation                          Time
+
+Access by Index                    O(n)
+
+Search                             O(n)
+
+Insert at Beginning                O(1)
+
+Insert at End (Head Only)          O(n)
+
+Insert at End (Head + Tail)        O(1)
+
+Delete at Beginning                O(1)
+
+Delete at End                      O(n)
+
+------------------------------------------------------------
+
+Q8. Why is insertion at the beginning O(1)?
+
+Answer:
+The head node is directly available. A new node is created, its next pointer is set to the current head, and the head is updated. No traversal is required.
+
+------------------------------------------------------------
+
+Q9. Why is insertion at an arbitrary position O(n)?
+
+Answer:
+Before inserting, we must traverse from the head to the required position. Traversal takes O(n), while updating references takes O(1).
+
+------------------------------------------------------------
+
+Q10. Why does Linked List require extra memory?
+
+Answer:
+Every node stores:
+• Data
+• Reference (Next Pointer)
+
+The additional reference occupies extra memory for every node, making Linked Lists less memory-efficient than arrays.
+
+======================================================================
+2. ADVANTAGES
+======================================================================
+
+• Dynamic size
+• No fixed length required
+• Memory allocated only when needed
+• Efficient insertion and deletion
+• Easy implementation of dynamic data structures like Stack, Queue and Graph
+
+======================================================================
+3. DISADVANTAGES
+======================================================================
+
+• No direct/random access
+• O(n) access time
+• Extra memory due to next pointer
+• Poor cache locality
+• Traversal is slower than arrays
+
+======================================================================
+4. REAL-LIFE EXAMPLE
+======================================================================
+
+Music Playlist
+
+Each song stores:
+• Song Information
+• Link to the next song
+
+Songs are connected one after another, similar to nodes in a Linked List.
+
+======================================================================
+5. SOFTWARE / INDUSTRY EXAMPLE
+======================================================================
+
+• Browser Back/Forward Navigation
+• Music Playlist
+• Undo/Redo Operations
+• HashMap Collision Handling (Separate Chaining)
+• LRU Cache Implementation
+• Graph Adjacency List Representation
+
+======================================================================
+6. IMPORTANT DIFFERENCES
+======================================================================
+
+Array vs Linked List
+
+Array
+• Fixed size
+• Contiguous memory
+• O(1) random access
+• O(n) insertion/deletion
+• Less memory
+
+Linked List
+• Dynamic size
+• Non-contiguous memory
+• O(n) access
+• O(1) insertion/deletion (after reaching position)
+• Extra memory for pointer
+
+------------------------------------------------------------
+
+Insertion at Beginning vs End
+
+Beginning
+→ O(1)
+
+End (Head Only)
+→ O(n)
+
+End (Head + Tail)
+→ O(1)
+
+======================================================================
+7. MEMORY TRICK
+======================================================================
+
+LINKED
+
+L → Linear Structure
+
+I → Insertion Easy
+
+N → Non-Contiguous Memory
+
+K → Keep Next Pointer
+
+E → Extra Memory
+
+D → Dynamic Size
+
+------------------------------------------------------------
+
+Remember
+
+Every Node
+
+Data
++
+Next Pointer
+
+======================================================================
+8. INTERVIEW TRAP QUESTIONS
+======================================================================
+
+❓ Why doesn't Linked List support random access?
+
+✔ Nodes are stored in non-contiguous memory.
+Traversal from head is required.
+
+------------------------------------------------------------
+
+❓ Why is insertion at beginning O(1)?
+
+✔ Head pointer is directly available.
+
+------------------------------------------------------------
+
+❓ Is insertion at end always O(1)?
+
+✘ No.
+
+✔ Head only → O(n)
+
+✔ Head + Tail → O(1)
+
+------------------------------------------------------------
+
+❓ Why is deletion at end O(n)?
+
+✔ We must traverse to the second-last node before updating its next pointer to NULL.
+
+------------------------------------------------------------
+
+❓ Why does Linked List use more memory?
+
+✔ Every node stores:
+Data + Next Pointer.
+
+------------------------------------------------------------
+
+❓ Which is faster for random access?
+
+✔ Array (O(1))
+
+❌ Linked List (O(n))
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+✔ Linked List = Collection of nodes.
+
+✔ Node = Data + Next Pointer.
+
+✔ Dynamic Size.
+
+✔ Non-Contiguous Memory.
+
+✔ Random Access = O(n)
+
+✔ Search = O(n)
+
+✔ Insert Beginning = O(1)
+
+✔ Insert End (Head Only) = O(n)
+
+✔ Insert End (Tail Pointer) = O(1)
+
+✔ Delete Beginning = O(1)
+
+✔ Delete End = O(n)
+
+✔ Extra Memory = Next Pointer.
+
+✔ Arrays → Better for Random Access.
+
+✔ Linked Lists → Better for Frequent Insertions & Deletions.
+
+======================================================================

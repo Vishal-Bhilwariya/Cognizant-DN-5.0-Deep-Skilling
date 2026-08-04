@@ -1,0 +1,397 @@
+======================================================================
+MODULE : DATA STRUCTURES & ALGORITHMS
+TOPIC : SEARCHING
+======================================================================
+
+1. INTERVIEW READY ANSWERS
+======================================================================
+
+Q1. What is Searching?
+
+Answer:
+Searching is the process of finding a required element (key) from a collection of data. It returns the index of the element if found; otherwise, it returns -1 (or indicates that the element is not present).
+
+Types:
+• Linear Search
+• Binary Search
+
+------------------------------------------------------------
+
+Q2. What is Linear Search?
+
+Answer:
+Linear Search checks each element sequentially from the beginning until the target element is found or the array ends.
+
+Best Case
+→ O(1)
+
+Worst Case
+→ O(n)
+
+Space Complexity
+→ O(1)
+
+------------------------------------------------------------
+
+Q3. Advantages of Linear Search
+
+Answer:
+• Works on sorted and unsorted data.
+• Very easy to implement.
+• No preprocessing required.
+
+------------------------------------------------------------
+
+Q4. Disadvantages of Linear Search
+
+Answer:
+• Slow for large datasets.
+• May need to scan the entire array.
+• Worst-case time complexity is O(n).
+
+------------------------------------------------------------
+
+Q5. Why can't Binary Search work on an unsorted array?
+
+Answer:
+Binary Search decides whether to search the left half or the right half based on the middle element. This decision is valid only when the array is sorted. In an unsorted array, discarding half of the elements may remove the target itself, leading to incorrect results.
+
+------------------------------------------------------------
+
+Q6. What is Binary Search?
+
+Answer:
+Binary Search is an efficient searching algorithm used only on sorted arrays. It repeatedly compares the target with the middle element and discards half of the search space in every iteration.
+
+Working
+
+1. Initialize
+   left = 0
+   right = n-1
+
+2. Find
+   mid = (left + right) / 2
+
+3. Compare
+
+arr[mid] == key
+→ Found
+
+arr[mid] < key
+→ left = mid + 1
+
+arr[mid] > key
+→ right = mid - 1
+
+Repeat until found or left > right.
+
+------------------------------------------------------------
+
+Q7. Why is Binary Search O(log n)?
+
+Answer:
+In every iteration, Binary Search removes half of the remaining search space.
+
+Search Space
+
+n
+↓
+
+n/2
+↓
+
+n/4
+↓
+
+n/8
+↓
+
+...
+
+After k iterations
+
+n / 2^k = 1
+
+Therefore,
+
+k = log₂n
+
+Hence,
+
+Time Complexity = O(log n)
+
+------------------------------------------------------------
+
+Q8. Linear Search vs Binary Search
+
+Feature              Linear Search            Binary Search
+
+Requirement          Sorted/Unsorted          Sorted only
+
+Working              Sequential               Divide into halves
+
+Best Time            O(1)                    O(1)
+
+Worst Time           O(n)                    O(log n)
+
+Space                O(1)                    O(1) (Iterative)
+
+Use Case             Small/Unsorted          Large Sorted Data
+
+======================================================================
+2. ADVANTAGES
+======================================================================
+
+Linear Search
+
+• Works on unsorted arrays.
+• Easy to implement.
+• No preprocessing required.
+
+------------------------------------------------------------
+
+Binary Search
+
+• Very fast.
+• O(log n) complexity.
+• Suitable for large datasets.
+• Efficient for repeated searches on sorted data.
+
+======================================================================
+3. DISADVANTAGES
+======================================================================
+
+Linear Search
+
+• Inefficient for large datasets.
+• Requires scanning elements one by one.
+
+------------------------------------------------------------
+
+Binary Search
+
+• Requires sorted data.
+• Slightly more complex to implement.
+• Sorting overhead if data is initially unsorted.
+
+======================================================================
+4. REAL-LIFE EXAMPLE
+======================================================================
+
+Linear Search
+
+Finding your friend by checking every student one by one in a classroom.
+
+------------------------------------------------------------
+
+Binary Search
+
+Searching a word in a dictionary.
+Open the middle page and eliminate half of the remaining pages in every step.
+
+======================================================================
+5. SOFTWARE / INDUSTRY EXAMPLE
+======================================================================
+
+Linear Search
+
+• Small configuration lists.
+• Small datasets.
+• Simple menu searches.
+
+------------------------------------------------------------
+
+Binary Search
+
+• Database indexing.
+• Search engines.
+• Dictionary applications.
+• Phone contacts.
+• Library management systems.
+
+======================================================================
+6. IMPORTANT DIFFERENCES
+======================================================================
+
+Linear Search vs Binary Search
+
+Requirement
+
+Linear
+→ Sorted or Unsorted
+
+Binary
+→ Sorted Only
+
+------------------------------------------------------------
+
+Working
+
+Linear
+→ Sequential Search
+
+Binary
+→ Divide and Conquer
+
+------------------------------------------------------------
+
+Worst Time
+
+Linear
+→ O(n)
+
+Binary
+→ O(log n)
+
+------------------------------------------------------------
+
+Space
+
+Linear
+→ O(1)
+
+Binary (Iterative)
+→ O(1)
+
+Binary (Recursive)
+→ O(log n)
+
+======================================================================
+7. MEMORY TRICK
+======================================================================
+
+LINEAR
+
+L
+→ Loop through all elements
+
+I
+→ Index checked one by one
+
+N
+→ No sorting needed
+
+------------------------------------------------------------
+
+BINARY
+
+B
+→ Balanced Halves
+
+I
+→ Index = Mid
+
+N
+→ Needs Sorted Array
+
+A
+→ Always Halve Search Space
+
+R
+→ Reduce by Half
+
+Y
+→ Yields O(log n)
+
+------------------------------------------------------------
+
+Remember
+
+Linear
+→ One by One
+
+Binary
+→ Half by Half
+
+======================================================================
+8. INTERVIEW TRAP QUESTIONS
+======================================================================
+
+❓ Can Binary Search work on an unsorted array?
+
+✘ No.
+
+✔ It requires sorted data.
+
+------------------------------------------------------------
+
+❓ Why is Binary Search faster?
+
+✔ It eliminates half of the search space in every iteration.
+
+------------------------------------------------------------
+
+❓ Binary Search Time Complexity?
+
+✔ Best = O(1)
+
+✔ Worst = O(log n)
+
+------------------------------------------------------------
+
+❓ Space Complexity of Binary Search?
+
+✔ Iterative = O(1)
+
+✔ Recursive = O(log n)
+
+------------------------------------------------------------
+
+❓ Which search algorithm should you choose?
+
+✔ Sorted Data
+→ Binary Search
+
+✔ Unsorted Data
+→ Linear Search
+
+------------------------------------------------------------
+
+❓ What does a searching algorithm return?
+
+✔ Index of the element if found.
+
+✔ -1 (or equivalent) if not found.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+✔ Searching = Find required element.
+
+✔ Returns index if found.
+
+✔ Linear Search
+→ Sequential Search
+
+✔ Binary Search
+→ Divide and Conquer
+
+✔ Linear works on Sorted + Unsorted.
+
+✔ Binary works only on Sorted.
+
+✔ Linear Worst = O(n)
+
+✔ Binary Worst = O(log n)
+
+✔ Binary halves the search space every iteration.
+
+✔ Binary Search is faster because:
+
+n
+↓
+
+n/2
+↓
+
+n/4
+↓
+
+n/8
+
+...
+
+⇒ O(log n)
+
+======================================================================

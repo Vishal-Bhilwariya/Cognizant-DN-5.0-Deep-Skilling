@@ -1,0 +1,345 @@
+======================================================================
+MODULE : DATA STRUCTURES & ALGORITHMS
+TOPIC : ARRAYS
+======================================================================
+
+1. INTERVIEW READY ANSWERS
+======================================================================
+
+Q1. What is an Array?
+
+Answer:
+An array is a linear data structure that stores multiple elements of the same data type in contiguous memory locations. It provides O(1) random access using indexing.
+
+------------------------------------------------------------
+
+Q2. Why do we need an Array?
+
+Answer:
+Before arrays, we had to create multiple variables to store similar data. Arrays allow us to store multiple values of the same type under a single variable name, making data management easier.
+
+------------------------------------------------------------
+
+Q3. Why is array access O(1)?
+
+Answer:
+Array elements are stored in contiguous memory locations. Using the base address and index, the address of any element can be calculated directly.
+
+Address(arr[i])
+=
+Base Address + (i × Size of Element)
+
+Therefore, no traversal is required.
+
+Time Complexity = O(1)
+
+------------------------------------------------------------
+
+Q4. Why is searching in an array O(n)?
+
+Answer:
+During searching, the index of the required element is unknown. Therefore, we may need to traverse every element until the target is found.
+
+Worst Case = O(n)
+
+------------------------------------------------------------
+
+Q5. Advantages of Arrays
+
+Answer:
+• Stores multiple values under one variable.
+• Stores homogeneous data.
+• O(1) random access.
+• Easy traversal using loops.
+• Cache friendly due to contiguous memory.
+• Less memory overhead than linked lists.
+
+------------------------------------------------------------
+
+Q6. Disadvantages of Arrays
+
+Answer:
+• Fixed size after creation.
+• Costly insertion and deletion.
+• Memory wastage if size is overallocated.
+• Cannot directly store multiple primitive data types.
+
+------------------------------------------------------------
+
+Q7. Why are insertion and deletion expensive?
+
+Answer:
+Arrays use contiguous memory. Inserting or deleting at the beginning or middle requires shifting elements.
+
+Insertion
+
+Beginning
+→ O(n)
+
+Middle
+→ O(n)
+
+End
+→ O(1) (if free space exists)
+
+Deletion
+
+Beginning
+→ O(n)
+
+Middle
+→ O(n)
+
+End
+→ O(1)
+
+------------------------------------------------------------
+
+Q8. Can arrays store different data types?
+
+Answer:
+Normally, an array stores elements of a single declared type.
+
+int[]
+→ Only int values
+
+String[]
+→ Only String objects
+
+Object[]
+→ Any Java object (String, Integer, Double, User-defined class, etc.)
+
+------------------------------------------------------------
+
+Q9. What is ArrayIndexOutOfBoundsException?
+
+Answer:
+It is a Runtime (Unchecked) Exception that occurs when an invalid index is accessed.
+
+Valid Index
+
+0 to length - 1
+
+Prevention
+
+• Check index before access.
+• Use arr.length while traversing.
+
+------------------------------------------------------------
+
+Q10. Why are arrays stored in contiguous memory?
+
+Answer:
+Contiguous memory allows direct address calculation using the index, resulting in O(1) random access. It also improves CPU cache performance.
+
+======================================================================
+2. ADVANTAGES
+======================================================================
+
+• O(1) random access.
+• Easy traversal.
+• Contiguous memory allocation.
+• Cache friendly.
+• Less memory overhead.
+• Suitable when size is known.
+
+======================================================================
+3. DISADVANTAGES
+======================================================================
+
+• Fixed size.
+• Costly insertion.
+• Costly deletion.
+• Possible memory wastage.
+• Array overflow if full.
+
+======================================================================
+4. REAL-LIFE EXAMPLE
+======================================================================
+
+Student Roll Numbers
+
+Instead of creating
+
+roll1
+roll2
+roll3
+...
+roll100
+
+Create
+
+int roll[100]
+
+All roll numbers are stored together and accessed using an index.
+
+======================================================================
+5. SOFTWARE / INDUSTRY EXAMPLE
+======================================================================
+
+• Image Processing
+  Pixels are stored in arrays.
+
+• Game Development
+  Board positions and grids use arrays.
+
+• Database Systems
+  Buffers and page storage use arrays.
+
+• Java Collections
+  ArrayList internally uses a dynamic array.
+
+======================================================================
+6. IMPORTANT DIFFERENCES
+======================================================================
+
+Array vs Variables
+
+Variables
+• One value per variable.
+
+Array
+• Multiple values under one name.
+
+------------------------------------------------------------
+
+Access vs Search
+
+Access
+• Index known.
+• O(1)
+
+Search
+• Index unknown.
+• O(n)
+
+------------------------------------------------------------
+
+int[] vs String[] vs Object[]
+
+int[]
+→ Only int values
+
+String[]
+→ Only String objects
+
+Object[]
+→ Any Java object
+
+======================================================================
+7. MEMORY TRICK
+======================================================================
+
+ARRAY
+
+A → Access O(1)
+
+R → Random Access
+
+R → Requires Contiguous Memory
+
+A → All Same Data Type
+
+Y → Yes, Fixed Size
+
+------------------------------------------------------------
+
+Insertion & Deletion
+
+Beginning
+→ Shift
+
+Middle
+→ Shift
+
+End
+→ No Shift
+
+Remember
+
+Shift = O(n)
+
+No Shift = O(1)
+
+======================================================================
+8. INTERVIEW TRAP QUESTIONS
+======================================================================
+
+❓ Is an array a primitive data type in Java?
+
+✘ No.
+
+✔ Array is an Object (Reference Type).
+
+------------------------------------------------------------
+
+❓ Can Object[] store different objects?
+
+✔ Yes.
+
+It can store any Java object.
+
+------------------------------------------------------------
+
+❓ Why is array access O(1)?
+
+✔ Direct address calculation using index.
+
+------------------------------------------------------------
+
+❓ Why is searching O(n)?
+
+✔ Index is unknown, so traversal is required.
+
+------------------------------------------------------------
+
+❓ Why are arrays contiguous?
+
+✔ To support direct address calculation and improve cache performance.
+
+------------------------------------------------------------
+
+❓ Is insertion at the end always O(1)?
+
+✔ O(1) only if free space exists.
+If the array is full, a new larger array must be created and elements copied.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+✔ Array = Linear data structure.
+
+✔ Stores homogeneous data.
+
+✔ Contiguous memory allocation.
+
+✔ Access = O(1)
+
+✔ Search = O(n)
+
+✔ Beginning Insertion = O(n)
+
+✔ Middle Insertion = O(n)
+
+✔ End Insertion = O(1) (if space available)
+
+✔ Beginning Deletion = O(n)
+
+✔ Middle Deletion = O(n)
+
+✔ End Deletion = O(1)
+
+✔ ArrayIndexOutOfBoundsException = Runtime Exception
+
+✔ Object[] stores any Java object.
+
+✔ Arrays are objects in Java, NOT primitive data types.
+
+✔ Address Formula
+
+Address(arr[i])
+=
+Base Address + (i × Size of Element)
+
+======================================================================
