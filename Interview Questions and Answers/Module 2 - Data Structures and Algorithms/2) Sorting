@@ -1,0 +1,443 @@
+======================================================================
+MODULE : DATA STRUCTURES & ALGORITHMS
+TOPIC : SORTING
+======================================================================
+
+1. INTERVIEW READY ANSWERS
+======================================================================
+
+Q1. What is Sorting?
+
+Answer:
+Sorting is the process of arranging data in ascending or descending order. It improves searching, data processing, and organization.
+
+Why do we need Sorting?
+
+• Required before Binary Search.
+• Easy to find minimum and maximum values.
+• Makes searching faster.
+• Helps in data analysis and reporting.
+• Used in databases and search engines.
+
+------------------------------------------------------------
+
+Q2. What is Bubble Sort?
+
+Answer:
+Bubble Sort is a comparison-based sorting algorithm that repeatedly compares adjacent elements and swaps them if they are in the wrong order.
+
+After every pass,
+→ The largest unsorted element reaches its correct position.
+
+Time Complexity
+
+Best
+→ O(n) (Optimized Bubble Sort)
+
+Average
+→ O(n²)
+
+Worst
+→ O(n²)
+
+Space
+→ O(1)
+
+------------------------------------------------------------
+
+Q3. Why is it called Bubble Sort?
+
+Answer:
+After every pass, the largest unsorted element moves to the end of the array, similar to how an air bubble rises to the surface.
+
+------------------------------------------------------------
+
+Q4. Advantages of Bubble Sort
+
+Answer:
+
+• Very simple implementation.
+• Easy to understand.
+• Good for very small datasets.
+• Optimized version can detect an already sorted array.
+
+------------------------------------------------------------
+
+Q5. Disadvantages of Bubble Sort
+
+Answer:
+
+• O(n²) in average and worst case.
+• Large number of swaps.
+• Inefficient for large datasets.
+
+------------------------------------------------------------
+
+Q6. What is Selection Sort?
+
+Answer:
+Selection Sort repeatedly finds the minimum element from the unsorted portion of the array and places it at its correct position.
+
+After every pass,
+→ The smallest element reaches its correct position.
+
+Time Complexity
+
+Best
+→ O(n²)
+
+Average
+→ O(n²)
+
+Worst
+→ O(n²)
+
+Space
+→ O(1)
+
+------------------------------------------------------------
+
+Q7. Why is Best Case of Selection Sort still O(n²)?
+
+Answer:
+Even if the array is already sorted, Selection Sort still scans the remaining unsorted part to find the minimum element. Therefore, the number of comparisons remains the same.
+
+------------------------------------------------------------
+
+Q8. Advantages of Selection Sort
+
+Answer:
+
+• Performs fewer swaps.
+• Simple implementation.
+• O(1) extra space.
+• Useful when swapping is expensive.
+
+------------------------------------------------------------
+
+Q9. Disadvantages of Selection Sort
+
+Answer:
+
+• Always O(n²).
+• Not adaptive.
+• Slow for large datasets.
+
+------------------------------------------------------------
+
+Q10. What is Insertion Sort?
+
+Answer:
+Insertion Sort builds the sorted part of the array one element at a time. It picks the next element as a key, shifts larger elements to the right, and inserts the key into its correct position.
+
+Time Complexity
+
+Best
+→ O(n)
+
+Average
+→ O(n²)
+
+Worst
+→ O(n²)
+
+Space
+→ O(1)
+
+------------------------------------------------------------
+
+Q11. Why is Insertion Sort efficient for nearly sorted arrays?
+
+Answer:
+If the array is already sorted or nearly sorted, very few elements need to be shifted. Therefore, only a small number of comparisons and shifts are performed, making the best-case time complexity O(n).
+
+------------------------------------------------------------
+
+Q12. Advantages of Insertion Sort
+
+Answer:
+
+• Efficient for small datasets.
+• Efficient for nearly sorted arrays.
+• Stable sorting algorithm.
+• O(1) extra space.
+• Online algorithm (can sort elements as they arrive).
+
+------------------------------------------------------------
+
+Q13. Disadvantages of Insertion Sort
+
+Answer:
+
+• O(n²) in average and worst case.
+• Not suitable for large datasets.
+
+------------------------------------------------------------
+
+Q14. Bubble Sort vs Selection Sort vs Insertion Sort
+
+Feature               Bubble           Selection         Insertion
+
+Working               Adjacent Swap    Select Minimum    Shift & Insert
+
+Best Case             O(n)*            O(n²)             O(n)
+
+Average               O(n²)            O(n²)             O(n²)
+
+Worst                 O(n²)            O(n²)             O(n²)
+
+Space                 O(1)             O(1)              O(1)
+
+Stable                Yes              No                Yes
+
+Swaps                 Many             Very Few          Few
+
+Adaptive              Yes*             No                Yes
+
+(*Optimized Bubble Sort)
+
+======================================================================
+2. ADVANTAGES
+======================================================================
+
+Bubble Sort
+
+• Simple
+• Easy to learn
+• Adaptive (optimized)
+
+------------------------------------------------------------
+
+Selection Sort
+
+• Minimum swaps
+• O(1) space
+• Good when swapping is costly
+
+------------------------------------------------------------
+
+Insertion Sort
+
+• Fast for nearly sorted arrays
+• Stable
+• Adaptive
+• O(1) space
+
+======================================================================
+3. DISADVANTAGES
+======================================================================
+
+Bubble
+
+• Too many swaps
+• O(n²)
+
+------------------------------------------------------------
+
+Selection
+
+• Always O(n²)
+• Not adaptive
+
+------------------------------------------------------------
+
+Insertion
+
+• O(n²) worst case
+• Slow for large datasets
+
+======================================================================
+4. REAL-LIFE EXAMPLE
+======================================================================
+
+Bubble Sort
+
+Students standing randomly keep swapping with adjacent students until everyone is in height order.
+
+------------------------------------------------------------
+
+Selection Sort
+
+Teacher repeatedly selects the shortest student from the remaining group and places them at the front.
+
+------------------------------------------------------------
+
+Insertion Sort
+
+Arranging playing cards in your hand by inserting each new card into its correct position.
+
+======================================================================
+5. SOFTWARE / INDUSTRY EXAMPLE
+======================================================================
+
+Bubble Sort
+
+• Teaching algorithms
+• Very small datasets
+
+------------------------------------------------------------
+
+Selection Sort
+
+• Systems where minimizing swaps is important
+• Embedded systems (limited writes)
+
+------------------------------------------------------------
+
+Insertion Sort
+
+• Small arrays
+• Nearly sorted data
+• Used inside advanced sorting algorithms like TimSort and IntroSort for small partitions
+
+======================================================================
+6. IMPORTANT DIFFERENCES
+======================================================================
+
+Bubble vs Selection
+
+Bubble
+→ Adjacent swaps
+
+Selection
+→ Find minimum then one swap
+
+------------------------------------------------------------
+
+Selection vs Insertion
+
+Selection
+→ Finds minimum
+
+Insertion
+→ Picks next element and inserts into correct position
+
+------------------------------------------------------------
+
+Bubble vs Insertion
+
+Bubble
+→ Swap adjacent elements
+
+Insertion
+→ Shift elements then insert key
+
+======================================================================
+7. MEMORY TRICK
+======================================================================
+
+Bubble
+
+Bubble
+→ Biggest Bubbles Up
+
+------------------------------------------------------------
+
+Selection
+
+Selection
+→ Select Smallest
+
+------------------------------------------------------------
+
+Insertion
+
+Insertion
+→ Insert Key into Sorted Part
+
+======================================================================
+8. INTERVIEW TRAP QUESTIONS
+======================================================================
+
+❓ Why is Bubble Sort called Bubble Sort?
+
+✔ Largest element bubbles to the end after each pass.
+
+------------------------------------------------------------
+
+❓ Why is Selection Sort Best Case O(n²)?
+
+✔ It still searches the remaining array for the minimum element.
+
+------------------------------------------------------------
+
+❓ Why is Insertion Sort Best Case O(n)?
+
+✔ No shifting is required in an already sorted array.
+
+------------------------------------------------------------
+
+❓ Which sorting algorithm performs the fewest swaps?
+
+✔ Selection Sort
+
+------------------------------------------------------------
+
+❓ Which sorting algorithm is stable?
+
+✔ Bubble Sort
+✔ Insertion Sort
+
+✘ Selection Sort
+
+------------------------------------------------------------
+
+❓ Which sorting algorithm is adaptive?
+
+✔ Insertion Sort
+
+✔ Optimized Bubble Sort
+
+✘ Selection Sort
+
+------------------------------------------------------------
+
+❓ Which algorithm is best for nearly sorted data?
+
+✔ Insertion Sort
+
+------------------------------------------------------------
+
+❓ Which algorithm is best for very small datasets?
+
+✔ Insertion Sort
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+✔ Bubble Sort
+→ Compare Adjacent Elements
+→ Largest Goes Last
+→ O(n²)
+→ Stable
+→ Adaptive (Optimized)
+
+✔ Selection Sort
+→ Find Minimum
+→ One Swap Per Pass
+→ O(n²)
+→ Not Stable
+→ Not Adaptive
+
+✔ Insertion Sort
+→ Pick Key
+→ Shift Larger Elements
+→ Insert Key
+→ Best = O(n)
+→ Worst = O(n²)
+→ Stable
+→ Adaptive
+
+Interview Keywords
+
+Bubble
+→ Adjacent Swap
+
+Selection
+→ Minimum Selection
+
+Insertion
+→ Shift + Insert
+
+======================================================================
