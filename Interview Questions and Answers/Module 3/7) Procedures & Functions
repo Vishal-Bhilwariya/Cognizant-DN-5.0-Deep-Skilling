@@ -1,0 +1,186 @@
+======================================================================
+MODULE 3 : PL/SQL PROGRAMMING
+TOPIC 7 : PROCEDURES & FUNCTIONS
+======================================================================
+
+Q1. What is a Procedure in PL/SQL?
+
+Interview Ready Answer
+
+A Procedure is a named PL/SQL block that performs a specific task.
+
+It is stored in the Oracle database and can be executed multiple
+times whenever required.
+
+Purpose
+
+• Reuse business logic.
+• Reduce code duplication.
+• Improve maintainability.
+• Perform database operations.
+
+Examples
+
+• Insert employee record.
+• Update salary.
+• Delete records.
+• Generate reports.
+
+======================================================================
+
+Q2. Why do we need Procedures?
+
+Interview Ready Answer
+
+Procedures are used to store reusable business logic inside the
+database.
+
+Advantages
+
+• Code reusability.
+• Better maintainability.
+• Reduced network traffic.
+• Improved security.
+• Easier application development.
+
+======================================================================
+
+Q3. What is a Function in PL/SQL?
+
+Interview Ready Answer
+
+A Function is a named PL/SQL block that performs a specific task
+and must return exactly one value using the RETURN statement.
+
+Functions are mainly used for calculations, validations and
+returning computed results.
+
+Purpose
+
+• Perform calculations.
+• Return computed values.
+• Reuse business logic.
+• Improve maintainability.
+
+======================================================================
+
+Q4. Why do we need Functions?
+
+Interview Ready Answer
+
+Functions are used whenever a program needs to perform a calculation
+or business logic and return a value to the caller.
+
+Examples
+
+• Calculate employee bonus.
+• Calculate total salary.
+• Validate user input.
+• Find tax amount.
+
+======================================================================
+
+Q5. Difference between Procedure and Function.
+
+Interview Ready Answer
+
+Procedure
+
+• Performs a specific task.
+• Return value is optional.
+• Can return values using OUT parameters.
+• Mainly used for INSERT, UPDATE and DELETE operations.
+
+------------------------------------------------------------
+
+Function
+
+• Performs a specific task and returns a value.
+• RETURN statement is mandatory.
+• Returns exactly one value.
+• Mainly used for calculations and validations.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+Can a Function exist without RETURN statement?
+
+Correct Answer
+
+No.
+
+Every PL/SQL Function must return exactly one value using RETURN.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Can a Procedure return a value?
+
+Correct Answer
+
+Yes.
+
+A Procedure can return values using OUT or IN OUT parameters,
+but returning a value is not mandatory.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Which is used for calculations?
+
+Correct Answer
+
+Function.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Which is generally used for database operations like INSERT,
+UPDATE and DELETE?
+
+Correct Answer
+
+Procedure.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Which one is mandatory to return a value?
+
+Correct Answer
+
+Function.
+
+Procedure is not required to return any value.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+• Procedure = Performs a task.
+• Function = Performs a task and returns one value.
+• Procedure → Return value optional.
+• Function → RETURN is mandatory.
+• Procedure → Mainly used for database operations.
+• Function → Mainly used for calculations and validations.
+• Both are reusable PL/SQL blocks.
+• Both improve code reusability and maintainability.
+
+======================================================================
