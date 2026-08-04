@@ -1,0 +1,359 @@
+======================================================================
+MODULE 3 : PL/SQL PROGRAMMING
+TOPIC 2 : PL/SQL ENVIRONMENT & BLOCK STRUCTURE
+======================================================================
+
+Q1. What is a PL/SQL Block?
+
+Interview Ready Answer
+
+A PL/SQL block is the basic executable unit of a PL/SQL program.
+It is a logical container that groups SQL statements and procedural
+statements into a single executable block.
+
+Key Points
+
+• Basic executable unit of PL/SQL.
+• Contains SQL and procedural statements.
+• Executes as a single unit.
+• Supports modular programming.
+• Can be anonymous or named.
+
+======================================================================
+
+Q2. What are the sections of a PL/SQL Block?
+
+Interview Ready Answer
+
+A PL/SQL block consists of four sections.
+
+1. DECLARE
+2. BEGIN
+3. EXCEPTION
+4. END
+
+Each section has a specific purpose.
+
+Structure
+
+DECLARE
+    -- Variable declarations
+
+BEGIN
+    -- Executable statements
+
+EXCEPTION
+    -- Exception handling
+
+END;
+
+======================================================================
+
+Q3. What is the purpose of the DECLARE section?
+
+Interview Ready Answer
+
+The DECLARE section is used to declare local variables, constants,
+cursors and user-defined data types required by the PL/SQL block.
+
+Key Points
+
+• Used for variable declaration.
+• Used for constants.
+• Used for cursors.
+• Used for user-defined data types.
+• Variables can also be initialized here.
+
+Important
+
+DECLARE section is OPTIONAL.
+
+======================================================================
+
+Q4. What is the purpose of the BEGIN section?
+
+Interview Ready Answer
+
+The BEGIN section contains the executable statements of the PL/SQL
+program. It is the main section where business logic is written.
+
+Key Points
+
+• Contains executable statements.
+• SQL statements are written here.
+• IF-ELSE statements.
+• Loops.
+• Function calls.
+• Procedure calls.
+
+Important
+
+BEGIN section is MANDATORY.
+
+======================================================================
+
+Q5. What is the purpose of the EXCEPTION section?
+
+Interview Ready Answer
+
+The EXCEPTION section is used to handle runtime errors that occur
+during the execution of the BEGIN section.
+
+Key Points
+
+• Handles runtime exceptions.
+• Prevents abnormal program termination.
+• Improves reliability.
+• Executes only when an exception occurs.
+
+Important
+
+EXCEPTION section is OPTIONAL.
+
+======================================================================
+
+Q6. What is the purpose of the END section?
+
+Interview Ready Answer
+
+The END section marks the end of a PL/SQL block.
+
+Key Points
+
+• Terminates the PL/SQL block.
+• Every PL/SQL block must end with END;
+• END is always followed by a semicolon.
+
+Important
+
+END section is MANDATORY.
+
+======================================================================
+
+Q7. Which sections of a PL/SQL block are mandatory and which are
+optional?
+
+Interview Ready Answer
+
+Mandatory Sections
+
+• BEGIN
+• END
+
+Optional Sections
+
+• DECLARE
+• EXCEPTION
+
+Memory Trick
+
+DECLARE
+↓
+
+BEGIN
+↓
+
+EXCEPTION
+↓
+
+END
+
+Only BEGIN and END are compulsory.
+
+======================================================================
+
+Q8. Can a PL/SQL block exist without a DECLARE section?
+
+Interview Ready Answer
+
+Yes.
+
+A PL/SQL block can exist without a DECLARE section because DECLARE
+is optional.
+
+If the program does not require variables, constants, cursors or
+user-defined data types, the DECLARE section can be omitted.
+
+Example
+
+BEGIN
+
+    NULL;
+
+END;
+
+======================================================================
+
+Q9. Why is the BEGIN section mandatory?
+
+Interview Ready Answer
+
+The BEGIN section is mandatory because it contains the executable
+statements of the PL/SQL block.
+
+Without the BEGIN section, there is no executable code and the
+program cannot run.
+
+======================================================================
+
+Q10. Types of PL/SQL Blocks
+
+Interview Ready Answer
+
+PL/SQL blocks are of two types.
+
+1. Anonymous Block
+
+• Does not have a name.
+• Executes only once.
+• Cannot be stored in the database.
+
+2. Named Block
+
+• Has a name.
+• Stored in the database.
+• Can be executed multiple times.
+• Examples:
+  • Procedure
+  • Function
+  • Package
+  • Trigger
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+Is DECLARE mandatory in every PL/SQL block?
+
+Correct Answer
+
+No.
+
+DECLARE is optional.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Is BEGIN optional?
+
+Correct Answer
+
+No.
+
+BEGIN is mandatory because it contains executable statements.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Is EXCEPTION mandatory?
+
+Correct Answer
+
+No.
+
+It is required only when exception handling is needed.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Is END optional?
+
+Correct Answer
+
+No.
+
+Every PL/SQL block must end with END;
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Can a PL/SQL block exist without DECLARE?
+
+Correct Answer
+
+Yes.
+
+If no variables, constants, cursors or user-defined data types are
+required, DECLARE can be omitted.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Can a PL/SQL block exist without BEGIN?
+
+Correct Answer
+
+No.
+
+BEGIN is mandatory because executable statements must be placed
+inside it.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Can a PL/SQL block exist without EXCEPTION?
+
+Correct Answer
+
+Yes.
+
+If there is no requirement to handle runtime errors, the EXCEPTION
+section can be omitted.
+
+---------------------------------------------------------------------
+
+Trap 8
+
+Question
+
+What is the basic executable unit of PL/SQL?
+
+Correct Answer
+
+PL/SQL Block.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+• PL/SQL Block = Basic executable unit of PL/SQL.
+• Four Sections:
+  • DECLARE
+  • BEGIN
+  • EXCEPTION
+  • END
+• DECLARE → Optional.
+• BEGIN → Mandatory.
+• EXCEPTION → Optional.
+• END → Mandatory.
+• BEGIN contains executable statements.
+• DECLARE contains variables, constants, cursors and user-defined
+  data types.
+• EXCEPTION handles runtime errors.
+• END marks the end of the PL/SQL block.
+• Anonymous Block → No name, executes once.
+• Named Block → Stored in database, reusable.
+
+======================================================================
