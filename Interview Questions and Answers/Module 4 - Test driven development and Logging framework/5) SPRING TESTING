@@ -1,0 +1,270 @@
+======================================================================
+MODULE 4 : TEST DRIVEN DEVELOPMENT (TDD)
+TOPIC 5 : SPRING TESTING
+======================================================================
+
+Q1. What is Spring Testing?
+
+Interview Ready Answer
+
+Spring Testing is used to test Spring Boot applications using JUnit
+and Mockito.
+
+It supports Unit Testing, Integration Testing, and testing different
+layers of a Spring Boot application such as Controllers, Services,
+and Repositories.
+
+Key Points
+
+• Used for testing Spring Boot applications.
+• Uses JUnit and Mockito.
+• Supports Unit Testing.
+• Supports Integration Testing.
+• Tests different application layers.
+
+======================================================================
+
+Q2. What is @SpringBootTest?
+
+Interview Ready Answer
+
+@SpringBootTest is a Spring Boot annotation used for Integration
+Testing.
+
+It loads the complete Spring Application Context so that all layers
+of the application work together during testing.
+
+Purpose
+
+• Loads complete Spring Context.
+• Used for Integration Testing.
+• Tests the entire application.
+
+======================================================================
+
+Q3. What is @WebMvcTest?
+
+Interview Ready Answer
+
+@WebMvcTest is used to test only the Controller layer of a Spring Boot
+application.
+
+It does not load the complete Spring Application Context, making the
+tests faster.
+
+Purpose
+
+• Tests Controller only.
+• Verifies REST endpoints.
+• Returns HTTP request/response.
+• Faster than @SpringBootTest.
+
+======================================================================
+
+Q4. What is @DataJpaTest?
+
+Interview Ready Answer
+
+@DataJpaTest is used to test only the Repository layer.
+
+It verifies database operations such as Save, Update, Delete and Find.
+Spring Boot usually uses an in-memory H2 database during these tests.
+
+Purpose
+
+• Tests Repository layer.
+• Verifies CRUD operations.
+• Uses H2 in-memory database.
+• Faster Repository testing.
+
+======================================================================
+
+Q5. Why are Repositories mocked during Service Testing?
+
+Interview Ready Answer
+
+Repositories are mocked so that only the Service layer's business
+logic is tested.
+
+This avoids connecting to a real database and makes Unit Tests
+faster, isolated, and reliable.
+
+Advantages
+
+• No real database required.
+• Faster execution.
+• Tests only business logic.
+• Independent Unit Testing.
+
+======================================================================
+
+Q6. What is @MockBean?
+
+Interview Ready Answer
+
+@MockBean is a Spring Boot testing annotation used to replace a real
+Spring Bean with a Mock Bean inside the Spring Application Context.
+
+It prevents real external dependencies from being called during
+testing.
+
+======================================================================
+
+Q7. Difference between @SpringBootTest, @WebMvcTest and @DataJpaTest.
+
+Interview Ready Answer
+
+@SpringBootTest
+
+• Loads complete Spring Application Context.
+• Used for Integration Testing.
+• Tests the complete application.
+
+------------------------------------------------------------
+
+@WebMvcTest
+
+• Tests only Controller layer.
+• Does not load complete application.
+• Used for REST API testing.
+
+------------------------------------------------------------
+
+@DataJpaTest
+
+• Tests only Repository layer.
+• Verifies CRUD operations.
+• Uses H2 in-memory database.
+
+======================================================================
+
+Q8. Difference between @Mock and @MockBean.
+
+Interview Ready Answer
+
+@Mock
+
+• Mockito annotation.
+• Creates a mock object.
+• Used in Unit Testing.
+• Does not load Spring Context.
+
+------------------------------------------------------------
+
+@MockBean
+
+• Spring Boot annotation.
+• Creates a Mock Spring Bean.
+• Replaces a real bean inside Spring Context.
+• Used in Spring Boot Testing.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+Which annotation loads the complete Spring Boot Application?
+
+Correct Answer
+
+@SpringBootTest
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Which annotation is used only for Controller Testing?
+
+Correct Answer
+
+@WebMvcTest
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Which annotation is used only for Repository Testing?
+
+Correct Answer
+
+@DataJpaTest
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Which annotation replaces a Spring Bean with a Mock Bean?
+
+Correct Answer
+
+@MockBean
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Can @WebMvcTest test the Repository layer?
+
+Correct Answer
+
+No.
+
+@WebMvcTest tests only the Controller layer.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Can @DataJpaTest test Controllers?
+
+Correct Answer
+
+No.
+
+It tests only the Repository layer.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Does @MockBean belong to Mockito?
+
+Correct Answer
+
+No.
+
+@MockBean is a Spring Boot Testing annotation.
+
+@Mock belongs to Mockito.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+• Spring Testing uses JUnit and Mockito.
+• @SpringBootTest → Tests complete application.
+• @WebMvcTest → Tests Controller layer.
+• @DataJpaTest → Tests Repository layer.
+• Service Testing usually mocks Repository.
+• @MockBean replaces a real Spring Bean.
+• @Mock creates a Mockito Mock Object.
+• Controller → @WebMvcTest
+• Repository → @DataJpaTest
+• Complete Application → @SpringBootTest
+
+======================================================================
