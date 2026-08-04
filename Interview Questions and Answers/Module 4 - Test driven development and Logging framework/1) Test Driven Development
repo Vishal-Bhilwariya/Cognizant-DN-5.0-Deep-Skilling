@@ -1,0 +1,297 @@
+======================================================================
+MODULE 4 : TEST DRIVEN DEVELOPMENT (TDD)
+TOPIC 1 : INTRODUCTION TO TEST DRIVEN DEVELOPMENT (TDD)
+======================================================================
+
+Q1. What is Test-Driven Development (TDD)?
+
+Interview Ready Answer
+
+Test-Driven Development (TDD) is a software development methodology
+in which developers write automated test cases before writing the
+actual production code.
+
+Development follows the Red → Green → Refactor cycle to produce
+reliable, maintainable, and well-tested software.
+
+Key Points
+
+• Test First approach.
+• Tests are written before implementation.
+• Produces reliable code.
+• Encourages continuous testing.
+• Improves maintainability.
+
+======================================================================
+
+Q2. Why do we need TDD?
+
+Interview Ready Answer
+
+TDD helps detect defects early by writing tests before code.
+It reduces debugging effort, improves software quality, and gives
+developers confidence that new changes do not break existing features.
+
+Advantages
+
+• Finds bugs early.
+• Improves code quality.
+• Easier debugging.
+• Safer refactoring.
+• Better maintainability.
+• Higher developer confidence.
+
+Real-Life Example
+
+ATM Withdrawal
+
+Requirement:
+Withdraw ₹1000
+
+↓
+
+Write Test
+
+↓
+
+Expected Balance = ₹4000
+
+↓
+
+Test Fails
+
+↓
+
+Write Minimum Code
+
+↓
+
+Test Passes
+
+Instead of debugging after writing the complete feature.
+
+======================================================================
+
+Q3. Explain the Red → Green → Refactor Cycle.
+
+Interview Ready Answer
+
+The Red → Green → Refactor cycle is the core workflow of TDD.
+
+Red
+
+Write a test case.
+
+Run it.
+
+The test fails.
+
+------------------------------------------------------------
+
+Green
+
+Write only the minimum production code required.
+
+Run the test again.
+
+The test passes.
+
+------------------------------------------------------------
+
+Refactor
+
+Improve the code structure without changing its behavior.
+
+All tests should continue to pass.
+
+Memory Trick
+
+R → G → R
+
+Red
+↓
+
+Green
+↓
+
+Refactor
+
+======================================================================
+
+Q4. Difference between Traditional Development and TDD.
+
+Interview Ready Answer
+
+Traditional Development
+
+• Code first.
+• Testing is done later.
+• Bugs are found late.
+• More debugging effort.
+• Lower confidence while modifying code.
+• Refactoring is risky.
+
+------------------------------------------------------------
+
+Test-Driven Development (TDD)
+
+• Test first.
+• Testing starts from the beginning.
+• Bugs are found early.
+• Easier debugging.
+• Higher developer confidence.
+• Safer refactoring.
+
+======================================================================
+
+Q5. Why do companies prefer TDD?
+
+Interview Ready Answer
+
+Companies use TDD because it produces high-quality software by
+detecting defects early and ensuring every feature is automatically
+verified before deployment.
+
+Benefits
+
+• Fewer bugs.
+• Better software quality.
+• Easier maintenance.
+• Safer refactoring.
+• Faster regression testing.
+• Higher developer confidence.
+
+Software/Industry Example
+
+TDD is commonly used in:
+
+• Banking Applications
+• FinTech
+• Enterprise Spring Boot Applications
+• REST APIs
+• Microservices
+• E-commerce Platforms
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+Does TDD mean testing after development?
+
+Correct Answer
+
+No.
+
+TDD means writing automated tests BEFORE writing production code.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+What is the first step in TDD?
+
+Correct Answer
+
+Writing the test case.
+
+Not writing the implementation.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+What is the correct order in TDD?
+
+Correct Answer
+
+Write Test
+
+↓
+
+Test Fails (Red)
+
+↓
+
+Write Minimum Code
+
+↓
+
+Test Passes (Green)
+
+↓
+
+Refactor
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+During the Refactor phase, should functionality change?
+
+Correct Answer
+
+No.
+
+Only the internal code structure is improved.
+The external behavior must remain the same.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Should we write the complete implementation during the Green phase?
+
+Correct Answer
+
+No.
+
+Write only the minimum code required to make the test pass.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Is TDD a testing technique or a software development methodology?
+
+Correct Answer
+
+TDD is a Software Development Methodology.
+
+Testing is only one part of it.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+• TDD = Write Tests Before Production Code.
+• Test First Approach.
+• Core Cycle:
+  • Red
+  • Green
+  • Refactor
+• Red = Write failing test.
+• Green = Write minimum code to pass the test.
+• Refactor = Improve code without changing behavior.
+• Traditional Development = Code First.
+• TDD = Test First.
+• TDD detects bugs early.
+• Improves maintainability.
+• Makes refactoring safer.
+• Gives developers higher confidence.
+• Commonly used with JUnit and Mockito in Spring Boot projects.
+
+======================================================================
