@@ -444,3 +444,921 @@ QUICK REVISION
 • Includes code review.
 • Requires approval before merge.
 • Improves code quality.
+
+====================================================================
+QUESTION 8 : What is a Merge Conflict, and when does it occur?
+====================================================================
+
+Interview Ready Answer
+
+A merge conflict occurs when Git cannot automatically merge
+changes because two branches have modified the same part of the
+same file. The developer must manually resolve the conflict
+before completing the merge.
+
+Definition
+
+Merge Conflict:
+A situation where Git cannot decide which version of the code
+should be kept during a merge.
+
+Purpose
+
+• Prevent incorrect automatic merges
+• Ensure developers manually verify conflicting changes
+• Maintain code correctness
+
+When Does It Occur?
+
+• Same file modified
+• Same lines modified
+• Git cannot determine the correct version
+
+How Is It Resolved?
+
+• Resolve the conflicting code manually
+• git add .
+• git commit
+
+Important Keywords
+
+• Same File
+• Same Lines
+• Manual Resolution
+• Git Cannot Auto Merge
+
+Memory Trick
+
+Same File + Same Lines = Merge Conflict
+
+====================================================================
+INTERVIEW TRAP
+====================================================================
+
+Q:
+Will Git always create a merge conflict if two developers modify
+the same file?
+
+Answer:
+No.
+
+If they modify different parts of the file, Git can usually merge
+the changes automatically. A conflict typically occurs when the
+same part of the file is modified.
+
+====================================================================
+QUICK REVISION
+====================================================================
+
+• Merge Conflict = Git cannot auto merge.
+• Usually occurs when the same lines are modified.
+• Developer resolves it manually.
+• After resolving → git add → git commit.
+
+====================================================================
+QUESTION 9 : What is the difference between git pull and git fetch?
+====================================================================
+
+Interview Ready Answer
+
+git fetch downloads the latest commits and branch updates from
+the remote repository but does not merge them into the current
+local branch.
+
+git pull downloads the latest changes and automatically merges
+them into the current local branch.
+
+Definition
+
+git fetch
+• Download only
+• No automatic merge
+• Safe for reviewing changes
+
+git pull
+• Download + Merge
+• Updates current branch automatically
+
+Purpose
+
+• fetch → Inspect changes first
+• pull → Update local branch immediately
+
+Important Keywords
+
+• Download
+• Merge
+• Remote Repository
+• Remote-Tracking Branch
+• Synchronization
+
+Memory Trick
+
+fetch = Download
+
+pull = Download + Merge
+
+====================================================================
+INTERVIEW TRAP
+====================================================================
+
+Q:
+Does git fetch download commits from the remote repository?
+
+Answer:
+Yes.
+
+It downloads the latest commits and updates the remote-tracking
+branches. It simply does not merge them into your current branch.
+
+====================================================================
+QUICK REVISION
+====================================================================
+
+• Both communicate with the remote repository.
+• fetch = Download only.
+• pull = Download + Merge.
+• fetch is safer when you want to inspect changes first.
+
+====================================================================
+QUESTION 10 : What is the purpose of the .gitignore file?
+====================================================================
+
+Interview Ready Answer
+
+A .gitignore file specifies files and directories that Git
+should ignore and not track. It is used to exclude build
+artifacts, IDE configuration files, temporary files, and
+sensitive files from being committed to the repository.
+
+Definition
+
+.gitignore:
+A file that tells Git which files and directories should not
+be tracked.
+
+Purpose
+
+• Ignore build artifacts
+• Ignore IDE configuration files
+• Ignore temporary files
+• Protect sensitive files
+• Keep the repository clean
+
+Common Examples
+
+target/
+*.class
+.idea/
+.vscode/
+.env
+
+Important Keywords
+
+• Ignore
+• Untracked Files
+• Build Artifacts
+• Sensitive Files
+• Repository Cleanliness
+
+Memory Trick
+
+.gitignore = Don't Track These Files
+
+====================================================================
+INTERVIEW TRAP
+====================================================================
+
+Q:
+If a file is already committed, will adding it to .gitignore
+stop Git from tracking it?
+
+Answer:
+No.
+
+.gitignore affects only untracked files. Already tracked files
+remain tracked until they are explicitly removed from Git.
+
+====================================================================
+QUICK REVISION
+====================================================================
+
+• .gitignore tells Git what not to track.
+• Used for temporary, generated, IDE, and sensitive files.
+• Does not remove already tracked files.
+
+====================================================================
+QUESTION 11 : What is the purpose of git add, and what is the Staging Area?
+====================================================================
+
+Interview Ready Answer
+
+The git add command stages selected changes for the next commit
+by moving them from the Working Directory to the Staging Area.
+
+The Staging Area is an intermediate area where developers select
+which changes should be included in the next commit before they
+are permanently recorded in the Local Repository.
+
+Definition
+
+git add
+• Stages selected changes
+• Moves changes to the Staging Area
+• Prepares changes for commit
+
+Staging Area
+• Intermediate area
+• Holds selected changes
+• Changes remain here until git commit
+
+Flow
+
+Working Directory
+      ↓
+git add
+      ↓
+Staging Area
+      ↓
+git commit
+      ↓
+Local Repository
+
+Important Keywords
+
+• Stage
+• Staging Area
+• Working Directory
+• Local Repository
+• Commit
+
+Memory Trick
+
+Write → Stage → Commit
+
+====================================================================
+INTERVIEW TRAP
+====================================================================
+
+Q:
+Does git add save the project permanently?
+
+Answer:
+No.
+
+git add only stages the selected changes.
+The changes become part of the repository only after git commit.
+
+====================================================================
+QUICK REVISION
+====================================================================
+
+• git add stages changes.
+• Staging Area is temporary.
+• Commit permanently records staged changes.
+• git add . stages all modified and new files in the current directory.
+
+====================================================================
+QUESTION 12 : What is a commit, and how is git commit different from
+git add?
+====================================================================
+
+Interview Ready Answer
+
+A commit is a snapshot of the staged changes at a specific point
+in time.
+
+git add stages selected changes by moving them from the Working
+Directory to the Staging Area.
+
+git commit permanently records those staged changes as a new
+commit in the Local Repository.
+
+Definition
+
+Commit
+• Snapshot of staged changes
+• Permanent record
+• Stored in Local Repository
+
+Difference
+
+git add
+• Stages changes
+• Working Directory → Staging Area
+
+git commit
+• Creates a new commit
+• Staging Area → Local Repository
+
+Flow
+
+Working Directory
+      ↓
+git add
+      ↓
+Staging Area
+      ↓
+git commit
+      ↓
+Local Repository
+
+Important Keywords
+
+• Snapshot
+• Staging Area
+• Local Repository
+• Permanent Record
+• Commit History
+
+Memory Trick
+
+git add = Prepare
+
+git commit = Save Snapshot
+
+====================================================================
+INTERVIEW TRAP
+====================================================================
+
+Q:
+Does git commit upload code to GitHub?
+
+Answer:
+No.
+
+git commit only creates a commit in the Local Repository.
+The code is uploaded to GitHub only after running git push.
+
+====================================================================
+QUICK REVISION
+====================================================================
+
+• Commit = Snapshot.
+• git add stages changes.
+• git commit creates a permanent record.
+• Commits are created locally.
+• git push uploads commits to GitHub.
+
+====================================================================
+QUESTION 13 : Explain the complete Git workflow from writing code to
+making it available to your teammates.
+====================================================================
+
+Interview Ready Answer
+
+For a new developer:
+git clone → Write Code → git add → git commit → git push
+
+For an existing developer:
+git pull → Write Code → git add → git commit → git push
+
+If working on a feature branch:
+Push → Pull Request → Code Review → Merge → Team pulls changes
+
+Workflow
+
+New Project
+• git init
+
+Existing Project
+• git clone (first time only)
+
+Daily Workflow
+• git pull
+• Write code
+• git add
+• git commit
+• git push
+
+Team Workflow
+
+Developer
+      ↓
+git push
+      ↓
+GitHub
+      ↓
+Pull Request
+      ↓
+Code Review
+      ↓
+Merge
+      ↓
+git pull (Team)
+
+Important Keywords
+
+• Clone
+• Pull
+• Commit
+• Push
+• Pull Request
+• Merge
+
+Memory Trick
+
+Clone Once
+
+Pull Daily
+
+Push Your Changes
+
+====================================================================
+INTERVIEW TRAP
+====================================================================
+
+Q:
+After you push your code, should your teammates run git clone?
+
+Answer:
+No.
+
+They already have the repository locally.
+They should run git pull to download the latest changes.
+
+====================================================================
+QUICK REVISION
+====================================================================
+
+• git clone → First-time download.
+• git pull → Daily update.
+• git add → Stage.
+• git commit → Create snapshot.
+• git push → Upload commits.
+• Pull Request → Review before merge.
+
+====================================================================
+QUESTION 14 : What is the difference between git clone and git pull?
+====================================================================
+
+Interview Ready Answer
+
+git clone downloads a complete Git repository from a remote
+server to the local machine for the first time. It includes the
+project files, commit history, branches, and repository
+configuration.
+
+git pull is used when the repository already exists locally.
+It downloads the latest changes from the remote repository and
+automatically merges them into the current local branch.
+
+Definition
+
+git clone
+• First-time download
+• Complete repository
+• Creates local repository
+
+git pull
+• Existing repository
+• Downloads latest changes
+• Automatically merges changes
+
+Difference
+
+git clone
+• First time
+• Complete repository
+
+git pull
+• Existing repository
+• Latest updates only
+
+Important Keywords
+
+• Complete Repository
+• First Time
+• Fetch + Merge
+• Local Repository
+
+Memory Trick
+
+Clone Once
+
+Pull Daily
+
+====================================================================
+INTERVIEW TRAP
+====================================================================
+
+Q:
+Can git pull be used if the repository does not exist on your
+local machine?
+
+Answer:
+No.
+
+You must first download the repository using git clone.
+After that, use git pull to receive future updates.
+
+====================================================================
+QUICK REVISION
+====================================================================
+
+• git clone = First download.
+• Downloads complete repository.
+• git pull = Update existing repository.
+• git pull = Fetch + Merge.
+
+====================================================================
+QUESTION 15 : What is the purpose of git status?
+====================================================================
+
+Interview Ready Answer
+
+The git status command displays the current state of the Git
+repository. It shows modified files, untracked files, staged
+changes, the current branch, and whether the working directory
+is ready for a commit.
+
+Definition
+
+git status
+• Displays repository status
+• Does not modify any files
+
+Purpose
+
+• View modified files
+• View untracked files
+• View staged files
+• View current branch
+• Check repository state before commit
+
+Important Keywords
+
+• Repository Status
+• Modified Files
+• Untracked Files
+• Staged Files
+• Current Branch
+
+Memory Trick
+
+git status = "What's happening in my repository?"
+
+====================================================================
+INTERVIEW TRAP
+====================================================================
+
+Q:
+Does git status change or save any files?
+
+Answer:
+No.
+
+It is a read-only command that only displays the current status
+of the repository.
+
+====================================================================
+QUICK REVISION
+====================================================================
+
+• Shows repository status.
+• Displays modified files.
+• Displays untracked files.
+• Displays staged changes.
+• Helps before git add and git commit.
+
+====================================================================
+QUESTION 16 : What is the purpose of git log?
+====================================================================
+
+Interview Ready Answer
+
+The git log command displays the commit history of a Git
+repository. It shows the commit ID (SHA), author, date, and
+commit message.
+
+git log --oneline displays each commit in a compact single-line
+format.
+
+Definition
+
+git log
+• Displays commit history
+• Read-only command
+
+Purpose
+
+• View commit history
+• View commit IDs
+• View author information
+• View commit messages
+• Track project changes
+
+Common Commands
+
+git log
+git log --oneline
+
+Important Keywords
+
+• Commit History
+• Commit SHA
+• Author
+• Commit Message
+
+Memory Trick
+
+git log = Project History
+
+====================================================================
+INTERVIEW TRAP
+====================================================================
+
+Q:
+Does git log modify the repository?
+
+Answer:
+No.
+
+It is a read-only command used only to view commit history.
+
+====================================================================
+QUICK REVISION
+====================================================================
+
+• Shows commit history.
+• Displays commit ID, author, date, and message.
+• git log --oneline gives a compact view.
+
+====================================================================
+QUESTION 17 : What happens internally when you run git init?
+====================================================================
+
+Interview Ready Answer
+
+The git init command initializes a Git repository by creating a
+hidden .git directory in the current folder. The .git directory
+stores commit history, branch information, configuration, and
+other metadata required for version control.
+
+Definition
+
+git init
+• Initializes a Git repository
+• Creates the .git folder
+
+Purpose
+
+• Start tracking a project
+• Enable version control
+• Create Git metadata
+
+What Does .git Store?
+
+• Commit history
+• Branch information
+• Repository configuration
+• Git objects
+• Metadata
+
+Important Keywords
+
+• Initialize Repository
+• .git Folder
+• Metadata
+• Version Control
+
+Memory Trick
+
+git init
+
+↓
+
+Creates .git
+
+↓
+
+Project becomes Git Repository
+
+====================================================================
+INTERVIEW TRAP
+====================================================================
+
+Q:
+Does git init create your project?
+
+Answer:
+No.
+
+It only initializes Git by creating the hidden .git directory.
+The project may already exist.
+
+====================================================================
+QUICK REVISION
+====================================================================
+
+• git init initializes Git.
+• Creates the .git folder.
+• Starts version tracking.
+• Does not create the project itself.
+
+====================================================================
+QUESTION 18 : What is the purpose of git push?
+====================================================================
+
+Interview Ready Answer
+
+The git push command uploads local commits from the Local
+Repository to the Remote Repository, such as GitHub. It
+synchronizes the remote repository with the latest committed
+changes.
+
+Definition
+
+git push
+• Uploads local commits
+• Updates the remote repository
+
+Purpose
+
+• Share code
+• Synchronize repositories
+• Enable collaboration
+• Update GitHub
+
+Flow
+
+Local Repository
+      ↓
+git push
+      ↓
+Remote Repository (GitHub)
+
+Important Keywords
+
+• Local Commits
+• Remote Repository
+• Synchronization
+• Collaboration
+
+Memory Trick
+
+Push = Local → Remote
+
+====================================================================
+INTERVIEW TRAP
+====================================================================
+
+Q:
+Can git push upload uncommitted changes?
+
+Answer:
+No.
+
+Only committed changes are pushed. You must first use
+git add and git commit before git push.
+
+====================================================================
+QUICK REVISION
+====================================================================
+
+• git push uploads commits.
+• Direction: Local → Remote.
+• Used for collaboration.
+• Uncommitted changes are never pushed.
+
+====================================================================
+QUESTION 19 : What is the difference between git branch and
+git checkout -b (or git switch -c)?
+====================================================================
+
+Interview Ready Answer
+
+git branch is used to list existing branches or create a new
+branch. It does not switch to the new branch.
+
+git checkout -b (or git switch -c) creates a new branch and
+immediately switches to it.
+
+Definition
+
+git branch
+• Lists local branches
+• Can create a branch
+• Does not switch branches
+
+git checkout -b
+• Creates a branch
+• Switches to the branch immediately
+
+git switch -c
+• Modern alternative to git checkout -b
+
+Difference
+
+git branch feature-login
+→ Create only
+
+git checkout -b feature-login
+→ Create + Switch
+
+git switch -c feature-login
+→ Create + Switch
+
+Important Keywords
+
+• Create Branch
+• Switch Branch
+• Current Branch
+
+Memory Trick
+
+git branch = Create
+
+git checkout -b = Create + Switch
+
+====================================================================
+INTERVIEW TRAP
+====================================================================
+
+Q:
+Does git branch feature-login switch you to the new branch?
+
+Answer:
+No.
+
+It only creates the branch.
+You must use git switch feature-login or
+git checkout feature-login to move to it.
+
+====================================================================
+QUICK REVISION
+====================================================================
+
+• git branch → List/Create.
+• git checkout -b → Create + Switch.
+• git switch -c → Modern Create + Switch.
+
+====================================================================
+QUESTION 20 : Explain the complete process from a feature branch until
+it becomes part of the main branch.
+====================================================================
+
+Interview Ready Answer
+
+1. Complete the feature on the feature branch.
+2. Push the feature branch to GitHub.
+3. Create a Pull Request.
+4. Team reviews the code.
+5. Required changes are made (if any).
+6. Pull Request is approved.
+7. Merge into the main branch.
+8. Team members run git pull to get the latest changes.
+
+Workflow
+
+Feature Branch
+      ↓
+git push
+      ↓
+GitHub
+      ↓
+Pull Request
+      ↓
+Code Review
+      ↓
+Approval
+      ↓
+Merge into main
+      ↓
+git pull (Team)
+
+Important Keywords
+
+• Feature Branch
+• Push
+• Pull Request
+• Code Review
+• Approval
+• Merge
+
+Memory Trick
+
+Push → PR → Review → Merge → Pull
+
+====================================================================
+INTERVIEW TRAP
+====================================================================
+
+Q:
+Can you create a Pull Request before pushing your branch?
+
+Answer:
+No.
+
+The feature branch must exist on the remote repository before a
+Pull Request can be created.
+
+====================================================================
+QUICK REVISION
+====================================================================
+
+• Push feature branch first.
+• Create Pull Request.
+• Review and approval.
+• Merge into main.
+• Team updates using git pull.
