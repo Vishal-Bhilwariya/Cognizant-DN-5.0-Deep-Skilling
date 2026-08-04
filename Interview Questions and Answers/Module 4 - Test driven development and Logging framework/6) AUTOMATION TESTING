@@ -1,0 +1,308 @@
+======================================================================
+MODULE 4 : TEST DRIVEN DEVELOPMENT (TDD)
+TOPIC 6 : AUTOMATION TESTING
+======================================================================
+
+Q1. What is Automation Testing?
+
+Interview Ready Answer
+
+Automation Testing is a software testing technique in which test
+cases are executed automatically using testing tools or scripts
+instead of being performed manually by a tester.
+
+It helps execute repetitive test cases quickly, accurately, and
+consistently.
+
+Key Points
+
+• Test execution is automated.
+• Uses testing tools/scripts.
+• Faster than Manual Testing.
+• Reduces human errors.
+• Best for repetitive testing.
+
+======================================================================
+
+Q2. Why do we need Automation Testing?
+
+Interview Ready Answer
+
+Automation Testing is required to reduce manual effort, execute
+repetitive test cases quickly, improve testing accuracy, and support
+continuous testing during software development.
+
+Advantages
+
+• Faster execution.
+• Reduces human errors.
+• Reusable test scripts.
+• Higher test coverage.
+• Saves time and effort.
+• Best suited for Regression Testing.
+
+Real-Life Example
+
+E-commerce Website
+
+Whenever a new feature is added,
+
+↓
+
+Login
+
+↓
+
+Cart
+
+↓
+
+Payment
+
+↓
+
+Order
+
+must be tested again.
+
+Instead of testing manually every time,
+
+Automation Testing executes all test cases automatically.
+
+======================================================================
+
+Q3. Difference between Manual Testing and Automation Testing.
+
+Interview Ready Answer
+
+Manual Testing
+
+• Performed by a human tester.
+• Slower execution.
+• More prone to human errors.
+• Suitable for Exploratory Testing.
+• No programming knowledge required.
+
+------------------------------------------------------------
+
+Automation Testing
+
+• Performed using tools/scripts.
+• Faster execution.
+• More accurate and consistent.
+• Best suited for Regression Testing.
+• Basic programming knowledge is usually required.
+
+Memory Trick
+
+Manual
+
+↓
+
+Human
+
+Automation
+
+↓
+
+Tool
+
+======================================================================
+
+Q4. What are the different types of Testing?
+
+Interview Ready Answer
+
+Unit Testing
+
+• Tests a single method or function.
+
+Example
+
+calculateSalary()
+
+------------------------------------------------------------
+
+Integration Testing
+
+• Tests communication between multiple modules.
+
+Example
+
+Login
+
+↓
+
+Service
+
+↓
+
+Database
+
+------------------------------------------------------------
+
+Functional Testing
+
+• Verifies whether a feature works according to business
+  requirements.
+
+Example
+
+Add to Cart
+
+------------------------------------------------------------
+
+End-to-End (E2E) Testing
+
+• Tests the complete application workflow.
+
+Example
+
+Login
+
+↓
+
+Search Product
+
+↓
+
+Payment
+
+↓
+
+Order Success
+
+------------------------------------------------------------
+
+Performance Testing
+
+• Measures application speed, stability, and scalability.
+
+Example
+
+Testing whether an application can handle thousands of users
+simultaneously.
+
+======================================================================
+
+Q5. When should we use Automation Testing?
+
+Interview Ready Answer
+
+Automation Testing should be used for repetitive tasks, Regression
+Testing, Smoke Testing, and scenarios where the same test cases are
+executed multiple times.
+
+Manual Testing is preferred for Exploratory Testing, Usability
+Testing, and situations requiring human judgment.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+Does Automation Testing completely replace Manual Testing?
+
+Correct Answer
+
+No.
+
+Automation Testing complements Manual Testing.
+
+Exploratory and Usability Testing are usually performed manually.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Which testing is best for Regression Testing?
+
+Correct Answer
+
+Automation Testing.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Which testing is best for Exploratory Testing?
+
+Correct Answer
+
+Manual Testing.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Is programming knowledge required for Automation Testing?
+
+Correct Answer
+
+Yes.
+
+Basic programming or scripting knowledge is usually required.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Which testing verifies the complete application workflow?
+
+Correct Answer
+
+End-to-End (E2E) Testing.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Which testing checks communication between modules?
+
+Correct Answer
+
+Integration Testing.
+
+---------------------------------------------------------------------
+
+Trap 7
+
+Question
+
+Which testing measures speed and scalability?
+
+Correct Answer
+
+Performance Testing.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+• Automation Testing executes test cases automatically.
+• Uses testing tools and scripts.
+• Faster than Manual Testing.
+• Reduces human errors.
+• Best for repetitive and Regression Testing.
+• Manual Testing → Human.
+• Automation Testing → Tool.
+• Unit Testing → Tests a single method.
+• Integration Testing → Tests module interaction.
+• Functional Testing → Tests business functionality.
+• End-to-End Testing → Tests complete workflow.
+• Performance Testing → Tests speed, stability, and scalability.
+
+======================================================================
