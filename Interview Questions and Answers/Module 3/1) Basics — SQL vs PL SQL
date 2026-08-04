@@ -1,0 +1,306 @@
+======================================================================
+MODULE 3 : PL/SQL PROGRAMMING
+TOPIC 1 : PL/SQL BASICS (SQL vs PL/SQL)
+======================================================================
+
+Q1. What is SQL?
+
+Interview Ready Answer
+
+SQL (Structured Query Language) is a declarative language used to
+communicate with a relational database. It is used to retrieve,
+insert, update, delete and define database objects.
+
+Key Points
+
+• Declarative language.
+• Used to perform database operations.
+• Executes one SQL statement at a time.
+• Supported by Oracle, MySQL, SQL Server, PostgreSQL, etc.
+
+======================================================================
+
+Q2. What is PL/SQL?
+
+Interview Ready Answer
+
+PL/SQL (Procedural Language/Structured Query Language) is Oracle's
+procedural extension to SQL. It combines SQL with programming
+features like variables, loops, conditions, exception handling,
+procedures, functions, packages and triggers.
+
+Key Points
+
+• Oracle specific language.
+• Supports procedural programming.
+• Executes as a PL/SQL block.
+• Used to implement business logic inside the database.
+
+Formula
+
+PL/SQL = SQL + Programming Features
+
+======================================================================
+
+Q3. Why was PL/SQL introduced when SQL already existed?
+
+Interview Ready Answer
+
+PL/SQL was introduced because SQL is designed only for data
+manipulation and cannot implement business logic. SQL does not
+support variables, loops, conditions, exception handling,
+procedures or functions.
+
+PL/SQL overcomes these limitations by adding procedural programming
+features, allowing developers to write complete database programs.
+
+Limitations of SQL
+
+• No variables.
+• No IF-ELSE.
+• No loops.
+• No exception handling.
+• No procedures or functions.
+• Cannot implement business logic.
+
+======================================================================
+
+Q4. How does PL/SQL work internally?
+
+Interview Ready Answer
+
+PL/SQL code is first executed by the PL/SQL Engine. Whenever an SQL
+statement is encountered, it is sent to the SQL Engine for execution.
+After execution, control returns to the PL/SQL Engine.
+
+Flow
+
+User
+
+↓
+
+PL/SQL Engine
+
+↓
+
+SQL Engine
+
+↓
+
+Oracle Database
+
+↓
+
+Result Returned
+
+Important Point
+
+The entire PL/SQL block executes inside the Oracle Database,
+reducing communication between the application and database.
+
+======================================================================
+
+Q5. Why is PL/SQL faster than executing multiple SQL statements from
+an application?
+
+Interview Ready Answer
+
+PL/SQL executes the complete business logic inside the Oracle
+database. Instead of sending multiple SQL statements separately,
+the application sends a single PL/SQL block.
+
+Advantages
+
+• Reduces network round trips.
+• Improves execution speed.
+• Better performance.
+• Less communication overhead.
+
+======================================================================
+
+Q6. What are the advantages of PL/SQL?
+
+Interview Ready Answer
+
+PL/SQL provides procedural programming capabilities along with SQL,
+making database applications faster, secure and reusable.
+
+Advantages
+
+• Supports business logic.
+• Supports variables.
+• Supports IF-ELSE.
+• Supports loops.
+• Supports exception handling.
+• Better performance.
+• Reduced network traffic.
+• Reusable procedures and functions.
+• Better security using stored procedures.
+• Easy maintenance.
+
+======================================================================
+
+Q7. What are the disadvantages of PL/SQL?
+
+Interview Ready Answer
+
+Although PL/SQL is powerful, it has some limitations.
+
+Disadvantages
+
+• Oracle specific language.
+• Not portable to other databases.
+• Vendor lock-in.
+• Learning curve is higher than SQL.
+
+======================================================================
+
+Q8. Difference between SQL and PL/SQL.
+
+Interview Ready Answer
+
+SQL
+
+• Declarative language.
+• Used for database operations.
+• Executes one statement at a time.
+• Does not support variables.
+• Does not support loops.
+• Does not support IF-ELSE.
+• No exception handling.
+• Supported by multiple databases.
+
+PL/SQL
+
+• Procedural language.
+• Used for business logic.
+• Executes an entire block.
+• Supports variables.
+• Supports loops.
+• Supports IF-ELSE.
+• Supports exception handling.
+• Oracle specific.
+
+======================================================================
+
+Q9. Where is PL/SQL used in industry?
+
+Interview Ready Answer
+
+PL/SQL is mainly used in Oracle-based enterprise applications where
+business logic needs to be executed inside the database.
+
+Industry Examples
+
+• Banking Systems.
+• Payroll Systems.
+• ERP Applications.
+• Hospital Management Systems.
+• Oracle E-Business Suite.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+Is SQL a programming language?
+
+Correct Answer
+
+No.
+
+SQL is a declarative query language. It is not a procedural
+programming language.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Can SQL perform IF-ELSE or loops?
+
+Correct Answer
+
+No.
+
+SQL does not support procedural constructs like IF-ELSE,
+loops or variables.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Is PL/SQL a separate language from SQL?
+
+Correct Answer
+
+No.
+
+PL/SQL is Oracle's procedural extension to SQL.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Why is PL/SQL faster than executing multiple SQL statements from an
+application?
+
+Correct Answer
+
+Because the complete PL/SQL block executes inside the Oracle
+database, reducing network round trips.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Can PL/SQL execute SQL statements?
+
+Correct Answer
+
+Yes.
+
+PL/SQL can execute SELECT, INSERT, UPDATE, DELETE and other SQL
+statements inside a PL/SQL block.
+
+---------------------------------------------------------------------
+
+Trap 6
+
+Question
+
+Can SQL execute PL/SQL statements?
+
+Correct Answer
+
+No.
+
+SQL cannot execute procedural statements like IF-ELSE,
+loops or exception handling.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+• SQL = Declarative Language.
+• PL/SQL = Procedural Extension of SQL.
+• SQL is used for data manipulation.
+• PL/SQL is used for business logic.
+• PL/SQL supports variables, loops, IF-ELSE and exception handling.
+• PL/SQL executes inside Oracle Database.
+• PL/SQL reduces network round trips.
+• PL/SQL supports procedures, functions, packages and triggers.
+• SQL is database independent.
+• PL/SQL is Oracle specific.
+
+======================================================================
