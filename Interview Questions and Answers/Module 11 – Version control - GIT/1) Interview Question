@@ -1,0 +1,56 @@
+====================================================================
+QUESTION 1 : What is Git, and why do software development teams use it?
+====================================================================
+
+Interview Ready Answer
+
+Git is a Distributed Version Control System (DVCS) used to track
+changes in source code, maintain version history, and enable multiple
+developers to collaborate efficiently on the same project.
+
+Definition
+
+Git is a Distributed Version Control System.
+
+Purpose
+
+• Tracks source code changes
+• Maintains version history
+• Enables team collaboration
+• Supports parallel development using branches
+• Restores previous project versions when required
+
+Important Keywords
+
+• Distributed
+• Version Control
+• Collaboration
+• Commit History
+• Source Code Management
+
+Memory Trick
+
+Git = Track + History + Collaboration
+
+====================================================================
+INTERVIEW TRAP
+====================================================================
+
+Q:
+Is Git and GitHub the same?
+
+Answer:
+No.
+
+Git is a Distributed Version Control System installed locally.
+GitHub is a cloud platform that hosts Git repositories for collaboration.
+
+====================================================================
+QUICK REVISION
+====================================================================
+
+• Git is a DVCS.
+• Git tracks source code changes.
+• Git maintains version history.
+• Git enables collaboration.
+• Git supports parallel development.
