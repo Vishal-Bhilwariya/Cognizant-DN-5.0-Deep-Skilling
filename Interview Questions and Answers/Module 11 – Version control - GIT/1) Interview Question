@@ -54,3 +54,56 @@ QUICK REVISION
 • Git maintains version history.
 • Git enables collaboration.
 • Git supports parallel development.
+
+====================================================================
+QUESTION 2 : Why is Git called a Distributed Version Control System (DVCS)?
+====================================================================
+
+Interview Ready Answer
+
+Git is called a Distributed Version Control System because every
+developer has a complete copy of the repository, including the
+entire commit history and branches, on their local machine.
+Developers can work offline and synchronize their changes later
+with a remote repository like GitHub.
+
+Definition
+
+Distributed = Complete repository on every developer's machine.
+
+Version = Different snapshots/versions of the project.
+
+Control = Managing and controlling different versions of source code.
+
+Purpose
+
+• Every developer has a full repository.
+• Supports offline development.
+• Maintains complete commit history locally.
+• Enables efficient collaboration.
+
+Memory Trick
+
+Distributed = Repository is distributed, NOT the project.
+
+====================================================================
+INTERVIEW TRAP
+====================================================================
+
+Q:
+Does "Distributed" mean the project is divided among developers?
+
+Answer:
+No.
+
+It means every developer has a complete copy of the repository,
+including its history and branches.
+
+====================================================================
+QUICK REVISION
+====================================================================
+
+• Distributed = Full repository on every machine.
+• Version = Project snapshots.
+• Control = Manage source code versions.
+• Git works offline because the repository is local.
