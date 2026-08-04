@@ -250,3 +250,72 @@ QUICK REVISION
 • .git makes a project a Git repository.
 • .git stores history, branches, and metadata.
 • GitHub is not required for a local repository.
+
+====================================================================
+QUESTION 5 : What is the difference between a Local Repository and a Remote Repository?
+====================================================================
+
+Interview Ready Answer
+
+A Local Repository is stored on the developer's local machine,
+where code is written, committed, and managed. It supports
+offline development.
+
+A Remote Repository is hosted on a remote Git server such as
+GitHub. It is used for collaboration, code sharing, backup,
+and maintaining a central copy of the project.
+
+Definition
+
+Local Repository
+• Stored on local machine
+• Write code
+• Commit code
+• Branch management
+• Works offline
+
+Remote Repository
+• Hosted on GitHub
+• Team collaboration
+• Code sharing
+• Backup
+• Pull Requests
+• Code Reviews
+
+Important Keywords
+
+• Local Machine
+• Remote Git Server
+• Collaboration
+• Offline Development
+• Central Repository
+
+Memory Trick
+
+Local = Work
+
+Remote = Share
+
+====================================================================
+INTERVIEW TRAP
+====================================================================
+
+Q:
+Can you create commits in a Remote Repository?
+
+Answer:
+No.
+
+Commits are always created in the Local Repository.
+The Remote Repository receives them only after git push.
+
+====================================================================
+QUICK REVISION
+====================================================================
+
+• Local Repository → Local machine.
+• Remote Repository → GitHub/Remote Git server.
+• Local = Development.
+• Remote = Collaboration.
+• Commits happen locally.
+• Push/Pull synchronize both repositories.
