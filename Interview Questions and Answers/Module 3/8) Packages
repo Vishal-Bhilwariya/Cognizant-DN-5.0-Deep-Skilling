@@ -191,3 +191,62 @@ QUICK REVISION
 • Body contains executable code.
 
 ======================================================================
+
+====================================================================
+QUESTION 4 : What is a Repository in Git?
+====================================================================
+
+Interview Ready Answer
+
+A Git repository is a project managed by Git. It contains the
+project files along with a hidden .git directory, which stores
+commit history, branch information, configuration, and metadata
+required for version control.
+
+Definition
+
+Repository = Project + .git folder
+
+Purpose
+
+• Stores project source code
+• Stores commit history
+• Stores branch information
+• Stores Git configuration
+• Enables version control
+
+Important Keywords
+
+• Project managed by Git
+• .git folder
+• Commit History
+• Branches
+• Metadata
+
+Memory Trick
+
+Project + .git = Git Repository
+
+Without .git = Normal Folder
+
+====================================================================
+INTERVIEW TRAP
+====================================================================
+
+Q:
+Does a Git repository require GitHub?
+
+Answer:
+No.
+
+A Git repository can exist completely on the local machine.
+GitHub is only a remote hosting platform.
+
+====================================================================
+QUICK REVISION
+====================================================================
+
+• Repository = Project managed by Git.
+• .git makes a project a Git repository.
+• .git stores history, branches, and metadata.
+• GitHub is not required for a local repository.
