@@ -1,0 +1,193 @@
+======================================================================
+MODULE 3 : PL/SQL PROGRAMMING
+TOPIC 8 : PACKAGES
+======================================================================
+
+Q1. What is a Package in PL/SQL?
+
+Interview Ready Answer
+
+A Package is a database object that groups related procedures,
+functions, variables, cursors and exceptions into a single unit.
+
+Packages are used to organize business logic, improve code
+reusability and simplify maintenance.
+
+Purpose
+
+• Group related PL/SQL objects.
+• Improve modularity.
+• Increase code reusability.
+• Simplify maintenance.
+• Improve security.
+
+======================================================================
+
+Q2. Why do we need Packages?
+
+Interview Ready Answer
+
+Packages are used to organize related PL/SQL components into a
+single database object.
+
+Advantages
+
+• Better code organization.
+• Code reusability.
+• Easier maintenance.
+• Improved modularity.
+• Better security.
+• Better performance because the package is loaded once into memory.
+
+======================================================================
+
+Q3. What are the Parts of a Package?
+
+Interview Ready Answer
+
+A PL/SQL Package consists of two parts.
+
+1. Package Specification
+2. Package Body
+
+======================================================================
+
+Q4. What is Package Specification?
+
+Interview Ready Answer
+
+Package Specification is the public interface of a package.
+
+It contains the declarations of procedures, functions, variables,
+cursors and exceptions that are accessible from outside the package.
+
+Purpose
+
+• Declares package members.
+• Defines public interface.
+• Does not contain implementation.
+
+======================================================================
+
+Q5. What is Package Body?
+
+Interview Ready Answer
+
+Package Body contains the implementation of the procedures and
+functions declared in the Package Specification.
+
+Purpose
+
+• Contains executable code.
+• Implements declared procedures and functions.
+• Can also contain private procedures and functions that are not
+  accessible outside the package.
+
+======================================================================
+
+Q6. Difference between Package Specification and Package Body.
+
+Interview Ready Answer
+
+Package Specification
+
+• Contains declarations.
+• Public interface.
+• Accessible from outside.
+• No implementation.
+
+------------------------------------------------------------
+
+Package Body
+
+• Contains implementation.
+• Executable code.
+• Can contain private members.
+• Implements Specification.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Trap 1
+
+Question
+
+What are the two parts of a Package?
+
+Correct Answer
+
+1. Package Specification.
+2. Package Body.
+
+---------------------------------------------------------------------
+
+Trap 2
+
+Question
+
+Does Package Specification contain implementation?
+
+Correct Answer
+
+No.
+
+It contains only declarations.
+
+---------------------------------------------------------------------
+
+Trap 3
+
+Question
+
+Where is the actual code written?
+
+Correct Answer
+
+Package Body.
+
+---------------------------------------------------------------------
+
+Trap 4
+
+Question
+
+Can a Package Body contain private procedures and functions?
+
+Correct Answer
+
+Yes.
+
+Private members are accessible only within the package.
+
+---------------------------------------------------------------------
+
+Trap 5
+
+Question
+
+Why are Packages used?
+
+Correct Answer
+
+To group related PL/SQL objects, improve modularity, code reusability
+and maintainability.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+• Package = Database object.
+• Groups related procedures, functions, variables, cursors and
+  exceptions.
+• Improves code organization.
+• Improves reusability.
+• Two Parts:
+  • Package Specification.
+  • Package Body.
+• Package Specification → Declaration.
+• Package Body → Implementation.
+• Specification is public.
+• Body contains executable code.
+
+======================================================================
