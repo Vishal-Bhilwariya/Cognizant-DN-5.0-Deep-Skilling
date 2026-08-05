@@ -1,0 +1,204 @@
+======================================================================
+MODULE 12 : DEVOPS AND CI/CD
+TOPIC 1 : INTRODUCTION TO DEVOPS
+======================================================================
+
+Q1. What is DevOps?
+
+Interview Ready Answer
+
+DevOps is a software development culture and methodology that integrates
+the Development and Operations teams to improve collaboration, automate
+software delivery, and deliver high-quality software faster and more
+reliably.
+
+Definition
+
+DevOps = Development + Operations
+
+It is:
+• A culture
+• A methodology
+• A set of practices
+
+It is NOT:
+• A programming language
+• A framework
+• A software
+• A tool
+
+Purpose
+
+• Improve collaboration between Development and Operations teams.
+• Automate software development and deployment.
+• Deliver software faster and more reliably.
+• Reduce manual effort and deployment failures.
+• Enable continuous feedback and monitoring.
+
+======================================================================
+
+Q2. Why was DevOps introduced?
+
+Interview Ready Answer
+
+DevOps was introduced to overcome the communication gap between
+Development and Operations teams, eliminate manual deployment issues,
+reduce release time, automate software delivery, and improve the quality
+and reliability of software releases.
+
+Problems Before DevOps
+
+• Development and Operations worked independently.
+• Poor communication between teams.
+• Manual deployments.
+• Slow software releases.
+• Environment inconsistencies.
+• Frequent deployment failures.
+• Delayed bug detection and feedback.
+
+How DevOps Solves These Problems
+
+Development Team
+        │
+        ▼
+Build & Test
+        │
+        ▼
+Continuous Collaboration
+        │
+        ▼
+Operations Team
+        │
+        ▼
+Deployment & Monitoring
+        │
+        ▼
+Continuous Feedback
+
+Benefits
+
+• Better collaboration
+• Faster software delivery
+• Automated deployment
+• Reduced deployment errors
+• Faster bug detection
+• Improved software quality
+• Continuous monitoring
+• Continuous feedback
+
+======================================================================
+
+Q3. Is DevOps a Tool, Methodology, or Culture?
+
+Interview Ready Answer
+
+DevOps is a software development culture and methodology. It promotes
+collaboration between Development and Operations teams throughout the
+software development lifecycle. It also emphasizes automation,
+Continuous Integration (CI), Continuous Delivery (CD), monitoring, and
+continuous feedback. Tools such as Jenkins, Docker, Kubernetes, Git, and
+Ansible are used to implement DevOps practices.
+
+Key Point
+
+DevOps itself is NOT a tool.
+
+Examples of DevOps Tools
+
+• Jenkins
+• Docker
+• Kubernetes
+• Git
+• Ansible
+• GitHub Actions
+• GitLab CI/CD
+• CircleCI
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Q1. Is DevOps a tool?
+
+Answer:
+No. DevOps is a culture and methodology. Tools are used to implement
+DevOps practices.
+
+------------------------------------------------------------
+
+Q2. Does DevOps replace the Development or Operations team?
+
+Answer:
+No. DevOps does not replace either team. It improves collaboration
+between them.
+
+------------------------------------------------------------
+
+Q3. Does DevOps guarantee zero deployment errors?
+
+Answer:
+No. DevOps reduces deployment errors through automation and continuous
+testing, but it cannot guarantee zero errors.
+
+------------------------------------------------------------
+
+Q4. Is CI/CD the same as DevOps?
+
+Answer:
+No. CI/CD is a core practice within DevOps. DevOps is a broader culture
+that includes CI/CD, automation, monitoring, collaboration, and
+continuous feedback.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+DevOps = Development + Operations
+
+DevOps is:
+• Culture
+• Methodology
+• Set of Practices
+
+Main Goals
+
+• Collaboration
+• Automation
+• Faster Delivery
+• Reliable Releases
+• Continuous Feedback
+• Continuous Monitoring
+
+Problems Before DevOps
+
+• Communication gap
+• Manual deployment
+• Slow releases
+• Environment mismatch
+• Frequent deployment failures
+
+Important Interview Keywords
+
+• Collaboration
+• Automation
+• Continuous Integration (CI)
+• Continuous Delivery (CD)
+• Monitoring
+• Feedback
+• Reliable Software Delivery
+• Faster Release Cycle
+
+Memory Trick
+
+C A R E
+
+C → Collaboration
+A → Automation
+R → Reliable Delivery
+E → Early Feedback
+
+Interview One-Liner
+
+"DevOps is a culture and methodology that integrates Development and
+Operations teams through collaboration and automation to deliver
+software faster, more reliably, and with continuous feedback."

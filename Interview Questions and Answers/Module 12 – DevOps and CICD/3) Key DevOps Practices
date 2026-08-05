@@ -1,0 +1,211 @@
+======================================================================
+MODULE 12 : DEVOPS AND CI/CD
+TOPIC 3 : KEY DEVOPS PRACTICES
+======================================================================
+
+Q1. What are the key DevOps practices?
+
+Interview Ready Answer
+
+The key DevOps practices are Collaboration, Automation, Continuous
+Integration (CI), Continuous Delivery/Deployment (CD), Continuous
+Monitoring, and Infrastructure as Code (IaC). These practices help
+organizations deliver software faster, improve quality, reduce manual
+effort, and increase deployment reliability.
+
+Definition
+
+DevOps practices are the techniques and processes used to implement the
+DevOps culture throughout the software development lifecycle.
+
+Purpose
+
+• Improve collaboration.
+• Automate repetitive tasks.
+• Deliver software faster.
+• Improve software quality.
+• Reduce deployment failures.
+• Detect issues early.
+• Ensure consistent infrastructure.
+
+======================================================================
+
+Q2. Explain each DevOps practice briefly.
+
+Interview Ready Answer
+
+1. Collaboration
+
+Development and Operations teams work together throughout the software
+development lifecycle. Continuous communication and feedback reduce
+misunderstandings and improve software quality.
+
+------------------------------------------------------------
+
+2. Automation
+
+Manual tasks such as building, testing, deployment, and infrastructure
+provisioning are automated. This reduces human errors, saves time, and
+improves consistency.
+
+------------------------------------------------------------
+
+3. Continuous Integration (CI)
+
+Developers frequently merge code into a shared repository. Every code
+change is automatically built and tested to detect integration issues
+early.
+
+------------------------------------------------------------
+
+4. Continuous Delivery / Continuous Deployment (CD)
+
+Software is automatically prepared for release or automatically deployed
+to production, enabling faster and more reliable software delivery.
+
+------------------------------------------------------------
+
+5. Continuous Monitoring
+
+Applications, servers, and infrastructure are continuously monitored to
+identify performance issues, failures, and security problems as early as
+possible.
+
+------------------------------------------------------------
+
+6. Infrastructure as Code (IaC)
+
+Infrastructure such as servers, networks, and cloud resources is managed
+using configuration files or code instead of manual configuration. This
+ensures consistency, repeatability, and easier management.
+
+======================================================================
+
+ASCII FLOW
+======================================================================
+
+Planning
+    │
+    ▼
+Development
+    │
+    ▼
+Collaboration
+    │
+    ▼
+Automation
+    │
+    ▼
+Continuous Integration
+    │
+    ▼
+Continuous Delivery / Deployment
+    │
+    ▼
+Production
+    │
+    ▼
+Continuous Monitoring
+    │
+    ▼
+Feedback
+    │
+    └────────────► Development
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Q1. Is debugging a DevOps practice?
+
+Answer
+
+No.
+
+Debugging is a software development activity. DevOps focuses on
+automation, collaboration, CI/CD, monitoring, and infrastructure
+management.
+
+------------------------------------------------------------
+
+Q2. Is Continuous Integration a DevOps practice or a DevOps goal?
+
+Answer
+
+Continuous Integration is a DevOps practice used to achieve DevOps
+goals.
+
+------------------------------------------------------------
+
+Q3. Is automation limited to deployment?
+
+Answer
+
+No.
+
+Automation is applied to building, testing, deployment, infrastructure
+provisioning, monitoring, and other repetitive tasks.
+
+------------------------------------------------------------
+
+Q4. What is the purpose of Infrastructure as Code (IaC)?
+
+Answer
+
+Infrastructure as Code manages infrastructure using code instead of
+manual configuration, ensuring consistency, repeatability, and easier
+maintenance.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+Key DevOps Practices
+
+• Collaboration
+• Automation
+• Continuous Integration (CI)
+• Continuous Delivery (CD)
+• Continuous Deployment
+• Continuous Monitoring
+• Infrastructure as Code (IaC)
+
+Purpose of Each
+
+• Collaboration → Better communication.
+• Automation → Reduce manual effort and human errors.
+• CI → Frequently integrate code and test automatically.
+• CD → Faster and reliable software releases.
+• Monitoring → Detect issues early and improve reliability.
+• IaC → Manage infrastructure through code.
+
+Interview Keywords
+
+• Collaboration
+• Automation
+• Continuous Integration
+• Continuous Delivery
+• Continuous Deployment
+• Continuous Monitoring
+• Infrastructure as Code
+• Reliability
+• Scalability
+• Consistency
+
+Memory Trick
+
+CACCMI
+
+C → Collaboration
+A → Automation
+C → Continuous Integration
+C → Continuous Delivery / Deployment
+M → Continuous Monitoring
+I → Infrastructure as Code
+
+Interview One-Liner
+
+"DevOps is implemented through practices such as collaboration,
+automation, CI/CD, continuous monitoring, and Infrastructure as Code,
+which together enable faster, reliable, and high-quality software
+delivery."
