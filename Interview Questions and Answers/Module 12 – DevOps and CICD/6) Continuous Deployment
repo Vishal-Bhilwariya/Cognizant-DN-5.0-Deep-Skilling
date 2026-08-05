@@ -1,0 +1,231 @@
+======================================================================
+MODULE 12 : DEVOPS AND CI/CD
+TOPIC 6 : CONTINUOUS DEPLOYMENT
+======================================================================
+
+Q1. What is Continuous Deployment? Explain how it works.
+
+Interview Ready Answer
+
+Continuous Deployment is a DevOps practice in which every successful
+build produced by the Continuous Integration (CI) pipeline is
+automatically deployed to the production environment without any manual
+approval. Every code change that passes all automated tests is released
+to end users immediately.
+
+Definition
+
+Continuous Deployment is the practice of automatically deploying every
+successful build to the production environment without manual
+intervention.
+
+Purpose
+
+• Eliminate manual deployment.
+• Release software immediately.
+• Deliver bug fixes and features faster.
+• Reduce release time.
+• Achieve a fully automated software delivery pipeline.
+
+======================================================================
+
+Q2. Explain the workflow of Continuous Deployment.
+
+Interview Ready Answer
+
+After developers commit code, the CI pipeline automatically builds and
+tests the application. If all tests pass, the deployment pipeline
+immediately deploys the application to the production environment
+without requiring manual approval.
+
+Workflow
+
+Developer Writes Code
+        │
+        ▼
+Commit & Push
+        │
+        ▼
+Continuous Integration
+(Build + Test)
+        │
+        ▼
+All Tests Pass
+        │
+        ▼
+Automatic Deployment
+        │
+        ▼
+Production
+
+Important Point
+
+There is NO manual approval before production deployment.
+
+======================================================================
+
+Q3. Why is Continuous Deployment considered risky?
+
+Interview Ready Answer
+
+Continuous Deployment is considered risky because every successful build
+is automatically deployed to production without manual approval. If
+automated tests fail to detect a defect, faulty code may reach end users
+immediately. Therefore, Continuous Deployment requires highly reliable
+automated testing.
+
+Reasons
+
+• No manual approval.
+• Bugs can directly reach production.
+• Depends completely on automated testing.
+• Incorrect tests may allow faulty software to be released.
+• Immediate impact on end users.
+
+======================================================================
+
+Q4. In which applications should Continuous Deployment be avoided?
+
+Interview Ready Answer
+
+Continuous Deployment should generally be avoided in safety-critical and
+highly regulated applications where manual verification, compliance
+checks, or business approval are mandatory before production release.
+
+Examples
+
+• Banking systems.
+• Healthcare applications.
+• Aviation software.
+• Government systems.
+• Payment gateways.
+• Financial trading platforms.
+
+Reason
+
+These applications require strict validation because deployment failures
+can lead to financial loss, legal issues, or safety risks.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Q1. Does Continuous Deployment require manual approval?
+
+Answer
+
+No.
+
+Every successful build is automatically deployed to production.
+
+------------------------------------------------------------
+
+Q2. Can Continuous Deployment work without automated testing?
+
+Answer
+
+No.
+
+Continuous Deployment depends heavily on reliable automated testing.
+Without it, defective code may reach production.
+
+------------------------------------------------------------
+
+Q3. Is Continuous Deployment suitable for every application?
+
+Answer
+
+No.
+
+It is generally not suitable for safety-critical or highly regulated
+applications where manual approval is mandatory.
+
+------------------------------------------------------------
+
+Q4. What happens if automated tests miss a bug?
+
+Answer
+
+The faulty code may be automatically deployed to production and become
+available to end users.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+Continuous Deployment
+
+Definition
+
+• Automatically deploy every successful build.
+• No manual approval.
+• Fully automated release pipeline.
+
+Workflow
+
+Developer
+    │
+    ▼
+Commit & Push
+    │
+    ▼
+Continuous Integration
+(Build + Test)
+    │
+    ▼
+Tests Pass
+    │
+    ▼
+Automatic Deployment
+    │
+    ▼
+Production
+
+Advantages
+
+• Faster releases.
+• Immediate feature delivery.
+• Reduced manual effort.
+• Faster customer feedback.
+• Fully automated deployment.
+
+Disadvantages
+
+• High dependency on automated testing.
+• Bugs can reach production.
+• Not suitable for safety-critical applications.
+
+Interview Keywords
+
+• Automatic Deployment
+• Production Environment
+• No Manual Approval
+• Automated Pipeline
+• Faster Releases
+• Reliable Automated Testing
+
+Memory Trick
+
+Continuous Deployment
+
+CI
+↓
+
+Build + Test
+↓
+
+Automatic Production Deployment
+
+Remember
+
+Continuous Delivery
+→ Manual Approval
+
+Continuous Deployment
+→ Automatic Deployment
+
+Interview One-Liner
+
+"Continuous Deployment is a DevOps practice in which every successful
+build is automatically deployed to the production environment without
+manual approval, enabling rapid and continuous software releases."

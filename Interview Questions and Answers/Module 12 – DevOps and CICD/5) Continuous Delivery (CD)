@@ -1,0 +1,224 @@
+======================================================================
+MODULE 12 : DEVOPS AND CI/CD
+TOPIC 5 : CONTINUOUS DELIVERY (CD)
+======================================================================
+
+Q1. What is Continuous Delivery (CD)? Explain how it works.
+
+Interview Ready Answer
+
+Continuous Delivery (CD) is a DevOps practice in which every successful
+build produced by the Continuous Integration (CI) pipeline is
+automatically prepared for release. The application is always kept in a
+deployable state, but deployment to the production environment requires
+manual approval.
+
+Definition
+
+Continuous Delivery is the practice of automatically preparing software
+for release after Continuous Integration, while keeping manual control
+over production deployment.
+
+Purpose
+
+• Keep the application release-ready at all times.
+• Reduce deployment risk.
+• Improve software quality.
+• Deliver features faster.
+• Allow controlled production releases.
+• Enable quick rollback if required.
+
+======================================================================
+
+Q2. Explain the workflow of Continuous Delivery.
+
+Interview Ready Answer
+
+After the CI pipeline successfully builds and tests the application, the
+Continuous Delivery pipeline packages the application and prepares it
+for deployment. The application remains in a release-ready state until a
+manual approval is given for deployment to the production environment.
+
+CD Workflow
+
+Developer Writes Code
+        │
+        ▼
+Commit & Push
+        │
+        ▼
+Continuous Integration
+(Build + Test)
+        │
+        ▼
+Package Application
+        │
+        ▼
+Release Ready
+        │
+        ▼
+Manual Approval
+        │
+        ▼
+Deploy to Production
+
+Important Point
+
+Deployment to production is MANUAL in Continuous Delivery.
+
+======================================================================
+
+Q3. Why is Continuous Delivery considered safer than releasing software
+only at the end of development?
+
+Interview Ready Answer
+
+Continuous Delivery is safer because software is delivered in small,
+incremental, release-ready changes instead of one large release at the
+end of development. Smaller changes are easier to test, debug, and roll
+back if problems occur. Manual approval before production deployment
+acts as an additional quality gate, reducing deployment risk.
+
+Why CD is Safer
+
+• Small and incremental releases.
+• Easier testing.
+• Faster bug detection.
+• Easier rollback.
+• Lower deployment risk.
+• Manual approval before production deployment.
+• Application is always release-ready.
+
+Before Continuous Delivery
+
+• Large releases.
+• Difficult debugging.
+• High deployment risk.
+• Long release cycles.
+• More production failures.
+
+After Continuous Delivery
+
+• Frequent releases.
+• Faster testing.
+• Faster recovery.
+• Controlled deployment.
+• Better software quality.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Q1. Does Continuous Delivery automatically deploy software to
+production?
+
+Answer
+
+No.
+
+Continuous Delivery prepares the application for deployment, but the
+actual deployment to production requires manual approval.
+
+------------------------------------------------------------
+
+Q2. What is the biggest difference between Continuous Integration and
+Continuous Delivery?
+
+Answer
+
+Continuous Integration automatically builds and tests the application.
+
+Continuous Delivery automatically prepares the application for release
+after successful CI, but production deployment is still manual.
+
+------------------------------------------------------------
+
+Q3. Is Continuous Delivery the same as Continuous Deployment?
+
+Answer
+
+No.
+
+Continuous Delivery requires manual approval before production
+deployment.
+
+Continuous Deployment automatically deploys every successful build to
+production.
+
+------------------------------------------------------------
+
+Q4. Why is manual approval used in Continuous Delivery?
+
+Answer
+
+Manual approval provides an additional quality gate before production
+deployment, reducing deployment risk and allowing business teams to
+choose the appropriate release time.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+Continuous Delivery (CD)
+
+Definition
+
+• Automatically prepares software for release.
+• Keeps the application in a deployable state.
+• Production deployment requires manual approval.
+
+Workflow
+
+Developer
+    │
+    ▼
+Commit Code
+    │
+    ▼
+Continuous Integration
+(Build + Test)
+    │
+    ▼
+Package Application
+    │
+    ▼
+Release Ready
+    │
+    ▼
+Manual Approval
+    │
+    ▼
+Production
+
+Advantages
+
+• Faster releases.
+• Reduced deployment risk.
+• Easier rollback.
+• Better software quality.
+• Controlled production deployment.
+• Always release-ready.
+
+Interview Keywords
+
+• Release Ready
+• Deployable State
+• Manual Approval
+• Controlled Deployment
+• Lower Risk
+• Incremental Releases
+• Faster Recovery
+• Quality Gate
+
+Memory Trick
+
+CD = Create & Deliver (Release Ready)
+
+C → CI Completed
+D → Deploy with Manual Approval
+
+Interview One-Liner
+
+"Continuous Delivery is a DevOps practice that automatically prepares
+software for release after Continuous Integration, while keeping
+production deployment under manual control."
