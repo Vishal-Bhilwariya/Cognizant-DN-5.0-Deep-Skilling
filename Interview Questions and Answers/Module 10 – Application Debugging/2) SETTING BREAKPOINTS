@@ -1,0 +1,179 @@
+======================================================================
+MODULE 10 : APPLICATION DEBUGGING
+TOPIC 2 : SETTING BREAKPOINTS
+======================================================================
+
+Q1. What is a Breakpoint?
+
+Interview Ready Answer
+
+A breakpoint is a debugging marker placed on a specific line of code that pauses program execution when that line is reached. It allows developers to inspect variable values, analyze the call stack, examine the execution flow, and identify the root cause of bugs before continuing execution.
+
+Definition
+
+A breakpoint is a debugging marker that temporarily pauses program execution.
+
+Purpose
+
+• Pause execution at a specific line.
+• Inspect variable values.
+• Analyze the execution flow.
+• Check the call stack.
+• Identify and fix bugs efficiently.
+
+======================================================================
+
+Q2. Why are breakpoints used?
+
+Interview Ready Answer
+
+Breakpoints are used to pause program execution at a desired location so that developers can inspect the application's current state, analyze variable values, trace the execution flow, and identify the root cause of defects.
+
+Purpose
+
+• Debug complex logic.
+• Verify variable values.
+• Analyze function execution.
+• Detect the root cause of bugs.
+• Reduce dependency on console.log() statements.
+
+======================================================================
+
+Q3. What are the different types of breakpoints available in modern debuggers?
+
+Interview Ready Answer
+
+Modern debuggers provide multiple types of breakpoints:
+
+• Line Breakpoint
+• Conditional Breakpoint
+• Exception Breakpoint
+• Function Breakpoint
+• Logpoint
+
+Definition
+
+Line Breakpoint
+• Pauses execution whenever the specified line is reached.
+
+Conditional Breakpoint
+• Pauses execution only when a specified condition evaluates to true.
+
+Exception Breakpoint
+• Pauses execution when an exception is thrown.
+
+Function Breakpoint
+• Pauses execution whenever a specified function is called.
+
+Logpoint
+• Prints a log message without pausing program execution.
+
+======================================================================
+
+Q4. What is a Conditional Breakpoint?
+
+Interview Ready Answer
+
+A conditional breakpoint is a breakpoint that pauses program execution only when a specified condition evaluates to true. It is useful when a section of code executes repeatedly, but the developer wants to stop execution only for a specific scenario.
+
+Definition
+
+A conditional breakpoint pauses execution only if a given condition is satisfied.
+
+Purpose
+
+• Debug loops efficiently.
+• Stop only for specific data.
+• Reduce unnecessary pauses.
+• Analyze a particular execution scenario.
+
+Example Use Cases
+
+• Stop when count == 100
+• Stop when userId == 101
+• Stop when price > 5000
+
+======================================================================
+
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Q1. Does a breakpoint terminate program execution?
+
+Answer
+
+No.
+
+A breakpoint only pauses (suspends) program execution.
+Execution can be resumed after inspection.
+
+------------------------------------------------------------
+
+Q2. Does a breakpoint automatically detect bugs?
+
+Answer
+
+No.
+
+A breakpoint only pauses execution.
+The developer analyzes the application state to identify the bug.
+
+------------------------------------------------------------
+
+Q3. Which breakpoint is most commonly used?
+
+Answer
+
+The Line Breakpoint is the most commonly used breakpoint during debugging.
+
+------------------------------------------------------------
+
+Q4. Why use a Conditional Breakpoint instead of a normal breakpoint?
+
+Answer
+
+A normal breakpoint pauses every time the line is executed.
+
+A conditional breakpoint pauses only when the specified condition evaluates to true, making debugging more efficient.
+
+------------------------------------------------------------
+
+Q5. Can a Conditional Breakpoint improve debugging efficiency?
+
+Answer
+
+Yes.
+
+It avoids unnecessary pauses and allows developers to inspect only the required execution scenario.
+
+======================================================================
+
+QUICK REVISION
+======================================================================
+
+• Breakpoint = Pauses program execution.
+• Purpose = Inspect variables, execution flow, and call stack.
+• Breakpoint does NOT terminate execution.
+• Types of Breakpoints:
+  - Line Breakpoint
+  - Conditional Breakpoint
+  - Exception Breakpoint
+  - Function Breakpoint
+  - Logpoint
+• Conditional Breakpoint = Pauses only when a condition evaluates to true.
+• Use Conditional Breakpoints for loops, repeated function calls, and specific data values.
+
+Interview Keywords
+
+• Pause Execution
+• Debugging Marker
+• Execution Flow
+• Variable Inspection
+• Conditional Evaluation
+• Root Cause Analysis
+• Line Breakpoint
+• Conditional Breakpoint
+• Exception Breakpoint
+• Function Breakpoint
+• Logpoint
+```

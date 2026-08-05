@@ -1,0 +1,198 @@
+======================================================================
+MODULE 10 : APPLICATION DEBUGGING
+TOPIC 1 : DEBUGGING FUNDAMENTALS
+======================================================================
+
+Q1. What is Debugging?
+
+Interview Ready Answer
+
+Debugging is the systematic process of identifying, analyzing, isolating, and fixing defects (bugs) in a software application. It is performed after a bug has been detected to determine its root cause and resolve it.
+
+Definition
+
+Debugging is the process of finding and fixing bugs in software.
+
+Purpose
+
+• Identify the root cause of defects.
+• Analyze application execution.
+• Fix incorrect or unexpected behavior.
+• Improve software reliability and stability.
+
+======================================================================
+
+Q2. What is the difference between Testing and Debugging?
+
+Interview Ready Answer
+
+Testing is the process of executing software to identify defects and verify that it behaves as expected. Debugging begins after a defect is found and involves locating the root cause and fixing the issue.
+
+Definition
+
+Testing finds defects.
+Debugging fixes defects.
+
+Purpose
+
+• Testing verifies software correctness.
+• Debugging removes the cause of failures.
+
+Key Points
+
+• Testing is performed using test cases.
+• Debugging is primarily performed by developers.
+• Testing identifies defects.
+• Debugging analyzes and fixes defects.
+
+======================================================================
+
+Q3. What is a Bug?
+
+Interview Ready Answer
+
+A bug is a defect or flaw in a software application that causes incorrect, unexpected, or unintended behavior. Bugs may result from mistakes in design, logic, implementation, or requirements.
+
+Definition
+
+A bug is a software defect.
+
+Purpose
+
+• Represents an issue that prevents the application from behaving as expected.
+
+Examples
+
+• Incorrect output
+• Runtime exception
+• Application crash
+• Security vulnerability
+• Performance issue
+
+======================================================================
+
+Q4. What are the different types of errors in JavaScript?
+
+Interview Ready Answer
+
+The three primary types of errors in JavaScript are:
+
+1. Syntax Errors
+2. Runtime Errors
+3. Logical Errors
+
+Definition
+
+Syntax Error
+• Occurs when the code violates JavaScript syntax rules.
+• Prevents the code from executing correctly.
+
+Runtime Error
+• Occurs while the program is executing.
+• Example: Accessing a property of null or undefined.
+
+Logical Error
+• The program executes successfully but produces incorrect results due to incorrect program logic.
+
+Purpose
+
+• Understanding error types helps select the appropriate debugging approach.
+
+======================================================================
+
+Q5. What is a Breakpoint?
+
+Interview Ready Answer
+
+A breakpoint is a debugging marker placed on a specific line of code that pauses program execution when that line is reached. It allows developers to inspect variable values, analyze the call stack, examine the execution flow, and identify the root cause of bugs before continuing execution.
+
+Definition
+
+A breakpoint temporarily pauses program execution during debugging.
+
+Purpose
+
+• Pause execution at a desired location.
+• Inspect variables.
+• Analyze execution flow.
+• Check the call stack.
+• Identify the root cause of bugs.
+
+======================================================================
+
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Q1. Is debugging performed before executing the program?
+
+Answer:
+No.
+Debugging is generally performed after a bug is observed during execution or testing.
+
+------------------------------------------------------------
+
+Q2. Does testing fix bugs?
+
+Answer:
+No.
+Testing identifies defects, while debugging fixes them.
+
+------------------------------------------------------------
+
+Q3. Is a bug the same as an exception?
+
+Answer:
+No.
+A bug is a defect in the code.
+An exception is a runtime event that may occur because of a bug or an unexpected condition.
+
+------------------------------------------------------------
+
+Q4. Are Syntax Errors and Logical Errors the same?
+
+Answer:
+No.
+
+Syntax Error:
+The code cannot be parsed or executed correctly.
+
+Logical Error:
+The code executes but produces incorrect results.
+
+------------------------------------------------------------
+
+Q5. Does a breakpoint automatically detect bugs?
+
+Answer:
+No.
+A breakpoint only pauses program execution. The developer analyzes the application state to identify the bug.
+
+======================================================================
+
+QUICK REVISION
+======================================================================
+
+• Debugging = Identify → Analyze → Isolate → Fix bugs.
+• Testing finds defects; Debugging fixes defects.
+• Bug = Defect causing incorrect or unexpected behavior.
+• Error Types:
+  - Syntax Error
+  - Runtime Error
+  - Logical Error
+• Breakpoint = Pauses program execution at a specified line.
+• Breakpoints are used to:
+  - Inspect variables
+  - Analyze execution flow
+  - Check the Call Stack
+  - Find the root cause of bugs
+
+Interview Keywords
+
+• Defect
+• Root Cause
+• Program Execution
+• Breakpoint
+• Execution Flow
+• Call Stack
+• Variable Inspection
+• Runtime Analysis

@@ -1,0 +1,122 @@
+======================================================================
+MODULE 10 : APPLICATION DEBUGGING
+TOPIC 3 : WATCH WINDOW & LOCALS WINDOW
+======================================================================
+
+Q1. What is the difference between the Watch Window and the Locals Window?
+
+Interview Ready Answer
+
+The Locals window automatically displays all variables available in the current execution scope. The Watch window displays only the variables or expressions that the developer explicitly adds for continuous monitoring during debugging.
+
+Definition
+
+Locals Window
+
+• Automatically displays all local variables in the current scope.
+
+Watch Window
+
+• Displays only developer-selected variables or expressions.
+
+Purpose
+
+Locals Window
+
+• View all variables available in the current scope.
+• Understand the current state of program execution.
+
+Watch Window
+
+• Monitor important variables continuously.
+• Observe value changes across breakpoints and execution steps.
+
+======================================================================
+
+Q2. What is the purpose of the Watch Window?
+
+Interview Ready Answer
+
+The Watch window is used to continuously monitor specific variables or expressions that the developer explicitly adds during debugging. It helps developers observe how selected values change as the program executes.
+
+Definition
+
+The Watch window monitors selected variables or expressions during debugging.
+
+Purpose
+
+• Track important variables.
+• Observe value changes during execution.
+• Avoid searching for variables repeatedly.
+• Simplify debugging of complex applications.
+
+======================================================================
+
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Q1. Does the Watch Window automatically display all variables?
+
+Answer
+
+No.
+
+Only variables or expressions explicitly added by the developer are displayed.
+
+------------------------------------------------------------
+
+Q2. Does the Locals Window require manual configuration?
+
+Answer
+
+No.
+
+It automatically displays all variables available in the current execution scope.
+
+------------------------------------------------------------
+
+Q3. Can the Watch Window monitor expressions as well as variables?
+
+Answer
+
+Yes.
+
+It can monitor both variables and expressions added by the developer.
+
+------------------------------------------------------------
+
+Q4. Which window is useful for monitoring only a few important variables?
+
+Answer
+
+The Watch Window.
+
+------------------------------------------------------------
+
+Q5. Which window automatically updates based on the current scope?
+
+Answer
+
+The Locals Window.
+
+======================================================================
+
+QUICK REVISION
+======================================================================
+
+• Locals Window = Automatic.
+• Watch Window = Manual.
+• Locals shows all variables in the current scope.
+• Watch shows only selected variables or expressions.
+• Watch is used for continuous monitoring.
+• Locals is used to inspect the current execution scope.
+
+Interview Keywords
+
+• Current Scope
+• Local Variables
+• Watch Expressions
+• Variable Monitoring
+• Automatic Inspection
+• Manual Monitoring
+• Debugging State
