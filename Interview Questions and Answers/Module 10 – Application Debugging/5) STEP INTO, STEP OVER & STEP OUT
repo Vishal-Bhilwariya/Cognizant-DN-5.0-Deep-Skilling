@@ -1,0 +1,115 @@
+```text
+======================================================================
+MODULE 10 : APPLICATION DEBUGGING
+TOPIC 5 : STEP INTO, STEP OVER & STEP OUT
+======================================================================
+
+Q1. What is the difference between Step Into, Step Over, and Step Out?
+
+Interview Ready Answer
+
+Step Into enters the called function and allows the developer to debug its internal execution line by line.
+
+Step Over executes the current line completely without entering any called functions and pauses at the next line in the current function.
+
+Step Out completes the execution of the current function, returns to the calling function, and pauses immediately after the function call.
+
+Definition
+
+Step Into
+• Enters the called function.
+• Used when the function's internal logic needs to be inspected.
+
+Step Over
+• Executes the current line completely.
+• Does not enter any called functions.
+• Stops at the next line in the current function.
+
+Step Out
+• Executes the remaining code of the current function.
+• Returns to the calling function.
+• Pauses immediately after the function call.
+
+Purpose
+
+Step Into
+• Debug the internal implementation of a function.
+• Inspect variable values inside the function.
+
+Step Over
+• Skip debugging inside a function whose implementation is already trusted.
+• Continue debugging the current function efficiently.
+
+Step Out
+• Exit the current function quickly.
+• Resume debugging in the calling function.
+
+======================================================================
+
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Q1. Does Step Over enter a function call?
+
+Answer
+
+No.
+
+Step Over executes the function completely without entering it.
+
+------------------------------------------------------------
+
+Q2. Does Step Into always move to the next line?
+
+Answer
+
+No.
+
+If the current line contains a function call, Step Into enters that function.
+
+------------------------------------------------------------
+
+Q3. When should Step Out be used?
+
+Answer
+
+When you have already entered a function and want to finish its execution and return to the caller.
+
+------------------------------------------------------------
+
+Q4. Which command is best for debugging the internal logic of a function?
+
+Answer
+
+Step Into.
+
+------------------------------------------------------------
+
+Q5. Which command is best when you do not want to debug a function's implementation?
+
+Answer
+
+Step Over.
+
+======================================================================
+
+QUICK REVISION
+======================================================================
+
+• Step Into → Enter the called function.
+• Step Over → Execute the current line without entering the called function.
+• Step Out → Finish the current function and return to the caller.
+• Step Into = Inspect function internals.
+• Step Over = Skip trusted function implementation.
+• Step Out = Exit the current function quickly.
+
+Interview Keywords
+
+• Function Call
+• Calling Function
+• Current Function
+• Execution Flow
+• Line-by-Line Debugging
+• Resume Execution
+• Function Navigation
+```

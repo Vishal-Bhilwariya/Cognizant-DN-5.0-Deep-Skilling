@@ -1,0 +1,173 @@
+```text
+======================================================================
+MODULE 10 : APPLICATION DEBUGGING
+TOPIC 6 : DEBUGGING REACT APPLICATIONS WITH CHROME DEVTOOLS
+======================================================================
+
+Q1. What is Chrome DevTools?
+
+Interview Ready Answer
+
+Chrome DevTools is a built-in set of browser developer tools provided by Google Chrome for inspecting, debugging, and analyzing web applications. It enables developers to inspect the DOM, debug JavaScript, monitor network requests, view console errors, analyze performance, and troubleshoot frontend issues efficiently.
+
+Definition
+
+Chrome DevTools is a browser-based debugging and inspection tool.
+
+Purpose
+
+• Inspect web page elements.
+• Debug JavaScript.
+• Analyze network requests.
+• View console errors.
+• Monitor application performance.
+• Troubleshoot frontend issues.
+
+======================================================================
+
+Q2. What is the purpose of the Elements tab?
+
+Interview Ready Answer
+
+The Elements tab is used to inspect and modify the live DOM structure and CSS styles of a web page. It helps developers analyze HTML elements, debug layout and styling issues, and test changes in real time without modifying the source code.
+
+Definition
+
+The Elements tab displays the live DOM and applied CSS.
+
+Purpose
+
+• Inspect HTML elements.
+• Inspect CSS styles.
+• Debug layout issues.
+• Test UI changes in real time.
+• View parent-child DOM hierarchy.
+
+======================================================================
+
+Q3. What is the purpose of the Sources tab?
+
+Interview Ready Answer
+
+The Sources tab is used to debug JavaScript and TypeScript code. It allows developers to view source files, set breakpoints, execute code step by step, inspect variables, analyze the call stack, and identify the root cause of bugs during program execution.
+
+Definition
+
+The Sources tab is the primary JavaScript debugging tool in Chrome DevTools.
+
+Purpose
+
+• View source files.
+• Set breakpoints.
+• Step Into, Step Over and Step Out.
+• Inspect variables.
+• Analyze the Call Stack.
+• Debug JavaScript and TypeScript.
+
+======================================================================
+
+Q4. What is the purpose of the Network tab?
+
+Interview Ready Answer
+
+The Network tab is used to monitor and analyze all network requests made by a web application. It helps developers inspect API calls, request and response data, HTTP status codes, headers, payloads, and response times, making it easier to identify and troubleshoot network-related issues.
+
+Definition
+
+The Network tab monitors all network communication between the browser and the server.
+
+Purpose
+
+• Inspect API requests.
+• View request and response headers.
+• Analyze request payloads.
+• Check response body.
+• Verify HTTP status codes.
+• Measure response time.
+• Debug network-related issues.
+
+======================================================================
+
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Q1. Is Chrome DevTools only used for debugging JavaScript?
+
+Answer
+
+No.
+
+It is also used for inspecting the DOM, analyzing CSS, monitoring network requests, viewing console logs, and measuring performance.
+
+------------------------------------------------------------
+
+Q2. Can the Elements tab permanently modify HTML or CSS?
+
+Answer
+
+No.
+
+Changes made in the Elements tab are temporary and affect only the current browser session.
+
+------------------------------------------------------------
+
+Q3. Which Chrome DevTools tab is primarily used for JavaScript debugging?
+
+Answer
+
+The Sources tab.
+
+------------------------------------------------------------
+
+Q4. Which Chrome DevTools tab is primarily used to inspect API requests?
+
+Answer
+
+The Network tab.
+
+------------------------------------------------------------
+
+Q5. Which Chrome DevTools tab is used to inspect HTML and CSS?
+
+Answer
+
+The Elements tab.
+
+======================================================================
+
+QUICK REVISION
+======================================================================
+
+• Chrome DevTools = Built-in browser debugging tool.
+• Elements = Inspect and modify live DOM and CSS.
+• Sources = Debug JavaScript/TypeScript using breakpoints.
+• Network = Monitor all network requests and API calls.
+• Sources tab supports:
+  - Breakpoints
+  - Step Into
+  - Step Over
+  - Step Out
+  - Variable Inspection
+  - Call Stack
+• Network tab shows:
+  - URL
+  - HTTP Method
+  - Status Code
+  - Headers
+  - Payload
+  - Response
+  - Response Time
+
+Interview Keywords
+
+• Chrome DevTools
+• DOM Inspection
+• CSS Inspection
+• JavaScript Debugging
+• Network Monitoring
+• HTTP Requests
+• API Debugging
+• Breakpoints
+• Call Stack
+• Variable Inspection
+```
