@@ -1,0 +1,229 @@
+```text
+======================================================================
+MODULE 12 : DEVOPS AND CI/CD
+TOPIC 7 : DIFFERENCE BETWEEN CONTINUOUS INTEGRATION (CI),
+           CONTINUOUS DELIVERY (CD), AND CONTINUOUS DEPLOYMENT
+======================================================================
+
+Q1. Differentiate between Continuous Integration (CI), Continuous
+Delivery (CD), and Continuous Deployment.
+
+Interview Ready Answer
+
+Continuous Integration (CI) focuses on integrating code changes
+frequently into a shared repository where every commit is automatically
+built and tested.
+
+Continuous Delivery (CD) extends CI by automatically preparing the
+application for release. The application is always in a deployable state,
+but deployment to production requires manual approval.
+
+Continuous Deployment extends Continuous Delivery by automatically
+deploying every successful build to the production environment without
+any manual approval.
+
+======================================================================
+
+Comparison
+
+1. Primary Purpose
+
+CI
+• Frequently integrate code.
+• Detect bugs early.
+
+Continuous Delivery
+• Keep software release-ready.
+
+Continuous Deployment
+• Automatically release software to users.
+
+------------------------------------------------------------
+
+2. Automatic Process
+
+CI
+• Build
+• Testing
+
+Continuous Delivery
+• Build
+• Testing
+• Package
+• Release Preparation
+
+Continuous Deployment
+• Build
+• Testing
+• Package
+• Automatic Production Deployment
+
+------------------------------------------------------------
+
+3. Production Deployment
+
+CI
+• Not included.
+
+Continuous Delivery
+• Manual approval required.
+
+Continuous Deployment
+• Automatic deployment.
+
+------------------------------------------------------------
+
+4. End Point
+
+CI
+• Build & Test Completed.
+
+Continuous Delivery
+• Release Ready.
+
+Continuous Deployment
+• Production Deployment Completed.
+
+======================================================================
+
+ASCII FLOW
+======================================================================
+
+CI
+
+Developer
+    │
+    ▼
+Commit
+    │
+    ▼
+Build
+    │
+    ▼
+Automatic Testing
+
+------------------------------------------------------------
+
+Continuous Delivery
+
+Developer
+    │
+    ▼
+Commit
+    │
+    ▼
+CI Pipeline
+    │
+    ▼
+Release Ready
+    │
+    ▼
+Manual Approval
+    │
+    ▼
+Production
+
+------------------------------------------------------------
+
+Continuous Deployment
+
+Developer
+    │
+    ▼
+Commit
+    │
+    ▼
+CI Pipeline
+    │
+    ▼
+Automatic Deployment
+    │
+    ▼
+Production
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Q1. Which process ends after Build and Test?
+
+Answer
+
+Continuous Integration (CI).
+
+------------------------------------------------------------
+
+Q2. Which process requires manual approval before production?
+
+Answer
+
+Continuous Delivery.
+
+------------------------------------------------------------
+
+Q3. Which process automatically deploys every successful build to
+production?
+
+Answer
+
+Continuous Deployment.
+
+------------------------------------------------------------
+
+Q4. Does CI deploy applications to production?
+
+Answer
+
+No.
+
+CI only performs automatic build and testing.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+Continuous Integration (CI)
+
+• Frequent code integration.
+• Automatic build.
+• Automatic testing.
+• Early bug detection.
+• Ends after Build & Test.
+
+------------------------------------------------------------
+
+Continuous Delivery
+
+• Extends CI.
+• Application is release-ready.
+• Manual approval before production deployment.
+
+------------------------------------------------------------
+
+Continuous Deployment
+
+• Extends Continuous Delivery.
+• Automatic production deployment.
+• No manual approval.
+
+------------------------------------------------------------
+
+Memory Trick
+
+CI
+→ Build + Test
+
+Continuous Delivery
+→ Build + Test + Release Ready
+→ Manual Deployment
+
+Continuous Deployment
+→ Build + Test + Automatic Production Deployment
+
+Interview One-Liner
+
+"Continuous Integration automates code integration, building, and
+testing. Continuous Delivery prepares software for release with manual
+production approval, while Continuous Deployment automatically deploys
+every successful build to production without manual intervention."
+```
