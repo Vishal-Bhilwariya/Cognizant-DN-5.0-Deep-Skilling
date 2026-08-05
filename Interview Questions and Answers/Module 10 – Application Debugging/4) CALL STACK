@@ -1,0 +1,125 @@
+======================================================================
+MODULE 10 : APPLICATION DEBUGGING
+TOPIC 4 : CALL STACK
+======================================================================
+
+Q1. What is the Call Stack?
+
+Interview Ready Answer
+
+The Call Stack is a debugging tool that displays the sequence of function or method calls leading to the current execution point. It helps developers trace the execution flow, understand how the program reached the current state, and identify the origin of an error or exception.
+
+Definition
+
+The Call Stack shows the sequence of active function or method calls during program execution.
+
+Purpose
+
+• Trace the execution flow.
+• Identify where an exception occurred.
+• Determine which function called another function.
+• Understand the current execution path.
+• Locate the root cause of bugs quickly.
+
+======================================================================
+
+Q2. How does the Call Stack help during debugging?
+
+Interview Ready Answer
+
+The Call Stack helps developers understand the exact sequence of function calls that led to the current execution point or exception. Instead of searching through the entire codebase, developers can trace the execution path and identify the function responsible for the issue.
+
+Example
+
+main()
+   ↓
+login()
+   ↓
+authenticate()
+   ↓
+validatePassword()   ← Exception occurs here
+
+The Call Stack indicates:
+
+• main() called login()
+• login() called authenticate()
+• authenticate() called validatePassword()
+• The exception occurred in validatePassword()
+
+======================================================================
+
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Q1. Does the Call Stack store bugs or debugging points?
+
+Answer
+
+No.
+
+The Call Stack stores the sequence of active function or method calls during execution. It does not store bugs or breakpoints.
+
+------------------------------------------------------------
+
+Q2. Is the Call Stack created only when an exception occurs?
+
+Answer
+
+No.
+
+The Call Stack exists whenever functions are called during program execution. It becomes especially useful when debugging exceptions.
+
+------------------------------------------------------------
+
+Q3. Does the Call Stack show variable values?
+
+Answer
+
+No.
+
+Variable values are viewed using the Locals or Watch window. The Call Stack only shows the sequence of function or method calls.
+
+------------------------------------------------------------
+
+Q4. Does the Call Stack help identify the root cause of an exception?
+
+Answer
+
+Yes.
+
+It shows the execution path that led to the current execution point, making it easier to identify where the exception originated.
+
+------------------------------------------------------------
+
+Q5. Is the Call Stack the same as the Watch Window?
+
+Answer
+
+No.
+
+The Call Stack displays the sequence of function calls.
+
+The Watch Window displays developer-selected variables or expressions.
+
+======================================================================
+
+QUICK REVISION
+======================================================================
+
+• Call Stack = Sequence of function/method calls.
+• Displays the execution path.
+• Helps identify where an exception occurred.
+• Useful for tracing function calls.
+• Does NOT display variable values.
+• Does NOT store bugs or breakpoints.
+
+Interview Keywords
+
+• Execution Flow
+• Function Call Sequence
+• Active Method Calls
+• Exception Origin
+• Stack Trace
+• Root Cause Analysis
+• Debugging Path
+```
