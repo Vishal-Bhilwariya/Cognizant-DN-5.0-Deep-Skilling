@@ -1,0 +1,119 @@
+```text
+======================================================================
+MODULE 10 : APPLICATION DEBUGGING
+TOPIC 7 : REACT DEVELOPER TOOLS
+======================================================================
+
+Q1. What are React Developer Tools?
+
+Interview Ready Answer
+
+React Developer Tools is a browser extension used to inspect and debug React applications. It allows developers to view the React component hierarchy, inspect component props and state, analyze hooks, monitor component updates, and troubleshoot React-specific issues efficiently.
+
+Definition
+
+React Developer Tools is a browser extension designed specifically for debugging React applications.
+
+Purpose
+
+• Inspect the React component hierarchy.
+• View component props.
+• View component state.
+• Inspect React Hooks.
+• Monitor component re-renders.
+• Troubleshoot React-specific issues.
+
+======================================================================
+
+Q2. Why are React Developer Tools used?
+
+Interview Ready Answer
+
+React Developer Tools are used to inspect the internal structure of React applications, monitor component state and props, analyze component rendering behavior, and simplify debugging without manually tracing React code.
+
+Purpose
+
+• Debug React components.
+• Verify props passed between components.
+• Inspect component state.
+• Analyze Hooks.
+• Detect unnecessary re-renders.
+• Improve debugging efficiency.
+
+======================================================================
+
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Q1. Are React Developer Tools part of Chrome DevTools?
+
+Answer
+
+No.
+
+React Developer Tools is a separate browser extension that integrates with Chrome DevTools to provide React-specific debugging capabilities.
+
+------------------------------------------------------------
+
+Q2. Can React Developer Tools inspect normal HTML elements?
+
+Answer
+
+No.
+
+It is designed to inspect React components, not regular HTML elements.
+
+------------------------------------------------------------
+
+Q3. Can React Developer Tools inspect component state and props?
+
+Answer
+
+Yes.
+
+It allows developers to inspect both props and state of React components.
+
+------------------------------------------------------------
+
+Q4. Can React Developer Tools help identify unnecessary component re-renders?
+
+Answer
+
+Yes.
+
+It helps analyze component updates and rendering behavior.
+
+------------------------------------------------------------
+
+Q5. Is React Developer Tools useful only for React applications?
+
+Answer
+
+Yes.
+
+It is specifically designed for debugging React applications.
+
+======================================================================
+
+QUICK REVISION
+======================================================================
+
+• React Developer Tools = Browser extension for debugging React.
+• Displays the React component hierarchy.
+• Inspect component props.
+• Inspect component state.
+• Analyze React Hooks.
+• Monitor component re-renders.
+• Used for React-specific debugging.
+
+Interview Keywords
+
+• React Components
+• Component Tree
+• Props
+• State
+• React Hooks
+• Component Re-rendering
+• React Debugging
+• Browser Extension
+```

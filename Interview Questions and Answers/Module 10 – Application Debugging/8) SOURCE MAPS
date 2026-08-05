@@ -1,0 +1,119 @@
+```text
+======================================================================
+MODULE 10 : APPLICATION DEBUGGING
+TOPIC 8 : SOURCE MAPS
+======================================================================
+
+Q1. What are Source Maps?
+
+Interview Ready Answer
+
+Source maps are files that map the transformed or minified JavaScript code back to the original source code, such as TypeScript or modern JavaScript. They allow developers to debug the original source code instead of the generated code, making debugging easier and more accurate.
+
+Definition
+
+Source maps create a mapping between the original source files and the generated JavaScript files.
+
+Purpose
+
+• Debug TypeScript instead of compiled JavaScript.
+• Debug original React source code.
+• Set breakpoints in original source files.
+• Display meaningful line numbers during debugging.
+• Simplify debugging of bundled or minified code.
+
+======================================================================
+
+Q2. Why are Source Maps used?
+
+Interview Ready Answer
+
+Source maps enable developers to debug the original application source code rather than the transpiled or minified JavaScript. This improves readability, debugging accuracy, and developer productivity.
+
+Example
+
+Original Source
+
+App.tsx
+
+↓
+
+Compiled
+
+App.js
+
+Without Source Maps
+
+• Chrome DevTools displays App.js.
+• Breakpoints are placed in generated JavaScript.
+• Debugging is more difficult.
+
+With Source Maps
+
+• Chrome DevTools displays App.tsx.
+• Breakpoints can be placed in the original TypeScript file.
+• Debugging becomes easier and more accurate.
+
+======================================================================
+
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Q1. Do Source Maps change the execution of JavaScript?
+
+Answer
+
+No.
+
+They only map generated code to the original source for debugging. They do not affect program execution.
+
+------------------------------------------------------------
+
+Q2. Are Source Maps used only with TypeScript?
+
+Answer
+
+No.
+
+They are also used with JavaScript that has been transpiled, bundled, or minified (for example, React applications built with Webpack or Vite).
+
+------------------------------------------------------------
+
+Q3. Can Source Maps improve application performance?
+
+Answer
+
+No.
+
+They improve the debugging experience, not runtime performance.
+
+------------------------------------------------------------
+
+Q4. Are Source Maps useful in production debugging?
+
+Answer
+
+Yes, if they are intentionally generated and made available. They help developers trace errors back to the original source code.
+
+======================================================================
+
+QUICK REVISION
+======================================================================
+
+• Source Maps = Mapping between original source code and generated JavaScript.
+• Used to debug original TypeScript/JavaScript files.
+• Makes breakpoints work on original source files.
+• Improves readability during debugging.
+• Does not affect application execution or performance.
+
+Interview Keywords
+
+• Source Map
+• TypeScript
+• Transpiled Code
+• Bundled JavaScript
+• Original Source Code
+• Breakpoints
+• Debugging
+• Minified Code
+```

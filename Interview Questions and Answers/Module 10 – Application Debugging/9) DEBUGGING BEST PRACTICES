@@ -1,0 +1,116 @@
+```text
+======================================================================
+MODULE 10 : APPLICATION DEBUGGING
+TOPIC 9 : DEBUGGING BEST PRACTICES
+======================================================================
+
+Q1. What are some best practices you follow while debugging an application?
+
+Interview Ready Answer
+
+While debugging an application, I follow a systematic approach instead of making random code changes. I first reproduce the issue, analyze the error message, use breakpoints to inspect the execution flow, examine variable values and the call stack, isolate the root cause, apply the fix, and finally retest the application to ensure the issue is resolved without introducing new defects.
+
+Definition
+
+Debugging best practices are systematic techniques that help identify and resolve software defects efficiently and accurately.
+
+Purpose
+
+• Identify the root cause of defects.
+• Reduce debugging time.
+• Avoid introducing new bugs.
+• Improve code quality and application reliability.
+
+======================================================================
+
+COMMON DEBUGGING BEST PRACTICES
+======================================================================
+
+1. Reproduce the issue consistently.
+2. Read the error message carefully.
+3. Use breakpoints instead of excessive console.log() statements.
+4. Inspect variables using the Watch and Locals windows.
+5. Analyze the Call Stack.
+6. Use the Elements tab to inspect the DOM and CSS.
+7. Use the Network tab to verify API requests and responses.
+8. Fix the root cause instead of the symptom.
+9. Test the application after applying the fix.
+10. Make one code change at a time during debugging.
+
+======================================================================
+
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Q1. Should developers immediately start modifying code after seeing a bug?
+
+Answer
+
+No.
+
+The issue should first be reproduced and analyzed to identify the root cause.
+
+------------------------------------------------------------
+
+Q2. Is using console.log() the best debugging technique?
+
+Answer
+
+No.
+
+For simple cases it is useful, but breakpoints and debugger tools provide much more detailed information.
+
+------------------------------------------------------------
+
+Q3. Should you fix only the visible symptom of a bug?
+
+Answer
+
+No.
+
+The root cause should be identified and fixed to prevent the issue from recurring.
+
+------------------------------------------------------------
+
+Q4. Why should the application be tested again after fixing a bug?
+
+Answer
+
+To verify that the defect has been resolved and to ensure no new issues were introduced.
+
+------------------------------------------------------------
+
+Q5. Why is making multiple code changes at once discouraged?
+
+Answer
+
+Because it becomes difficult to determine which change fixed or introduced a problem.
+
+======================================================================
+
+QUICK REVISION
+======================================================================
+
+• Reproduce the issue.
+• Read the error message.
+• Use breakpoints.
+• Inspect variables.
+• Analyze the Call Stack.
+• Verify network requests.
+• Inspect the DOM.
+• Fix the root cause.
+• Retest the application.
+• Make one change at a time.
+
+Interview Keywords
+
+• Root Cause Analysis
+• Breakpoints
+• Variable Inspection
+• Call Stack
+• DOM Inspection
+• Network Analysis
+• Error Analysis
+• Regression Testing
+• Systematic Debugging
+```
