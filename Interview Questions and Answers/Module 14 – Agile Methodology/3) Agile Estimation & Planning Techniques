@@ -1,0 +1,274 @@
+```text
+======================================================================
+MODULE 14 : AGILE METHODOLOGY
+TOPIC 3 : AGILE ESTIMATION & PLANNING TECHNIQUES
+======================================================================
+
+Q1. What are Story Points, and why are they used instead of estimating
+tasks in hours?
+
+Interview Ready Answer
+
+Story Points are a relative unit used by the Development Team to
+estimate the effort, complexity, and uncertainty involved in
+implementing a User Story.
+
+They are preferred over hours because different developers work at
+different speeds. Story Points provide a consistent relative estimation
+independent of individual productivity.
+
+Definition
+
+Story Points are a relative estimation unit.
+
+Purpose
+
+• Estimate effort.
+• Estimate complexity.
+• Estimate uncertainty.
+• Help Sprint Planning.
+• Predict team capacity.
+
+======================================================================
+
+Q2. What is Planning Poker, and how does it help estimate Story Points?
+
+Interview Ready Answer
+
+Planning Poker is a consensus-based estimation technique used by the
+Development Team to estimate Story Points.
+
+The Product Owner explains the User Story, and each developer
+independently selects a Story Point estimate. All estimates are revealed
+simultaneously. If there is a significant difference, the team discusses
+the reasons and reaches a consensus.
+
+Definition
+
+Planning Poker is a Story Point estimation technique.
+
+Purpose
+
+• Independent estimation.
+• Avoid estimation bias.
+• Reach team consensus.
+• Improve estimation accuracy.
+
+Planning Poker Flow
+
+Product Owner explains User Story
+          ↓
+Developers estimate independently
+          ↓
+Everyone reveals cards together
+          ↓
+Large difference?
+      Yes ↓      No ↓
+ Discussion     Final Estimate
+          ↓
+     Team Consensus
+
+======================================================================
+
+Q3. Explain the Sprint Planning process from Product Backlog to Sprint
+Backlog.
+
+Interview Ready Answer
+
+During Sprint Planning, the Product Owner presents the prioritized
+Product Backlog. The Development Team selects the Product Backlog items
+that can realistically be completed in the upcoming Sprint based on
+their capacity and estimates.
+
+The selected items become the Sprint Backlog, and the team defines the
+Sprint Goal.
+
+Purpose
+
+• Select Sprint work.
+• Create Sprint Backlog.
+• Define Sprint Goal.
+• Plan achievable work.
+
+Flow
+
+Product Backlog
+        ↓
+Sprint Planning
+        ↓
+Selected Items
+        ↓
+Sprint Backlog
+        ↓
+Development
+
+======================================================================
+
+Q4. What is Velocity in Agile, and how is it used in Sprint Planning?
+
+Interview Ready Answer
+
+Velocity is the total number of Story Points completed by the
+Development Team in a Sprint.
+
+It is used during Sprint Planning to estimate how much work the team
+can realistically commit to in the next Sprint based on previous Sprint
+performance.
+
+Definition
+
+Velocity = Total completed Story Points in one Sprint.
+
+Purpose
+
+• Predict Sprint capacity.
+• Prevent overcommitment.
+• Improve Sprint Planning.
+
+Example
+
+Sprint 1 : 28 Story Points
+Sprint 2 : 30 Story Points
+
+Expected Velocity ≈ 29 Story Points
+
+Next Sprint should plan around 29 Story Points.
+
+======================================================================
+
+Q5. What is a Burndown Chart, and what information does it provide?
+
+Interview Ready Answer
+
+A Burndown Chart is a graphical representation of the remaining Story
+Points versus time during a Sprint.
+
+It helps the Scrum Team track Sprint progress and determine whether they
+are on schedule to complete the Sprint Goal.
+
+Definition
+
+Burndown Chart tracks remaining work.
+
+Purpose
+
+• Monitor Sprint progress.
+• Compare actual progress with planned progress.
+• Identify delays early.
+• Predict Sprint completion.
+
+Example
+
+Total Story Points = 20
+
+Day 1 → 20 Remaining
+Day 2 → 17 Remaining
+Day 3 → 14 Remaining
+...
+Day 10 → 0 Remaining
+
+If 0 is reached before Day 10:
+• Sprint completed early.
+
+If Story Points remain after Day 10:
+• Sprint Goal not achieved.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Q1. Who estimates Story Points?
+
+Answer:
+Development Team.
+
+------------------------------------------------------------
+
+Q2. Does the Product Owner assign Story Points?
+
+Answer:
+No. The Product Owner explains the User Story, but the Development Team
+estimates the Story Points.
+
+------------------------------------------------------------
+
+Q3. Are Story Points used to decide task priority?
+
+Answer:
+No. Story Points estimate effort, complexity, and uncertainty.
+Priority is decided by the Product Owner.
+
+------------------------------------------------------------
+
+Q4. Why not estimate in hours?
+
+Answer:
+Hours vary from developer to developer. Story Points provide relative,
+team-based estimation.
+
+------------------------------------------------------------
+
+Q5. Does Velocity measure developer speed?
+
+Answer:
+No. Velocity measures the team's completed Story Points in a Sprint. It
+is used for future Sprint Planning, not individual performance.
+
+------------------------------------------------------------
+
+Q6. Does a Burndown Chart show completed Story Points?
+
+Answer:
+No. It shows the remaining Story Points over time.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+Story Points
+
+• Relative estimation unit.
+• Measures effort, complexity, and uncertainty.
+• Estimated by Development Team.
+
+Planning Poker
+
+• Consensus-based estimation.
+• Independent estimates.
+• Reveal together.
+• Discuss differences.
+• Reach consensus.
+
+Sprint Planning Process
+
+Product Backlog
+      ↓
+Sprint Planning
+      ↓
+Sprint Backlog
+      ↓
+Sprint Goal
+
+Velocity
+
+• Total completed Story Points in one Sprint.
+• Predicts future Sprint capacity.
+
+Burndown Chart
+
+• Remaining Story Points vs Time.
+• Tracks Sprint progress.
+• Reaches 0 at Sprint completion.
+
+Interview Keywords
+
+• Relative Estimation
+• Story Points
+• Planning Poker
+• Consensus
+• Sprint Capacity
+• Velocity
+• Burndown Chart
+• Remaining Story Points
+• Sprint Goal
+```
