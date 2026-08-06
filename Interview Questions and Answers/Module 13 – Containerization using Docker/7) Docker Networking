@@ -1,0 +1,197 @@
+======================================================================
+MODULE : DOCKER
+TOPIC 7 : DOCKER NETWORKING
+======================================================================
+
+Q1. Why do we need Docker Networking?
+
+Interview Ready Answer
+
+Docker Networking enables communication between Docker containers,
+between the host machine and containers, and between containers and
+external networks. It allows multi-container applications such as
+Spring Boot and MySQL to communicate securely and efficiently.
+
+Definition
+
+Docker Networking
+- Communication mechanism for Docker containers.
+- Connects containers with each other and external systems.
+
+Purpose
+
+• Container-to-container communication.
+• Host-to-container communication.
+• Container-to-external network communication.
+• Enable multi-container applications.
+
+======================================================================
+
+Q2. What are the default Docker Networks?
+
+Interview Ready Answer
+
+Docker provides three default network types:
+
+Bridge
+- Default network for standalone containers.
+- Allows containers on the same bridge network to communicate.
+
+Host
+- Shares the host machine's network stack.
+- No separate network namespace is created.
+
+None
+- Disables networking for the container.
+- Container has no network connectivity.
+
+Purpose
+
+• Bridge → General container communication.
+• Host → High-performance networking.
+• None → Isolated containers.
+
+======================================================================
+
+Q3. Which command lists all Docker Networks?
+
+Interview Ready Answer
+
+The following command lists all Docker networks available on the local
+Docker host.
+
+docker network ls
+
+Purpose
+
+• View available Docker networks.
+• Verify existing networks.
+• Manage networking.
+
+======================================================================
+
+Q4. Which command creates a new Docker Network?
+
+Interview Ready Answer
+
+A custom Docker network is created using:
+
+docker network create <network_name>
+
+Containers connected to the same custom network can communicate with
+each other in an isolated environment.
+
+Purpose
+
+• Create isolated container networks.
+• Enable communication between related containers.
+• Improve application organization.
+
+======================================================================
+
+Q5. Which command inspects a Docker Network?
+
+Interview Ready Answer
+
+The following command displays detailed information about a Docker
+network.
+
+docker network inspect <network_name>
+
+It shows:
+
+• Network ID
+• Driver
+• Connected Containers
+• Subnet
+• Gateway
+• Network Configuration
+
+Purpose
+
+• Troubleshoot networking.
+• Verify connected containers.
+• Inspect network configuration.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+1. Does Docker Networking allow only container-to-container communication?
+
+Answer:
+No.
+It supports:
+- Container ↔ Container
+- Host ↔ Container
+- Container ↔ External Network
+
+---------------------------------------------------------------------
+
+2. Which Docker network is used by default?
+
+Answer:
+Bridge.
+
+---------------------------------------------------------------------
+
+3. Which network completely disables networking?
+
+Answer:
+None.
+
+---------------------------------------------------------------------
+
+4. Which command lists Docker networks?
+
+Answer:
+docker network ls
+
+---------------------------------------------------------------------
+
+5. Which command displays detailed information about a network?
+
+Answer:
+docker network inspect <network_name>
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+Docker Networking
+→ Enables communication between containers, host, and external networks.
+
+Default Networks
+
+Bridge
+→ Default network.
+
+Host
+→ Shares host network.
+
+None
+→ No network access.
+
+docker network ls
+→ Lists all Docker networks.
+
+docker network create <network_name>
+→ Creates a custom Docker network.
+
+docker network inspect <network_name>
+→ Displays detailed network information.
+
+Most Asked Interview Questions
+
+• Why do we need Docker Networking?
+• Default Docker networks.
+• Bridge vs Host vs None.
+• docker network ls.
+• docker network create.
+• docker network inspect.
+
+Frequently Confused Concepts
+
+• Bridge vs Host Network.
+• Default Network vs Custom Network.
+• docker network ls vs docker network inspect.
