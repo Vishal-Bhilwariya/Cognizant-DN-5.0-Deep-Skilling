@@ -1,0 +1,193 @@
+======================================================================
+MODULE : DOCKER
+TOPIC 5 : DOCKER ENGINE
+======================================================================
+
+Q1. What is Docker Engine?
+
+Interview Ready Answer
+
+Docker Engine is the core runtime of Docker. It is responsible for
+building, running, and managing Docker containers and images. Docker
+Engine consists of three main components: Docker CLI, Docker Daemon,
+and Docker REST API.
+
+Definition
+
+Docker Engine
+- Core runtime of Docker.
+- Executes Docker operations.
+- Manages containers, images, networks, and volumes.
+
+Purpose
+
+• Build Docker images.
+• Run Docker containers.
+• Manage Docker resources.
+• Process Docker commands.
+
+======================================================================
+
+Q2. What is Docker Daemon?
+
+Interview Ready Answer
+
+Docker Daemon (dockerd) is the background service of Docker Engine. It
+listens for Docker API requests and performs Docker operations such as
+building images, creating containers, starting or stopping containers,
+and managing networks and volumes.
+
+Definition
+
+Docker Daemon
+- Background service.
+- Performs actual Docker operations.
+
+Purpose
+
+• Build images.
+• Create containers.
+• Start/Stop containers.
+• Manage networks.
+• Manage volumes.
+
+======================================================================
+
+Q3. What is Docker CLI?
+
+Interview Ready Answer
+
+Docker CLI (Command Line Interface) is the command-line tool used to
+interact with Docker. It accepts Docker commands from the user and sends
+them to the Docker Daemon through the Docker REST API.
+
+Definition
+
+Docker CLI
+- Command-line interface.
+- Used by users to execute Docker commands.
+
+Purpose
+
+• Accept user commands.
+• Communicate with Docker Daemon.
+• Trigger Docker operations.
+
+======================================================================
+
+Q4. What is Docker REST API?
+
+Interview Ready Answer
+
+Docker REST API is an interface that allows the Docker CLI and other
+applications to communicate with the Docker Daemon. It forwards Docker
+requests to the daemon for execution.
+
+Definition
+
+Docker REST API
+- Communication interface.
+- Connects Docker CLI with Docker Daemon.
+
+Purpose
+
+• Transfer Docker requests.
+• Enable communication between CLI and Daemon.
+• Allow external applications to control Docker.
+
+======================================================================
+ASCII DIAGRAM
+======================================================================
+
+                User
+                  │
+                  ▼
+          Docker CLI
+                  │
+           (REST API)
+                  │
+                  ▼
+         Docker Daemon
+                  │
+      ┌───────────┼───────────┐
+      ▼           ▼           ▼
+   Images     Containers   Networks
+                              │
+                              ▼
+                           Volumes
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+1. Does Docker CLI create containers?
+Answer:
+No.
+Docker CLI only accepts commands and forwards them to the Docker
+Daemon.
+
+------------------------------------------------------------
+
+2. Which component actually creates and runs containers?
+Answer:
+Docker Daemon.
+
+------------------------------------------------------------
+
+3. Can Docker Daemon work without Docker CLI?
+Answer:
+Yes.
+Any application can communicate directly with the Docker Daemon using
+the Docker REST API.
+
+------------------------------------------------------------
+
+4. What is the relationship between Docker CLI and Docker Daemon?
+
+Answer:
+Docker CLI sends requests through the Docker REST API, and Docker
+Daemon performs the actual Docker operations.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+Docker Engine
+→ Core runtime of Docker.
+
+Docker CLI
+→ Accepts Docker commands from the user.
+
+Docker REST API
+→ Communication interface between Docker CLI and Docker Daemon.
+
+Docker Daemon
+→ Performs all Docker operations.
+
+Execution Flow
+
+User
+↓
+Docker CLI
+↓
+Docker REST API
+↓
+Docker Daemon
+↓
+Images / Containers / Networks / Volumes
+
+Most Asked Interview Questions
+
+• What is Docker Engine?
+• Components of Docker Engine.
+• Docker CLI vs Docker Daemon.
+• Role of Docker Daemon.
+• Docker REST API.
+• Internal working of Docker Engine.
+
+Frequently Confused Concepts
+
+• Docker CLI vs Docker Daemon.
+• Docker Engine vs Docker Daemon.
+• REST API vs Docker CLI.
+• Who actually creates the container? (Docker Daemon, not Docker CLI.)
