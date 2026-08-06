@@ -1,0 +1,293 @@
+======================================================================
+MODULE 16 : GENERATIVE AI FUNDAMENTALS
+TOPIC 2 : PROMPT ENGINEERING
+============================
+
+======================================================================
+INTERVIEW QUESTION 1
+What is Prompt Engineering?
+===========================
+
+Interview Answer:
+
+Prompt Engineering is the process of designing and refining prompts to
+obtain accurate, relevant, and high-quality responses from AI models.
+
+It is important because the quality of the AI's output largely depends
+on the quality of the prompt. A clear and specific prompt helps the AI
+understand the user's intent and generate better results.
+
+---
+
+======================================================================
+INTERVIEW QUESTION 2
+What is Zero-shot Prompting? When would you use it?
+===================================================
+
+Interview Answer:
+
+Zero-shot prompting is a prompting technique in which we give the AI
+only the task or instruction without providing any examples.
+
+It relies on the model's existing knowledge to generate the response.
+
+Used For:
+• Simple tasks
+• Straightforward code generation
+• Translation
+• Summarization
+• Basic questions
+
+Example:
+
+Write a Java program to check whether a number is palindrome or not.
+
+(No examples provided.)
+
+---
+
+======================================================================
+INTERVIEW QUESTION 3
+What is Few-shot Prompting? When would you use it?
+==================================================
+
+Interview Answer:
+
+Few-shot prompting is a prompting technique in which we provide one or
+more examples before giving the actual task. The examples help the AI
+understand the expected format, style, or pattern of the output.
+
+Used For:
+• Specific output format
+• Coding style
+• Email format
+• JSON/XML generation
+• SQL query formatting
+
+Example:
+
+Example 1:
+Input: Hello
+Output: Hi
+
+Example 2:
+Input: Thanks
+Output: You're welcome
+
+Now:
+Input: Good Morning
+Output: ?
+
+---
+
+======================================================================
+INTERVIEW QUESTION 4
+What is Chain-of-Thought Prompting? When would you use it?
+==========================================================
+
+Interview Answer:
+
+Chain-of-Thought prompting is a prompting technique in which we ask the
+AI to solve a problem by reasoning through it step by step before
+generating the final answer.
+
+Used For:
+• Dynamic Programming
+• Complex Algorithms
+• Debugging
+• Mathematical Problems
+• Logical Reasoning
+
+Example:
+
+Explain the logic first and then write the Java solution for the
+Longest Increasing Subsequence problem.
+
+---
+
+======================================================================
+MEMORY TRICK
+============
+
+Zero-shot
+↓
+
+Simple Task
+
+---
+
+Few-shot
+↓
+
+Need Examples / Specific Format
+
+---
+
+Chain-of-Thought
+↓
+
+Complex Reasoning
+
+Remember:
+
+Zero-shot
+→ No Examples
+
+Few-shot
+→ Examples
+
+Chain-of-Thought
+→ Step-by-Step Reasoning
+
+======================================================================
+COMMON INTERVIEW TRAPS
+======================
+
+Q. When should you avoid Zero-shot?
+
+Answer:
+When the task requires a specific format, style, or complex reasoning.
+
+---
+
+Q. When should you choose Few-shot over Zero-shot?
+
+Answer:
+When you want the AI to follow a specific format or style.
+
+---
+
+Q. Should Chain-of-Thought be used for getters and setters?
+
+Answer:
+No.
+
+Generating getters and setters is a simple task.
+
+Use Zero-shot instead.
+
+Chain-of-Thought is suitable for complex reasoning problems.
+
+======================================================================
+QUICK REVISION
+==============
+
+✔ Prompt Engineering
+→ Designing prompts to get better AI responses
+
+✔ Zero-shot
+→ No examples
+
+✔ Few-shot
+→ Uses examples
+
+✔ Chain-of-Thought
+→ Step-by-step reasoning
+
+======================================================================
+END OF TOPIC 2
+==============
+
+======================================================================
+MODULE 16 : GENERATIVE AI FUNDAMENTALS
+TOPIC 3 : PROMPT BEST PRACTICES & ETHICS
+========================================
+
+======================================================================
+INTERVIEW QUESTION 1
+What are the best practices for writing an effective prompt?
+============================================================
+
+Interview Answer:
+
+The best practices for writing an effective prompt are:
+
+1. Use clear and specific instructions.
+2. Provide sufficient context.
+3. Specify the expected output format.
+4. Iterate and refine the prompt if needed.
+
+---
+
+======================================================================
+INTERVIEW QUESTION 2
+What are the ethical concerns when using Generative AI?
+=======================================================
+
+Interview Answer:
+
+The main ethical concerns are:
+
+• Bias
+AI may generate unfair or biased responses.
+
+• Accuracy
+AI can generate incorrect information (hallucinations).
+Always verify the output.
+
+• Privacy
+Do not share confidential or sensitive information with AI tools.
+
+• Responsible AI Usage
+AI should assist humans, not replace human judgment.
+Always review important outputs before using them.
+
+---
+
+======================================================================
+COMMON INTERVIEW TRAPS
+======================
+
+Q. Is writing a longer prompt always better?
+
+Answer:
+No.
+
+A prompt should be clear, relevant, and specific.
+Length does not guarantee better results.
+
+---
+
+Q. Should developers blindly trust AI-generated output?
+
+Answer:
+No.
+
+AI-generated code or content should always be reviewed, tested, and
+validated before use.
+
+======================================================================
+QUICK REVISION
+==============
+
+Best Practices
+
+✔ Clear Instructions
+✔ Provide Context
+✔ Specify Output Format
+✔ Refine the Prompt
+
+---
+
+Ethics
+
+✔ Bias
+✔ Accuracy
+✔ Privacy
+✔ Responsible AI Usage
+
+Memory Trick:
+
+CAPR
+
+C → Clear Instructions
+
+A → Accuracy & Verify
+
+P → Privacy
+
+R → Responsible AI Usage
+
+======================================================================
+END OF TOPIC 3
+==============

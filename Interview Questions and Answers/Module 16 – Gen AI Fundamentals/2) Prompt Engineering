@@ -1,0 +1,211 @@
+======================================================================
+MODULE 16 : GENERATIVE AI FUNDAMENTALS
+TOPIC 2 : PROMPT ENGINEERING
+============================
+
+======================================================================
+INTERVIEW QUESTION 1
+What is Prompt Engineering?
+===========================
+
+Interview Answer:
+
+Prompt Engineering is the process of designing and refining prompts to
+obtain accurate, relevant, and high-quality responses from AI models.
+
+It is important because the quality of the AI's output depends largely
+on the quality of the prompt. A clear, specific, and well-structured
+prompt helps the AI understand the user's intent and produce better
+results.
+
+---
+
+Key Points
+
+✔ Prompt = Instruction given to an AI model
+
+✔ Prompt Engineering = Designing better prompts to get better outputs
+
+✔ Better Prompt → Better Response
+
+✔ Poor Prompt → Ambiguous or Incomplete Response
+
+Example
+
+Poor Prompt:
+Write Java code.
+
+Better Prompt:
+Write a Java program to check whether a number is palindrome or not.
+Use Java 17 and explain the logic.
+
+======================================================================
+INTERVIEW QUESTION 2
+What is Zero-shot Prompting? When would you use it?
+===================================================
+
+Interview Answer:
+
+Zero-shot prompting is a prompting technique in which we give the AI
+only the task or instruction without providing any examples.
+
+It relies on the model's existing knowledge to generate the response.
+
+When to Use
+
+• Simple coding tasks
+• Basic questions
+• Translation
+• Summarization
+• Straightforward content generation
+
+Example
+
+Prompt:
+Write a Java method to reverse a string.
+
+(No examples are provided.)
+
+---
+
+Interview Trap
+
+Q. When should you avoid Zero-shot?
+
+Answer:
+
+Avoid Zero-shot when the task requires a specific format, style,
+or complex reasoning. In such cases, Few-shot or Chain-of-Thought
+prompting is more suitable.
+
+======================================================================
+INTERVIEW QUESTION 3
+What is Few-shot Prompting? When would you use it?
+==================================================
+
+Interview Answer:
+
+Few-shot prompting is a prompting technique in which we provide one
+or more examples before giving the actual task. These examples help
+the AI understand the expected format, style, or pattern of the output.
+
+When to Use
+
+• Specific output format
+• Coding style
+• Email writing
+• JSON/XML generation
+• SQL query formatting
+
+Example
+
+Example:
+Input : Hello
+Output: Hi
+
+Input : Thanks
+Output: You're welcome
+
+Now:
+Input : Good Morning
+Output: ?
+
+---
+
+Interview Trap
+
+Q. When should you choose Few-shot instead of Zero-shot?
+
+Answer:
+
+Use Few-shot when you want the AI to follow a particular format,
+style, or pattern. Use Zero-shot for simple tasks that do not require
+examples.
+
+======================================================================
+INTERVIEW QUESTION 4
+What is Chain-of-Thought (CoT) Prompting? When would you use it?
+================================================================
+
+Interview Answer:
+
+Chain-of-Thought prompting is a prompting technique in which we ask the
+AI to solve a problem by reasoning through it step by step before
+generating the final answer.
+
+It is mainly used for complex tasks where reasoning improves accuracy.
+
+When to Use
+
+• Dynamic Programming
+• Complex Algorithms
+• Debugging
+• Mathematical Problems
+• Logical Reasoning
+
+Example
+
+Explain the logic first and then write the Java solution for the
+Longest Increasing Subsequence problem.
+
+---
+
+Interview Trap
+
+Q. Should Chain-of-Thought be used for generating getters and setters?
+
+Answer:
+
+No.
+
+Generating getters and setters is a simple task that does not require
+reasoning. Zero-shot prompting is sufficient.
+
+Use Chain-of-Thought only for complex reasoning tasks such as Dynamic
+Programming, debugging, or algorithm design.
+
+======================================================================
+MOST IMPORTANT INTERVIEW TABLE
+==============================
+
+## Technique              Best Used For
+
+Zero-shot              Simple tasks
+Few-shot               Need a specific format or style
+Chain-of-Thought       Complex reasoning problems
+
+This table alone answers many interview questions.
+
+======================================================================
+QUICK REVISION
+==============
+
+✔ Prompt Engineering
+→ Designing prompts to obtain accurate and high-quality AI responses.
+
+✔ Zero-shot
+→ No examples.
+→ Best for simple tasks.
+
+✔ Few-shot
+→ Uses one or more examples.
+→ Best for a required format or style.
+
+✔ Chain-of-Thought
+→ Step-by-step reasoning.
+→ Best for complex algorithms and logical problems.
+
+Memory Trick
+
+Zero-shot
+→ No Examples
+
+Few-shot
+→ Examples
+
+Chain-of-Thought
+→ Reasoning
+
+======================================================================
+END OF TOPIC 2
+==============

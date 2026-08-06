@@ -1,0 +1,215 @@
+======================================================================
+MODULE 16 : GENERATIVE AI FUNDAMENTALS
+TOPIC 1 : INTRODUCTION TO GENERATIVE AI
+=======================================
+
+======================================================================
+INTERVIEW QUESTION 1
+What is Generative AI?
+======================
+
+Interview Answer:
+Generative AI is a type of Artificial Intelligence that learns patterns
+from large amounts of training data and generates new content such as
+text, images, code, audio, and videos. Unlike traditional AI, which
+mainly analyzes or classifies existing data, Generative AI creates new
+content that resembles the data it was trained on.
+
+Key Points:
+✔ Learns patterns from training data
+✔ Generates NEW content
+✔ Can generate text, code, images, audio, and video
+✔ Does not simply copy training data
+
+Example:
+• ChatGPT
+• GitHub Copilot
+• DALL·E
+• Gemini
+
+---
+
+======================================================================
+INTERVIEW QUESTION 2
+Difference between Generative AI and Traditional AI
+===================================================
+
+Interview Answer:
+
+Generative AI creates new content such as text, images, code, audio,
+and videos by learning patterns from training data.
+
+Traditional (Discriminative) AI does not generate new content. It
+analyzes existing data to perform tasks such as classification,
+prediction, recommendation, or detection.
+
+Difference:
+
+## Generative AI
+
+• Creates new content
+• Output: Text, code, images, audio, video
+• Examples: ChatGPT, GitHub Copilot, DALL·E
+
+## Traditional AI
+
+• Predicts or classifies existing data
+• Output: Label, prediction, recommendation
+• Examples: Spam detection, Face recognition,
+Fraud detection, Disease prediction
+
+Memory Trick:
+
+Generative AI  →  CREATE
+Traditional AI →  PREDICT
+
+---
+
+======================================================================
+INTERVIEW QUESTION 3
+What are the real-world applications of Generative AI?
+======================================================
+
+Interview Answer:
+
+Generative AI is widely used in many domains:
+
+• Text generation
+
+* Emails
+* Articles
+* Reports
+* Summaries
+
+• Code generation
+
+* Functions
+* Documentation
+* Test cases
+* GitHub Copilot
+
+• Image generation
+
+* Logos
+* Artwork
+* Posters
+
+• Chatbots & Virtual Assistants
+
+* ChatGPT
+* Customer support bots
+
+• Audio & Video generation
+
+* Voiceovers
+* Music
+* AI-generated videos
+
+• Content creation
+
+* Marketing
+* Education
+* Software development
+
+---
+
+======================================================================
+INTERVIEW QUESTION 4
+Briefly explain the evolution of Generative AI.
+===============================================
+
+Interview Answer:
+
+The evolution of Generative AI can be summarized as follows:
+
+1960s
+↓
+Early Rule-Based Chatbots
+
+2014
+↓
+GANs (Generative Adversarial Networks)
+→ Realistic image generation
+
+2020
+↓
+GPT-3
+→ Powerful Large Language Model for text generation
+
+2022
+↓
+ChatGPT
+→ Made Generative AI widely accessible
+
+Today
+↓
+GitHub Copilot, Gemini, Claude, Image Generators,
+AI Coding Assistants, and many enterprise AI tools
+
+---
+
+======================================================================
+COMMON INTERVIEW TRAPS
+======================
+
+Q. Does Generative AI copy training data?
+
+Answer:
+No. It learns patterns and relationships from training data and
+generates new content. It does not simply copy the training data.
+
+---
+
+Q. Is GitHub Copilot Generative AI?
+
+Answer:
+GitHub Copilot is an AI-powered coding assistant built using
+Generative AI models. Code generation is the application, while
+Copilot is the tool.
+
+---
+
+Q. Can Traditional AI generate new content?
+
+Answer:
+No. Traditional AI mainly predicts, classifies, detects, or recommends.
+Content generation is a capability of Generative AI.
+
+======================================================================
+QUICK REVISION
+==============
+
+✔ Generative AI = Creates new content
+
+✔ Traditional AI = Predicts or classifies existing data
+
+✔ Applications:
+• Text generation
+• Code generation
+• Image generation
+• Chatbots
+• Audio & Video generation
+• Content creation
+
+✔ Evolution:
+Early Chatbots
+↓
+GANs (2014)
+↓
+GPT-3 (2020)
+↓
+ChatGPT (2022)
+↓
+GitHub Copilot & Modern AI
+
+Memory Trick:
+
+Traditional AI
+→ Predict
+
+Generative AI
+→ Create
+
+======================================================================
+END OF TOPIC 1
+==============
