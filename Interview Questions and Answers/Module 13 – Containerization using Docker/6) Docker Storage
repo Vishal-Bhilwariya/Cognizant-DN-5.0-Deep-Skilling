@@ -1,0 +1,235 @@
+======================================================================
+MODULE : DOCKER
+TOPIC 6 : DOCKER STORAGE
+======================================================================
+
+Q1. Why do we use Docker Volumes?
+
+Interview Ready Answer
+
+Docker Volumes provide persistent storage for container data. They store
+data outside the container's writable layer, ensuring that the data
+remains available even if the container is removed or recreated.
+
+Definition
+
+Docker Volume
+- Persistent storage mechanism.
+- Stores container data outside the writable layer.
+
+Purpose
+
+• Prevent data loss.
+• Share data between containers.
+• Store databases, uploaded files, and application data.
+• Keep data independent of the container lifecycle.
+
+======================================================================
+
+Q2. What is the difference between a Docker Volume and the Container's Writable Layer?
+
+Interview Ready Answer
+
+A Docker Volume provides persistent storage outside the container's
+writable layer. Data stored in a volume remains available even if the
+container is removed or recreated.
+
+The container's writable layer is temporary. Any data stored there is
+lost when the container is removed.
+
+Definition
+
+Docker Volume
+- Persistent storage.
+- Independent of container lifecycle.
+
+Writable Layer
+- Temporary storage.
+- Exists only with the container.
+
+Purpose
+
+Docker Volume
+
+• Long-term data storage.
+• Data persistence.
+• Data sharing.
+
+Writable Layer
+
+• Temporary runtime changes.
+• Logs, temporary files, cache.
+
+ASCII Diagram
+
+Docker Image (Read-only)
+        │
+        ▼
+Container Writable Layer (Temporary)
+        │
+        │
+        └───────────────┐
+                        │
+Docker Volume           │
+(Persistent Storage)    │
+        │               │
+        ▼               ▼
+Container Removed   Writable Layer Deleted
+        │
+        ▼
+Volume Data Still Exists ✅
+
+======================================================================
+
+Q3. What is a Docker Storage Driver?
+
+Interview Ready Answer
+
+A Docker Storage Driver is the component responsible for managing Docker
+image layers and the container's writable layer. It implements Docker's
+layered filesystem and allows multiple images to share common layers
+efficiently.
+
+Definition
+
+Storage Driver
+- Manages image layers.
+- Manages writable layer.
+- Implements layered filesystem.
+
+Purpose
+
+• Manage image layers.
+• Manage container writable layer.
+• Improve storage efficiency.
+• Enable layer sharing.
+
+Note
+
+Common storage drivers include:
+- overlay2 (Most commonly used)
+- aufs
+- btrfs
+- zfs
+
+(Only overlay2 is worth remembering for campus interviews.)
+
+======================================================================
+
+Q4. How do you create a Docker Volume?
+
+Interview Ready Answer
+
+A Docker Volume is created using the following command:
+
+docker volume create <volume_name>
+
+The volume can then be mounted to one or more containers to provide
+persistent storage.
+
+Purpose
+
+• Create persistent storage.
+• Store application data.
+• Store database files.
+
+======================================================================
+
+Q5. Which command lists all Docker Volumes?
+
+Interview Ready Answer
+
+The following command lists all Docker Volumes available on the local
+Docker host:
+
+docker volume ls
+
+Purpose
+
+• View existing volumes.
+• Verify created volumes.
+• Manage Docker storage.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+1. Does a Docker Volume store the container?
+
+Answer:
+No.
+A Docker Volume stores the container's data, not the container itself.
+
+---------------------------------------------------------------------
+
+2. Is data stored in the writable layer permanent?
+
+Answer:
+No.
+The writable layer is deleted when the container is removed.
+
+---------------------------------------------------------------------
+
+3. What is the purpose of a Storage Driver?
+
+Answer:
+It manages Docker image layers and the container's writable layer.
+It does NOT manage Docker Volumes.
+
+---------------------------------------------------------------------
+
+4. Which command creates a Docker Volume?
+
+Answer:
+docker volume create <volume_name>
+
+---------------------------------------------------------------------
+
+5. Which command lists all Docker Volumes?
+
+Answer:
+docker volume ls
+
+======================================================================
+LOW PRIORITY (Notes Only)
+======================================================================
+
+Changing Storage Driver
+
+- Docker supports multiple storage drivers such as overlay2, aufs,
+  btrfs, and zfs.
+- The storage driver is configured at the Docker Engine level.
+- Rarely asked in campus interviews.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+Docker Volume
+→ Persistent storage outside the container.
+
+Writable Layer
+→ Temporary storage inside the container.
+
+Storage Driver
+→ Manages image layers and writable layer.
+
+docker volume create <volume_name>
+→ Creates a Docker Volume.
+
+docker volume ls
+→ Lists all Docker Volumes.
+
+Most Asked Interview Questions
+
+• Why do we use Docker Volumes?
+• Docker Volume vs Writable Layer.
+• What is a Storage Driver?
+• How do you create a Docker Volume?
+• Which command lists Docker Volumes?
+
+Frequently Confused Concepts
+
+• Docker Volume vs Writable Layer.
+• Storage Driver vs Docker Volume.
+• docker volume create vs docker volume ls.
