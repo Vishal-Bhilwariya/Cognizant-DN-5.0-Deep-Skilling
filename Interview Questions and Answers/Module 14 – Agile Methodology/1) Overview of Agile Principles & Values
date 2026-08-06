@@ -1,0 +1,172 @@
+======================================================================
+MODULE 14 : AGILE METHODOLOGY
+TOPIC 1 : OVERVIEW OF AGILE PRINCIPLES & VALUES
+======================================================================
+
+Q1. What is Agile methodology, and why was it introduced?
+
+Interview Ready Answer
+
+Agile is a software development methodology based on iterative and
+incremental development. It focuses on delivering software in small,
+working increments while maintaining continuous collaboration with
+stakeholders and adapting to changing requirements.
+
+It was introduced to overcome the limitations of the Waterfall model,
+where all requirements are finalized upfront and the product is delivered
+only at the end. Agile enables continuous customer feedback, faster
+delivery, and quick adaptation to changing business requirements.
+
+Definition
+
+Agile is a software development methodology that emphasizes iterative
+development, incremental delivery, customer collaboration, and continuous
+improvement.
+
+Purpose
+
+• Deliver working software frequently.
+• Adapt to changing requirements.
+• Improve collaboration with stakeholders.
+• Reduce project risk through continuous feedback.
+• Deliver business value early and continuously.
+
+Key Interview Points
+
+• Agile follows iterative and incremental development.
+• Software is delivered in small working increments.
+• Customer feedback is collected throughout development.
+• Requirements can change even during development.
+• Agile focuses on collaboration, flexibility, and continuous improvement.
+
+Why Agile Was Introduced
+
+Problems with Waterfall:
+
+• Requirements are fixed at the beginning.
+• Customer sees the product only after completion.
+• Late feedback increases rework.
+• Requirement changes are expensive.
+• Higher risk of delivering an unsuitable product.
+
+Agile Solution:
+
+• Frequent customer collaboration.
+• Early and continuous software delivery.
+• Easy adaptation to changing requirements.
+• Faster feedback cycle.
+• Reduced project risk.
+
+ASCII Flow
+
+Waterfall
+
+Requirements
+      ↓
+Design
+      ↓
+Development
+      ↓
+Testing
+      ↓
+Deployment
+
+(Customer feedback comes at the end)
+
+--------------------------------------------------
+
+Agile
+
+Plan
+  ↓
+Develop
+  ↓
+Test
+  ↓
+Release
+  ↓
+Customer Feedback
+  ↓
+Next Iteration
+
+(Feedback is continuous)
+
+Real-Life Example
+
+Suppose a banking application is being developed.
+
+Waterfall:
+The customer requests only UPI payment initially.
+After six months, they ask for Net Banking.
+Adding the new feature becomes costly because the project is already
+completed.
+
+Agile:
+The application is developed in small iterations.
+After the first release, the customer requests Net Banking.
+The feature is added in the next iteration with minimal disruption.
+
+Industry Example
+
+An e-commerce company releases a shopping application with basic payment
+features. Based on customer feedback, Wallet, UPI, EMI, and Buy Now Pay
+Later are added in future iterations instead of waiting for one final
+release.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Q1. Is Agile a process or a methodology?
+
+Answer:
+Agile is generally referred to as a software development methodology or
+approach. Scrum is a framework that implements Agile principles.
+
+--------------------------------------------------
+
+Q2. Is Agile mandatory for every project?
+
+Answer:
+No. Agile is not mandatory. Organizations choose it when requirements are
+expected to change frequently and continuous customer feedback is valuable.
+
+--------------------------------------------------
+
+Q3. What are the two most important characteristics of Agile?
+
+Answer:
+
+• Iterative development
+• Incremental delivery
+
+--------------------------------------------------
+
+Q4. Why was Agile introduced?
+
+Answer:
+To overcome the limitations of the Waterfall model by enabling continuous
+customer collaboration, faster feedback, and adaptability to changing
+requirements.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+• Agile = Iterative + Incremental development.
+• Delivers working software frequently.
+• Encourages continuous stakeholder collaboration.
+• Adapts easily to changing requirements.
+• Introduced to overcome Waterfall limitations.
+• Focuses on early delivery, continuous feedback, and continuous
+  improvement.
+
+Interview Keywords
+
+• Iterative Development
+• Incremental Delivery
+• Stakeholder Collaboration
+• Continuous Feedback
+• Changing Requirements
+• Early Value Delivery
+• Continuous Improvement
