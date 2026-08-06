@@ -1,0 +1,231 @@
+======================================================================
+MODULE : DOCKER
+TOPIC 2 : DOCKER RUN
+======================================================================
+
+Q1. What is the purpose of assigning a specific name to a Docker container using the --name option?
+
+Interview Ready Answer
+
+The --name option assigns a custom, human-readable name to a Docker
+container. It allows Docker commands such as docker stop, docker start,
+docker exec, and docker logs to reference the container by name instead
+of its container ID.
+
+Definition
+
+--name
+- Assigns a custom name to a container.
+- Replaces the need to remember the container ID.
+
+Purpose
+
+• Easily identify containers.
+• Manage containers using meaningful names.
+• Improves readability in projects with multiple containers.
+
+======================================================================
+
+Q2. What is Detached Mode (-d)?
+
+Interview Ready Answer
+
+Detached mode (-d) runs a Docker container in the background. After the
+container starts, Docker immediately returns control of the terminal to
+the user while the container continues running.
+
+Definition
+
+Detached Mode
+- Background execution mode.
+- Terminal is released immediately.
+- Container keeps running.
+
+Purpose
+
+• Run web servers.
+• Run databases.
+• Run backend services continuously.
+• Continue using the terminal after starting the container.
+
+Real-Life Example
+
+Spring Boot Application
+↓
+docker run -d
+↓
+Application keeps running
+↓
+Terminal becomes available for other commands
+
+======================================================================
+
+Q3. What is Interactive Mode (-it)?
+
+Interview Ready Answer
+
+Interactive mode (-it) allows the user to interact with a running Docker
+container through a terminal.
+
+It combines:
+
+-i
+Keeps STDIN open.
+
+-t
+Allocates a pseudo-terminal (TTY).
+
+Definition
+
+Interactive Mode
+- Opens an interactive shell.
+- Allows manual command execution inside the container.
+
+Purpose
+
+• Debug applications.
+• Inspect container files.
+• Execute Linux commands inside the container.
+• Troubleshoot running containers.
+
+Real-Life Example
+
+Ubuntu Container
+↓
+Run with -it
+↓
+Access Linux shell
+↓
+Execute commands manually
+
+======================================================================
+
+Q4. Why do we publish container ports using the -p option?
+
+Interview Ready Answer
+
+The -p option maps a host machine port to a container port, allowing
+applications running inside the container to be accessed from outside
+the container.
+
+Definition
+
+Port Mapping
+Host Port  →  Container Port
+
+Purpose
+
+• Expose containerized applications.
+• Access web applications from a browser.
+• Enable communication between the host and the container.
+
+Real-Life Example
+
+Spring Boot runs on port 8080 inside the container.
+
+Host Port 8080
+        │
+        ▼
+Container Port 8080
+
+Browser
+↓
+http://localhost:8080
+
+======================================================================
+
+Q5. What is the purpose of the --rm option?
+
+Interview Ready Answer
+
+The --rm option automatically removes a Docker container after it exits.
+It is mainly used for temporary or one-time containers to prevent stopped
+containers from accumulating.
+
+Definition
+
+--rm
+- Automatic container removal after exit.
+
+Purpose
+
+• Keep the system clean.
+• Avoid unused stopped containers.
+• Useful for temporary containers.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+1. Does the --name option make a container unique?
+Answer:
+It assigns a unique name to a container on the Docker host. Docker will
+not allow two containers to have the same name simultaneously.
+
+---------------------------------------------------------------------
+
+2. What is the difference between Detached Mode (-d) and Interactive Mode (-it)?
+Answer:
+-d runs the container in the background.
+-it provides an interactive terminal to work inside the container.
+
+---------------------------------------------------------------------
+
+3. Why is port mapping required?
+Answer:
+Without port mapping, applications running inside the container cannot be
+accessed from the host machine.
+
+---------------------------------------------------------------------
+
+4. Does -p change the application's listening port?
+Answer:
+No.
+It maps a host port to the existing container port.
+
+---------------------------------------------------------------------
+
+5. Why use --rm?
+Answer:
+To automatically remove the container after it exits, preventing unused
+containers from accumulating.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+--name
+→ Assigns a custom name to a container.
+
+-d
+→ Runs the container in the background.
+
+-it
+→ Opens an interactive terminal inside the container.
+
+-i
+→ Keeps STDIN open.
+
+-t
+→ Allocates a terminal (TTY).
+
+-p
+→ Maps Host Port → Container Port.
+
+--rm
+→ Automatically removes the container after it exits.
+
+Most Asked Interview Questions
+
+• Purpose of --name
+• Detached Mode (-d)
+• Interactive Mode (-it)
+• Difference between -d and -it
+• Purpose of -p
+• Purpose of --rm
+
+Frequently Confused Concepts
+
+• -d vs -it
+• Host Port vs Container Port
+• --rm vs docker rm
