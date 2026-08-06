@@ -362,3 +362,524 @@ experience."
 
 ======================================================================
 
+======================================================================
+                 JAVA BASICS INTERVIEW REVISION NOTES
+======================================================================
+
+1. WHAT IS JAVA?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+Java is a high-level, object-oriented, class-based, and
+platform-independent programming language developed by
+James Gosling at Sun Microsystems in 1995.
+
+It follows the principle of "Write Once, Run Anywhere (WORA)"
+because Java source code is compiled into bytecode, which is
+executed by the Java Virtual Machine (JVM).
+
+Java is widely used for developing enterprise applications,
+web applications, Android applications, desktop software,
+and backend systems.
+
+
+======================================================================
+
+2. ADVANTAGES OF JAVA
+----------------------------------------------------------------------
+
+Interview Answer:
+
+Java provides several advantages:
+
+• Platform Independent (WORA)
+• Object-Oriented
+• Simple
+• Secure
+• Robust
+• Portable
+• Multithreading Support
+• High Performance (JIT Compiler)
+• Distributed
+• Rich Standard Library
+
+These features make Java suitable for enterprise, banking,
+finance, web, and backend applications.
+
+
+======================================================================
+
+3. WHY IS JAVA PLATFORM INDEPENDENT?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+Java is platform independent because it is compiled into
+platform-independent bytecode instead of machine code.
+
+The Java compiler converts source code (.java) into bytecode
+(.class).
+
+The JVM available on each operating system converts this
+bytecode into machine code and executes it.
+
+Since only the JVM changes for different operating systems,
+the same bytecode runs everywhere.
+
+This is called:
+
+Write Once, Run Anywhere (WORA)
+
+
+======================================================================
+
+4. WHAT IS THE ENTRY POINT OF A JAVA PROGRAM?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+The entry point of a Java application is the main() method.
+
+When the JVM starts a Java application, it searches for
+the following method:
+
+public static void main(String[] args)
+
+Execution always begins from this method.
+
+
+======================================================================
+
+5. EXPLAIN
+   public static void main(String[] args)
+----------------------------------------------------------------------
+
+public
+
+• Access Modifier
+• Accessible from anywhere
+• JVM can invoke it
+
+--------------------------------------------------
+
+static
+
+• Belongs to the class
+• JVM can call it without creating an object
+
+--------------------------------------------------
+
+void
+
+• Return type
+• Returns nothing
+
+--------------------------------------------------
+
+main
+
+• Predefined method name
+• JVM searches for this method first
+
+--------------------------------------------------
+
+String[] args
+
+• Array of String objects
+• Stores command-line arguments
+
+
+======================================================================
+
+6. CAN main() METHOD BE OVERLOADED?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+Yes.
+
+The main() method can be overloaded like any other method.
+
+However,
+
+JVM always calls
+
+public static void main(String[] args)
+
+The overloaded versions must be called manually.
+
+
+Example
+
+public static void main(String[] args)
+
+public static void main(int x)
+
+
+======================================================================
+
+7. CAN THE main() METHOD SIGNATURE BE CHANGED?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+No.
+
+The JVM looks for the exact signature
+
+public static void main(String[] args)
+
+If the signature is changed,
+the JVM cannot identify it as the entry point,
+and the program will not start.
+
+Important:
+
+String[] args
+
+and
+
+String args[]
+
+Both are valid.
+
+
+======================================================================
+
+8. DIFFERENCE BETWEEN JDK AND JRE
+----------------------------------------------------------------------
+
+JDK (Java Development Kit)
+
+Purpose
+
+Develop, Compile, Debug, Run Java Programs
+
+Contains
+
+• JRE
+• javac
+• jdb
+• jar
+• Development Tools
+
+--------------------------------------------------
+
+JRE (Java Runtime Environment)
+
+Purpose
+
+Run Java Programs
+
+Contains
+
+• JVM
+• Core Libraries
+• Runtime Environment
+
+--------------------------------------------------
+
+Relationship
+
+JDK
+│
+├── JRE
+│
+└── JVM
+
+
+======================================================================
+
+9. WHAT IS JVM?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+JVM (Java Virtual Machine) is responsible for executing
+Java bytecode.
+
+It converts bytecode into machine code using the
+Just-In-Time (JIT) Compiler.
+
+It also provides
+
+• Memory Management
+• Garbage Collection
+• Platform Independence
+
+
+======================================================================
+
+10. HOW DO JDK, JRE AND JVM WORK TOGETHER?
+----------------------------------------------------------------------
+
+Flow
+
+Java Source Code (.java)
+
+        │
+
+        ▼
+
+JDK
+
+(javac Compiler)
+
+        │
+
+        ▼
+
+Bytecode (.class)
+
+        │
+
+        ▼
+
+JRE
+
+(Runtime Environment)
+
+        │
+
+        ▼
+
+JVM
+
+        │
+
+        ▼
+
+Machine Code
+
+        │
+
+        ▼
+
+Program Output
+
+
+======================================================================
+
+11. WHICH IDE DO YOU USE?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+I have used both VS Code and IntelliJ IDEA.
+
+I prefer VS Code because it is lightweight,
+fast, and user-friendly.
+
+It provides
+
+• Java Extension Pack
+• IntelliSense
+• Integrated Terminal
+• Debugger
+• Maven Support
+• Git Integration
+
+Although IntelliJ IDEA offers more advanced
+enterprise Java features, VS Code fits my
+workflow and helps me stay productive.
+
+
+======================================================================
+                 QUICK REVISION
+======================================================================
+
+✔ Java
+
+High-Level
+Object-Oriented
+Platform Independent
+Class-Based
+WORA
+
+--------------------------------------------------
+
+✔ Java Flow
+
+.java
+
+↓
+
+javac
+
+↓
+
+.class
+
+↓
+
+JVM
+
+↓
+
+Machine Code
+
+↓
+
+Output
+
+--------------------------------------------------
+
+✔ JDK
+
+Development Kit
+
+Contains
+
+JRE
+Compiler
+Debugger
+Tools
+
+--------------------------------------------------
+
+✔ JRE
+
+Runtime Environment
+
+Contains
+
+JVM
+Libraries
+
+--------------------------------------------------
+
+✔ JVM
+
+Runs Bytecode
+
+Converts Bytecode → Machine Code
+
+Provides
+
+Garbage Collection
+
+Memory Management
+
+Platform Independence
+
+--------------------------------------------------
+
+✔ main()
+
+Entry Point
+
+public static void main(String[] args)
+
+--------------------------------------------------
+
+✔ public
+
+Accessible Everywhere
+
+--------------------------------------------------
+
+✔ static
+
+No Object Required
+
+--------------------------------------------------
+
+✔ void
+
+Returns Nothing
+
+--------------------------------------------------
+
+✔ String[] args
+
+Command-Line Arguments
+
+--------------------------------------------------
+
+✔ main()
+
+Can be Overloaded
+
+JVM calls only
+
+public static void main(String[] args)
+
+--------------------------------------------------
+
+✔ Signature
+
+Cannot Change
+
+Except
+
+String[] args
+and
+String args[]
+
+Both Valid
+
+
+======================================================================
+                  INTERVIEW TRAPS
+======================================================================
+
+❌ Don't Say
+
+Java is Platform Dependent
+
+✅ Say
+
+Java is Platform Independent.
+
+--------------------------------------------------
+
+❌ Don't Say
+
+JVM compiles Java source code.
+
+✅ Say
+
+javac compiles Java source code into bytecode.
+
+JVM executes bytecode by converting it into machine code.
+
+--------------------------------------------------
+
+❌ Don't Say
+
+JRE contains JDK.
+
+✅ Correct Hierarchy
+
+JDK
+
+↓
+
+JRE
+
+↓
+
+JVM
+
+--------------------------------------------------
+
+❌ Don't Say
+
+Bytecode is machine code.
+
+✅ Say
+
+Bytecode is platform-independent intermediate code.
+
+--------------------------------------------------
+
+❌ Don't Say
+
+JVM compiles Java.
+
+✅ Say
+
+JVM executes bytecode and converts it into machine code.
+
+======================================================================
