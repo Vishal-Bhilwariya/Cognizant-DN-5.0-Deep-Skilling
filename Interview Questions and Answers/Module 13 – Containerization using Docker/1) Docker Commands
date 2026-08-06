@@ -1,0 +1,304 @@
+======================================================================
+MODULE : DOCKER
+TOPIC 1 : DOCKER COMMANDS
+======================================================================
+
+Q1. What is the difference between a Docker Image and a Docker Container?
+
+Interview Ready Answer
+
+A Docker image is an immutable, read-only template that contains the
+application, dependencies, libraries, runtime, and configuration required
+to run an application.
+
+A Docker container is a running instance of a Docker image. It adds a
+writable layer on top of the image and executes the application in an
+isolated environment.
+
+Definition
+
+Docker Image
+- Read-only template
+- Contains application + dependencies
+- Created using a Dockerfile and docker build
+
+Docker Container
+- Running instance of an image
+- Has its own writable layer
+- Executes the application
+
+Purpose
+
+• Image stores application and dependencies.
+• Container runs the application.
+
+======================================================================
+
+Q2. What is the purpose of the docker run command?
+
+Interview Ready Answer
+
+The docker run command creates a new container from a Docker image and
+starts it. If the image is not available locally, Docker first downloads
+it from the configured container registry and then creates and starts the
+container.
+
+Internal Working
+
+docker run
+     │
+     ▼
+Check image locally
+     │
+     ├── Found → Use image
+     │
+     └── Not Found
+             │
+             ▼
+        Pull image
+             │
+             ▼
+Create new container
+             │
+             ▼
+Add writable layer
+             │
+             ▼
+Configure network/ports/volumes
+             │
+             ▼
+Start container
+             │
+             ▼
+Execute ENTRYPOINT/CMD
+
+Purpose
+
+• Creates a new container.
+• Starts the container.
+• Pulls image automatically if required.
+
+======================================================================
+
+Q3. What is the purpose of the docker ps command?
+
+Interview Ready Answer
+
+The docker ps command lists all currently running Docker containers.
+
+Purpose
+
+• View running containers.
+• Verify whether a container is running.
+
+======================================================================
+
+Q4. What is the difference between docker ps and docker ps -a?
+
+Interview Ready Answer
+
+docker ps displays only running containers.
+
+docker ps -a displays all containers, including running, stopped, exited,
+and newly created containers.
+
+Purpose
+
+• docker ps → Running containers only.
+• docker ps -a → All containers.
+
+======================================================================
+
+Q5. What is the purpose of the docker stop command?
+
+Interview Ready Answer
+
+The docker stop command gracefully stops a running container. Docker first
+sends a SIGTERM signal to allow the application to shut down cleanly. If
+the application does not stop within the timeout period, Docker sends
+SIGKILL to terminate it forcefully.
+
+Purpose
+
+• Gracefully stop a running container.
+• Prevent abrupt application termination.
+
+======================================================================
+
+Q6. What is the difference between docker stop and docker kill?
+
+Interview Ready Answer
+
+docker stop performs a graceful shutdown by sending SIGTERM first and
+SIGKILL only if required.
+
+docker kill immediately sends SIGKILL (or another specified signal) and
+terminates the container without waiting.
+
+Purpose
+
+• docker stop → Graceful shutdown.
+• docker kill → Immediate termination.
+
+======================================================================
+
+Q7. What is the purpose of the docker rm command?
+
+Interview Ready Answer
+
+The docker rm command removes a Docker container. By default, it removes
+only stopped containers. A running container must be stopped first or
+removed forcefully using docker rm -f.
+
+Purpose
+
+• Remove Docker containers.
+• Clean up unused containers.
+
+======================================================================
+
+Q8. What is the difference between docker rm and docker rmi?
+
+Interview Ready Answer
+
+docker rm removes Docker containers.
+
+docker rmi removes Docker images.
+
+A Docker image cannot be removed while it is being used by an existing
+container.
+
+Purpose
+
+• docker rm → Remove containers.
+• docker rmi → Remove images.
+
+======================================================================
+
+Q9. What is the purpose of the docker images command?
+
+Interview Ready Answer
+
+The docker images command lists all Docker images available on the local
+Docker host. It displays details such as repository, tag, image ID,
+creation time, and image size.
+
+Purpose
+
+• View locally available images.
+
+======================================================================
+
+Q10. What is the purpose of the docker pull command?
+
+Interview Ready Answer
+
+The docker pull command downloads a Docker image from a container
+registry (such as Docker Hub) to the local Docker host.
+
+Purpose
+
+• Download images from a registry.
+• Fetch required images before running containers.
+
+======================================================================
+
+Q11. What is the purpose of the docker exec command?
+
+Interview Ready Answer
+
+The docker exec command executes a command inside an already running
+Docker container. It is commonly used for debugging, inspection, and
+administration of running containers.
+
+Purpose
+
+• Execute commands inside a running container.
+• Debug or inspect running applications.
+
+======================================================================
+
+Q12. What is the difference between docker run and docker exec?
+
+Interview Ready Answer
+
+docker run creates a new container from a Docker image and starts it.
+
+docker exec executes a command inside an already running container without
+creating a new container.
+
+Purpose
+
+• docker run → Create and start a new container.
+• docker exec → Execute commands in an existing running container.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+1. Does docker run always require the image to be present locally?
+Answer:
+No. If the image is not available locally, Docker automatically pulls it
+from the configured registry.
+
+2. Can docker rm remove a running container?
+Answer:
+No. The container must be stopped first or removed using docker rm -f.
+
+3. Can docker rmi remove an image that is being used by a container?
+Answer:
+No. The dependent container must be removed first.
+
+4. What is the difference between docker stop and docker kill?
+Answer:
+docker stop performs a graceful shutdown using SIGTERM, while docker kill
+immediately terminates the container using SIGKILL.
+
+5. Does docker exec create a new container?
+Answer:
+No. It executes a command inside an existing running container.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+docker run
+→ Creates and starts a new container.
+
+docker ps
+→ Lists running containers.
+
+docker ps -a
+→ Lists all containers.
+
+docker stop
+→ Graceful container shutdown (SIGTERM → SIGKILL).
+
+docker kill
+→ Immediate container termination (SIGKILL).
+
+docker rm
+→ Removes containers.
+
+docker rm -f
+→ Force removes a running container.
+
+docker rmi
+→ Removes Docker images.
+
+docker images
+→ Lists local Docker images.
+
+docker pull
+→ Downloads Docker images from a registry.
+
+docker exec
+→ Executes commands inside a running container.
+
+Most Important Comparisons
+
+• Image vs Container
+• docker ps vs docker ps -a
+• docker stop vs docker kill
+• docker rm vs docker rmi
+• docker run vs docker exec
