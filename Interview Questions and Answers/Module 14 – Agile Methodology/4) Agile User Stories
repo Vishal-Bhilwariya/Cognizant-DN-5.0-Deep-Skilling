@@ -1,0 +1,246 @@
+```text
+======================================================================
+MODULE 14 : AGILE METHODOLOGY
+TOPIC 4 : AGILE USER STORIES
+======================================================================
+
+Q1. What is a User Story, and why is it used in Agile?
+
+Interview Ready Answer
+
+A User Story is a short, simple description of a feature written from
+the end user's perspective. It captures a user's requirement and
+explains the value the feature provides. User Stories help the Scrum
+Team understand customer needs and deliver business value
+incrementally.
+
+Definition
+
+A User Story is a user-centric requirement written in simple language.
+
+Purpose
+
+• Capture customer requirements.
+• Focus on user value.
+• Help the Development Team understand business needs.
+• Deliver features incrementally.
+
+======================================================================
+
+Q2. What is the standard format of a User Story?
+
+Interview Ready Answer
+
+The standard User Story format is:
+
+As a <User>,
+I want <Feature/Goal>,
+So that <Benefit>.
+
+Example
+
+As a Student,
+
+I want to upload my resume,
+
+So that I can apply for placement opportunities.
+
+Purpose
+
+• Identify the user.
+• Describe the required feature.
+• Explain the business value.
+
+======================================================================
+
+Q3. What is the INVEST principle?
+
+Interview Ready Answer
+
+The INVEST principle is a checklist used to determine whether a User
+Story is well-written and of high quality.
+
+INVEST
+
+I → Independent
+N → Negotiable
+V → Valuable
+E → Estimable
+S → Small
+T → Testable
+
+Purpose
+
+• Improve User Story quality.
+• Make estimation easier.
+• Ensure stories are testable.
+• Keep stories manageable within a Sprint.
+
+======================================================================
+
+Q4. What are Acceptance Criteria, and why is the Given–When–Then format
+used?
+
+Interview Ready Answer
+
+Acceptance Criteria are the conditions that a User Story must satisfy
+before it can be accepted as complete. They ensure the feature meets
+business and customer requirements.
+
+The Given–When–Then format makes Acceptance Criteria clear, testable,
+and unambiguous.
+
+Given
+Initial condition or precondition.
+
+When
+Action performed by the user.
+
+Then
+Expected outcome.
+
+Example
+
+Given
+The user is logged in.
+
+When
+The user clicks the Logout button.
+
+Then
+The user should be logged out successfully.
+
+Purpose
+
+• Define completion conditions.
+• Remove ambiguity.
+• Help testing.
+• Ensure expected behavior.
+
+======================================================================
+
+Q5. Write a User Story and Acceptance Criteria for a feature.
+
+Interview Ready Answer
+
+User Story
+
+As a user,
+
+I want to reset my password,
+
+So that I can regain access to my account if I forget it.
+
+Acceptance Criteria
+
+Given
+The user is on the Forgot Password page.
+
+When
+The user enters a registered email address and clicks "Send OTP".
+
+Then
+The system should send an OTP to the registered email and allow the
+user to reset the password after successful OTP verification.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Q1. Who writes User Stories?
+
+Answer:
+Generally, the Product Owner creates and maintains User Stories with
+input from stakeholders and the Scrum Team.
+
+------------------------------------------------------------
+
+Q2. Is a User Story the same as Acceptance Criteria?
+
+Answer:
+No.
+
+User Story → Describes what the user wants.
+
+Acceptance Criteria → Define when the User Story is considered complete.
+
+------------------------------------------------------------
+
+Q3. Does INVEST stand for the Sprint process?
+
+Answer:
+No.
+
+INVEST is a checklist for writing good User Stories.
+
+------------------------------------------------------------
+
+Q4. Is Given–When–Then mandatory?
+
+Answer:
+No.
+
+It is a widely used and recommended format because it makes Acceptance
+Criteria easy to understand and test.
+
+------------------------------------------------------------
+
+Q5. Can a User Story be marked as Done if one Acceptance Criterion
+fails?
+
+Answer:
+No.
+
+A User Story is considered complete only when all Acceptance Criteria
+and the Definition of Done are satisfied.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+User Story
+
+• User-centric requirement.
+• Focuses on business value.
+
+Format
+
+As a <User>
+
+I want <Feature>
+
+So that <Benefit>
+
+INVEST
+
+I → Independent
+
+N → Negotiable
+
+V → Valuable
+
+E → Estimable
+
+S → Small
+
+T → Testable
+
+Acceptance Criteria
+
+Given → Initial condition
+
+When → User action
+
+Then → Expected result
+
+Interview Keywords
+
+• User Story
+• Business Value
+• INVEST
+• Acceptance Criteria
+• Given–When–Then
+• End User Perspective
+• Testable
+• Definition of Done
+```
