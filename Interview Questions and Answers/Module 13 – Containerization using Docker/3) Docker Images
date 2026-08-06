@@ -1,0 +1,316 @@
+======================================================================
+MODULE : DOCKER
+TOPIC 3 : DOCKER IMAGES
+======================================================================
+
+Q1. What is a Docker Image?
+
+Interview Ready Answer
+
+A Docker image is an immutable, read-only template that contains the
+application, runtime, libraries, dependencies, and configuration
+required to run an application. It is created by building a Dockerfile
+using the docker build command and is used to create Docker containers.
+
+Definition
+
+Docker Image
+- Read-only template
+- Immutable
+- Contains application, runtime, dependencies, libraries and configuration
+- Used to create Docker containers
+
+Purpose
+
+• Package an application with all its dependencies.
+• Ensure consistent execution across different environments.
+• Serve as the blueprint for creating containers.
+
+======================================================================
+
+Q2. What are Docker Image Layers?
+
+Interview Ready Answer
+
+A Docker image consists of multiple read-only layers. Each instruction
+in a Dockerfile creates a new layer. Docker caches these layers, allowing
+unchanged layers to be reused, which improves build speed and reduces
+storage usage.
+
+Definition
+
+Image Layer
+- Read-only layer.
+- Created by each Dockerfile instruction.
+- Cached by Docker.
+
+Purpose
+
+• Faster image builds.
+• Reduced storage usage.
+• Layer sharing between images.
+
+ASCII Diagram
+
+Docker Image
+────────────────────────────
+Layer 5 : Application Code
+────────────────────────────
+Layer 4 : Dependencies
+────────────────────────────
+Layer 3 : JDK
+────────────────────────────
+Layer 2 : Ubuntu Packages
+────────────────────────────
+Layer 1 : Base Image
+────────────────────────────
+
+======================================================================
+
+Q3. What is the Container Layer?
+
+Interview Ready Answer
+
+The container layer is the writable layer added on top of the read-only
+Docker image when a container is created. Any changes made while the
+container is running are stored in this layer without modifying the
+original image.
+
+Definition
+
+Container Layer
+- Writable layer.
+- Exists only for a running container.
+- Image remains unchanged.
+
+Purpose
+
+• Store runtime changes.
+• Keep the original image immutable.
+
+======================================================================
+
+Q4. What is the difference between a Base Image and a Parent Image?
+
+Interview Ready Answer
+
+A Base Image is the starting image used to build other Docker images and
+does not depend on another image.
+
+A Parent Image is an existing image used as the foundation for creating
+another image. It may itself be built on top of another image.
+
+Definition
+
+Base Image
+- Starting point for image creation.
+
+Parent Image
+- Existing image used to build another image.
+
+Purpose
+
+• Enable image reuse.
+• Support layered image creation.
+
+======================================================================
+
+Q5. What is the difference between a Docker Registry and a Docker Repository?
+
+Interview Ready Answer
+
+A Docker Registry is a service that stores and distributes Docker images,
+such as Docker Hub or a private registry.
+
+A Docker Repository is a collection of related Docker images with
+different tags or versions stored within a registry.
+
+Definition
+
+Docker Registry
+- Storage service for Docker images.
+
+Docker Repository
+- Collection of versions (tags) of the same image.
+
+Purpose
+
+• Registry stores repositories.
+• Repository organizes image versions.
+
+ASCII Diagram
+
+Docker Registry
+      │
+      ├── Repository : nginx
+      │      ├── latest
+      │      ├── 1.25
+      │      └── 1.26
+      │
+      ├── Repository : mysql
+      │      ├── latest
+      │      └── 8.0
+      │
+      └── Repository : redis
+             ├── latest
+             └── 7.2
+
+======================================================================
+
+Q6. What is a Dockerfile, and how is it different from a Docker Image?
+
+Interview Ready Answer
+
+A Dockerfile is a text file containing instructions to build a Docker
+image, such as copying files, installing dependencies, and configuring
+the runtime environment.
+
+A Docker image is the immutable, read-only output produced by executing
+those instructions using the docker build command.
+
+Definition
+
+Dockerfile
+- Text file.
+- Contains build instructions.
+
+Docker Image
+- Output of docker build.
+- Used to create containers.
+
+Purpose
+
+• Automate image creation.
+• Ensure reproducible builds.
+
+ASCII Diagram
+
+Dockerfile
+      │
+docker build
+      │
+Docker Image
+      │
+docker run
+      │
+Docker Container
+
+======================================================================
+
+Q7. What is Docker Build Context?
+
+Interview Ready Answer
+
+The Docker Build Context is the set of files and directories that Docker
+can access during the image build process. When the docker build command
+is executed, Docker sends the specified directory (build context) to the
+Docker daemon, allowing Dockerfile instructions such as COPY and ADD to
+use those files.
+
+Definition
+
+Docker Build Context
+- Directory supplied to docker build.
+- Contains Dockerfile, source code, configuration files, and other
+  required resources.
+
+Purpose
+
+• Makes project files available during image creation.
+• Required for COPY and ADD instructions.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+1. Is a Docker Image writable?
+Answer:
+No. Docker images are immutable and read-only.
+
+---------------------------------------------------------------------
+
+2. Where are runtime changes stored?
+Answer:
+In the writable Container Layer, not in the Docker Image.
+
+---------------------------------------------------------------------
+
+3. Does every Dockerfile instruction create a new image layer?
+Answer:
+Yes. Most Dockerfile instructions create a new layer.
+
+---------------------------------------------------------------------
+
+4. What is the difference between a Dockerfile and a Docker Image?
+Answer:
+A Dockerfile contains build instructions, whereas a Docker Image is the
+output produced after executing those instructions.
+
+---------------------------------------------------------------------
+
+5. Is Docker Hub a Registry or a Repository?
+Answer:
+Docker Hub is a Docker Registry.
+
+======================================================================
+LOW PRIORITY (Notes Only)
+======================================================================
+
+Docker Manifest
+- Metadata describing an image.
+- Contains image digest, supported platforms, architecture, and layer
+  information.
+- Rarely asked in campus interviews.
+
+Interactive Image Creation Method
+- Creates an image manually using a running container and commit.
+- Mostly used for experimentation.
+- Dockerfile method is preferred in real projects.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+Docker Image
+→ Immutable, read-only template.
+
+Image Layer
+→ Read-only cached layer created by Dockerfile instructions.
+
+Container Layer
+→ Writable layer added when a container starts.
+
+Base Image
+→ Starting image for building new images.
+
+Parent Image
+→ Existing image used as the foundation for another image.
+
+Docker Registry
+→ Stores Docker repositories.
+
+Docker Repository
+→ Collection of versions (tags) of the same image.
+
+Dockerfile
+→ Text file containing build instructions.
+
+Docker Build Context
+→ Directory whose files are available during docker build.
+
+Most Asked Interview Questions
+
+• What is a Docker Image?
+• Docker Image vs Docker Container
+• Image Layers
+• Dockerfile vs Docker Image
+• Registry vs Repository
+• Base Image vs Parent Image
+• Docker Build Context
+
+Frequently Confused Concepts
+
+• Image Layer vs Container Layer
+• Dockerfile vs Docker Image
+• Registry vs Repository
+• Base Image vs Parent Image
