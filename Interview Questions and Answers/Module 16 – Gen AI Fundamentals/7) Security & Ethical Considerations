@@ -1,0 +1,271 @@
+======================================================================
+MODULE 16 : GENERATIVE AI FUNDAMENTALS
+TOPIC 7 : SECURITY & ETHICAL CONSIDERATIONS
+===========================================
+
+======================================================================
+INTERVIEW QUESTION 1
+What are the security risks of using AI-generated code from GitHub Copilot?
+===========================================================================
+
+Interview Answer:
+
+AI-generated code may contain security vulnerabilities, logical errors,
+or outdated coding practices. It can also hallucinate by generating
+incorrect APIs or code that does not work as expected.
+
+Therefore, developers should always review, test, and validate
+AI-generated code before using it in production.
+
+---
+
+Key Risks
+
+✔ Security Vulnerabilities
+
+✔ Logical Errors
+
+✔ Hallucinations
+
+✔ Outdated Coding Practices
+
+✔ Requires Human Review
+
+Example
+
+AI Suggestion
+↓
+
+SQL Query without parameterized statements
+
+↓
+
+Risk
+
+SQL Injection Vulnerability
+
+======================================================================
+INTERVIEW QUESTION 2
+What are licensing and attribution concerns when using AI-generated code?
+=========================================================================
+
+Interview Answer:
+
+Licensing and attribution concerns arise because AI-generated code may
+resemble code from publicly available repositories that have different
+software licenses.
+
+Developers should ensure that the generated code does not violate
+license terms or copyright requirements. If required by the license,
+proper attribution should be provided.
+
+---
+
+Key Points
+
+✔ Check software license
+
+✔ Respect copyright
+
+✔ Verify before reuse
+
+✔ Follow organizational policies
+
+Memory Tip
+
+License First
+↓
+
+Then Use
+
+======================================================================
+INTERVIEW QUESTION 3
+Why should developers avoid sharing confidential or sensitive
+information with GitHub Copilot or other AI tools?
+==================================================
+
+Interview Answer:
+
+Developers should avoid sharing confidential information such as
+passwords, API keys, customer data, or proprietary source code with AI
+tools because it can create privacy, security, and compliance risks.
+
+Sensitive information should never be exposed to AI systems unless its
+use is permitted by the organization's security policies.
+
+---
+
+Never Share
+
+✘ Passwords
+
+✘ API Keys
+
+✘ Database Credentials
+
+✘ Customer Data
+
+✘ Company Source Code
+
+✘ Secret Tokens
+
+======================================================================
+INTERVIEW QUESTION 4
+What are the best practices for using GitHub Copilot responsibly?
+=================================================================
+
+Interview Answer:
+
+The best practices for using GitHub Copilot responsibly are:
+
+• Review AI-generated code before using it.
+
+• Test and validate the generated code.
+
+• Check for security vulnerabilities.
+
+• Do not blindly accept AI suggestions.
+
+• Never share confidential information.
+
+• Verify licensing and attribution requirements.
+
+• Use Copilot as a coding assistant, not as a replacement for developer
+judgment.
+
+---
+
+Responsible AI Checklist
+
+✔ Review
+
+✔ Test
+
+✔ Validate
+
+✔ Secure
+
+✔ Verify License
+
+✔ Protect Privacy
+
+======================================================================
+COMMON INTERVIEW TRAPS
+======================
+
+Q. Is AI-generated code production-ready?
+
+Answer:
+
+No.
+
+AI-generated code should always be reviewed, tested, and security-
+validated before deployment.
+
+---
+
+Q. Can you directly copy AI-generated code into a commercial project?
+
+Answer:
+
+Not always.
+
+You should verify licensing and copyright obligations before using it.
+
+---
+
+Q. Can you paste your company's source code into ChatGPT or GitHub
+Copilot?
+
+Answer:
+
+No.
+
+Unless your organization's policies explicitly allow it and proper
+security controls are in place, confidential company code, credentials,
+and sensitive information should not be shared with AI tools.
+
+---
+
+Q. Should GitHub Copilot replace code reviews?
+
+Answer:
+
+No.
+
+GitHub Copilot is a coding assistant. Human code reviews, testing, and
+security validation remain essential before deploying code.
+
+======================================================================
+QUICK REVISION
+==============
+
+Security Risks
+
+✔ Vulnerabilities
+
+✔ Hallucinations
+
+✔ Logical Errors
+
+✔ Outdated Code
+
+---
+
+Licensing
+
+✔ Check License
+
+✔ Respect Copyright
+
+✔ Provide Attribution (if required)
+
+---
+
+Privacy
+
+✘ Passwords
+
+✘ API Keys
+
+✘ Customer Data
+
+✘ Company Source Code
+
+---
+
+Responsible AI Usage
+
+✔ Review
+
+✔ Test
+
+✔ Validate
+
+✔ Secure
+
+✔ Verify License
+
+✔ Human Judgment
+
+======================================================================
+FINAL MEMORY TRICK
+==================
+
+R T V S L P
+
+R → Review
+
+T → Test
+
+V → Validate
+
+S → Secure
+
+L → License Check
+
+P → Protect Privacy
+
+======================================================================
+END OF TOPIC 7
+==============
