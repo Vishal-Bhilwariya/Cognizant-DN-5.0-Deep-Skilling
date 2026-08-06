@@ -1,0 +1,176 @@
+```text
+======================================================================
+MODULE 14 : AGILE METHODOLOGY
+TOPIC 1 : INTRODUCTION TO AGILE & AGILE MANIFESTO
+======================================================================
+
+Q1. What is Agile methodology, and why was it introduced?
+
+Interview Ready Answer
+
+Agile is a software development methodology based on iterative and
+incremental development. It focuses on delivering working software in
+small increments, encouraging continuous stakeholder collaboration,
+and adapting to changing requirements.
+
+It was introduced to overcome the limitations of the Waterfall model,
+where the product is delivered only after all phases are completed and
+requirement changes become expensive.
+
+Definition
+
+Agile is a software development methodology that emphasizes iterative
+development, incremental delivery, customer collaboration, and
+continuous improvement.
+
+Purpose
+
+• Deliver working software frequently.
+• Adapt to changing business requirements.
+• Encourage continuous customer collaboration.
+• Reduce project risk through early feedback.
+• Deliver business value faster.
+
+----------------------------------------------------------------------
+Q2. What are the four values of the Agile Manifesto?
+
+Interview Ready Answer
+
+The four values of the Agile Manifesto are:
+
+1. Individuals and interactions over processes and tools.
+2. Working software over comprehensive documentation.
+3. Customer collaboration over contract negotiation.
+4. Responding to change over following a plan.
+
+Key Points
+
+• Agile does NOT reject the items on the right.
+• It simply values the items on the left more.
+
+----------------------------------------------------------------------
+Q3. Do we need to memorize all 12 Agile Manifesto principles?
+
+Interview Ready Answer
+
+No.
+
+For campus interviews, it is generally not necessary to memorize all
+12 principles verbatim. However, you should understand the core ideas
+behind them, such as:
+
+• Customer collaboration
+• Responding to changing requirements
+• Frequent delivery of working software
+• Continuous improvement
+• Team collaboration
+
+If specifically asked, explain the principles at a high level.
+
+----------------------------------------------------------------------
+Q4. What are the key differences between Agile and Waterfall?
+
+Interview Ready Answer
+
+Agile follows an iterative and incremental development approach,
+delivers working software frequently, encourages continuous customer
+collaboration, and easily adapts to changing requirements.
+
+Waterfall follows a sequential approach where each phase is completed
+before the next begins. Customer involvement is limited after
+requirements are finalized, changes are difficult to incorporate, and
+the product is generally delivered at the end of the project.
+
+Purpose
+
+Agile
+
+• Iterative and Incremental
+• Frequent software releases
+• Continuous customer collaboration
+• Easy to accommodate changes
+• Continuous feedback
+
+Waterfall
+
+• Sequential development
+• Single final delivery
+• Limited customer involvement
+• Requirement changes are costly
+• Feedback mainly at the end
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Q1. Is Agile a framework?
+
+Answer:
+No. Agile is a methodology (or approach). Scrum is a framework that
+implements Agile principles.
+
+------------------------------------------------------------------
+
+Q2. Does Agile eliminate documentation?
+
+Answer:
+No. Agile values working software more than comprehensive
+documentation, but documentation is still important.
+
+------------------------------------------------------------------
+
+Q3. Does Agile eliminate planning?
+
+Answer:
+No. Agile supports planning, but it also allows plans to change when
+business requirements change.
+
+------------------------------------------------------------------
+
+Q4. Do we need to memorize all 12 principles?
+
+Answer:
+No. Understand the concepts behind them. Memorizing all 12 is usually
+not expected in campus interviews.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+• Agile = Iterative + Incremental Development
+• Introduced to overcome Waterfall limitations
+• Delivers working software frequently
+• Continuous stakeholder collaboration
+• Easily adapts to changing requirements
+
+4 Agile Manifesto Values
+
+• Individuals and interactions over processes and tools
+• Working software over comprehensive documentation
+• Customer collaboration over contract negotiation
+• Responding to change over following a plan
+
+Agile vs Waterfall
+
+Agile
+• Iterative
+• Frequent releases
+• Continuous collaboration
+• Flexible to change
+
+Waterfall
+• Sequential
+• Final delivery
+• Limited collaboration after requirements
+• Changes are expensive
+
+Interview Keywords
+
+• Iterative Development
+• Incremental Delivery
+• Stakeholder Collaboration
+• Customer Collaboration
+• Working Software
+• Responding to Change
+• Continuous Improvement
+```
