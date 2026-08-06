@@ -1,0 +1,304 @@
+```text
+======================================================================
+MODULE 14 : AGILE METHODOLOGY
+TOPIC 2 : SCRUM FRAMEWORK – ROLES, CEREMONIES & ARTIFACTS
+======================================================================
+
+Q1. Who is a Scrum Master, and what are their responsibilities?
+
+Interview Ready Answer
+
+A Scrum Master is a servant leader and facilitator of the Scrum Team.
+They ensure Scrum principles and practices are followed, facilitate
+Scrum ceremonies, remove impediments (blockers), coach the team on
+Agile practices, and help improve team productivity.
+
+Definition
+
+A Scrum Master is responsible for ensuring the Scrum framework is
+properly followed.
+
+Purpose
+
+• Facilitate Scrum ceremonies.
+• Remove impediments.
+• Coach the team on Scrum.
+• Ensure Scrum practices are followed.
+
+======================================================================
+
+Q2. Who is the Product Owner, and what are their responsibilities?
+
+Interview Ready Answer
+
+The Product Owner represents the customer and is responsible for
+maximizing the value of the product. They create and prioritize the
+Product Backlog, gather business requirements, communicate with
+stakeholders, and ensure the team develops the highest-value features.
+
+Definition
+
+The Product Owner manages the Product Backlog and decides what should
+be built first.
+
+Purpose
+
+• Gather customer requirements.
+• Prioritize Product Backlog.
+• Maximize business value.
+• Communicate with stakeholders.
+
+======================================================================
+
+Q3. Who are the Development Team, and what are their responsibilities?
+
+Interview Ready Answer
+
+The Development Team is a cross-functional, self-managing team
+responsible for designing, developing, testing, and delivering a
+potentially shippable product increment in every Sprint.
+
+Definition
+
+The Development Team builds the product.
+
+Purpose
+
+• Develop product features.
+• Test the application.
+• Estimate Story Points.
+• Deliver a working Increment.
+
+======================================================================
+
+Q4. What is Sprint Planning, and what is its purpose?
+
+Interview Ready Answer
+
+Sprint Planning is the first Scrum ceremony conducted at the beginning
+of every Sprint. During this meeting, the Product Owner, Scrum Master,
+and Development Team decide which Product Backlog items can be
+completed in the upcoming Sprint. The selected items become the Sprint
+Backlog, and the team defines the Sprint Goal.
+
+Purpose
+
+• Select Product Backlog items.
+• Create Sprint Backlog.
+• Define Sprint Goal.
+• Plan work for the Sprint.
+
+======================================================================
+
+Q5. What is the purpose of the Daily Scrum?
+
+Interview Ready Answer
+
+The Daily Scrum is a 15-minute daily meeting where the Development Team
+synchronizes work, tracks Sprint progress, and identifies impediments.
+
+Each member typically answers:
+
+• What did I complete yesterday?
+• What will I work on today?
+• Are there any blockers?
+
+Purpose
+
+• Track Sprint progress.
+• Synchronize team work.
+• Identify blockers.
+• Keep everyone aligned.
+
+======================================================================
+
+Q6. What is Sprint Review, and what is its purpose?
+
+Interview Ready Answer
+
+Sprint Review is conducted at the end of the Sprint to demonstrate the
+completed Increment to stakeholders. Feedback is collected and the
+Product Backlog may be updated based on new requirements.
+
+Purpose
+
+• Demonstrate completed work.
+• Collect stakeholder feedback.
+• Update Product Backlog.
+• Validate business expectations.
+
+======================================================================
+
+Q7. What is Sprint Retrospective, and what is its purpose?
+
+Interview Ready Answer
+
+Sprint Retrospective is the final Scrum ceremony where the Scrum Team
+reflects on the completed Sprint to identify what went well, what did
+not go well, and how the next Sprint can be improved.
+
+Purpose
+
+• Improve team process.
+• Improve collaboration.
+• Identify improvements.
+• Continuous improvement.
+
+======================================================================
+
+Q8. What is a Product Backlog?
+
+Interview Ready Answer
+
+The Product Backlog is a prioritized list of all features,
+enhancements, bug fixes, and tasks required to build the product. It is
+managed and prioritized by the Product Owner.
+
+Purpose
+
+• Store all product requirements.
+• Prioritize work.
+• Guide future Sprints.
+
+======================================================================
+
+Q9. What is a Sprint Backlog?
+
+Interview Ready Answer
+
+The Sprint Backlog is the set of Product Backlog items selected for the
+current Sprint, along with the plan to complete them.
+
+Purpose
+
+• Define Sprint work.
+• Track Sprint tasks.
+• Help achieve the Sprint Goal.
+
+Difference
+
+Product Backlog
+• Entire product work.
+• Managed by Product Owner.
+
+Sprint Backlog
+• Current Sprint work only.
+• Selected during Sprint Planning.
+
+======================================================================
+
+Q10. What is an Increment?
+
+Interview Ready Answer
+
+An Increment is the working product produced at the end of a Sprint. It
+contains all completed Product Backlog items that satisfy the
+Definition of Done and is potentially releasable.
+
+Purpose
+
+• Deliver working software.
+• Add business value after every Sprint.
+
+======================================================================
+
+Q11. What is the Definition of Done (DoD)?
+
+Interview Ready Answer
+
+Definition of Done (DoD) is a predefined checklist that determines
+whether a Product Backlog item or Increment is considered complete. It
+ensures the work has been developed, tested, reviewed, integrated,
+meets quality standards, and is potentially releasable.
+
+Purpose
+
+• Maintain quality.
+• Ensure consistent completion criteria.
+• Prevent incomplete work from being accepted.
+
+======================================================================
+INTERVIEW TRAP QUESTIONS
+======================================================================
+
+Q1. Who prioritizes the Product Backlog?
+
+Answer:
+Product Owner.
+
+------------------------------------------------------------
+
+Q2. Who estimates Story Points?
+
+Answer:
+Development Team.
+
+------------------------------------------------------------
+
+Q3. Does the Scrum Master assign tasks to developers?
+
+Answer:
+No. The Development Team is self-managing.
+
+------------------------------------------------------------
+
+Q4. Is Sprint Review the same as Sprint Retrospective?
+
+Answer:
+No.
+
+Sprint Review → Review the Product with stakeholders.
+
+Sprint Retrospective → Review the team's process and identify
+improvements.
+
+------------------------------------------------------------
+
+Q5. Is Product Owner responsible for Story Point estimation?
+
+Answer:
+No. Story Points are estimated by the Development Team.
+
+------------------------------------------------------------
+
+Q6. Does Definition of Done mean Product Owner approval?
+
+Answer:
+No. DoD is a predefined quality checklist. Product Owner acceptance is
+separate.
+
+======================================================================
+QUICK REVISION
+======================================================================
+
+Scrum Roles
+
+• Scrum Master → Facilitates Scrum and removes impediments.
+• Product Owner → Prioritizes Product Backlog.
+• Development Team → Builds the product.
+
+Scrum Ceremonies
+
+• Sprint Planning → Plan Sprint work.
+• Daily Scrum → Track daily progress.
+• Sprint Review → Review product with stakeholders.
+• Sprint Retrospective → Improve the process.
+
+Scrum Artifacts
+
+• Product Backlog → Entire prioritized work.
+• Sprint Backlog → Work selected for current Sprint.
+• Increment → Working product after Sprint.
+• Definition of Done → Checklist to consider work complete.
+
+Interview Keywords
+
+• Servant Leader
+• Product Backlog
+• Sprint Backlog
+• Sprint Goal
+• Impediments
+• Potentially Releasable
+• Continuous Improvement
+• Definition of Done
+```
