@@ -1,0 +1,189 @@
+======================================================================
+MODULE 16 : GENERATIVE AI FUNDAMENTALS
+TOPIC 6 : CORE FEATURES & CAPABILITIES
+======================================
+
+======================================================================
+INTERVIEW QUESTION 1
+How can GitHub Copilot help in code refactoring and optimization?
+=================================================================
+
+Interview Answer:
+
+GitHub Copilot helps in code refactoring and optimization by suggesting
+cleaner, more efficient, and more maintainable code.
+
+It can:
+
+• Identify repetitive code
+
+• Remove unnecessary or unused code
+
+• Suggest better coding practices
+
+• Recommend optimized implementations
+
+• Improve code readability and performance
+
+• Generate a more efficient version of existing code
+
+Example:
+
+## Current Code
+
+Nested loops
+Time Complexity : O(n²)
+
+↓
+
+Copilot Suggestion
+
+Optimized Algorithm
+Time Complexity : O(n)
+
+---
+
+Key Points
+
+✔ Cleaner Code
+
+✔ Better Readability
+
+✔ Better Performance
+
+✔ Removes Repeated Code
+
+✔ Suggests Optimized Logic
+
+======================================================================
+INTERVIEW QUESTION 2
+How can GitHub Copilot help in generating test cases?
+=====================================================
+
+Interview Answer:
+
+GitHub Copilot can automatically generate test cases for existing code.
+
+It can:
+
+• Generate unit test cases
+
+• Suggest edge cases
+
+• Generate test methods
+
+• Improve test coverage
+
+• Reduce manual testing effort
+
+• Save development time
+
+However, developers should always review and validate the generated
+test cases before using them.
+
+---
+
+Example
+
+Function
+
+calculateSum(a, b)
+
+↓
+
+Copilot Suggestion
+
+✔ Positive Test Case
+
+✔ Negative Test Case
+
+✔ Boundary Test Case
+
+✔ Edge Case
+
+======================================================================
+COMMON INTERVIEW TRAPS
+======================
+
+Q. Should developers directly accept Copilot's optimized code?
+
+Answer:
+
+No.
+
+Developers should always review, test, and validate the optimized code
+before using it in production.
+
+---
+
+Q. Can GitHub Copilot guarantee complete test coverage?
+
+Answer:
+
+No.
+
+Copilot can generate useful test cases, but it cannot guarantee complete
+or correct test coverage.
+
+Developers should review the generated tests and add additional test
+cases if necessary.
+
+======================================================================
+QUICK REVISION
+==============
+
+Refactoring
+
+✔ Remove duplicate code
+
+✔ Remove unused code
+
+✔ Improve readability
+
+✔ Optimize performance
+
+✔ Suggest better implementation
+
+---
+
+Test Case Generation
+
+✔ Unit Tests
+
+✔ Edge Cases
+
+✔ Boundary Cases
+
+✔ Test Methods
+
+✔ Improves Test Coverage
+
+Memory Trick
+
+Refactoring
+
+R
+↓
+
+Readability
+
+Performance
+
+Maintainability
+
+---
+
+Testing
+
+T
+↓
+
+Test Cases
+
+Coverage
+
+Validation
+
+======================================================================
+END OF TOPIC 6
+==============

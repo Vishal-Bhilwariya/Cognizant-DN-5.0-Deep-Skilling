@@ -1,0 +1,143 @@
+======================================================================
+MODULE 16 : GENERATIVE AI FUNDAMENTALS
+TOPIC 5 : GITHUB COPILOT SETUP & CONFIGURATION
+==============================================
+
+======================================================================
+INTERVIEW QUESTION 1
+How do you set up GitHub Copilot in Visual Studio Code?
+=======================================================
+
+Interview Answer:
+
+To set up GitHub Copilot in Visual Studio Code:
+
+1. Open Visual Studio Code.
+
+2. Open the Extensions Marketplace.
+
+3. Search for "GitHub Copilot".
+
+4. Install the GitHub Copilot extension.
+
+5. Sign in with your GitHub account.
+
+6. Authorize GitHub Copilot.
+
+7. Enable the extension.
+
+8. Start writing code or comments and GitHub Copilot will provide
+   AI-powered suggestions.
+
+---
+
+Setup Flow
+
+Open VS Code
+│
+▼
+Extensions Marketplace
+│
+▼
+Search "GitHub Copilot"
+│
+▼
+Install Extension
+│
+▼
+Sign in with GitHub Account
+│
+▼
+Authorize Copilot
+│
+▼
+Enable Extension
+│
+▼
+Start Coding
+
+======================================================================
+KEY POINTS
+==========
+
+✔ Install GitHub Copilot Extension
+
+✔ GitHub Account Required
+
+✔ Authentication Required
+
+✔ Works inside VS Code
+
+✔ Provides AI suggestions while coding
+
+======================================================================
+COMMON INTERVIEW TRAPS
+======================
+
+Q. Can GitHub Copilot be used without a GitHub account?
+
+Answer:
+
+No.
+
+A GitHub account is required to authenticate and use GitHub Copilot.
+
+---
+
+Q. Does installing the extension automatically enable Copilot?
+
+Answer:
+
+No.
+
+You must sign in with your GitHub account and authorize Copilot before
+using it.
+
+---
+
+Q. Does GitHub Copilot only work in VS Code?
+
+Answer:
+
+No.
+
+It also supports Visual Studio, IntelliJ IDEA, Eclipse, Neovim,
+and several other IDEs.
+
+======================================================================
+QUICK REVISION
+==============
+
+Installation Steps
+
+Open VS Code
+↓
+Extensions
+↓
+Search GitHub Copilot
+↓
+Install
+↓
+Sign in with GitHub
+↓
+Authorize
+↓
+Enable
+↓
+Start Coding
+
+Memory Trick
+
+I S A E
+
+I → Install Extension
+
+S → Sign in
+
+A → Authorize
+
+E → Enable
+
+======================================================================
+END OF TOPIC 5
+==============

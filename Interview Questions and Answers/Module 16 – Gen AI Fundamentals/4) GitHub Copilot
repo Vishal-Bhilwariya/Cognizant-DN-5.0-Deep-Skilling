@@ -1,0 +1,261 @@
+======================================================================
+MODULE 16 : GENERATIVE AI FUNDAMENTALS
+TOPIC 4 : GITHUB COPILOT
+========================
+
+======================================================================
+INTERVIEW QUESTION 1
+What is GitHub Copilot?
+=======================
+
+Interview Answer:
+
+GitHub Copilot is an AI-powered coding assistant built using
+Generative AI models. It helps developers by providing real-time code
+suggestions, completing code, generating functions from comments,
+creating documentation, and assisting with test case generation.
+
+It improves developer productivity by reducing repetitive coding tasks
+and speeding up software development.
+
+---
+
+Key Points
+
+✔ AI-powered coding assistant
+
+✔ Built using Generative AI models
+
+✔ Works inside the IDE
+
+✔ Provides real-time code suggestions
+
+✔ Improves developer productivity
+
+======================================================================
+INTERVIEW QUESTION 2
+How does GitHub Copilot work?
+=============================
+
+Interview Answer:
+
+GitHub Copilot works as an AI pair programmer. As the developer types
+code or writes comments, Copilot reads the surrounding code context and
+sends it to its AI model.
+
+The AI analyzes the context, predicts the most relevant code, and
+returns real-time suggestions inside the IDE. The developer can accept,
+modify, or reject these suggestions.
+
+---
+
+Working Flow
+
+Developer writes code/comment
+│
+▼
+Copilot reads surrounding context
+│
+▼
+AI model analyzes the request
+│
+▼
+Generates code suggestions
+│
+▼
+Developer Accepts / Edits / Rejects
+
+======================================================================
+INTERVIEW QUESTION 3
+What are the core features of GitHub Copilot?
+=============================================
+
+Interview Answer:
+
+GitHub Copilot provides the following core features:
+
+• Context-aware code suggestions
+
+• Code auto-completion
+
+• Function and boilerplate code generation
+
+• Documentation and comment generation
+
+• Code refactoring and optimization
+
+• Test case generation
+
+---
+
+Example
+
+Comment:
+
+// Write a Java program to check palindrome number
+
+↓
+
+GitHub Copilot generates the complete implementation.
+
+======================================================================
+INTERVIEW QUESTION 4
+Which IDEs and programming languages are supported by GitHub Copilot?
+=====================================================================
+
+Interview Answer:
+
+GitHub Copilot supports many popular IDEs, including:
+
+• Visual Studio Code
+
+• Visual Studio
+
+• IntelliJ IDEA
+
+• Eclipse
+
+• Neovim
+
+It supports many programming languages such as:
+
+• Java
+
+• Python
+
+• JavaScript
+
+• TypeScript
+
+• C
+
+• C++
+
+• C#
+
+• Go
+
+• PHP
+
+• Ruby
+
+and many more.
+
+======================================================================
+COMMON INTERVIEW TRAPS
+======================
+
+Q. Is GitHub Copilot a replacement for developers?
+
+Answer:
+
+No.
+
+GitHub Copilot assists developers by generating suggestions.
+
+Developers must review, test, and validate the generated code before
+using it in production.
+
+---
+
+Q. Does GitHub Copilot automatically generate correct code every time?
+
+Answer:
+
+No.
+
+The generated code can contain logical errors, security issues, or
+inefficient implementations. Human review is always required.
+
+---
+
+Q. Does GitHub Copilot only support Java?
+
+Answer:
+
+No.
+
+It supports many programming languages and works with multiple popular
+IDEs.
+
+======================================================================
+QUICK REVISION
+==============
+
+GitHub Copilot
+
+↓
+
+AI-powered Coding Assistant
+
+---
+
+How it Works
+
+Developer writes code
+↓
+Reads surrounding context
+↓
+AI analyzes context
+↓
+Suggests code
+↓
+Developer accepts or edits
+
+---
+
+Core Features
+
+✔ Code Suggestions
+
+✔ Auto Completion
+
+✔ Function Generation
+
+✔ Documentation Generation
+
+✔ Refactoring
+
+✔ Test Case Generation
+
+---
+
+Supported IDEs
+
+✔ VS Code
+
+✔ Visual Studio
+
+✔ IntelliJ IDEA
+
+✔ Eclipse
+
+✔ Neovim
+
+---
+
+Supported Languages
+
+✔ Java
+
+✔ Python
+
+✔ JavaScript
+
+✔ TypeScript
+
+✔ C
+
+✔ C++
+
+✔ C#
+
+✔ Go
+
+✔ PHP
+
+✔ Ruby
+
+======================================================================
+END OF TOPIC 4
+==============
