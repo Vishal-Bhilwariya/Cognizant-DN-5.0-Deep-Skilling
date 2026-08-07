@@ -8701,3 +8701,265 @@ PART 4.3 – FILE HANDLING
 
 Q127. What is file handling in Java?
 ======================================================================
+
+```text
+======================================================================
+       PART 4.3 – FILE HANDLING | INTERVIEW REVISION NOTES
+======================================================================
+
+Questions Covered:
+
+✓ Q127. What is File Handling?
+✓ Q128. How to read data from a file?
+✓ Q129. How to write data to a file?
+
+
+======================================================================
+Q127. WHAT IS FILE HANDLING IN JAVA?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+File handling in Java is the process of creating, reading, writing,
+updating, and deleting files or directories using Java APIs.
+
+It allows Java applications to interact with data stored in the
+file system.
+
+
+Common operations:
+
+• Create
+• Read
+• Write
+• Update
+• Delete
+
+
+Common APIs:
+
+java.io
+java.nio.file
+
+
+Memory:
+
+File Handling
+      ↓
+Create → Read → Write → Update → Delete
+
+
+======================================================================
+Q128. HOW DO YOU READ DATA FROM A FILE?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+In Java, we can read data from a file using classes and methods
+provided by java.io and java.nio.file.
+
+For example, Files.readString() can read the complete content of a
+text file, while BufferedReader can read text line by line.
+
+
+Using Files.readString():
+
+import java.nio.file.*;
+
+String data = Files.readString(Path.of("data.txt"));
+
+System.out.println(data);
+
+
+Using BufferedReader:
+
+BufferedReader br = new BufferedReader(
+    new FileReader("data.txt")
+);
+
+String line;
+
+while ((line = br.readLine()) != null) {
+    System.out.println(line);
+}
+
+br.close();
+
+
+Common APIs:
+
+java.io
+    → FileReader
+    → BufferedReader
+
+java.nio.file
+    → Files.readString()
+    → Files.readAllLines()
+
+
+Interview Trap:
+
+❌ "Java has a read method for file handling."
+
+✅ Mention the specific API/class and method being used.
+
+
+======================================================================
+Q129. HOW DO YOU WRITE DATA TO A FILE?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+In Java, we can write data to a file using classes from java.io or
+methods from java.nio.file.
+
+For example, Files.writeString() can write text to a file, while
+FileWriter can also be used.
+
+
+Using Files.writeString():
+
+import java.nio.file.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+
+        Path path = Path.of("data.txt");
+
+        Files.writeString(path, "Hello Java!");
+    }
+}
+
+
+Using FileWriter:
+
+FileWriter writer = new FileWriter("data.txt");
+
+writer.write("Hello Java!");
+
+writer.close();
+
+
+Common APIs:
+
+READ
+→ Files.readString()
+
+WRITE
+→ Files.writeString()
+
+Traditional APIs
+→ FileReader
+→ FileWriter
+
+
+Important:
+
+File operations can throw IOException or related I/O exceptions,
+so appropriate exception handling is required.
+
+
+======================================================================
+COMMON INTERVIEW TRAPS
+----------------------------------------------------------------------
+
+1. ❌ File handling only means reading files.
+
+   ✅ It includes creating, reading, writing, updating and deleting.
+
+
+2. ❌ There is one generic read() method for all file operations.
+
+   ✅ Different APIs provide different methods.
+
+
+3. ❌ FileWriter automatically closes itself.
+
+   ✅ Normally close it explicitly or use try-with-resources.
+
+
+4. ❌ File operations never throw exceptions.
+
+   ✅ I/O operations can throw IOException.
+
+
+======================================================================
+QUICK REVISION – 30 SECONDS
+----------------------------------------------------------------------
+
+File Handling
+→ Interact with file system
+
+
+READ
+→ Files.readString()
+→ BufferedReader
+→ FileReader
+
+
+WRITE
+→ Files.writeString()
+→ FileWriter
+
+
+APIs
+→ java.io
+→ java.nio.file
+
+
+Important Exception
+→ IOException
+
+
+Memory:
+
+READ  → readString()
+WRITE → writeString()
+
+Traditional:
+FileReader  → Read
+FileWriter  → Write
+
+
+======================================================================
+SECTION STATUS
+----------------------------------------------------------------------
+
+PART 4.3 – FILE HANDLING
+
+Q127 → File Handling                  ✓
+Q128 → Reading File                    ✓
+Q129 → Writing File                    ✓
+Q130 → File Reading Program           SKIPPED
+     → Repeated practical question;
+       concept already covered in Q128.
+
+
+STATUS: COMPLETE ✓
+
+
+======================================================================
+OVERALL PART 4 STATUS
+----------------------------------------------------------------------
+
+Part 4.1 – Exception Handling
+→ COMPLETE ✓
+
+Part 4.2 – JVM & Memory Management
+→ COMPLETE ✓
+
+Part 4.3 – File Handling
+→ COMPLETE ✓
+
+
+Remaining meaningful questions: 6
+
+
+NEXT:
+
+PART 4.4 – MULTITHREADING
+
+Q131. What is multithreading in Java?
+======================================================================
+```
