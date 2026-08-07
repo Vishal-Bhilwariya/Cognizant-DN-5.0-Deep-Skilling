@@ -5986,3 +5986,368 @@ Q88 → Comparable
 Q89 → Comparator
 Q90 → Comparable vs Comparator
 ======================================================================
+
+======================================================================
+              JAVA COLLECTIONS FRAMEWORK INTERVIEW NOTES
+                    PART 3.4 – SORTING & COMPARISON
+======================================================================
+
+Questions Covered
+
+✓ Q88. What is Comparable?
+✓ Q89. What is Comparator?
+✓ Q90. Difference between Comparable and Comparator
+
+
+======================================================================
+Q88. WHAT IS COMPARABLE?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+Comparable is an interface in Java used to define the natural
+ordering of objects.
+
+A class implements Comparable and overrides the compareTo() method
+to define how its objects should be compared and sorted.
+
+Syntax:
+
+class Student implements Comparable<Student> {
+
+    @Override
+    public int compareTo(Student other) {
+        // comparison logic
+    }
+}
+
+
+Example:
+
+class Student implements Comparable<Student> {
+
+    int marks;
+
+    Student(int marks) {
+        this.marks = marks;
+    }
+
+    @Override
+    public int compareTo(Student other) {
+        return Integer.compare(this.marks, other.marks);
+    }
+}
+
+
+Then:
+
+Collections.sort(students);
+
+
+The sorting uses:
+
+compareTo()
+
+
+Important:
+
+Comparable is generally used when the class has a natural ordering.
+
+
+Memory Trick:
+
+Comparable
+    ↓
+compareTo()
+    ↓
+Natural ordering
+    ↓
+Inside the class
+
+
+======================================================================
+Q89. WHAT IS COMPARATOR?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+Comparator is a functional interface used to define custom ordering
+for objects.
+
+It uses the compare() method.
+
+Comparator allows us to define sorting logic separately from the
+class being sorted.
+
+
+Example:
+
+Comparator<Student> byMarks =
+    (s1, s2) -> Integer.compare(s1.marks, s2.marks);
+
+
+Then:
+
+students.sort(byMarks);
+
+
+Concept:
+
+Student objects
+      +
+Comparator
+      ↓
+Custom sorting logic
+
+
+Comparator is useful when we want different ways of sorting the
+same type of object.
+
+
+Example Employee:
+
+Employee
+    |
+    +-- Sort by salary
+    +-- Sort by name
+    +-- Sort by age
+
+
+Each can be represented using a different Comparator.
+
+
+Memory Trick:
+
+Comparator
+    ↓
+compare()
+    ↓
+Custom ordering
+    ↓
+Separate from the class
+
+
+======================================================================
+Q90. COMPARABLE vs COMPARATOR
+----------------------------------------------------------------------
+
+Interview Answer:
+
+Comparable and Comparator are both used to sort objects.
+
+Comparable defines the natural ordering using compareTo(), while
+Comparator defines custom ordering using compare().
+
+
++---------------------+----------------------+----------------------+
+| Feature             | Comparable            | Comparator           |
++---------------------+----------------------+----------------------+
+| Package             | java.lang             | java.util            |
+| Method              | compareTo()           | compare()            |
+| Purpose             | Natural ordering      | Custom ordering      |
+| Logic location      | Inside the class      | Outside the class    |
+| Multiple orderings  | Usually one           | Multiple possible    |
+| Modify class        | Usually yes           | No                   |
++---------------------+----------------------+----------------------+
+
+
+Comparable Example:
+
+class Student implements Comparable<Student> {
+
+    int marks;
+
+    @Override
+    public int compareTo(Student s) {
+        return Integer.compare(this.marks, s.marks);
+    }
+}
+
+
+Comparator Example:
+
+Comparator<Student> byName =
+    (s1, s2) -> s1.name.compareTo(s2.name);
+
+
+======================================================================
+COMPARISON EXAMPLE
+----------------------------------------------------------------------
+
+Suppose Employee has:
+
+name
+salary
+age
+
+
+Using Comparable:
+
+Employee
+    ↓
+Natural ordering
+    ↓
+For example → employee ID
+
+
+Using Comparator:
+
+Comparator 1 → sort by salary
+Comparator 2 → sort by name
+Comparator 3 → sort by age
+
+
+This is the major practical advantage of Comparator:
+
+One class can have multiple custom sorting strategies.
+
+
+======================================================================
+IMPORTANT METHODS
+----------------------------------------------------------------------
+
+Comparable:
+
+compareTo()
+
+Returns:
+
+Negative → current object comes before other object
+Zero     → both are considered equal for ordering
+Positive → current object comes after other object
+
+
+Comparator:
+
+compare()
+
+Returns:
+
+Negative → first object comes before second
+Zero     → equal for ordering
+Positive → first object comes after second
+
+
+Example:
+
+Integer.compare(10, 20)
+→ negative
+
+
+Integer.compare(20, 20)
+→ 0
+
+
+Integer.compare(30, 20)
+→ positive
+
+
+======================================================================
+COMMON INTERVIEW TRAPS
+----------------------------------------------------------------------
+
+❌ Comparable uses compare()
+
+✅ Comparable uses compareTo()
+
+
+❌ Comparator uses compareTo()
+
+✅ Comparator uses compare()
+
+
+❌ Comparable is only used for custom sorting.
+
+✅ Comparable is mainly used to define natural ordering.
+
+
+❌ Comparator must be implemented inside the original class.
+
+✅ Comparator can be defined separately using a class, anonymous
+   class, or lambda expression.
+
+
+❌ A class can have only one Comparator.
+
+✅ Multiple Comparators can define different sorting strategies.
+
+
+======================================================================
+QUICK REVISION
+----------------------------------------------------------------------
+
+Comparable
+→ Interface
+→ java.lang
+→ compareTo()
+→ Natural ordering
+→ Logic inside the class
+
+
+Comparator
+→ Functional interface
+→ java.util
+→ compare()
+→ Custom ordering
+→ Logic outside/separate from the class
+
+
+======================================================================
+ONE-MINUTE INTERVIEW REVISION
+----------------------------------------------------------------------
+
+Q: What is Comparable?
+
+A: An interface used to define the natural ordering of objects
+   using compareTo().
+
+
+Q: What is Comparator?
+
+A: A functional interface used to define custom ordering using
+   compare().
+
+
+Q: Comparable vs Comparator?
+
+A:
+
+Comparable
+→ compareTo()
+→ Natural ordering
+→ Inside class
+
+Comparator
+→ compare()
+→ Custom ordering
+→ Separate from class
+
+
+Memory Trick:
+
+Comparable  → "I compare myself."
+Comparator  → "I compare two objects."
+
+
+======================================================================
+STATUS
+----------------------------------------------------------------------
+
+PART 3.4 – SORTING & COMPARISON
+
+Q88 → Comparable                    ✅
+Q89 → Comparator                    ✅
+Q90 → Comparable vs Comparator      ✅
+
+STATUS: ✅ COMPLETED
+
+Meaningful questions remaining overall: 7
+
+NEXT:
+PART 3.5 – ITERATION
+
+Meaningful questions remaining in section: 2
+
+Q91 → What is an Iterator?
+Q92 → Iterator vs ListIterator
+======================================================================
