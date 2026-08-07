@@ -10260,3 +10260,416 @@ Q208 ✓
 Part 6 Remaining:
 49 meaningful questions
 ======================================================================
+
+======================================================================
+             PART 6.2 – SQL CONSTRAINTS | INTERVIEW NOTES
+======================================================================
+
+QUESTIONS COVERED:
+
+✓ Q209. What are SQL constraints?
+✓ Q210. PRIMARY KEY and FOREIGN KEY
+✓ Q211. PRIMARY KEY vs UNIQUE KEY
+✓ Q212. NOT NULL
+✓ Q213. CHECK constraint
+✓ Q214. DEFAULT constraint
+
+
+======================================================================
+Q209. WHAT ARE SQL CONSTRAINTS?
+======================================================================
+
+Interview Answer:
+
+SQL constraints are rules applied to table columns to enforce
+data integrity, accuracy, and validity.
+
+They restrict invalid data from being inserted or updated.
+
+
+Common constraints:
+
+• PRIMARY KEY
+• FOREIGN KEY
+• UNIQUE
+• NOT NULL
+• CHECK
+• DEFAULT
+
+
+Example:
+
+CREATE TABLE Employee (
+    id INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    salary INT CHECK (salary > 0),
+    city VARCHAR(50) DEFAULT 'Delhi'
+);
+
+
+Memory:
+
+Constraints
+→ Protect Data
+→ Maintain Integrity
+→ Prevent Invalid Data
+
+
+======================================================================
+Q210. PRIMARY KEY AND FOREIGN KEY
+======================================================================
+
+PRIMARY KEY:
+
+A primary key uniquely identifies each row in a table.
+
+Properties:
+
+• Unique
+• Cannot contain NULL
+• One PRIMARY KEY constraint per table
+• Can consist of one or multiple columns
+
+
+FOREIGN KEY:
+
+A foreign key is a column or set of columns that references a key
+in another table, usually its primary key.
+
+It establishes relationships between tables and maintains
+referential integrity.
+
+
+Example:
+
+CREATE TABLE Department (
+    dept_id INT PRIMARY KEY,
+    dept_name VARCHAR(50)
+);
+
+CREATE TABLE Employee (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50),
+    dept_id INT,
+    FOREIGN KEY (dept_id)
+        REFERENCES Department(dept_id)
+);
+
+
+Relationship:
+
+DEPARTMENT
+-----------
+dept_id ← PRIMARY KEY
+    ↑
+    |
+    |
+dept_id ← FOREIGN KEY
+EMPLOYEE
+
+
+Memory:
+
+PRIMARY KEY
+→ Identifies a row
+
+FOREIGN KEY
+→ Connects tables
+→ References another table's key
+
+
+IMPORTANT:
+
+❌ Primary key can contain one NULL.
+
+✓ Primary key cannot contain NULL.
+
+
+❌ Foreign key always has to reference another table's primary key.
+
+✓ It usually references a primary key, but can reference another
+  candidate/unique key depending on DBMS rules.
+
+
+======================================================================
+Q211. PRIMARY KEY vs UNIQUE KEY
+======================================================================
+
+Interview Answer:
+
+A PRIMARY KEY uniquely identifies each row and cannot contain NULL.
+A UNIQUE constraint also enforces uniqueness, but NULL handling
+depends on the database system.
+
+A table can have only one PRIMARY KEY constraint but can have
+multiple UNIQUE constraints.
+
+
++----------------------+-------------------+-------------------+
+| Feature              | PRIMARY KEY       | UNIQUE KEY        |
++----------------------+-------------------+-------------------+
+| Duplicate values     | Not allowed       | Not allowed       |
+| NULL                 | Not allowed       | DBMS-dependent    |
+| Number per table     | One               | Multiple          |
+| Main purpose         | Identify row      | Enforce uniqueness|
++----------------------+-------------------+-------------------+
+
+
+Memory:
+
+PRIMARY KEY
+→ UNIQUE
+→ NOT NULL
+→ One per table
+
+UNIQUE
+→ UNIQUE
+→ NULL behavior DBMS-dependent
+→ Multiple allowed
+
+
+IMPORTANT:
+
+Do NOT universally say:
+
+"UNIQUE allows exactly one NULL."
+
+NULL behavior can differ between DBMSs.
+
+
+======================================================================
+Q212. NOT NULL CONSTRAINT
+======================================================================
+
+Interview Answer:
+
+The NOT NULL constraint specifies that a column cannot contain
+NULL values.
+
+It ensures that a value must be provided when inserting or
+updating a row.
+
+
+Example:
+
+CREATE TABLE Employee (
+    id INT,
+    name VARCHAR(50) NOT NULL
+);
+
+
+Invalid:
+
+INSERT INTO Employee (id, name)
+VALUES (1, NULL);
+
+
+Because name has NOT NULL constraint.
+
+
+Memory:
+
+NOT NULL
+→ Value is mandatory
+→ NULL is not allowed
+
+
+======================================================================
+Q213. CHECK CONSTRAINT
+======================================================================
+
+Interview Answer:
+
+The CHECK constraint is used to enforce a condition on values
+stored in a column.
+
+A row can be inserted or updated only when the specified condition
+is satisfied.
+
+
+Example:
+
+CREATE TABLE Voter (
+    id INT,
+    name VARCHAR(50),
+    age INT CHECK (age >= 18)
+);
+
+
+Result:
+
+age = 20 → Allowed
+age = 18 → Allowed
+age = 15 → Rejected
+
+
+Memory:
+
+CHECK
+→ Apply condition
+→ TRUE  → Allow
+→ FALSE → Reject
+
+
+======================================================================
+Q214. DEFAULT CONSTRAINT
+======================================================================
+
+Interview Answer:
+
+The DEFAULT constraint provides a default value for a column when
+no value is explicitly supplied during insertion.
+
+
+Example:
+
+CREATE TABLE Employee (
+    id INT,
+    name VARCHAR(50),
+    city VARCHAR(50) DEFAULT 'Delhi'
+);
+
+
+INSERT INTO Employee (id, name)
+VALUES (1, 'Vishal');
+
+
+Result:
+
+id     → 1
+name   → Vishal
+city   → Delhi       ← DEFAULT
+
+
+Memory:
+
+DEFAULT
+→ No value supplied
+→ Default value automatically used
+
+
+IMPORTANT:
+
+DEFAULT and NOT NULL are different.
+
+
+NOT NULL
+→ NULL is not allowed
+
+
+DEFAULT
+→ Provides a value when one isn't supplied
+
+
+======================================================================
+COMMON INTERVIEW TRAPS – CONSTRAINTS
+======================================================================
+
+1. PRIMARY KEY + NULL
+
+❌ Primary key can contain one NULL.
+
+✓ Primary key cannot contain NULL.
+
+
+2. PRIMARY KEY + UNIQUE
+
+✓ Both prevent duplicate values.
+
+But:
+
+PRIMARY KEY
+→ One per table
+→ Cannot be NULL
+
+UNIQUE
+→ Multiple constraints allowed
+→ NULL handling depends on DBMS
+
+
+3. FOREIGN KEY
+
+✓ Used to establish relationships between tables.
+
+✓ Maintains referential integrity.
+
+
+4. NOT NULL vs DEFAULT
+
+NOT NULL
+→ Prevents NULL
+
+
+DEFAULT
+→ Supplies a value when one isn't provided
+
+
+5. CHECK
+
+CHECK does not "check whether a column exists."
+
+It validates a condition on column values.
+
+
+======================================================================
+QUICK REVISION – 1 MINUTE
+======================================================================
+
+PRIMARY KEY
+→ Unique row identification
+→ NOT NULL
+→ One per table
+
+
+FOREIGN KEY
+→ Links tables
+→ References another table's key
+
+
+UNIQUE
+→ Prevents duplicate values
+→ Multiple UNIQUE constraints possible
+
+
+NOT NULL
+→ NULL prohibited
+
+
+CHECK
+→ Condition validation
+
+
+DEFAULT
+→ Automatic value when no value supplied
+
+
+MEMORY:
+
+PK  → Identify
+FK  → Connect
+UNIQUE → No duplicates
+NOT NULL → Mandatory
+CHECK → Condition
+DEFAULT → Automatic value
+
+
+======================================================================
+PART 6.2 STATUS
+======================================================================
+
+Q209 ✓
+Q210 ✓
+Q211 ✓
+Q212 ✓
+Q213 ✓
+Q214 ✓
+
+              6 / 6 COMPLETE ✓
+
+Next Topic:
+→ JOINS
+
+Part 6 Remaining:
+43 meaningful questions
+======================================================================
