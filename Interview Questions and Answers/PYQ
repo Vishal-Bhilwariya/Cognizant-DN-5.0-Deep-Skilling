@@ -12277,3 +12277,519 @@ Q235. What are Window Functions?
 Part 6 Remaining:
 26 meaningful questions
 ======================================================================
+
+======================================================================
+              PART 6.7 – SQL WINDOW FUNCTIONS | INTERVIEW NOTES
+======================================================================
+
+QUESTIONS COVERED:
+
+✓ Q235. What are Window Functions?
+✓ Q236. Explain ROW_NUMBER()
+✓ Q237. Explain RANK()
+✓ Q238. Explain DENSE_RANK()
+✓ Q239. What is the OVER() clause?
+✓ Q240. What is PARTITION BY?
+
+
+======================================================================
+Q235. WHAT ARE WINDOW FUNCTIONS?
+======================================================================
+
+Interview Answer:
+
+Window functions perform calculations across a set of related rows
+while preserving each individual row in the result.
+
+They are commonly used for:
+
+→ Ranking
+→ Running totals
+→ Row numbering
+→ Comparing rows
+→ Calculations within groups
+
+
+Common Window Functions:
+
+→ ROW_NUMBER()
+→ RANK()
+→ DENSE_RANK()
+→ SUM()
+→ AVG()
+→ COUNT()
+
+
+Window functions are generally used with the OVER() clause.
+
+
+Example:
+
+SELECT
+    name,
+    salary,
+    RANK() OVER (ORDER BY salary DESC) AS salary_rank
+FROM Employee;
+
+
+IMPORTANT DIFFERENCE:
+
+Aggregate Function:
+→ Can reduce multiple rows into one result.
+
+Window Function:
+→ Performs calculation across rows.
+→ Keeps individual rows in the result.
+
+
+Memory:
+
+WINDOW FUNCTION
+→ Calculate across rows
+→ Don't collapse the rows
+→ Usually uses OVER()
+
+
+======================================================================
+Q236. EXPLAIN ROW_NUMBER()
+======================================================================
+
+Interview Answer:
+
+ROW_NUMBER() is a window function that assigns a unique sequential
+number to each row in the result set, starting from 1.
+
+The numbering is determined by the ORDER BY inside OVER().
+
+
+Example:
+
+SELECT
+    name,
+    salary,
+    ROW_NUMBER() OVER (ORDER BY salary DESC) AS row_num
+FROM Employee;
+
+
+Example Result:
+
+salary    row_num
+-----------------
+50000        1
+40000        2
+40000        3
+30000        4
+
+
+IMPORTANT:
+
+Even if two rows have the same salary, ROW_NUMBER() assigns them
+different numbers.
+
+
+Memory:
+
+ROW_NUMBER()
+→ Number every row
+→ Always unique
+→ 1, 2, 3, 4, ...
+
+
+DO NOT CONFUSE:
+
+COUNT(*)
+→ Total number of rows
+
+ROW_NUMBER()
+→ Sequential number assigned to each row
+
+
+======================================================================
+Q237. EXPLAIN RANK()
+======================================================================
+
+Interview Answer:
+
+RANK() is a window function that assigns a rank to each row based on
+the specified ordering.
+
+Rows having the same value receive the same rank.
+
+After a tie, RANK() leaves gaps.
+
+
+Example:
+
+SELECT
+    name,
+    salary,
+    RANK() OVER (ORDER BY salary DESC) AS salary_rank
+FROM Employee;
+
+
+Example:
+
+salary    rank
+--------------
+50000       1
+40000       2
+40000       2
+30000       4
+
+
+Notice:
+
+1, 2, 2, 4
+
+
+The rank 3 is skipped because two rows received rank 2.
+
+
+Memory:
+
+RANK()
+→ Same value = Same rank
+→ Gaps are left after ties
+
+
+======================================================================
+Q238. EXPLAIN DENSE_RANK()
+======================================================================
+
+Interview Answer:
+
+DENSE_RANK() is a window function that assigns the same rank to rows
+with the same value, but unlike RANK(), it does not leave gaps after
+ties.
+
+
+Example:
+
+salary    RANK()    DENSE_RANK()
+--------------------------------
+90000       1           1
+80000       2           2
+80000       2           2
+60000       4           3
+
+
+RANK():
+
+1, 2, 2, 4
+
+
+DENSE_RANK():
+
+1, 2, 2, 3
+
+
+Memory:
+
+RANK()
+→ Leaves gaps
+
+DENSE_RANK()
+→ No gaps
+
+
+======================================================================
+Q239. WHAT IS THE OVER() CLAUSE?
+======================================================================
+
+Interview Answer:
+
+The OVER() clause defines the set of rows over which a window function
+performs its calculation.
+
+It can contain:
+
+→ ORDER BY
+→ PARTITION BY
+
+
+Example:
+
+SELECT
+    name,
+    salary,
+    RANK() OVER (ORDER BY salary DESC) AS salary_rank
+FROM Employee;
+
+
+Structure:
+
+RANK()
+   ↓
+OVER()
+   ↓
+ORDER BY salary DESC
+
+
+The OVER() clause tells SQL how the window function should determine
+the rows used for its calculation.
+
+
+Example with PARTITION BY:
+
+SELECT
+    name,
+    department,
+    salary,
+    RANK() OVER (
+        PARTITION BY department
+        ORDER BY salary DESC
+    ) AS dept_rank
+FROM Employee;
+
+
+Memory:
+
+OVER()
+→ Defines the window
+→ Controls how calculation is performed
+→ Can use ORDER BY
+→ Can use PARTITION BY
+
+
+======================================================================
+Q240. WHAT IS PARTITION BY?
+======================================================================
+
+Interview Answer:
+
+PARTITION BY divides the result set into separate groups or
+partitions based on one or more columns.
+
+The window function then performs its calculation independently
+within each partition.
+
+
+Example:
+
+SELECT
+    name,
+    department,
+    salary,
+    RANK() OVER (
+        PARTITION BY department
+        ORDER BY salary DESC
+    ) AS dept_rank
+FROM Employee;
+
+
+Example Result:
+
+Name   Department   Salary   Rank
+---------------------------------
+A      IT           90000      1
+B      IT           80000      2
+
+C      HR           70000      1
+D      HR           60000      2
+
+
+The ranking restarts from 1 for each department.
+
+
+IMPORTANT:
+
+PARTITION BY does NOT remove rows.
+
+
+======================================================================
+PARTITION BY vs GROUP BY
+======================================================================
+
++------------------+------------------------------------------+
+| GROUP BY         | PARTITION BY                             |
++------------------+------------------------------------------+
+| Groups rows      | Divides rows into partitions             |
+|                  |                                          |
+| Usually reduces  | Does not remove individual rows          |
+| number of rows    |                                          |
+|                  |                                          |
+| Used with         | Used with window functions               |
+| aggregate queries |                                          |
++------------------+------------------------------------------+
+
+
+Example:
+
+GROUP BY:
+
+SELECT department, AVG(salary)
+FROM Employee
+GROUP BY department;
+
+
+Result:
+
+IT    85000
+HR    65000
+
+
+PARTITION BY:
+
+SELECT
+    name,
+    department,
+    salary,
+    AVG(salary) OVER (PARTITION BY department) AS dept_avg
+FROM Employee;
+
+
+All employee rows remain in the result.
+
+
+======================================================================
+MOST IMPORTANT COMPARISON
+======================================================================
+
+ROW_NUMBER():
+
+1, 2, 3, 4
+
+→ Always unique.
+
+
+RANK():
+
+1, 2, 2, 4
+
+→ Same rank for ties.
+→ Leaves gaps.
+
+
+DENSE_RANK():
+
+1, 2, 2, 3
+
+→ Same rank for ties.
+→ No gaps.
+
+
+Memory:
+
+ROW_NUMBER → Unique numbering
+RANK       → Ranking + gaps
+DENSE_RANK → Ranking + no gaps
+
+
+======================================================================
+COMMON INTERVIEW TRAPS – WINDOW FUNCTIONS
+======================================================================
+
+1. ROW_NUMBER() vs COUNT()
+
+COUNT(*)
+→ Counts total rows.
+
+ROW_NUMBER()
+→ Assigns a sequential number to each row.
+
+
+2. RANK() vs DENSE_RANK()
+
+RANK():
+
+1, 2, 2, 4
+
+
+DENSE_RANK():
+
+1, 2, 2, 3
+
+
+3. OVER()
+
+OVER() defines the window for the window function.
+
+
+4. PARTITION BY
+
+PARTITION BY does NOT behave like GROUP BY.
+
+It divides rows for window calculations while keeping individual rows.
+
+
+5. ORDER BY inside OVER()
+
+ORDER BY determines the ordering used by the window function.
+
+
+6. PARTITION BY + ORDER BY
+
+Example:
+
+RANK() OVER (
+    PARTITION BY department
+    ORDER BY salary DESC
+)
+
+Meaning:
+
+→ Separate employees by department.
+→ Rank employees by salary within each department.
+
+
+======================================================================
+QUICK REVISION – 1 MINUTE
+======================================================================
+
+WINDOW FUNCTION
+→ Performs calculation across rows
+→ Keeps individual rows
+
+
+ROW_NUMBER()
+→ 1, 2, 3, 4
+→ Unique numbers
+
+
+RANK()
+→ 1, 2, 2, 4
+→ Gaps after ties
+
+
+DENSE_RANK()
+→ 1, 2, 2, 3
+→ No gaps
+
+
+OVER()
+→ Defines window
+→ Can contain ORDER BY / PARTITION BY
+
+
+PARTITION BY
+→ Divides rows into groups
+→ Window function works independently in each group
+→ Does NOT remove rows
+
+
+GROUP BY
+→ Groups rows
+→ Usually reduces result rows
+
+
+======================================================================
+PART 6.7 STATUS
+======================================================================
+
+Q235 ✓
+Q236 ✓
+Q237 ✓
+Q238 ✓
+Q239 ✓
+Q240 ✓
+
+              6 / 6 COMPLETE ✓
+
+Next Topic:
+→ TRANSACTIONS
+
+Q241. What is a Transaction in DBMS/SQL?
+
+Part 6 Remaining:
+22 meaningful questions
+======================================================================
