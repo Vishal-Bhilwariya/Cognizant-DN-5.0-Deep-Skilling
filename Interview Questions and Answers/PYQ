@@ -11931,3 +11931,349 @@ Q231. What is NULL in SQL?
 Part 6 Remaining:
 30 meaningful questions
 ======================================================================
+
+======================================================================
+                 PART 6.6 – SQL NULL HANDLING | INTERVIEW NOTES
+======================================================================
+
+QUESTIONS COVERED:
+
+✓ Q231. What is NULL in SQL?
+✓ Q232. How to retrieve rows containing NULL?
+✓ Q233. Difference between NULL and 0
+✓ Q234. Functions used to replace NULL values
+
+
+======================================================================
+Q231. WHAT IS NULL IN SQL?
+======================================================================
+
+Interview Answer:
+
+NULL in SQL represents a missing, unknown, or unavailable value.
+
+It does NOT mean zero, an empty string, or a string containing "NULL".
+
+
+Example:
+
+Employee
++----+--------+
+| id | salary |
++----+--------+
+| 1  | 30000  |
+| 2  | NULL   |
+| 3  | 40000  |
++----+--------+
+
+
+For employee 2, salary is not known or was not provided.
+
+
+IMPORTANT:
+
+NULL ≠ 0
+NULL ≠ ''
+NULL ≠ 'NULL'
+
+
+Memory:
+
+NULL
+→ Missing / Unknown value
+→ Not zero
+→ Not empty string
+
+
+======================================================================
+Q232. HOW TO RETRIEVE ROWS CONTAINING NULL VALUES?
+======================================================================
+
+Interview Answer:
+
+To retrieve rows where a column contains NULL, use IS NULL.
+
+To retrieve rows where a column does not contain NULL, use
+IS NOT NULL.
+
+
+Example:
+
+SELECT *
+FROM Employee
+WHERE salary IS NULL;
+
+
+To retrieve non-NULL values:
+
+SELECT *
+FROM Employee
+WHERE salary IS NOT NULL;
+
+
+IMPORTANT INTERVIEW TRAP:
+
+Do NOT write:
+
+WHERE salary = NULL
+
+This is incorrect.
+
+
+Correct:
+
+WHERE salary IS NULL
+
+
+Memory:
+
+NULL
+→ IS NULL
+
+NOT NULL
+→ IS NOT NULL
+
+
+======================================================================
+Q233. DIFFERENCE BETWEEN NULL AND 0
+======================================================================
+
+Interview Answer:
+
+NULL represents a missing, unknown, or unavailable value, whereas
+0 is an actual numeric value.
+
+NULL is not equal to zero.
+
+
++----------------------+--------------------------+
+| NULL                 | 0                        |
++----------------------+--------------------------+
+| Missing/unknown      | Actual numeric value     |
+| Not a number         | Number                   |
+| NULL ≠ 0             | Valid value              |
+| Use IS NULL          | Can use = 0              |
+| Cannot use = NULL    | Can use = 0              |
++----------------------+--------------------------+
+
+
+Example:
+
+For NULL:
+
+SELECT *
+FROM Employee
+WHERE salary IS NULL;
+
+
+For zero:
+
+SELECT *
+FROM Employee
+WHERE salary = 0;
+
+
+Memory:
+
+NULL → No known value
+0    → Known numeric value
+
+NULL → IS NULL
+0    → = 0
+
+
+======================================================================
+Q234. WHICH SQL FUNCTIONS ARE USED TO REPLACE NULL VALUES?
+======================================================================
+
+Interview Answer:
+
+Common SQL functions used to replace NULL values include:
+
+→ COALESCE()
+→ IFNULL() — commonly available in MySQL
+
+
+----------------------------------------------------------------------
+1. COALESCE()
+----------------------------------------------------------------------
+
+COALESCE() returns the first non-NULL value from its arguments.
+
+
+Example:
+
+SELECT COALESCE(salary, 0)
+FROM Employee;
+
+
+If:
+
+salary
+-------
+30000
+NULL
+40000
+
+
+Result:
+
+30000
+0
+40000
+
+
+Meaning:
+
+If salary is NULL
+→ return 0
+
+Otherwise
+→ return salary
+
+
+----------------------------------------------------------------------
+2. IFNULL()
+----------------------------------------------------------------------
+
+IFNULL() is commonly used in MySQL to replace a NULL value.
+
+
+Example:
+
+SELECT IFNULL(salary, 0)
+FROM Employee;
+
+
+Meaning:
+
+IF salary is NULL
+→ return 0
+
+Otherwise
+→ return salary
+
+
+IMPORTANT INTERVIEW POINT:
+
+If asked for the standard SQL function, prefer:
+
+COALESCE()
+
+
+Memory:
+
+NULL → Replace it
+
+COALESCE(value, replacement)
+IFNULL(value, replacement)
+
+
+======================================================================
+COMMON INTERVIEW TRAPS – NULL HANDLING
+======================================================================
+
+1. NULL vs 0
+
+❌ NULL means zero.
+
+✓ NULL means missing/unknown.
+
+✓ 0 is an actual numeric value.
+
+
+2. Checking NULL
+
+❌ WHERE salary = NULL
+
+✓ WHERE salary IS NULL
+
+
+3. Checking NOT NULL
+
+✓ WHERE salary IS NOT NULL
+
+
+4. COALESCE()
+
+✓ Returns the first non-NULL value.
+
+
+5. IFNULL()
+
+✓ Commonly used in MySQL to replace NULL.
+
+
+6. Empty String vs NULL
+
+NULL and '' are different.
+
+NULL:
+→ No known value
+
+'':
+→ Known value containing zero characters
+
+
+======================================================================
+QUICK REVISION – 30 SECONDS
+======================================================================
+
+NULL
+→ Missing / Unknown value
+
+
+CHECK NULL:
+
+WHERE column IS NULL
+
+
+CHECK NOT NULL:
+
+WHERE column IS NOT NULL
+
+
+NULL ≠ 0
+
+
+0
+→ Actual numeric value
+
+
+Replace NULL:
+
+COALESCE(column, replacement)
+
+
+MySQL:
+
+IFNULL(column, replacement)
+
+
+Most important:
+
+= NULL       ❌
+IS NULL      ✓
+
+= 0          ✓
+
+
+======================================================================
+PART 6.6 STATUS
+======================================================================
+
+Q231 ✓
+Q232 ✓
+Q233 ✓
+Q234 ✓
+
+              4 / 4 COMPLETE ✓
+
+Next Topic:
+→ WINDOW FUNCTIONS
+
+Q235. What are Window Functions?
+
+Part 6 Remaining:
+26 meaningful questions
+======================================================================
