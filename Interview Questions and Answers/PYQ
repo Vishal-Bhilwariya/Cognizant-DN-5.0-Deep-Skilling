@@ -6351,3 +6351,367 @@ Meaningful questions remaining in section: 2
 Q91 → What is an Iterator?
 Q92 → Iterator vs ListIterator
 ======================================================================
+
+======================================================================
+              JAVA COLLECTIONS FRAMEWORK INTERVIEW NOTES
+                         PART 3.5 – ITERATION
+======================================================================
+
+Questions Covered
+
+✓ Q91. What is an Iterator?
+✓ Q92. Difference between Iterator and ListIterator
+
+
+======================================================================
+Q91. WHAT IS AN ITERATOR?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+Iterator is an interface in Java used to traverse elements of a
+collection one by one.
+
+It provides methods such as:
+
+• hasNext()
+• next()
+• remove()
+
+
+Example:
+
+List<String> names = new ArrayList<>();
+
+names.add("Vishal");
+names.add("Rahul");
+names.add("Amit");
+
+Iterator<String> it = names.iterator();
+
+while (it.hasNext()) {
+    System.out.println(it.next());
+}
+
+
+Conceptual flow:
+
+Collection
+    ↓
+Iterator
+    ↓
+hasNext()
+    ↓
+next()
+    ↓
+Next element
+
+
+======================================================================
+IMPORTANT ITERATOR METHODS
+----------------------------------------------------------------------
+
+1. hasNext()
+
+Checks whether another element exists.
+
+if (it.hasNext())
+
+
+2. next()
+
+Returns the next element.
+
+it.next()
+
+
+3. remove()
+
+Removes the last element returned by the iterator.
+
+it.remove()
+
+
+Memory Trick:
+
+hasNext()
+→ "Is there another element?"
+
+
+next()
+→ "Give me the next element."
+
+
+remove()
+→ "Remove the current/last returned element."
+
+
+======================================================================
+WHY USE ITERATOR?
+----------------------------------------------------------------------
+
+Iterator provides a standard way to traverse collections.
+
+It is especially useful when elements need to be safely removed
+during iteration.
+
+
+Example:
+
+Iterator<Integer> it = list.iterator();
+
+while (it.hasNext()) {
+
+    if (it.next() < 10) {
+        it.remove();
+    }
+}
+
+
+Important:
+
+Do not confuse:
+
+for loop
+    ↓
+A way of iterating
+
+
+Iterator
+    ↓
+A Java interface for traversing collections
+
+
+======================================================================
+Q92. ITERATOR vs LISTITERATOR
+----------------------------------------------------------------------
+
+Interview Answer:
+
+Iterator is used to traverse collection elements in the forward
+direction.
+
+ListIterator is specifically designed for List implementations and
+can traverse elements in both forward and backward directions.
+
+ListIterator also provides additional methods for modifying
+elements during iteration.
+
+
++-------------------+----------------------+----------------------+
+| Feature           | Iterator             | ListIterator         |
++-------------------+----------------------+----------------------+
+| Works with        | Most Collections     | Only List            |
+| Direction         | Forward only         | Forward + Backward   |
+| next()            | Yes                  | Yes                  |
+| previous()        | No                   | Yes                  |
+| remove()          | Yes                  | Yes                  |
+| add()             | No                   | Yes                  |
+| set()             | No                   | Yes                  |
++-------------------+----------------------+----------------------+
+
+
+======================================================================
+ITERATOR EXAMPLE
+----------------------------------------------------------------------
+
+Iterator<String> it = list.iterator();
+
+while (it.hasNext()) {
+    System.out.println(it.next());
+}
+
+
+Direction:
+
+A → B → C → D
+
+
+Iterator moves forward only.
+
+
+======================================================================
+LISTITERATOR EXAMPLE
+----------------------------------------------------------------------
+
+ListIterator<String> it = list.listIterator();
+
+
+Forward:
+
+while (it.hasNext()) {
+    System.out.println(it.next());
+}
+
+
+Backward:
+
+while (it.hasPrevious()) {
+    System.out.println(it.previous());
+}
+
+
+Direction:
+
+A → B → C → D
+        ↑
+D ← C ← B ← A
+
+
+ListIterator can move in both directions.
+
+
+======================================================================
+LISTITERATOR IMPORTANT METHODS
+----------------------------------------------------------------------
+
+hasNext()
+→ Checks for next element
+
+
+next()
+→ Moves forward and returns next element
+
+
+hasPrevious()
+→ Checks for previous element
+
+
+previous()
+→ Moves backward and returns previous element
+
+
+add(element)
+→ Adds an element
+
+
+set(element)
+→ Replaces the last element returned by next()/previous()
+
+
+remove()
+→ Removes the last returned element
+
+
+======================================================================
+COMMON INTERVIEW TRAPS
+----------------------------------------------------------------------
+
+❌ "Iterator means for loop."
+
+✅ Iterator is a Java interface used to traverse collections.
+
+
+--------------------------------------------------
+
+❌ "Iterator can move backward."
+
+✅ Iterator moves forward only.
+
+
+--------------------------------------------------
+
+❌ "ListIterator works with Set and Map."
+
+✅ ListIterator works only with List implementations.
+
+
+--------------------------------------------------
+
+❌ "Iterator and ListIterator are exactly the same."
+
+✅ ListIterator provides additional capabilities such as:
+
+• Backward traversal
+• add()
+• set()
+
+
+======================================================================
+QUICK REVISION
+----------------------------------------------------------------------
+
+Iterator
+→ Interface
+→ Collection traversal
+→ Forward only
+→ hasNext()
+→ next()
+→ remove()
+
+
+ListIterator
+→ Specialized Iterator for List
+→ Forward + backward
+→ hasNext()
+→ next()
+→ hasPrevious()
+→ previous()
+→ add()
+→ set()
+→ remove()
+
+
+Memory Trick:
+
+Iterator
+→ ONE direction
+
+
+ListIterator
+→ TWO directions
+
+
+======================================================================
+ONE-MINUTE INTERVIEW REVISION
+----------------------------------------------------------------------
+
+Q: What is Iterator?
+
+A: An interface used to traverse collection elements one by one.
+
+
+Q: Main Iterator methods?
+
+A: hasNext(), next(), and remove().
+
+
+Q: Iterator vs ListIterator?
+
+A:
+
+Iterator
+→ Forward only
+→ Works with most collections
+→ Basic traversal
+
+
+ListIterator
+→ Forward + backward
+→ Only for List
+→ Supports add(), set(), and remove()
+
+
+======================================================================
+STATUS
+----------------------------------------------------------------------
+
+PART 3.5 – ITERATION
+
+Q91 → Iterator                    ✅
+Q92 → Iterator vs ListIterator    ✅
+Q93 → Skipped                     ❌ Low priority/repetitive
+
+STATUS: ✅ COMPLETED
+
+Meaningful questions remaining overall: 5
+
+NEXT:
+PART 3.6 – CODING QUESTIONS
+
+Q94 → Remove duplicate elements from a List
+Q96 → Sort custom objects by salary
+Q97 → Character frequency using HashMap
+Q98 → First non-repeating character using HashMap
+Q99 → Word frequency using HashMap
+======================================================================
