@@ -9391,3 +9391,872 @@ Remaining:
 Next:
 → Coding Questions
 ======================================================================
+======================================================================
+        LAST 2 CODING QUESTIONS – QUICK INTERVIEW NOTES
+======================================================================
+
+
+======================================================================
+Q139. CREATE AND RUN A THREAD USING THE Thread CLASS
+======================================================================
+
+QUESTION:
+Write a simple Java program to create and run a thread using the
+Thread class.
+
+
+CODE:
+
+class MyThread extends Thread {
+
+    @Override
+    public void run() {
+        System.out.println("Thread is running...");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        MyThread t = new MyThread();
+
+        t.start();
+    }
+}
+
+
+HOW IT WORKS:
+
+MyThread extends Thread
+        ↓
+Override run()
+        ↓
+Create object
+        ↓
+t.start()
+        ↓
+New thread starts
+        ↓
+run() executes
+
+
+IMPORTANT:
+
+start()
+→ Starts a new thread
+→ JVM executes run() on that new thread
+
+
+run()
+→ Just a normal method call
+→ Does NOT create a new thread
+
+
+INTERVIEW ANSWER:
+
+To create a thread using the Thread class, we extend the Thread
+class and override its run() method. Then we create an object of
+the class and call start(). The start() method creates and starts
+a new thread, which then executes the run() method.
+
+
+MEMORY TRICK:
+
+extends Thread
+      ↓
+override run()
+      ↓
+call start()
+      ↓
+NEW THREAD
+
+
+======================================================================
+Q140. CREATE TWO THREADS AND SYNCHRONIZE SHARED RESOURCE
+======================================================================
+
+QUESTION:
+Create two threads and synchronize access to a shared resource
+in Java.
+
+
+CODE:
+
+class Counter {
+
+    private int count = 0;
+
+    synchronized void increment() {
+        count++;
+    }
+
+    void display() {
+        System.out.println("Count: " + count);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args)
+            throws InterruptedException {
+
+        Counter counter = new Counter();
+
+        Thread t1 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                counter.increment();
+            }
+        });
+
+        Thread t2 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                counter.increment();
+            }
+        });
+
+        t1.start();
+        t2.start();
+
+        t1.join();
+        t2.join();
+
+        counter.display();
+    }
+}
+
+
+HOW IT WORKS:
+
+                  Counter Object
+                       |
+                 Shared count
+                       |
+              +--------+--------+
+              |                 |
+           Thread 1          Thread 2
+              |                 |
+              +--------+--------+
+                       |
+              synchronized increment()
+                       |
+                One thread at a time
+                       |
+                   Safe update
+
+
+IMPORTANT PARTS:
+
+count
+→ Shared resource.
+
+
+synchronized increment()
+→ Protects the shared resource.
+
+
+t1 and t2
+→ Two separate threads.
+
+
+start()
+→ Starts both threads.
+
+
+join()
+→ Makes main thread wait until both threads finish.
+
+
+Final count
+→ 2000
+
+
+WHY SYNCHRONIZATION?
+
+Without synchronization:
+
+Thread 1 ──→ count++
+Thread 2 ──→ count++
+
+Both can access/update shared data concurrently.
+
+This can cause:
+
+→ Race condition
+→ Incorrect result
+→ Data inconsistency
+
+
+With synchronization:
+
+Thread 1 → 🔒 increment() → 🔓
+                              ↓
+Thread 2 → 🔒 increment() → 🔓
+
+
+Only one thread at a time can execute the synchronized method for
+the same Counter object.
+
+
+INTERVIEW ANSWER:
+
+We can synchronize access to a shared resource using the
+synchronized keyword. In this example, two threads increment the
+same counter. The synchronized method ensures that only one thread
+at a time can execute the critical section for the same object,
+preventing race conditions and maintaining data consistency.
+
+
+======================================================================
+MOST IMPORTANT INTERVIEW POINTS
+======================================================================
+
+1. start() vs run()
+
+start()
+→ Creates/starts a new thread.
+
+run()
+→ Normal method call.
+→ Does not create a new thread.
+
+
+2. synchronized
+
+synchronized
+→ Provides mutual exclusion for the synchronized critical section
+  for the same monitor/object.
+
+
+3. Shared Resource
+
+Counter object
+→ Shared by t1 and t2.
+
+count
+→ Shared variable.
+
+
+4. join()
+
+t1.join();
+t2.join();
+
+→ Main thread waits for both threads to finish.
+
+
+======================================================================
+30-SECOND REVISION
+======================================================================
+
+THREAD CREATION:
+
+extends Thread
+→ override run()
+→ create object
+→ start()
+
+
+SYNCHRONIZATION:
+
+Shared Resource
+      ↓
+Multiple Threads
+      ↓
+synchronized
+      ↓
+One thread at a time
+      ↓
+Prevent Race Condition
+      ↓
+Consistent Data
+
+
+start()
+→ New thread
+
+run()
+→ Normal method
+
+join()
+→ Wait for thread completion
+
+synchronized
+→ Protect shared resource
+
+
+======================================================================
+
+======================================================================
+              PART 6.1 – SQL BASICS | INTERVIEW NOTES
+======================================================================
+
+QUESTIONS COVERED:
+
+✓ Q201. What is SQL?
+✓ Q202. Difference between SQL and MySQL
+✓ Q204. DDL, DML, DCL, TCL, DQL
+✓ Q205. DELETE vs DROP vs TRUNCATE
+✓ Q206. WHERE vs HAVING
+✓ Q207. GROUP BY vs ORDER BY
+✓ Q208. SQL Query Execution Order
+
+
+======================================================================
+Q201. WHAT IS SQL?
+======================================================================
+
+Interview Answer:
+
+SQL (Structured Query Language) is a standard language used to
+interact with relational databases.
+
+It is used to:
+
+• Create and manage database objects
+• Retrieve data
+• Insert, update and delete data
+• Control transactions
+• Control database permissions
+
+
+Example:
+
+SELECT * FROM employees;
+
+
+Memory:
+
+SQL
+→ Define
+→ Query
+→ Manipulate
+→ Control
+→ Relational Database
+
+
+======================================================================
+Q202. SQL vs MySQL
+======================================================================
+
+Interview Answer:
+
+SQL is a standard language used to interact with relational
+databases, whereas MySQL is an RDBMS that uses SQL to store,
+manage and retrieve data.
+
+
+SQL
+→ Language
+→ Used to write database queries
+
+
+MySQL
+→ RDBMS / Database software
+→ Uses SQL to manage databases
+
+
+Example:
+
+SELECT * FROM employees;
+
+This is SQL.
+
+MySQL can execute this SQL query.
+
+
+Memory:
+
+SQL = Language
+MySQL = RDBMS
+
+
+INTERVIEW TRAP:
+
+❌ SQL and MySQL are both databases.
+
+✓ SQL is a language.
+✓ MySQL is an RDBMS that uses SQL.
+
+
+======================================================================
+Q204. DDL, DML, DCL, TCL AND DQL
+======================================================================
+
+SQL commands are commonly categorized based on their purpose.
+
+
++---------+--------------------------------+-------------------------+
+| Type    | Full Form                      | Commands                |
++---------+--------------------------------+-------------------------+
+| DDL     | Data Definition Language      | CREATE, ALTER, DROP,    |
+|         |                                | TRUNCATE                |
+| DML     | Data Manipulation Language    | INSERT, UPDATE, DELETE  |
+| DQL     | Data Query Language           | SELECT                  |
+| DCL     | Data Control Language         | GRANT, REVOKE           |
+| TCL     | Transaction Control Language  | COMMIT, ROLLBACK,       |
+|         |                                | SAVEPOINT               |
++---------+--------------------------------+-------------------------+
+
+
+DDL
+→ Defines/modifies database structure.
+
+
+DML
+→ Manipulates data inside tables.
+
+
+DQL
+→ Retrieves data.
+
+
+DCL
+→ Controls permissions/access.
+
+
+TCL
+→ Manages transactions.
+
+
+Memory:
+
+DDL → Define structure
+DML → Manipulate data
+DQL → Query data
+DCL → Control permissions
+TCL → Control transactions
+
+
+IMPORTANT:
+
+DELETE
+→ Generally classified as DML
+
+TRUNCATE
+→ Generally classified as DDL
+
+
+======================================================================
+Q205. DELETE vs DROP vs TRUNCATE
+======================================================================
+
+Interview Answer:
+
+DELETE removes rows from a table.
+
+TRUNCATE removes all rows but preserves the table structure.
+
+DROP removes the entire table, including its data and structure.
+
+
++-----------+----------------+----------------------+----------+
+| Command   | Removes Data   | Removes Structure    | WHERE    |
++-----------+----------------+----------------------+----------+
+| DELETE    | Rows           | No                   | Yes      |
+| TRUNCATE  | All rows       | No                   | No       |
+| DROP      | All data       | Yes                  | No       |
++-----------+----------------+----------------------+----------+
+
+
+Examples:
+
+DELETE FROM employee
+WHERE id = 10;
+
+
+TRUNCATE TABLE employee;
+
+
+DROP TABLE employee;
+
+
+Memory:
+
+DELETE
+→ Delete rows
+→ Keep table
+
+
+TRUNCATE
+→ Empty table
+→ Keep structure
+
+
+DROP
+→ Destroy table
+→ Data + Structure gone
+
+
+INTERVIEW TRAP:
+
+❌ TRUNCATE deletes the structure.
+
+✓ TRUNCATE deletes all rows but keeps the table structure.
+
+
+======================================================================
+Q206. WHERE vs HAVING
+======================================================================
+
+Interview Answer:
+
+WHERE filters individual rows before grouping, while HAVING filters
+groups after GROUP BY, usually using aggregate functions.
+
+
+Example:
+
+SELECT department, COUNT(*) AS employee_count
+FROM employee
+WHERE salary > 30000
+GROUP BY department
+HAVING COUNT(*) > 5;
+
+
+Logical flow:
+
+FROM
+ ↓
+WHERE       → Filter rows
+ ↓
+GROUP BY    → Create groups
+ ↓
+HAVING      → Filter groups
+
+
+Memory:
+
+WHERE
+→ Filters ROWS
+
+
+HAVING
+→ Filters GROUPS
+
+
+IMPORTANT:
+
+❌ WHERE cannot be used with GROUP BY.
+
+✓ WHERE CAN be used with GROUP BY.
+
+
+Example:
+
+SELECT department, COUNT(*)
+FROM employee
+WHERE salary > 30000
+GROUP BY department;
+
+
+INTERVIEW TRAP:
+
+❌ WHERE COUNT(*) > 5
+
+✓ HAVING COUNT(*) > 5
+
+
+Reason:
+
+Aggregate functions are evaluated after row filtering.
+
+
+======================================================================
+Q207. GROUP BY vs ORDER BY
+======================================================================
+
+Interview Answer:
+
+GROUP BY combines rows having the same values into groups, usually
+for aggregate calculations.
+
+ORDER BY sorts the result in ascending or descending order.
+
+
+Example:
+
+SELECT department, COUNT(*) AS employee_count
+FROM employee
+GROUP BY department
+ORDER BY employee_count DESC;
+
+
+GROUP BY
+→ Creates groups
+
+
+COUNT()
+→ Calculates values for each group
+
+
+ORDER BY
+→ Sorts the resulting rows/groups
+
+
+Memory:
+
+GROUP BY
+→ Group data
+
+
+ORDER BY
+→ Sort data
+
+
+HAVING
+→ Filter groups
+
+
+======================================================================
+Q208. SQL QUERY EXECUTION ORDER
+======================================================================
+
+Interview Answer:
+
+The logical execution order of a typical SQL query is:
+
+FROM
+→ WHERE
+→ GROUP BY
+→ HAVING
+→ SELECT
+→ ORDER BY
+
+
+Example:
+
+SELECT department, COUNT(*) AS total
+FROM employee
+WHERE salary > 30000
+GROUP BY department
+HAVING COUNT(*) > 5
+ORDER BY total DESC;
+
+
+Logical execution:
+
+1. FROM
+   → Identify source table
+
+
+2. WHERE
+   → Filter individual rows
+
+
+3. GROUP BY
+   → Create groups
+
+
+4. HAVING
+   → Filter groups
+
+
+5. SELECT
+   → Produce requested columns/expressions
+
+
+6. ORDER BY
+   → Sort final result
+
+
+Memory Trick:
+
+F W G H S O
+
+FROM
+WHERE
+GROUP BY
+HAVING
+SELECT
+ORDER BY
+
+
+IMPORTANT:
+
+The order in which SQL is WRITTEN is different from its logical
+execution order.
+
+
+Written order:
+
+SELECT
+FROM
+WHERE
+GROUP BY
+HAVING
+ORDER BY
+
+
+Logical execution:
+
+FROM
+WHERE
+GROUP BY
+HAVING
+SELECT
+ORDER BY
+
+
+======================================================================
+COMMON INTERVIEW TRAPS – SQL BASICS
+======================================================================
+
+1. SQL vs MySQL
+
+SQL
+→ Language
+
+MySQL
+→ RDBMS
+
+
+2. TRUNCATE
+
+❌ Removes table structure
+
+✓ Removes all rows and preserves structure
+
+
+3. WHERE vs HAVING
+
+WHERE
+→ Rows
+
+HAVING
+→ Groups
+
+
+4. WHERE + GROUP BY
+
+✓ Can be used together.
+
+
+5. GROUP BY vs ORDER BY
+
+GROUP BY
+→ Groups rows
+
+ORDER BY
+→ Sorts result
+
+
+6. Query execution order
+
+FROM
+→ WHERE
+→ GROUP BY
+→ HAVING
+→ SELECT
+→ ORDER BY
+
+
+7. DELETE vs TRUNCATE vs DROP
+
+DELETE
+→ Selected/all rows
+
+
+TRUNCATE
+→ All rows
+
+
+DROP
+→ Entire table
+
+
+======================================================================
+QUICK REVISION – 1 MINUTE
+======================================================================
+
+SQL
+→ Language for interacting with relational databases.
+
+
+SQL vs MySQL
+→ SQL = Language
+→ MySQL = RDBMS
+
+
+DDL
+→ CREATE, ALTER, DROP, TRUNCATE
+
+
+DML
+→ INSERT, UPDATE, DELETE
+
+
+DQL
+→ SELECT
+
+
+DCL
+→ GRANT, REVOKE
+
+
+TCL
+→ COMMIT, ROLLBACK, SAVEPOINT
+
+
+DELETE
+→ Rows
+
+
+TRUNCATE
+→ All rows + structure remains
+
+
+DROP
+→ Data + structure removed
+
+
+WHERE
+→ Filters rows
+
+
+GROUP BY
+→ Creates groups
+
+
+HAVING
+→ Filters groups
+
+
+ORDER BY
+→ Sorts result
+
+
+QUERY EXECUTION:
+
+FROM
+↓
+WHERE
+↓
+GROUP BY
+↓
+HAVING
+↓
+SELECT
+↓
+ORDER BY
+
+
+======================================================================
+PART 6.1 STATUS
+======================================================================
+
+SQL Basics
+
+Q201 ✓
+Q202 ✓
+Q204 ✓
+Q205 ✓
+Q206 ✓
+Q207 ✓
+Q208 ✓
+
+              7 / 7 COMPLETE ✓
+
+Part 6 Remaining:
+49 meaningful questions
+======================================================================
