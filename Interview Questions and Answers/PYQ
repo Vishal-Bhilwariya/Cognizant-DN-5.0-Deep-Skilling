@@ -5458,3 +5458,531 @@ NEXT:
 PART 3.3 – MAP
 Meaningful questions remaining in section: 6
 ======================================================================
+
+======================================================================
+              JAVA COLLECTIONS FRAMEWORK INTERVIEW NOTES
+                         PART 3.3 – MAP
+======================================================================
+
+Questions Covered
+
+✓ Q79. What is a Map?
+✓ Q80. HashMap vs Hashtable
+✓ Q81. HashMap vs TreeMap
+✓ Q82. HashMap vs ConcurrentHashMap
+✓ Q83. Internal Working of HashMap
+
+
+======================================================================
+Q79. WHAT IS A MAP?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+Map is an interface in the Java Collections Framework that stores
+data in the form of key-value pairs.
+
+Each key must be unique, while multiple keys can have the same
+value.
+
+Common implementations:
+
+• HashMap
+• LinkedHashMap
+• TreeMap
+• Hashtable
+
+
+Example:
+
+Map<Integer, String> students = new HashMap<>();
+
+students.put(101, "Vishal");
+students.put(102, "Rahul");
+students.put(103, "Amit");
+
+
+Concept:
+
+101 → Vishal
+102 → Rahul
+103 → Amit
+
+
+Important:
+
+Map is NOT a child of Collection.
+
+It belongs to a separate hierarchy.
+
+
+Memory Trick:
+
+Map
+ ↓
+Key → Value
+ ↓
+Key = Unique
+Value = Can duplicate
+
+
+======================================================================
+Q80. HASHMAP vs HASHTABLE
+----------------------------------------------------------------------
+
+Interview Answer:
+
+HashMap and Hashtable both store key-value pairs, but HashMap is
+generally preferred in modern Java.
+
+HashMap is not synchronized and allows one null key and multiple
+null values.
+
+Hashtable is synchronized and does not allow null keys or null
+values.
+
+
++-------------------+----------------------+----------------------+
+| Feature           | HashMap              | Hashtable            |
++-------------------+----------------------+----------------------+
+| Synchronization   | Not synchronized     | Synchronized         |
+| Null key          | One allowed          | Not allowed          |
+| Null values       | Allowed              | Not allowed          |
+| Performance       | Generally faster     | Generally slower     |
+| Type               | Modern/common        | Legacy               |
++-------------------+----------------------+----------------------+
+
+
+Memory Trick:
+
+HashMap
+→ Fast
+→ Not synchronized
+→ Allows null
+
+
+Hashtable
+→ Synchronized
+→ No null
+→ Legacy
+
+
+IMPORTANT:
+
+Do not say Hashtable stores "address" instead of values.
+
+Both store:
+
+Key → Value
+
+
+Modern Java:
+
+If concurrent access is required, ConcurrentHashMap is generally
+preferred over Hashtable.
+
+
+======================================================================
+Q81. HASHMAP vs TREEMAP
+----------------------------------------------------------------------
+
+Interview Answer:
+
+HashMap and TreeMap both implement the Map interface and store
+key-value pairs.
+
+HashMap does not guarantee sorted order and generally provides
+O(1) average-time basic operations.
+
+TreeMap maintains keys in sorted order and generally provides
+O(log n) basic operations because it uses a Red-Black tree.
+
+
++-------------------+----------------------+----------------------+
+| Feature           | HashMap              | TreeMap              |
++-------------------+----------------------+----------------------+
+| Ordering          | No guaranteed order  | Sorted by keys       |
+| Internal basis    | Hash table           | Red-Black tree       |
+| Basic operations  | O(1) average         | O(log n)             |
+| Duplicate keys    | Not allowed          | Not allowed          |
+| Null key          | One allowed          | Generally not allowed|
+| Main use          | Fast lookup          | Sorted key-value data|
++-------------------+----------------------+----------------------+
+
+
+Memory Trick:
+
+HashMap
+→ Fast lookup
+→ No sorting
+→ O(1) average
+
+
+TreeMap
+→ Sorted keys
+→ Tree structure
+→ O(log n)
+
+
+IMPORTANT TERM:
+
+TreeMap is a tree-based data structure.
+
+Do NOT say "live structure."
+
+
+======================================================================
+Q82. HASHMAP vs CONCURRENTHASHMAP
+----------------------------------------------------------------------
+
+Interview Answer:
+
+HashMap is not thread-safe, whereas ConcurrentHashMap is designed
+for concurrent access by multiple threads.
+
+ConcurrentHashMap provides thread-safe operations while allowing
+better concurrency than synchronizing an entire map.
+
+
++-------------------+----------------------+----------------------+
+| Feature           | HashMap              | ConcurrentHashMap    |
++-------------------+----------------------+----------------------+
+| Thread-safe       | No                   | Yes                  |
+| Concurrent access | Not designed for it  | Designed for it      |
+| Null key          | One allowed          | Not allowed          |
+| Null values       | Allowed              | Not allowed          |
+| Main use          | Normal applications  | Multithreaded apps   |
++-------------------+----------------------+----------------------+
+
+
+Memory Trick:
+
+HashMap
+→ Normal
+→ Not thread-safe
+→ Allows null
+
+
+ConcurrentHashMap
+→ Concurrent
+→ Thread-safe
+→ No null keys/values
+
+
+Why not simply synchronize HashMap?
+
+Synchronizing an entire map can serialize access and reduce
+concurrency.
+
+ConcurrentHashMap is specifically designed for concurrent access
+and better throughput.
+
+
+======================================================================
+Q83. INTERNAL WORKING OF HASHMAP
+----------------------------------------------------------------------
+
+Interview Answer:
+
+HashMap internally uses a hash table.
+
+When a key-value pair is inserted:
+
+1. HashMap calculates the key's hash.
+2. The hash is used to determine a bucket/index.
+3. The key-value pair is stored in that bucket.
+4. If multiple keys map to the same bucket, a collision occurs.
+5. HashMap handles collisions using linked entries and, in modern
+   Java, a heavily-collided bucket can be converted into a
+   Red-Black tree.
+
+
+Example:
+
+map.put("A", 100);
+
+
+Conceptual flow:
+
+put("A", 100)
+       |
+       ↓
+key.hashCode()
+       |
+       ↓
+Hash calculation
+       |
+       ↓
+Find bucket/index
+       |
+       ↓
+Store key-value pair
+
+
+Collision example:
+
+Bucket 5
+
+[A → 100] → [B → 200] → [C → 300]
+
+
+If multiple entries collide, HashMap uses a linked structure.
+
+If a bucket becomes heavily populated, it can be treeified into
+a Red-Black tree.
+
+
+======================================================================
+HASHMAP GET() WORKING
+----------------------------------------------------------------------
+
+For:
+
+map.get("A");
+
+
+Conceptual flow:
+
+"A"
+ ↓
+hashCode()
+ ↓
+Calculate bucket/index
+ ↓
+Find bucket
+ ↓
+Compare keys
+ ↓
+Return value
+
+
+IMPORTANT:
+
+HashMap uses BOTH:
+
+hashCode()
+     +
+equals()
+
+
+hashCode()
+→ Helps locate the bucket.
+
+
+equals()
+→ Helps identify the exact key inside that bucket.
+
+
+======================================================================
+HASHMAP PUT() WORKING
+----------------------------------------------------------------------
+
+map.put(key, value)
+
+        |
+        ↓
+Calculate hash
+        |
+        ↓
+Find bucket
+        |
+        ↓
+Is bucket empty?
+    /          \
+  YES           NO
+   |             |
+Store entry    Collision
+                 |
+                 ↓
+            Compare keys
+                 |
+          +------+------+
+          |             |
+        Same key    Different key
+          |             |
+     Replace value   Add entry
+                     to bucket
+
+
+======================================================================
+HASHMAP TIME COMPLEXITY
+----------------------------------------------------------------------
+
+Average:
+
+get() → O(1)
+put() → O(1)
+remove() → O(1)
+
+
+Collision chain can result in:
+
+O(n)
+
+
+With treeified bucket:
+
+O(log n)
+
+
+IMPORTANT:
+
+These are general complexity characteristics; actual performance
+depends on hashing quality, collisions, resizing, and implementation
+details.
+
+
+======================================================================
+COMMON INTERVIEW TRAPS
+----------------------------------------------------------------------
+
+❌ "Map is part of Collection."
+
+✅ Map is a separate hierarchy.
+
+
+❌ "HashMap is synchronized."
+
+✅ HashMap is not synchronized.
+
+
+❌ "Hashtable allows null."
+
+✅ Hashtable does not allow null keys or null values.
+
+
+❌ "ConcurrentHashMap allows null."
+
+✅ ConcurrentHashMap does not allow null keys or values.
+
+
+❌ "TreeMap uses hashing."
+
+✅ TreeMap is tree-based and maintains sorted keys.
+
+
+❌ "HashMap always gives O(1)."
+
+✅ O(1) is the average expected complexity for basic operations.
+
+
+❌ "HashMap uses only equals()."
+
+✅ HashMap uses hashCode() to locate a bucket and equals() to
+   identify the exact key.
+
+
+❌ "Two keys cannot have the same hash code."
+
+✅ Different keys CAN have the same hash code.
+   This produces a hash collision.
+
+
+======================================================================
+QUICK REVISION
+----------------------------------------------------------------------
+
+Map
+→ Key-value pairs
+→ Keys unique
+→ Separate hierarchy from Collection
+
+
+HashMap
+→ Fast lookup
+→ O(1) average
+→ No guaranteed order
+→ One null key + multiple null values
+→ Not thread-safe
+
+
+Hashtable
+→ Synchronized
+→ No null key/value
+→ Legacy
+
+
+TreeMap
+→ Sorted keys
+→ Red-Black tree
+→ O(log n)
+
+
+ConcurrentHashMap
+→ Thread-safe
+→ Designed for concurrent access
+→ No null key/value
+
+
+HashMap Internal Flow:
+
+key
+ ↓
+hashCode()
+ ↓
+bucket/index
+ ↓
+equals()
+ ↓
+exact entry
+
+
+======================================================================
+ONE-MINUTE INTERVIEW REVISION
+----------------------------------------------------------------------
+
+Q: What is Map?
+
+A: An interface that stores key-value pairs. Keys are unique.
+
+
+Q: HashMap vs Hashtable?
+
+A: HashMap is not synchronized and allows null; Hashtable is
+   synchronized and does not allow null.
+
+
+Q: HashMap vs TreeMap?
+
+A: HashMap provides O(1) average basic operations without
+   guaranteed ordering; TreeMap maintains sorted keys with
+   O(log n) basic operations.
+
+
+Q: HashMap vs ConcurrentHashMap?
+
+A: HashMap is not thread-safe; ConcurrentHashMap is designed
+   for concurrent access.
+
+
+Q: How does HashMap work internally?
+
+A: It hashes the key to locate a bucket and uses equals() to
+   identify the exact key. Collisions are handled using linked
+   entries and potentially treeified buckets.
+
+
+======================================================================
+STATUS
+----------------------------------------------------------------------
+
+PART 3.3 – MAP
+
+Q79 → Map                              ✅
+Q80 → HashMap vs Hashtable              ✅
+Q81 → HashMap vs TreeMap                ✅
+Q82 → HashMap vs ConcurrentHashMap      ✅
+Q83 → Internal Working of HashMap       ✅
+
+STATUS: ✅ COMPLETED
+
+Meaningful questions remaining overall: 10
+
+NEXT:
+PART 3.4 – SORTING & COMPARISON
+Meaningful questions remaining in section: 3
+
+Q88 → Comparable
+Q89 → Comparator
+Q90 → Comparable vs Comparator
+======================================================================
