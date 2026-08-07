@@ -8007,3 +8007,697 @@ PART 4.2 – JVM & MEMORY MANAGEMENT
 
 Q115. What is JVM?
 ======================================================================
+======================================================================
+       PART 4.2 – JVM & MEMORY MANAGEMENT | INTERVIEW NOTES
+======================================================================
+
+Questions Covered:
+
+✓ Q115. What is JVM?
+✓ Q116. Responsibilities of JVM
+✓ Q117. Java Memory Model (JMM)
+✓ Q118. Heap vs Stack Memory
+✓ Q119. Method Area / Metaspace
+✓ Q120. Where are objects stored?
+✓ Q121. Garbage Collection
+✓ Q122. How Garbage Collection works
+✓ Q124. Garbage Collectors
+⏭ Q126. -Xms vs -Xmx → SKIPPED
+
+
+======================================================================
+Q115. WHAT IS JVM?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+JVM stands for Java Virtual Machine.
+
+It is the runtime environment that executes Java bytecode.
+
+The Java compiler converts source code into bytecode, and the JVM
+loads, verifies, and executes that bytecode.
+
+Flow:
+
+Java Source Code (.java)
+        ↓
+      javac
+        ↓
+Bytecode (.class)
+        ↓
+       JVM
+        ↓
+Load + Verify + Execute
+        ↓
+Machine/Native Instructions
+
+
+IMPORTANT:
+
+javac → Source Code → Bytecode
+
+JVM → Bytecode → Execution
+
+
+JVM responsibilities include:
+
+• Class Loading
+• Bytecode Verification
+• Bytecode Execution
+• Memory Management
+• Garbage Collection
+
+
+Why Java is platform independent:
+
+The same bytecode can run on different operating systems through
+their respective JVM implementations.
+
+
+======================================================================
+Q116. RESPONSIBILITIES OF JVM
+----------------------------------------------------------------------
+
+Interview Answer:
+
+The main responsibilities of JVM are class loading, bytecode
+verification, bytecode execution, memory management, and garbage
+collection.
+
+
+Main responsibilities:
+
+1. Class Loading
+   → Loads .class files into JVM.
+
+2. Bytecode Verification
+   → Checks bytecode for safety and validity.
+
+3. Bytecode Execution
+   → Executes Java bytecode.
+
+4. Memory Management
+   → Manages runtime memory areas.
+
+5. Garbage Collection
+   → Reclaims memory occupied by unreachable objects.
+
+
+Memory:
+
+JVM
+ |
+ +-- Class Loading
+ +-- Bytecode Verification
+ +-- Execution
+ +-- Memory Management
+ +-- Garbage Collection
+
+
+======================================================================
+Q117. WHAT IS JAVA MEMORY MODEL (JMM)?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+The Java Memory Model defines how threads interact with memory.
+
+It specifies rules related to:
+
+• Visibility
+• Ordering
+• Atomicity
+• Happens-before relationships
+
+
+Conceptually:
+
+                 JVM Memory
+                     |
+          +----------+----------+
+          |                     |
+       Thread 1              Thread 2
+          |                     |
+      Local data             Local data
+          |                     |
+          +---------+-----------+
+                    |
+              Shared Variables
+
+
+Important:
+
+JMM answers questions such as:
+
+→ Will one thread see another thread's changes?
+→ In what order are operations observed?
+→ What synchronization guarantees exist?
+
+
+Key concepts:
+
+Visibility
+→ Whether changes made by one thread are visible to another.
+
+
+Ordering
+→ How operations are ordered/observed between threads.
+
+
+Atomicity
+→ Whether an operation can be observed partially.
+
+
+Happens-before
+→ Defines guaranteed visibility and ordering relationships.
+
+
+IMPORTANT:
+
+JMM ≠ Heap/Stack memory.
+
+Heap and Stack
+→ JVM runtime memory areas
+
+JMM
+→ Rules governing thread-memory interaction
+
+
+======================================================================
+Q118. HEAP vs STACK MEMORY
+----------------------------------------------------------------------
+
+Interview Answer:
+
+Heap memory is generally used for objects and their instance data.
+
+Stack memory is used for method execution. Each thread has its own
+stack containing stack frames, local variables, parameters, and
+references.
+
+
+Example:
+
+Student s = new Student();
+
+
+Conceptually:
+
+STACK                     HEAP
+-----                     ----
+s ───────────────────→    Student object
+                          age
+                          name
+
+
+Comparison:
+
++----------------------+-------------------------+
+| Heap                 | Stack                   |
++----------------------+-------------------------+
+| Objects generally    | Method stack frames     |
+| allocated here       |                         |
+| Shared among threads | Each thread has own     |
+| Managed by GC        | Frames removed after    |
+|                      | method returns          |
+| Generally larger     | Generally smaller       |
++----------------------+-------------------------+
+
+
+Memory:
+
+HEAP
+→ Objects
+
+STACK
+→ Methods + Local Variables + References
+
+
+IMPORTANT INTERVIEW TRAP:
+
+❌ Object moves to Stack when method executes.
+
+✅ The object generally remains on Heap.
+   The method execution uses a Stack frame.
+
+
+======================================================================
+Q119. METHOD AREA / METASPACE
+----------------------------------------------------------------------
+
+Interview Answer:
+
+The Method Area is a JVM runtime memory area that stores class-level
+information such as class metadata, method information, runtime
+constant pools, and other class-related information.
+
+In Java 8+, the JVM uses Metaspace for class metadata instead of the
+old PermGen approach.
+
+
+Before Java 8:
+
+Method Area
+    ↓
+PermGen
+
+
+Java 8+:
+
+Method Area
+    ↓
+Metaspace
+    ↓
+Native Memory
+
+
+Conceptually:
+
+Method Area / Metaspace
+        |
+        +-- Class metadata
+        +-- Method information
+        +-- Runtime constant pool
+        +-- Class-level information
+
+
+Memory:
+
+Heap
+→ Objects
+
+Stack
+→ Method execution + local variables
+
+Method Area / Metaspace
+→ Class-level metadata
+
+
+IMPORTANT:
+
+Metaspace replaced PermGen in Java 8.
+
+
+======================================================================
+Q120. WHERE ARE OBJECTS STORED?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+Objects in Java are generally allocated in Heap memory.
+
+Example:
+
+Student s = new Student();
+
+
+Conceptually:
+
+STACK                     HEAP
+-----                     ----
+s ───────────────────→    Student object
+
+
+Here:
+
+Student object
+→ Heap
+
+Local reference variable s
+→ Stack
+
+
+IMPORTANT:
+
+The exact physical placement may be optimized by the JVM/JIT, but
+the standard interview-level model is:
+
+Heap → Objects
+Stack → Local references / method execution
+
+
+======================================================================
+Q121. WHAT IS GARBAGE COLLECTION?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+Garbage Collection is an automatic memory-management mechanism
+provided by the JVM.
+
+It identifies objects that are no longer reachable by the application
+and reclaims the heap memory occupied by those objects.
+
+
+Example:
+
+Student s = new Student();
+
+s = null;
+
+
+Conceptually:
+
+Before:
+
+s ─────→ Student Object
+
+
+After:
+
+s ─────→ null
+
+Student Object
+      ↓
+No longer reachable
+      ↓
+Eligible for Garbage Collection
+
+
+IMPORTANT:
+
+Eligible for GC ≠ immediately collected.
+
+The JVM decides when/how garbage collection occurs.
+
+
+Memory:
+
+Object
+  ↓
+No reachable reference
+  ↓
+Garbage
+  ↓
+Eligible for GC
+  ↓
+Heap memory can be reclaimed
+
+
+======================================================================
+Q122. HOW DOES GARBAGE COLLECTION WORK?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+Garbage Collection works by identifying objects in the heap that are
+no longer reachable from active references or GC Roots.
+
+The garbage collector then reclaims memory occupied by unreachable
+objects so that the memory can be reused.
+
+
+Basic flow:
+
+Objects created
+      ↓
+Stored in Heap
+      ↓
+Application uses objects
+      ↓
+Object becomes unreachable
+      ↓
+GC identifies unreachable object
+      ↓
+Memory reclaimed
+      ↓
+Memory available again
+
+
+GC Roots can include references associated with:
+
+• Active threads
+• Stack references
+• Static/class-related references
+• Other JVM roots
+
+
+Conceptually:
+
+GC Roots
+   ↓
+Reachable Object
+   ↓
+Reachable Object
+
+Unreachable Object
+       ↓
+    Garbage
+       ↓
+Memory reclaimed
+
+
+IMPORTANT:
+
+System.gc();
+
+does NOT guarantee immediate garbage collection.
+
+It only requests/suggests that the JVM perform GC.
+
+
+Memory:
+
+Reachable
+→ Keep
+
+Unreachable
+→ Eligible for GC
+
+GC
+→ Reclaim memory
+
+
+======================================================================
+Q124. DIFFERENT GARBAGE COLLECTORS
+----------------------------------------------------------------------
+
+Interview Answer:
+
+Java provides different garbage collectors optimized for different
+requirements such as throughput, latency, and heap size.
+
+Common collectors include:
+
+• Serial GC
+• Parallel GC
+• G1 GC
+• ZGC
+• Shenandoah GC
+
+
+1. SERIAL GC
+
+→ Uses a single GC thread.
+→ Suitable for smaller/simple applications.
+
+
+2. PARALLEL GC
+
+→ Uses multiple GC threads.
+→ Focuses on high throughput.
+
+
+3. G1 GC
+
+G1 = Garbage First
+
+→ Divides the heap into regions.
+→ Designed for predictable pause times.
+→ General-purpose collector.
+
+
+4. ZGC
+
+→ Designed for very low pause times.
+→ Suitable for large heaps and latency-sensitive applications.
+
+
+5. SHENANDOAH GC
+
+→ Low-pause collector.
+→ Performs much of its work concurrently.
+
+
+Memory:
+
+Serial
+→ Simple
+
+Parallel
+→ Throughput
+
+G1
+→ General purpose + predictable pauses
+
+ZGC
+→ Very low latency
+
+Shenandoah
+→ Very low latency
+
+
+IMPORTANT INTERVIEW TRAP:
+
+❌ G1 is always the best garbage collector.
+
+✅ The appropriate GC depends on application requirements, heap size,
+   latency requirements, and throughput requirements.
+
+
+======================================================================
+Q126. -Xms vs -Xmx
+----------------------------------------------------------------------
+
+STATUS:
+
+SKIPPED by choice.
+
+
+======================================================================
+COMMON INTERVIEW TRAPS
+----------------------------------------------------------------------
+
+1. ❌ JVM converts source code to bytecode.
+
+   ✅ javac converts source code to bytecode.
+      JVM executes bytecode.
+
+
+2. ❌ JVM is only responsible for execution.
+
+   ✅ JVM also handles class loading, verification, memory management,
+      and garbage collection.
+
+
+3. ❌ JMM is the same thing as Heap/Stack.
+
+   ✅ JMM defines thread-memory interaction rules.
+
+
+4. ❌ Object moves to Stack during execution.
+
+   ✅ Object is generally allocated in Heap.
+
+
+5. ❌ Garbage Collection immediately deletes unreachable objects.
+
+   ✅ Unreachable objects become eligible for GC.
+
+
+6. ❌ System.gc() forces garbage collection.
+
+   ✅ System.gc() only requests/suggests GC.
+
+
+7. ❌ Metaspace = PermGen.
+
+   ✅ Metaspace replaced PermGen in Java 8.
+
+
+======================================================================
+QUICK REVISION – 1 MINUTE
+----------------------------------------------------------------------
+
+JVM
+→ Executes bytecode
+
+
+javac
+→ Source code → Bytecode
+
+
+JVM
+→ Bytecode → Execution
+
+
+JMM
+→ Thread + Memory + Visibility + Ordering
+
+
+Heap
+→ Objects
+
+
+Stack
+→ Method execution + local variables + references
+
+
+Method Area / Metaspace
+→ Class metadata
+
+
+Garbage Collection
+→ Reclaims memory from unreachable objects
+
+
+GC Roots
+→ Starting points for reachability analysis
+
+
+System.gc()
+→ Request, NOT guarantee
+
+
+Serial GC
+→ Simple
+
+
+Parallel GC
+→ Throughput
+
+
+G1
+→ General purpose + predictable pauses
+
+
+ZGC
+→ Very low latency
+
+
+Shenandoah
+→ Very low latency
+
+
+======================================================================
+SECTION STATUS
+----------------------------------------------------------------------
+
+PART 4.2 – JVM & MEMORY MANAGEMENT
+
+Q115 → JVM                           ✓
+Q116 → JVM Responsibilities          ✓
+Q117 → Java Memory Model             ✓
+Q118 → Heap vs Stack                 ✓
+Q119 → Method Area / Metaspace       ✓
+Q120 → Object Storage                ✓
+Q121 → Garbage Collection            ✓
+Q122 → GC Working                    ✓
+Q124 → Garbage Collectors            ✓
+Q126 → -Xms vs -Xmx                  SKIPPED
+
+
+STATUS: COMPLETE ✓
+
+
+======================================================================
+OVERALL PART 4 STATUS
+----------------------------------------------------------------------
+
+Part 4.1 – Exception Handling
+→ COMPLETE ✓
+
+Part 4.2 – JVM & Memory Management
+→ COMPLETE ✓
+
+Remaining meaningful questions:
+9
+
+
+NEXT:
+
+PART 4.3 – FILE HANDLING
+
+Q127. What is file handling in Java?
+======================================================================
