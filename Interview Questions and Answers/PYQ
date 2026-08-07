@@ -2966,3 +2966,431 @@ Next:
 
 PART 2.6 – PACKAGES & ACCESS MODIFIERS
 ======================================================================
+
+======================================================================
+             JAVA OOPS INTERVIEW REVISION NOTES
+              PART 2.6 – PACKAGES & ACCESS MODIFIERS
+======================================================================
+
+Questions Covered
+
+✓ Q1. What is a package in Java?
+✓ Q2. Why do we use packages?
+✓ Q3. What are access modifiers?
+✓ Q4. Explain public, private, protected, and default access
+     modifiers with examples.
+
+
+======================================================================
+1. WHAT IS A PACKAGE IN JAVA?
+----------------------------------------------------------------------
+
+Interview Answer
+
+A package in Java is a mechanism used to group related classes,
+interfaces, and other Java types together.
+
+Packages help:
+
+• Organize code
+• Avoid naming conflicts
+• Provide access control
+• Improve maintainability
+• Support code reuse
+
+
+Example:
+
+package com.example.student;
+
+public class Student {
+
+    // class implementation
+}
+
+Here:
+
+com.example.student
+        ↓
+Package
+
+Student
+        ↓
+Class inside the package
+
+
+======================================================================
+2. WHY DO WE USE PACKAGES?
+----------------------------------------------------------------------
+
+Main purposes of packages:
+
+1. Code Organization
+   → Groups related classes/interfaces together.
+
+2. Avoid Naming Conflicts
+   → Classes with the same name can exist in different packages.
+
+3. Access Control
+   → Package-private members can be accessed only within
+     the same package.
+
+4. Maintainability
+   → Makes large applications easier to manage.
+
+5. Reusability
+   → Classes from a package can be imported and reused.
+
+
+Example:
+
+import calculator.Calculator;
+
+Calculator c = new Calculator();
+
+IMPORTANT:
+
+Importing a class ≠ inheritance.
+
+`import` is used to access/use a class from another package.
+
+`extends` is used for inheritance.
+
+
+======================================================================
+3. WHAT ARE ACCESS MODIFIERS?
+----------------------------------------------------------------------
+
+Interview Answer
+
+Access modifiers in Java define the visibility and accessibility
+of classes, methods, variables, and constructors.
+
+They control where a member can be accessed from.
+
+Java provides four access levels:
+
+1. public
+2. protected
+3. default / package-private
+4. private
+
+
+======================================================================
+4. PUBLIC
+----------------------------------------------------------------------
+
+Definition
+
+A `public` member can be accessed from anywhere, provided the
+class itself is accessible.
+
+Example:
+
+public class Calculator {
+
+    public void add() {
+        System.out.println("Addition");
+    }
+}
+
+The public method can be accessed from other classes and packages.
+
+
+Scope:
+
+Same Class       → YES
+Same Package     → YES
+Subclass         → YES
+Other Package    → YES
+
+
+Memory Trick:
+
+public → EVERYWHERE
+
+
+======================================================================
+5. PRIVATE
+----------------------------------------------------------------------
+
+Definition
+
+A `private` member can be accessed only within the same class.
+
+Example:
+
+class Bank {
+
+    private double balance;
+
+    private void calculateInterest() {
+        // implementation
+    }
+}
+
+The private members cannot be directly accessed outside `Bank`.
+
+Scope:
+
+Same Class       → YES
+Same Package     → NO
+Subclass         → NO
+Other Package    → NO
+
+
+Memory Trick:
+
+private → SAME CLASS ONLY
+
+
+======================================================================
+6. PROTECTED
+----------------------------------------------------------------------
+
+Definition
+
+A `protected` member can be accessed:
+
+• Within the same package
+• By subclasses outside the package through inheritance
+
+Example:
+
+class Animal {
+
+    protected void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+
+    void display() {
+        sound();
+    }
+}
+
+
+Scope:
+
+Same Class       → YES
+Same Package     → YES
+Subclass         → YES*
+Other Package    → NO
+
+
+*Subclass access outside the package is subject to Java's
+protected inheritance rules.
+
+
+Memory Trick:
+
+protected → PACKAGE + SUBCLASS
+
+
+======================================================================
+7. DEFAULT / PACKAGE-PRIVATE
+----------------------------------------------------------------------
+
+Definition
+
+If no access modifier is specified, Java gives the member
+default/package-private access.
+
+It can be accessed only within the same package.
+
+Example:
+
+class Student {
+
+    void display() {
+        System.out.println("Student");
+    }
+}
+
+Here `display()` has default/package-private access.
+
+Scope:
+
+Same Class       → YES
+Same Package     → YES
+Subclass         → NO*
+Other Package    → NO
+
+
+*An ordinary subclass in another package cannot access it merely
+because it is a subclass.
+
+
+Memory Trick:
+
+default → SAME PACKAGE ONLY
+
+
+======================================================================
+8. ACCESS MODIFIER COMPARISON
+----------------------------------------------------------------------
+
++------------+-------+---------+-----------+----------------+
+| Modifier   | Class | Package | Subclass  | Other Package |
++------------+-------+---------+-----------+----------------+
+| public     |  YES  |   YES   |    YES    |      YES       |
+| protected  |  YES  |   YES   |    YES*   |      NO        |
+| default    |  YES  |   YES   |    NO*    |      NO        |
+| private    |  YES  |   NO    |    NO     |      NO        |
++------------+-------+---------+-----------+----------------+
+
+*Protected has special inheritance rules for subclasses outside
+the package.
+
+
+======================================================================
+9. ACCESS MODIFIERS – QUICK VISUAL
+----------------------------------------------------------------------
+
+public
+   ↓
+Everywhere
+
+protected
+   ↓
+Same Package + Subclasses
+
+default
+   ↓
+Same Package
+
+private
+   ↓
+Same Class
+
+
+======================================================================
+COMMON INTERVIEW TRAPS
+----------------------------------------------------------------------
+
+❌ "Default is the same as private."
+
+✅ No.
+
+Default → same package
+Private → same class only
+
+
+--------------------------------------------------
+
+❌ "Protected can be accessed everywhere by subclasses."
+
+✅ Not exactly.
+
+A subclass in another package can access protected members through
+inheritance, subject to Java's protected-access rules.
+
+
+--------------------------------------------------
+
+❌ "Import means inheritance."
+
+✅ No.
+
+import
+→ Allows using a class/interface from another package.
+
+extends
+→ Inheritance.
+
+implements
+→ Interface implementation.
+
+
+--------------------------------------------------
+
+❌ "Private members are accessible from child classes."
+
+✅ No.
+
+Private members are not directly accessible in subclasses.
+
+
+======================================================================
+QUICK REVISION
+----------------------------------------------------------------------
+
+PACKAGE
+
+Related Classes + Interfaces
+          ↓
+       Package
+          ↓
+Organization + Access Control + Maintainability
+
+
+ACCESS MODIFIERS
+
+public
+→ Everywhere
+
+protected
+→ Same Package + Subclasses
+
+default
+→ Same Package
+
+private
+→ Same Class
+
+
+MEMORY TRICK
+
+P → Public → Places everywhere
+
+P → Protected → Package + child
+
+D → Default → Department/Package
+
+P → Private → Personal/Class only
+
+
+======================================================================
+ONE-MINUTE INTERVIEW REVISION
+----------------------------------------------------------------------
+
+Q: What is a package?
+A: A mechanism to group related classes/interfaces and organize
+   Java code.
+
+Q: Why use packages?
+A: Organization, naming-conflict prevention, access control,
+   maintainability, and reuse.
+
+Q: What are access modifiers?
+A: Keywords that control the visibility/accessibility of classes
+   and members.
+
+Q: What is public?
+A: Accessible from anywhere.
+
+Q: What is private?
+A: Accessible only within the same class.
+
+Q: What is protected?
+A: Accessible within the same package and by subclasses outside
+   the package under protected-access rules.
+
+Q: What is default?
+A: Package-private; accessible only within the same package.
+
+
+======================================================================
+STATUS
+----------------------------------------------------------------------
+
+PART 2.6 – PACKAGES & ACCESS MODIFIERS
+
+STATUS: ✅ COMPLETED
+
+Next:
+
+PART 2.7 – CONSTRUCTORS
+======================================================================
