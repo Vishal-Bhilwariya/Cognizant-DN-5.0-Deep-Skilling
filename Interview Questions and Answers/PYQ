@@ -1528,3 +1528,411 @@ public class Main {
         System.out.println(b.getBalance());
     }
 }
+
+======================================================================
+             JAVA OOPS INTERVIEW REVISION NOTES
+                  PART 2.3 – INHERITANCE
+======================================================================
+
+Questions Covered
+
+✓ Q13. What is inheritance?
+✓ Q14. What are the different types of inheritance in Java?
+✓ Q15. Why doesn't Java support multiple inheritance through classes?
+✓ Q16. Give a real-world example of inheritance.
+
+
+======================================================================
+1. WHAT IS INHERITANCE?
+----------------------------------------------------------------------
+
+Interview Answer
+
+Inheritance is one of the four pillars of Object-Oriented
+Programming.
+
+It is a mechanism through which a child class acquires the
+accessible properties and methods of a parent class.
+
+In Java, class inheritance is achieved using the extends keyword.
+
+Main benefit:
+
+• Code Reusability
+
+It also establishes an "IS-A" relationship between classes.
+
+Example:
+
+class Vehicle {
+    void start() {
+        System.out.println("Vehicle starts");
+    }
+}
+
+class Car extends Vehicle {
+}
+
+Here:
+
+Vehicle → Parent Class
+Car     → Child Class
+
+Car can use the accessible methods of Vehicle.
+
+
+======================================================================
+2. TYPES OF INHERITANCE IN JAVA
+----------------------------------------------------------------------
+
+Java supports the following inheritance structures:
+
+1. Single Inheritance
+2. Multilevel Inheritance
+3. Hierarchical Inheritance
+
+Multiple and Hybrid inheritance are NOT supported through
+classes, but similar behavior can be achieved using interfaces.
+
+
+----------------------------------------------------------------------
+1. SINGLE INHERITANCE
+----------------------------------------------------------------------
+
+One child class inherits from one parent class.
+
+        Parent
+           │
+           ▼
+         Child
+
+
+Example:
+
+class Animal {
+}
+
+class Dog extends Animal {
+}
+
+
+----------------------------------------------------------------------
+2. MULTILEVEL INHERITANCE
+----------------------------------------------------------------------
+
+A class inherits from another class, which itself inherits
+from another class.
+
+      Grandparent
+           │
+           ▼
+         Parent
+           │
+           ▼
+          Child
+
+
+Example:
+
+class Grandparent {
+}
+
+class Parent extends Grandparent {
+}
+
+class Child extends Parent {
+}
+
+
+----------------------------------------------------------------------
+3. HIERARCHICAL INHERITANCE
+----------------------------------------------------------------------
+
+Multiple child classes inherit from the same parent class.
+
+             Parent
+             /    \
+            /      \
+        Child1    Child2
+
+
+Example:
+
+class Animal {
+}
+
+class Dog extends Animal {
+}
+
+class Cat extends Animal {
+}
+
+
+----------------------------------------------------------------------
+4. MULTIPLE INHERITANCE
+----------------------------------------------------------------------
+
+One child class inherits from multiple parent classes.
+
+        Parent1      Parent2
+             \        /
+              \      /
+               Child
+
+
+Java does NOT support multiple inheritance through classes.
+
+Reason:
+
+Ambiguity / Diamond Problem
+
+
+However, similar behavior can be achieved using interfaces.
+
+
+----------------------------------------------------------------------
+5. HYBRID INHERITANCE
+----------------------------------------------------------------------
+
+Combination of two or more types of inheritance.
+
+Java does NOT support hybrid inheritance through classes.
+
+It can be achieved using interfaces.
+
+
+======================================================================
+3. WHY DOESN'T JAVA SUPPORT MULTIPLE INHERITANCE THROUGH CLASSES?
+----------------------------------------------------------------------
+
+Interview Answer
+
+Java does not support multiple inheritance through classes
+because it can create ambiguity when two parent classes contain
+methods with the same signature.
+
+Example:
+
+        Parent1          Parent2
+           │                │
+           │ same method    │ same method
+           └───────┬────────┘
+                   │
+                 Child
+
+If Child inherits from both Parent1 and Parent2,
+the compiler/JVM would have ambiguity about which
+method implementation should be used.
+
+This is commonly known as the:
+
+DIAMOND PROBLEM
+
+Java avoids this ambiguity by not allowing multiple
+inheritance through classes.
+
+Multiple inheritance of behavior can be achieved using
+interfaces.
+
+
+======================================================================
+4. REAL-WORLD EXAMPLE OF INHERITANCE
+----------------------------------------------------------------------
+
+Family Relationship
+
+       Grandparent
+            │
+            ▼
+          Parent
+            │
+            ▼
+           Child
+
+A child can inherit certain characteristics from parents,
+and parents can have characteristics originating from
+grandparents.
+
+Similarly, in Java:
+
+Parent Class
+      ↓
+Child Class
+
+The child class inherits accessible properties and methods
+from the parent class.
+
+Benefits:
+
+• Code Reusability
+• Reduced Duplication
+• IS-A Relationship
+
+
+======================================================================
+IMPORTANT KEYWORD
+----------------------------------------------------------------------
+
+extends
+
+Used to establish inheritance between classes.
+
+Example:
+
+class Dog extends Animal {
+
+}
+
+
+======================================================================
+INHERITANCE DIAGRAM
+----------------------------------------------------------------------
+
+                   Parent Class
+                       │
+              accessible members
+                       │
+                       ▼
+                   Child Class
+
+Child Class
+
+↓
+
+Can reuse inherited functionality
+
+
+======================================================================
+QUICK REVISION
+----------------------------------------------------------------------
+
+✔ Inheritance
+
+Child Class acquires accessible members
+from Parent Class.
+
+--------------------------------------------------
+
+✔ Main Purpose
+
+Code Reusability
+
+--------------------------------------------------
+
+✔ Keyword
+
+extends
+
+--------------------------------------------------
+
+✔ Relationship
+
+IS-A Relationship
+
+Example:
+
+Car IS-A Vehicle
+
+--------------------------------------------------
+
+✔ Single
+
+One Parent → One Child
+
+--------------------------------------------------
+
+✔ Multilevel
+
+Grandparent → Parent → Child
+
+--------------------------------------------------
+
+✔ Hierarchical
+
+One Parent → Multiple Children
+
+--------------------------------------------------
+
+✔ Multiple
+
+Multiple Parents → One Child
+
+NOT supported through Java classes.
+
+--------------------------------------------------
+
+✔ Hybrid
+
+Combination of inheritance types.
+
+NOT supported through Java classes.
+
+--------------------------------------------------
+
+✔ Multiple Inheritance Alternative
+
+Interfaces
+
+
+======================================================================
+INTERVIEW TRAPS
+----------------------------------------------------------------------
+
+❌ Don't Say:
+
+Java doesn't support multiple inheritance at all.
+
+✅ Say:
+
+Java doesn't support multiple inheritance through classes,
+but similar behavior can be achieved using interfaces.
+
+--------------------------------------------------
+
+❌ Don't Say:
+
+Multilevel means multiple children inherit from one parent.
+
+✅ Say:
+
+That's hierarchical inheritance.
+
+Multilevel:
+
+Grandparent → Parent → Child
+
+--------------------------------------------------
+
+❌ Don't Say:
+
+A child inherits every member of the parent class.
+
+✅ Say:
+
+A child can access the accessible members of the parent class.
+
+Private members are not directly accessible in the child class.
+
+--------------------------------------------------
+
+❌ Don't Say:
+
+Inheritance is mainly used for security.
+
+✅ Say:
+
+The primary benefit of inheritance is code reusability and
+establishing an IS-A relationship.
+
+--------------------------------------------------
+
+❌ Don't Say:
+
+Multiple inheritance causes a syntax error.
+
+✅ Say:
+
+Java deliberately avoids multiple inheritance through classes
+to prevent ambiguity such as the Diamond Problem.
+
+======================================================================
