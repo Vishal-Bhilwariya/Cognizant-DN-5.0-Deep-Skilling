@@ -3394,3 +3394,412 @@ Next:
 
 PART 2.7 – CONSTRUCTORS
 ======================================================================
+
+======================================================================
+             JAVA OOPS INTERVIEW REVISION NOTES
+                    PART 2.7 – CONSTRUCTORS
+======================================================================
+
+Questions Covered
+
+✓ Q1. What is a constructor in Java?
+✓ Q2. What are the different types of constructors?
+✓ Q3. What is the difference between a constructor and a method?
+
+
+======================================================================
+1. WHAT IS A CONSTRUCTOR?
+----------------------------------------------------------------------
+
+Interview Answer
+
+A constructor is a special member of a class used to initialize
+objects.
+
+It has:
+
+• Same name as the class
+• No return type, not even void
+• Automatically invoked during object creation
+• Used primarily for object initialization
+
+Example:
+
+class Student {
+
+    Student() {
+        System.out.println("Constructor called");
+    }
+}
+
+Student s = new Student();
+
+When `new Student()` creates the object, the constructor is invoked.
+
+
+======================================================================
+2. IMPORTANT CONSTRUCTOR POINTS
+----------------------------------------------------------------------
+
+✔ Constructor name must match the class name.
+
+✔ Constructor has NO return type.
+
+❌ This is NOT a constructor:
+
+void Student() {
+}
+
+Because `void` makes it a method.
+
+✔ Constructor is called during object creation.
+
+✔ A constructor is NOT technically a method.
+
+✔ A constructor is called once for EACH object creation.
+
+Example:
+
+Student s1 = new Student();
+Student s2 = new Student();
+
+The constructor executes once for `s1` and once for `s2`.
+
+
+======================================================================
+3. TYPES OF CONSTRUCTORS
+----------------------------------------------------------------------
+
+Commonly discussed types:
+
+1. No-Argument Constructor
+2. Parameterized Constructor
+3. Default Constructor
+
+
+----------------------------------------------------------------------
+3.1 NO-ARGUMENT CONSTRUCTOR
+----------------------------------------------------------------------
+
+A constructor that accepts no parameters.
+
+Example:
+
+class Student {
+
+    Student() {
+        System.out.println("Student created");
+    }
+}
+
+
+----------------------------------------------------------------------
+3.2 PARAMETERIZED CONSTRUCTOR
+----------------------------------------------------------------------
+
+A constructor that accepts parameters to initialize an object
+with specific values.
+
+Example:
+
+class Student {
+
+    String name;
+    int age;
+
+    Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+Usage:
+
+Student s = new Student("Vishal", 21);
+
+
+----------------------------------------------------------------------
+3.3 DEFAULT CONSTRUCTOR
+----------------------------------------------------------------------
+
+If the programmer does not declare ANY constructor, the compiler
+automatically provides a default constructor.
+
+Example:
+
+class Student {
+
+    String name;
+}
+
+Conceptually, the compiler provides something like:
+
+Student() {
+    super();
+}
+
+
+======================================================================
+4. DEFAULT vs NO-ARGUMENT CONSTRUCTOR
+----------------------------------------------------------------------
+
+VERY IMPORTANT INTERVIEW TRAP
+
+
+DEFAULT CONSTRUCTOR
+
+→ Automatically provided by the compiler
+→ Provided only when no constructor is declared
+
+
+NO-ARGUMENT CONSTRUCTOR
+
+→ Any constructor having zero parameters
+→ Can be written by the programmer
+→ Can also be compiler-provided
+
+
+Example:
+
+class Student {
+
+    Student() {
+        // Programmer-defined no-argument constructor
+    }
+}
+
+This is a:
+
+✓ No-argument constructor
+
+But it is NOT the compiler-generated default constructor.
+
+
+======================================================================
+5. CONSTRUCTOR vs METHOD
+----------------------------------------------------------------------
+
++---------------------+------------------------------+
+| Constructor         | Method                       |
++---------------------+------------------------------+
+| Initializes object  | Performs an operation        |
+| Same name as class  | Has its own name             |
+| No return type      | Has return type or void      |
+| Called during       | Called explicitly            |
+| object creation     |                              |
+| Called once per     | Can be called multiple times |
+| object creation     |                              |
+| Not inherited       | Can be inherited              |
+| Cannot be overridden| Can be overridden             |
++---------------------+------------------------------+
+
+
+======================================================================
+6. CONSTRUCTOR EXAMPLE
+----------------------------------------------------------------------
+
+class Student {
+
+    String name;
+    int age;
+
+    Student(String name, int age) {
+
+        this.name = name;
+        this.age = age;
+    }
+
+    void display() {
+
+        System.out.println(name);
+        System.out.println(age);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Student s = new Student("Vishal", 21);
+
+        s.display();
+    }
+}
+
+Here:
+
+Student(...) → Constructor
+
+display() → Method
+
+
+======================================================================
+7. CONSTRUCTOR OVERLOADING
+----------------------------------------------------------------------
+
+A class can have multiple constructors with different parameter
+lists.
+
+Example:
+
+class Student {
+
+    Student() {
+    }
+
+    Student(String name) {
+    }
+
+    Student(String name, int age) {
+    }
+}
+
+This is called:
+
+Constructor Overloading
+
+
+IMPORTANT:
+
+Constructor overloading is different from method overloading.
+
+Constructor:
+
+Student()
+Student(String)
+Student(String, int)
+
+Method:
+
+display()
+display(String)
+display(String, int)
+
+
+======================================================================
+8. COMMON INTERVIEW TRAPS
+----------------------------------------------------------------------
+
+❌ "Constructor is a special type of method."
+
+Better answer:
+
+✅ "Constructor is a special member of a class used to initialize
+objects. Technically, it is not a method."
+
+
+--------------------------------------------------
+
+❌ "Constructor is called only once."
+
+✅ "Constructor is called once for each object creation."
+
+
+--------------------------------------------------
+
+❌ "Constructor has void return type."
+
+✅ "Constructor has no return type, not even void."
+
+
+--------------------------------------------------
+
+❌ "Default constructor and no-argument constructor are always
+the same."
+
+✅ Default constructor → compiler-provided when no constructor
+   is declared.
+
+✅ No-argument constructor → any constructor with zero parameters.
+
+
+--------------------------------------------------
+
+❌ "Constructor can be overridden."
+
+✅ Constructors cannot be overridden.
+
+
+======================================================================
+QUICK REVISION
+----------------------------------------------------------------------
+
+CONSTRUCTOR
+
+Same class name
+      ↓
+No return type
+      ↓
+Called during object creation
+      ↓
+Initializes object
+
+
+TYPES
+
+No-Argument
+      +
+Parameterized
+      +
+Default (compiler-provided)
+
+
+CONSTRUCTOR vs METHOD
+
+Constructor
+→ Initializes object
+
+Method
+→ Performs behavior/operation
+
+
+MEMORY TRICK
+
+Constructor = CREATE + INITIALIZE
+
+Method = PERFORM + REUSE
+
+
+======================================================================
+ONE-MINUTE INTERVIEW REVISION
+----------------------------------------------------------------------
+
+Q: What is a constructor?
+A: A special class member used to initialize objects.
+
+Q: Does constructor have a return type?
+A: No, not even void.
+
+Q: When is constructor called?
+A: During object creation.
+
+Q: Can constructor be called multiple times?
+A: Yes, once for each object created.
+
+Q: What are common constructor types?
+A: No-argument, parameterized, and compiler-provided default
+   constructor.
+
+Q: Can constructor be overloaded?
+A: Yes.
+
+Q: Can constructor be overridden?
+A: No.
+
+Q: Difference between constructor and method?
+A: Constructor initializes an object and has no return type;
+   method performs an operation and can have a return type.
+
+
+======================================================================
+STATUS
+----------------------------------------------------------------------
+
+PART 2.7 – CONSTRUCTORS
+
+STATUS: ✅ COMPLETED
+
+Next:
+
+PART 2.8 – OPERATOR OVERLOADING
+======================================================================
