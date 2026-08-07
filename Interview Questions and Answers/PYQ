@@ -12793,3 +12793,479 @@ Q241. What is a Transaction in DBMS/SQL?
 Part 6 Remaining:
 22 meaningful questions
 ======================================================================
+
+======================================================================
+                 PART 6.8 – SQL TRANSACTIONS | INTERVIEW NOTES
+======================================================================
+
+QUESTIONS COVERED:
+
+✓ Q241. What is a Transaction?
+✓ Q242. Explain ACID Properties
+✓ Q243. COMMIT, ROLLBACK, and SAVEPOINT
+
+
+======================================================================
+Q241. WHAT IS A TRANSACTION?
+======================================================================
+
+Interview Answer:
+
+A transaction is a sequence of one or more SQL operations that are
+treated as a single logical unit of work.
+
+A transaction either completes successfully as a whole, or its
+uncommitted changes can be rolled back.
+
+
+Example: Bank Transfer
+
+Suppose ₹5,000 is transferred from Account A to Account B.
+
+Two operations are required:
+
+1. Deduct ₹5,000 from Account A
+2. Add ₹5,000 to Account B
+
+These operations should be treated as ONE transaction.
+
+
+Example:
+
+START TRANSACTION;
+
+UPDATE Account
+SET balance = balance - 5000
+WHERE account_id = 101;
+
+UPDATE Account
+SET balance = balance + 5000
+WHERE account_id = 102;
+
+COMMIT;
+
+
+If something goes wrong:
+
+ROLLBACK;
+
+
+Why transactions are needed:
+
+→ Maintain data consistency
+→ Maintain reliability
+→ Handle multiple related operations as one unit
+→ Prevent partially completed operations
+
+
+Memory:
+
+TRANSACTION
+→ Group of operations
+→ One logical unit
+→ All succeed → COMMIT
+→ Failure → ROLLBACK
+
+
+======================================================================
+Q242. EXPLAIN ACID PROPERTIES
+======================================================================
+
+ACID stands for:
+
+A → Atomicity
+C → Consistency
+I → Isolation
+D → Durability
+
+
+----------------------------------------------------------------------
+1. ATOMICITY — ALL OR NOTHING
+----------------------------------------------------------------------
+
+Atomicity means a transaction is treated as one indivisible unit.
+
+Either all operations succeed, or all uncommitted changes are undone.
+
+
+Example:
+
+Bank Transfer:
+
+1. Deduct money from A ✓
+2. Add money to B ✗
+
+Then the first operation must also be undone.
+
+
+Memory:
+
+Atomicity
+→ All or Nothing
+
+
+----------------------------------------------------------------------
+2. CONSISTENCY — VALID STATE → VALID STATE
+----------------------------------------------------------------------
+
+Consistency means a transaction takes the database from one valid
+state to another valid state while respecting database rules and
+constraints.
+
+
+Example:
+
+Before transfer:
+
+Total money = ₹1,00,000
+
+Transfer:
+
+A → -₹10,000
+B → +₹10,000
+
+After transfer:
+
+Total money = ₹1,00,000
+
+
+The database remains logically correct.
+
+
+Memory:
+
+Consistency
+→ Rules remain satisfied
+→ Valid State → Valid State
+
+
+----------------------------------------------------------------------
+3. ISOLATION — TRANSACTIONS DON'T IMPROPERLY INTERFERE
+----------------------------------------------------------------------
+
+Isolation means concurrent transactions should not improperly
+interfere with each other.
+
+Example:
+
+Transaction A
+    ↓
+Updating Account
+
+Transaction B
+    ↓
+Reading Account
+
+
+The database's isolation mechanism controls what changes one
+transaction can see while another is in progress.
+
+Isolation helps prevent concurrency problems such as dirty reads.
+
+
+Memory:
+
+Isolation
+→ Transactions stay separated
+
+
+----------------------------------------------------------------------
+4. DURABILITY — COMMITTED DATA STAYS
+----------------------------------------------------------------------
+
+Durability means once a transaction is successfully committed, its
+changes are permanently stored and should survive failures such as
+system crashes.
+
+
+Transaction
+    ↓
+  COMMIT
+    ↓
+Changes saved
+    ↓
+System crashes
+    ↓
+Committed changes remain
+
+
+Memory:
+
+Durability
+→ COMMIT means it stays
+
+
+======================================================================
+ACID QUICK TABLE
+======================================================================
+
++-------------+---------------------------------------------+
+| Property    | Meaning                                     |
++-------------+---------------------------------------------+
+| Atomicity   | All operations succeed or all are undone   |
+| Consistency | Database remains valid                     |
+| Isolation   | Transactions don't improperly interfere   |
+| Durability  | Committed changes survive failures         |
++-------------+---------------------------------------------+
+
+
+Memory:
+
+A → All or Nothing
+C → Correct/Consistent State
+I → Independent Transactions
+D → Data Doesn't Disappear after COMMIT
+
+
+======================================================================
+Q243. COMMIT, ROLLBACK, AND SAVEPOINT
+======================================================================
+
+----------------------------------------------------------------------
+1. COMMIT
+----------------------------------------------------------------------
+
+COMMIT permanently saves the changes made during the current
+transaction.
+
+
+Syntax:
+
+COMMIT;
+
+
+Example:
+
+START TRANSACTION;
+
+UPDATE Account
+SET balance = balance - 1000
+WHERE id = 1;
+
+COMMIT;
+
+
+IMPORTANT:
+
+After COMMIT, you cannot use a normal ROLLBACK to undo those already
+committed changes.
+
+However, the data CAN be modified later using a new transaction.
+
+
+Memory:
+
+COMMIT
+→ Save permanently
+
+
+----------------------------------------------------------------------
+2. ROLLBACK
+----------------------------------------------------------------------
+
+ROLLBACK undoes uncommitted changes in the current transaction.
+
+
+Syntax:
+
+ROLLBACK;
+
+
+Example:
+
+START TRANSACTION;
+
+UPDATE Account
+SET balance = balance - 1000
+WHERE id = 1;
+
+ROLLBACK;
+
+
+The uncommitted change is undone.
+
+
+IMPORTANT:
+
+ROLLBACK does NOT necessarily mean "undo the previous statement."
+
+It can undo the entire uncommitted transaction.
+
+
+Memory:
+
+ROLLBACK
+→ Undo uncommitted changes
+
+
+----------------------------------------------------------------------
+3. SAVEPOINT
+----------------------------------------------------------------------
+
+SAVEPOINT creates a named checkpoint inside a transaction.
+
+Syntax:
+
+SAVEPOINT savepoint_name;
+
+
+Example:
+
+START TRANSACTION;
+
+UPDATE Account
+SET balance = balance - 1000
+WHERE id = 1;
+
+SAVEPOINT sp1;
+
+UPDATE Account
+SET balance = balance + 1000
+WHERE id = 2;
+
+ROLLBACK TO sp1;
+
+COMMIT;
+
+
+Conceptually:
+
+START TRANSACTION
+       ↓
+   UPDATE A
+       ↓
+   SAVEPOINT sp1
+       ↓
+   UPDATE B
+       ↓
+ROLLBACK TO sp1
+       ↓
+Changes after sp1 are undone
+       ↓
+   COMMIT
+
+
+Memory:
+
+SAVEPOINT
+→ Create a checkpoint
+
+
+======================================================================
+COMMIT vs ROLLBACK vs SAVEPOINT
+======================================================================
+
++-------------+----------------------------------------------+
+| Command     | Purpose                                      |
++-------------+----------------------------------------------+
+| COMMIT      | Permanently save transaction changes        |
+| ROLLBACK    | Undo uncommitted transaction changes        |
+| SAVEPOINT   | Create a checkpoint inside a transaction   |
++-------------+----------------------------------------------+
+
+
+======================================================================
+COMMON INTERVIEW TRAPS – TRANSACTIONS
+======================================================================
+
+1. ATOMICITY
+
+✓ All or Nothing.
+
+❌ Means only one operation can execute at a time.
+
+
+2. CONSISTENCY
+
+✓ Database remains valid according to its rules.
+
+❌ Does not mean "data never changes."
+
+
+3. COMMIT
+
+✓ Saves transaction changes permanently.
+
+❌ Does not mean the data can never be modified again.
+
+
+4. ROLLBACK
+
+✓ Undoes uncommitted changes.
+
+❌ Does not necessarily mean only the previous statement is undone.
+
+
+5. SAVEPOINT
+
+✓ Creates a checkpoint within a transaction.
+
+✓ Can rollback to that point.
+
+
+6. DURABILITY
+
+✓ Committed changes survive failures such as system crashes.
+
+
+======================================================================
+QUICK REVISION – 1 MINUTE
+======================================================================
+
+TRANSACTION
+→ Group of SQL operations treated as one logical unit
+
+
+ACID:
+
+A → Atomicity    → All or Nothing
+C → Consistency  → Valid → Valid
+I → Isolation    → Transactions don't improperly interfere
+D → Durability   → Committed changes survive failures
+
+
+COMMIT
+→ Save permanently
+
+
+ROLLBACK
+→ Undo uncommitted changes
+
+
+SAVEPOINT
+→ Create checkpoint
+
+
+Example:
+
+START TRANSACTION;
+
+UPDATE ...;
+
+SAVEPOINT sp1;
+
+UPDATE ...;
+
+ROLLBACK TO sp1;
+
+COMMIT;
+
+
+======================================================================
+PART 6.8 STATUS
+======================================================================
+
+Q241 ✓
+Q242 ✓
+Q243 ✓
+
+              3 / 3 COMPLETE ✓
+
+Next Topic:
+→ PRACTICAL SQL QUESTIONS
+
+7 meaningful questions remain in this topic.
+
+Part 6 Remaining:
+19 meaningful questions
+======================================================================
