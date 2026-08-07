@@ -3803,3 +3803,215 @@ Next:
 
 PART 2.8 – OPERATOR OVERLOADING
 ======================================================================
+
+======================================================================
+             JAVA OOPS INTERVIEW REVISION NOTES
+                PART 2.8 – OPERATOR OVERLOADING
+======================================================================
+
+Questions Covered
+
+✓ Q1. Does Java support operator overloading? If not, why?
+
+
+======================================================================
+1. DOES JAVA SUPPORT OPERATOR OVERLOADING?
+----------------------------------------------------------------------
+
+Interview Answer
+
+Java does NOT support user-defined operator overloading.
+
+Operator overloading means giving an operator such as:
+
+    +   -   *   /
+
+different meanings or behaviors depending on the operands.
+
+Java intentionally does not allow developers to define their own
+behavior for operators because it can make code:
+
+• Complex
+• Ambiguous
+• Difficult to understand
+• Difficult to maintain
+
+
+======================================================================
+2. EXAMPLE OF OPERATOR OVERLOADING
+----------------------------------------------------------------------
+
+In languages such as C++, developers can define how operators
+behave for their own classes.
+
+Java does not allow this kind of user-defined operator
+overloading.
+
+
+======================================================================
+3. IMPORTANT JAVA EXCEPTION
+----------------------------------------------------------------------
+
+Although Java does not support USER-DEFINED operator overloading,
+some operators already have predefined/built-in behavior.
+
+Example:
+
+int result = 10 + 20;
+
+Here:
+
++ → Numeric addition
+
+
+But:
+
+String result = "Hello " + "Java";
+
+Here:
+
++ → String concatenation
+
+
+So Java itself provides predefined behavior for `+`.
+
+IMPORTANT:
+
+❌ "Java doesn't support operator overloading at all."
+
+Better:
+
+✅ "Java does not support USER-DEFINED operator overloading."
+
+
+======================================================================
+4. WHY DOES JAVA NOT SUPPORT USER-DEFINED OPERATOR OVERLOADING?
+----------------------------------------------------------------------
+
+Main reasons:
+
+1. Simplicity
+   → Keeps Java syntax simple.
+
+2. Readability
+   → Operators have predictable meanings.
+
+3. Avoids Ambiguity
+   → Prevents developers from assigning unexpected meanings
+     to operators.
+
+4. Maintainability
+   → Code becomes easier to understand and maintain.
+
+
+======================================================================
+5. JAVA vs C++
+----------------------------------------------------------------------
+
++--------------------------+-------------------------+
+| Java                     | C++                     |
++--------------------------+-------------------------+
+| No user-defined operator | Supports user-defined  |
+| overloading              | operator overloading   |
++--------------------------+-------------------------+
+| Simpler operator rules   | More flexible          |
++--------------------------+-------------------------+
+| + has predefined         | Operators can be       |
+| behavior                 | overloaded by classes  |
++--------------------------+-------------------------+
+
+
+======================================================================
+COMMON INTERVIEW TRAPS
+----------------------------------------------------------------------
+
+❌ "Java does not support operator overloading."
+
+This is incomplete.
+
+✅ "Java does not support USER-DEFINED operator overloading."
+
+
+--------------------------------------------------
+
+❌ "`+` only performs addition in Java."
+
+✅ `+` can perform numeric addition and String concatenation.
+
+
+--------------------------------------------------
+
+❌ "Operator overloading and method overloading are the same."
+
+✅ They are different concepts.
+
+Method Overloading
+→ Same method name + different parameter lists.
+
+Operator Overloading
+→ Same operator + different behavior depending on operands.
+
+
+======================================================================
+QUICK REVISION
+----------------------------------------------------------------------
+
+Java
+  ↓
+No USER-DEFINED operator overloading
+  ↓
+Why?
+  ↓
+Simplicity + Readability + Avoid Ambiguity
+
+
+But:
+
+10 + 20
+  ↓
+Addition
+
+"Hello " + "Java"
+  ↓
+String Concatenation
+
+
+======================================================================
+ONE-MINUTE INTERVIEW ANSWER
+----------------------------------------------------------------------
+
+Q: Does Java support operator overloading?
+
+A:
+
+"Java does not support user-defined operator overloading.
+This keeps the language simple, readable, and avoids ambiguity.
+
+However, Java has predefined operator behavior. For example,
+the `+` operator performs numeric addition and can also concatenate
+Strings."
+
+
+======================================================================
+STATUS
+----------------------------------------------------------------------
+
+PART 2.8 – OPERATOR OVERLOADING
+
+STATUS: ✅ COMPLETED
+
+
+======================================================================
+JAVA OOPS INTERVIEW SET – FINAL STATUS
+----------------------------------------------------------------------
+
+Part 2.4 → Polymorphism              ✅ COMPLETED
+Part 2.5 → Abstraction & Interface   ✅ COMPLETED
+Part 2.6 → Packages & Access         ✅ COMPLETED
+Part 2.7 → Constructors              ✅ COMPLETED
+Part 2.8 → Operator Overloading      ✅ COMPLETED
+
+TOTAL UNIQUE QUESTIONS IN THESE PARTS: 18
+
+Repeated questions were skipped as requested.
+======================================================================
