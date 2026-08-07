@@ -13269,3 +13269,599 @@ Next Topic:
 Part 6 Remaining:
 19 meaningful questions
 ======================================================================
+
+======================================================================
+              PART 6.9 – PRACTICAL SQL | INTERVIEW NOTES
+======================================================================
+
+QUESTIONS COVERED:
+
+✓ Q244. Query using WHERE, GROUP BY, HAVING, and ORDER BY
+✓ Q245. INNER JOIN query
+✓ Q246. Retrieve records containing NULL
+✓ Q247. Display duplicate records
+✓ Q248. Remove duplicate records while keeping one copy
+✓ Q249. Highest-paid employee in each department
+✓ Q250. Count employees in each department
+
+
+======================================================================
+Q244. QUERY USING WHERE, GROUP BY, HAVING, AND ORDER BY
+======================================================================
+
+Interview Answer:
+
+WHERE filters individual rows.
+
+GROUP BY groups rows based on a column.
+
+HAVING filters groups after grouping.
+
+ORDER BY sorts the final result.
+
+
+Example:
+
+Find the average salary of each department where employee salary is
+greater than 20,000, keep departments whose average salary is greater
+than 30,000, and sort by average salary descending.
+
+SELECT department, AVG(salary) AS avg_salary
+FROM Employee
+WHERE salary > 20000
+GROUP BY department
+HAVING AVG(salary) > 30000
+ORDER BY avg_salary DESC;
+
+
+Roles:
+
+WHERE
+→ Filters individual rows
+
+GROUP BY
+→ Creates groups
+
+HAVING
+→ Filters groups
+
+ORDER BY
+→ Sorts final result
+
+
+Logical SQL execution order:
+
+FROM
+  ↓
+WHERE
+  ↓
+GROUP BY
+  ↓
+HAVING
+  ↓
+SELECT
+  ↓
+ORDER BY
+
+
+Memory:
+
+WHERE  → Rows
+GROUP BY → Groups
+HAVING → Groups
+ORDER BY → Sorting
+
+
+======================================================================
+Q245. WRITE AN INNER JOIN QUERY
+======================================================================
+
+Interview Answer:
+
+An INNER JOIN returns only rows that have matching values in both
+tables based on the JOIN condition.
+
+
+Query:
+
+SELECT *
+FROM table1
+INNER JOIN table2
+ON table1.id = table2.id;
+
+
+Example:
+
+Table1:
+
+id   name
+---------
+1    Vishal
+2    Rohit
+3    Ankit
+
+
+Table2:
+
+id   salary
+-----------
+1    50000
+3    60000
+4    70000
+
+
+Result:
+
+id   name    salary
+-------------------
+1    Vishal  50000
+3    Ankit   60000
+
+
+Only matching IDs are returned.
+
+
+Memory:
+
+INNER JOIN
+→ Matching rows only
+
+
+======================================================================
+Q246. RETRIEVE RECORDS WHERE A COLUMN IS NULL
+======================================================================
+
+Interview Answer:
+
+Use IS NULL to retrieve rows where a column contains NULL.
+
+
+Query:
+
+SELECT *
+FROM Employee
+WHERE salary IS NULL;
+
+
+To retrieve non-NULL values:
+
+SELECT *
+FROM Employee
+WHERE salary IS NOT NULL;
+
+
+IMPORTANT:
+
+❌ Incorrect:
+
+WHERE salary = NULL
+
+
+✓ Correct:
+
+WHERE salary IS NULL
+
+
+Memory:
+
+NULL
+→ IS NULL
+
+NOT NULL
+→ IS NOT NULL
+
+
+======================================================================
+Q247. DISPLAY DUPLICATE RECORDS
+======================================================================
+
+Interview Answer:
+
+GROUP BY with HAVING COUNT(*) > 1 can be used to identify duplicate
+values.
+
+
+Example:
+
+SELECT id, COUNT(*) AS duplicate_count
+FROM table1
+GROUP BY id
+HAVING COUNT(*) > 1;
+
+
+Example data:
+
+id
+--
+101
+102
+101
+103
+102
+101
+
+
+Result:
+
+id    duplicate_count
+---------------------
+101        3
+102        2
+
+
+IMPORTANT:
+
+HAVING COUNT(*) > 1
+→ Values appearing more than once
+
+
+If we use:
+
+HAVING COUNT(*) = 2
+
+→ Only values appearing exactly twice are returned.
+
+
+Memory:
+
+Duplicates
+→ GROUP BY
+→ HAVING COUNT(*) > 1
+
+
+======================================================================
+Q248. REMOVE DUPLICATE RECORDS WHILE KEEPING ONE COPY
+======================================================================
+
+Assume:
+
+Employee(id, name, salary)
+
+And:
+
+→ id is unique
+→ name + salary define duplicate records
+→ Keep the record with the smallest id
+
+
+Query:
+
+DELETE e1
+FROM Employee e1
+JOIN Employee e2
+ON e1.name = e2.name
+AND e1.salary = e2.salary
+AND e1.id > e2.id;
+
+
+How it works:
+
+Same name
+     +
+Same salary
+     +
+Larger ID
+     ↓
+DELETE
+
+
+Example:
+
+Before:
+
+id   name     salary
+--------------------
+1    Vishal   50000
+2    Rohit    40000
+3    Vishal   50000
+4    Rohit    40000
+
+
+After:
+
+id   name     salary
+--------------------
+1    Vishal   50000
+2    Rohit    40000
+
+
+The smallest ID is retained.
+
+
+IMPORTANT:
+
+DISTINCT does NOT delete duplicates from a table.
+
+SELECT DISTINCT name
+FROM Employee;
+
+Only removes duplicate values from the query result.
+
+
+Memory:
+
+DISTINCT
+→ Unique query result
+
+DELETE
+→ Actually removes table rows
+
+
+======================================================================
+Q249. FIND EMPLOYEE WITH HIGHEST SALARY IN EACH DEPARTMENT
+======================================================================
+
+Interview Answer:
+
+A correlated subquery can be used to find the maximum salary within
+each employee's department.
+
+
+Query:
+
+SELECT e.*
+FROM Employee e
+WHERE e.salary = (
+    SELECT MAX(e2.salary)
+    FROM Employee e2
+    WHERE e2.department = e.department
+);
+
+
+How it works:
+
+For each employee:
+
+        ↓
+
+Find MAX salary
+
+        ↓
+
+Within the same department
+
+        ↓
+
+Return employee whose salary equals MAX salary.
+
+
+Example:
+
+Employee:
+
+Name   Department   Salary
+--------------------------
+A      IT           90000
+B      IT           80000
+C      HR           70000
+D      HR           60000
+
+
+Result:
+
+A    IT    90000
+C    HR    70000
+
+
+IMPORTANT:
+
+If two employees have the same highest salary in a department,
+both can be returned by this query.
+
+
+Memory:
+
+Highest salary per department:
+
+→ GROUP BY concept
+→ MAX(salary)
+→ Compare employee salary with department MAX
+
+
+======================================================================
+Q250. COUNT EMPLOYEES IN EACH DEPARTMENT
+======================================================================
+
+Interview Answer:
+
+Use COUNT(*) with GROUP BY department.
+
+
+Query:
+
+SELECT department, COUNT(*) AS employee_count
+FROM Employee
+GROUP BY department;
+
+
+Example:
+
+Employee:
+
+Name   Department
+-----------------
+A      IT
+B      IT
+C      HR
+D      HR
+E      IT
+
+
+Result:
+
+department   employee_count
+----------------------------
+IT                 3
+HR                 2
+
+
+Memory:
+
+"Count in each group"
+
+→ SELECT group_column, COUNT(*)
+→ FROM table
+→ GROUP BY group_column
+
+
+======================================================================
+COMMON INTERVIEW TRAPS – PRACTICAL SQL
+======================================================================
+
+1. WHERE vs HAVING
+
+WHERE
+→ Filters individual rows
+→ Before GROUP BY
+
+HAVING
+→ Filters groups
+→ After GROUP BY
+
+
+2. INNER JOIN
+
+→ Returns matching rows only.
+
+
+3. NULL
+
+❌ column = NULL
+
+✓ column IS NULL
+
+
+4. DUPLICATES
+
+HAVING COUNT(*) > 1
+→ More than one occurrence
+
+HAVING COUNT(*) = 2
+→ Exactly two occurrences
+
+
+5. DISTINCT
+
+DISTINCT does not delete rows from the database.
+
+It only removes duplicate values from the query result.
+
+
+6. GROUP BY
+
+If selecting a non-aggregated column with an aggregate function,
+that column generally needs to be included in GROUP BY.
+
+
+7. COUNT(*) + GROUP BY
+
+To count records in each department:
+
+SELECT department, COUNT(*)
+FROM Employee
+GROUP BY department;
+
+
+======================================================================
+QUICK REVISION – PRACTICAL SQL
+======================================================================
+
+WHERE + GROUP BY + HAVING + ORDER BY:
+
+SELECT department, AVG(salary)
+FROM Employee
+WHERE salary > 20000
+GROUP BY department
+HAVING AVG(salary) > 30000
+ORDER BY AVG(salary) DESC;
+
+
+INNER JOIN:
+
+SELECT *
+FROM table1
+INNER JOIN table2
+ON table1.id = table2.id;
+
+
+NULL:
+
+SELECT *
+FROM Employee
+WHERE salary IS NULL;
+
+
+DUPLICATES:
+
+SELECT id, COUNT(*)
+FROM Employee
+GROUP BY id
+HAVING COUNT(*) > 1;
+
+
+DELETE DUPLICATES:
+
+DELETE e1
+FROM Employee e1
+JOIN Employee e2
+ON e1.name = e2.name
+AND e1.salary = e2.salary
+AND e1.id > e2.id;
+
+
+HIGHEST SALARY PER DEPARTMENT:
+
+SELECT e.*
+FROM Employee e
+WHERE e.salary = (
+    SELECT MAX(e2.salary)
+    FROM Employee e2
+    WHERE e2.department = e.department
+);
+
+
+COUNT PER DEPARTMENT:
+
+SELECT department, COUNT(*)
+FROM Employee
+GROUP BY department;
+
+
+======================================================================
+PART 6.9 STATUS
+======================================================================
+
+Q244 ✓
+Q245 ✓
+Q246 ✓
+Q247 ✓
+Q248 ✓
+Q249 ✓
+Q250 ✓
+
+              7 / 7 COMPLETE ✓
+
+======================================================================
+PART 6 – SQL & DBMS STATUS
+======================================================================
+
+SQL Basics                 → Completed ✓
+Constraints                → Completed ✓
+Joins                      → Completed ✓
+Aggregate Functions        → Completed ✓
+Subqueries                 → Completed ✓
+NULL Handling              → Completed ✓
+Window Functions           → Completed ✓
+Transactions               → Completed ✓
+Practical SQL              → Completed ✓
+
+Remaining:
+→ DBMS
+
+Next:
+
+Q251. What is DBMS?
+
+Part 6 Remaining:
+14 meaningful questions
+======================================================================
