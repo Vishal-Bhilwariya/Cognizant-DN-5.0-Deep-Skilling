@@ -882,4 +882,649 @@ JVM compiles Java.
 
 JVM executes bytecode and converts it into machine code.
 
+====================================================================== 
 ======================================================================
+             JAVA OOPS INTERVIEW REVISION NOTES
+                 PART 2.1 – OOP FUNDAMENTALS
+======================================================================
+
+Questions Covered
+
+✓ Q1. What is Object-Oriented Programming (OOP)?
+✓ Q2. Explain the four pillars of OOP.
+✓ Q3. What is a class?
+✓ Q4. What is an object?
+✓ Q5. Relationship between class and object.
+✓ Q6. How are objects created in Java?
+✓ Q7. Purpose of the new keyword.
+✓ Q8. Where are objects stored in memory?
+
+
+======================================================================
+1. WHAT IS OBJECT-ORIENTED PROGRAMMING (OOP)?
+----------------------------------------------------------------------
+
+Interview Answer
+
+Object-Oriented Programming (OOP) is a programming paradigm
+that organizes software around objects rather than functions.
+
+An object contains
+
+• State (Data/Attributes)
+• Behavior (Methods)
+
+OOP is based on four fundamental principles
+
+• Encapsulation
+• Inheritance
+• Polymorphism
+• Abstraction
+
+Advantages
+
+• Code Reusability
+• Better Security (Data Hiding)
+• Easy Maintenance
+• Scalability
+• Modularity
+
+
+======================================================================
+2. FOUR PILLARS OF OOP
+----------------------------------------------------------------------
+
+1. Encapsulation
+
+Definition
+
+Wrapping data and methods into a single unit (class)
+and restricting direct access using private variables.
+
+Real World Example
+
+Bank Account
+
+Balance is private.
+Users access it only through deposit() and withdraw().
+
+--------------------------------------------------
+
+2. Inheritance
+
+Definition
+
+Acquiring properties and methods of a parent class
+using the extends keyword.
+
+Purpose
+
+Code Reusability
+
+Real World Example
+
+Vehicle
+
+↓
+
+Car
+
+--------------------------------------------------
+
+3. Polymorphism
+
+Definition
+
+One Interface, Many Forms
+
+Same method behaves differently for different objects.
+
+Real World Example
+
+One Person
+
+↓
+
+Father
+
+Son
+
+Husband
+
+--------------------------------------------------
+
+4. Abstraction
+
+Definition
+
+Hiding implementation details and exposing only the
+essential functionality.
+
+Real World Example
+
+Driving a Car
+
+User knows
+
+Accelerator
+
+Brake
+
+Steering
+
+User doesn't know
+
+Engine Working
+
+
+======================================================================
+3. WHAT IS A CLASS?
+----------------------------------------------------------------------
+
+Definition
+
+A class is a blueprint or template used to create objects.
+
+A class contains
+
+• Fields (Variables)
+• Methods (Functions)
+
+Example
+
+class Student
+
+Fields
+
+name
+
+age
+
+marks
+
+Methods
+
+setName()
+
+getMarks()
+
+display()
+
+
+======================================================================
+4. WHAT IS AN OBJECT?
+----------------------------------------------------------------------
+
+Definition
+
+An object is an instance of a class.
+
+It represents a real-world entity and contains
+
+• State (Data)
+• Behavior (Methods)
+
+Example
+
+Student s1 = new Student();
+
+Student s2 = new Student();
+
+Both are objects of Student class.
+
+Each object has different values.
+
+
+======================================================================
+5. RELATIONSHIP BETWEEN CLASS & OBJECT
+----------------------------------------------------------------------
+
+Class
+
+Blueprint
+
+↓
+
+Object
+
+Instance
+
+One class
+
+↓
+
+Multiple Objects
+
+Example
+
+Student Class
+
+↓
+
+student1
+
+student2
+
+student3
+
+Memory
+
+Class Metadata
+
+↓
+
+JVM Metaspace
+
+Object
+
+↓
+
+Heap Memory
+
+
+======================================================================
+6. HOW ARE OBJECTS CREATED?
+----------------------------------------------------------------------
+
+Objects are created using the new keyword.
+
+Syntax
+
+Student s1 = new Student();
+
+Here
+
+Student
+
+↓
+
+Class
+
+s1
+
+↓
+
+Reference Variable
+
+new Student()
+
+↓
+
+Creates Object
+
+Calls Constructor
+
+Allocates Heap Memory
+
+
+======================================================================
+7. PURPOSE OF new KEYWORD
+----------------------------------------------------------------------
+
+The new keyword
+
+• Creates Object
+• Allocates Heap Memory
+• Calls Constructor
+• Returns Object Reference
+
+Example
+
+Student s1 = new Student();
+
+
+======================================================================
+8. WHERE ARE OBJECTS STORED?
+----------------------------------------------------------------------
+
+Objects
+
+↓
+
+Heap Memory
+
+Reference Variables (Local)
+
+↓
+
+Stack Memory
+
+Example
+
+Student s1 = new Student();
+
+Stack
+
+↓
+
+s1
+
+Heap
+
+↓
+
+Student Object
+
+
+======================================================================
+MEMORY DIAGRAM
+----------------------------------------------------------------------
+
+                 JVM
+
+        +--------------------+
+
+              STACK
+
+        +--------------------+
+
+        s1
+         │
+
+         ▼
+
+        +--------------------+
+
+              HEAP
+
+        +--------------------+
+
+        Student Object
+
+        name
+
+        age
+
+        marks
+
+        methods
+
+        +--------------------+
+
+Class Metadata
+
+↓
+
+Metaspace
+
+
+======================================================================
+QUICK REVISION
+----------------------------------------------------------------------
+
+✔ OOP
+
+Programming using Objects
+
+--------------------------------------------------
+
+✔ Four Pillars
+
+Encapsulation
+
+Inheritance
+
+Polymorphism
+
+Abstraction
+
+--------------------------------------------------
+
+✔ Class
+
+Blueprint
+
+Contains
+
+Variables + Methods
+
+--------------------------------------------------
+
+✔ Object
+
+Instance of Class
+
+Real World Entity
+
+--------------------------------------------------
+
+✔ One Class
+
+↓
+
+Many Objects
+
+--------------------------------------------------
+
+✔ Object Creation
+
+Student s1 = new Student();
+
+--------------------------------------------------
+
+✔ new Keyword
+
+Creates Object
+
+Allocates Heap Memory
+
+Calls Constructor
+
+Returns Reference
+
+--------------------------------------------------
+
+✔ Memory
+
+Object
+
+↓
+
+Heap
+
+Reference Variable
+
+↓
+
+Stack
+
+Class Metadata
+
+↓
+
+Metaspace
+
+
+======================================================================
+INTERVIEW TRAPS
+----------------------------------------------------------------------
+
+❌ Don't Say
+
+Class is an object.
+
+✅ Say
+
+A class is a blueprint, whereas an object is an instance
+of that class.
+
+--------------------------------------------------
+
+❌ Don't Say
+
+new only creates an object.
+
+✅ Say
+
+The new keyword allocates Heap memory, invokes the
+constructor, and returns the object reference.
+
+--------------------------------------------------
+
+❌ Don't Say
+
+Objects are stored in Stack.
+
+✅ Say
+
+Objects are stored in Heap.
+
+Reference variables (local variables) are stored in Stack.
+
+--------------------------------------------------
+
+❌ Don't Say
+
+OOP provides security.
+
+✅ Say
+
+Encapsulation provides data hiding, which improves security.
+
+--------------------------------------------------
+
+❌ Don't Say
+
+All properties are copied from parent to child.
+
+✅ Say
+
+A child class inherits the accessible fields and methods
+of the parent class.
+
+======================================================================
+
+======================================================================
+             JAVA OOPS INTERVIEW REVISION NOTES
+                 PART 2.2 – ENCAPSULATION
+======================================================================
+
+Questions Covered
+
+✓ Q9. What is Encapsulation?
+✓ Q10. Explain Encapsulation with a real-world example.
+✓ Q11. Why do we use Getters and Setters?
+✓ Q12. Write a Java program demonstrating Encapsulation.
+
+
+======================================================================
+1. WHAT IS ENCAPSULATION?
+----------------------------------------------------------------------
+
+Interview Answer
+
+Encapsulation is the process of wrapping data (fields)
+and methods into a single unit called a class while
+restricting direct access to the data.
+
+It is achieved by
+
+• Declaring variables as private
+• Providing public Getter and Setter methods
+
+Benefits
+
+• Data Hiding
+• Security
+• Controlled Access
+• Better Maintainability
+• Better Modularity
+
+
+======================================================================
+2. REAL-WORLD EXAMPLE OF ENCAPSULATION
+----------------------------------------------------------------------
+
+Example
+
+Bank Account
+
+The account balance is private.
+
+Users cannot directly modify it.
+
+Instead,
+
+Bank provides methods like
+
+getBalance()
+
+deposit()
+
+withdraw()
+
+These methods control how the balance is accessed
+and modified.
+
+This is Encapsulation.
+
+
+======================================================================
+3. WHY DO WE USE GETTERS AND SETTERS?
+----------------------------------------------------------------------
+
+Getter
+
+Used to read the value of a private variable.
+
+Setter
+
+Used to update the value of a private variable.
+
+Purpose
+
+• Controlled Access
+• Data Hiding
+• Validation
+• Security
+• Maintainability
+
+Example
+
+private int age;
+
+public int getAge()
+
+public void setAge(int age)
+
+
+======================================================================
+4. ENCAPSULATION PROGRAM
+----------------------------------------------------------------------
+
+```java
+class Bank {
+
+    private String name;
+    private int balance;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Bank b = new Bank();
+
+        b.setName("Vishal");
+        b.setBalance(5000);
+
+        System.out.println(b.getName());
+        System.out.println(b.getBalance());
+    }
+}
