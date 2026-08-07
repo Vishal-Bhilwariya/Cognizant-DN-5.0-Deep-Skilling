@@ -11224,3 +11224,225 @@ Next Topic:
 Part 6 Remaining:
 35 meaningful questions
 ======================================================================
+
+======================================================================
+             PART 6.4 – SQL AGGREGATE FUNCTIONS | INTERVIEW NOTES
+======================================================================
+
+QUESTIONS COVERED:
+
+✓ Q224. COUNT(), SUM(), AVG(), MIN(), MAX()
+✓ Q225. COUNT(*) vs COUNT(column_name)
+
+
+======================================================================
+Q224. WHAT ARE AGGREGATE FUNCTIONS?
+======================================================================
+
+Interview Answer:
+
+Aggregate functions perform calculations on a set of rows and return
+a single result for each group.
+
+Common aggregate functions:
+
+• COUNT()
+• SUM()
+• AVG()
+• MIN()
+• MAX()
+
+
++----------+--------------------------------------+
+| Function | Purpose                              |
++----------+--------------------------------------+
+| COUNT()  | Counts rows/values                   |
+| SUM()    | Calculates total                     |
+| AVG()    | Calculates average                   |
+| MIN()    | Finds minimum value                  |
+| MAX()    | Finds maximum value                  |
++----------+--------------------------------------+
+
+
+Example:
+
+SELECT
+    COUNT(*) AS total_employees,
+    SUM(salary) AS total_salary,
+    AVG(salary) AS average_salary,
+    MIN(salary) AS minimum_salary,
+    MAX(salary) AS maximum_salary
+FROM Employee;
+
+
+If:
+
+salary
+-------
+20000
+30000
+40000
+
+
+Result:
+
+COUNT → 3
+SUM   → 90000
+AVG   → 30000
+MIN   → 20000
+MAX   → 40000
+
+
+Memory Trick:
+
+COUNT → How many?
+SUM   → How much total?
+AVG   → What's the average?
+MIN   → What's the smallest?
+MAX   → What's the largest?
+
+
+======================================================================
+Q225. COUNT(*) vs COUNT(column_name)
+======================================================================
+
+Interview Answer:
+
+COUNT(*) counts all rows returned by the query, regardless of NULL
+values in individual columns.
+
+COUNT(column_name) counts only the non-NULL values in the specified
+column.
+
+
+Example:
+
+Employee
++----+--------+
+| id | salary |
++----+--------+
+| 1  | 30000  |
+| 2  | NULL   |
+| 3  | 40000  |
++----+--------+
+
+
+Query:
+
+SELECT COUNT(*) FROM Employee;
+
+Result:
+
+3
+
+Because there are 3 rows.
+
+
+Query:
+
+SELECT COUNT(salary) FROM Employee;
+
+Result:
+
+2
+
+Because COUNT(salary) ignores the NULL salary.
+
+
+Memory Trick:
+
+COUNT(*)
+→ Count ALL ROWS
+
+COUNT(column)
+→ Count NON-NULL VALUES
+
+
+IMPORTANT INTERVIEW POINT:
+
+COUNT(column_name) does NOT count NULL values.
+
+
+======================================================================
+COMMON INTERVIEW TRAPS – AGGREGATE FUNCTIONS
+======================================================================
+
+1. COUNT(*)
+
+✓ Counts all rows.
+
+❌ Does not ignore a row just because one of its columns is NULL.
+
+
+2. COUNT(column_name)
+
+✓ Counts non-NULL values in that column.
+
+❌ Does not count NULL values.
+
+
+3. SUM()
+
+→ Calculates total of numeric values.
+
+
+4. AVG()
+
+→ Calculates average of numeric values.
+
+
+5. MIN() / MAX()
+
+→ Find minimum / maximum values.
+
+
+======================================================================
+QUICK REVISION – 30 SECONDS
+======================================================================
+
+COUNT → Number
+SUM   → Total
+AVG   → Average
+MIN   → Smallest
+MAX   → Largest
+
+
+COUNT(*)
+→ ALL ROWS
+
+
+COUNT(column)
+→ NON-NULL VALUES
+
+
+Example:
+
+salary
+-------
+20000
+NULL
+40000
+
+COUNT(*)       → 3
+COUNT(salary)  → 2
+SUM(salary)    → 60000
+AVG(salary)    → 30000
+MIN(salary)    → 20000
+MAX(salary)    → 40000
+
+
+======================================================================
+PART 6.4 STATUS
+======================================================================
+
+Q224 ✓
+Q225 ✓
+
+              2 / 2 COMPLETE ✓
+
+Next Topic:
+→ SUBQUERIES
+
+Part 6 Remaining:
+33 meaningful questions
+======================================================================
