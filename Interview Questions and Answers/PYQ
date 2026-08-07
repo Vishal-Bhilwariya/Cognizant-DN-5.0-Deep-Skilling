@@ -4015,3 +4015,1068 @@ TOTAL UNIQUE QUESTIONS IN THESE PARTS: 18
 
 Repeated questions were skipped as requested.
 ======================================================================
+
+======================================================================
+             JAVA OOPS INTERVIEW REVISION NOTES
+                 PART 2.9 – OOP CODING QUESTIONS
+======================================================================
+
+Questions Covered
+
+✓ Q61. Write a Java program to demonstrate method overloading.
+✓ Q62. Write a Java program demonstrating runtime polymorphism.
+✓ Q63. Write a Java program using encapsulation (getters/setters).
+✓ Q64. Design a Student Management System using OOP concepts.
+✓ Q65. Design a Travel Booking System using OOP concepts.
+
+
+======================================================================
+Q61. METHOD OVERLOADING
+----------------------------------------------------------------------
+
+Definition:
+
+Method overloading means defining multiple methods with the same
+name but different parameter lists.
+
+Example:
+
+class Calculator {
+
+    void add() {
+        System.out.println("No arguments");
+    }
+
+    void add(int a) {
+        System.out.println(a);
+    }
+
+    void add(int a, int b) {
+        System.out.println(a + b);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Calculator c = new Calculator();
+
+        c.add();
+        c.add(10);
+        c.add(10, 20);
+    }
+}
+
+
+Output:
+
+No arguments
+10
+30
+
+
+Key Point:
+
+add()
+add(int)
+add(int, int)
+
+Same method name
++
+Different parameters
+=
+Method Overloading
+
+
+Interview Concept:
+
+Method overloading is compile-time polymorphism because the
+compiler determines which method to call based on the arguments.
+
+
+IMPORTANT TRAP:
+
+Changing only the return type does NOT create method overloading.
+
+int add(int a)
+double add(int a)    // ❌ Invalid
+
+
+======================================================================
+Q62. RUNTIME POLYMORPHISM
+----------------------------------------------------------------------
+
+Definition:
+
+Runtime polymorphism occurs when a parent reference refers to a
+child object and an overridden method is selected at runtime.
+
+Example:
+
+class Animal {
+
+    void sound() {
+        System.out.println("Animal");
+    }
+}
+
+class Cat extends Animal {
+
+    @Override
+    void sound() {
+        System.out.println("Cat");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Animal a = new Cat();
+
+        a.sound();
+    }
+}
+
+
+Output:
+
+Cat
+
+
+How it works:
+
+Animal a = new Cat();
+       ↑        ↑
+ Reference    Object
+  Type        Type
+
+
+a.sound();
+
+        ↓
+
+Actual object = Cat
+
+        ↓
+
+Cat.sound() executes
+
+
+Important Terms:
+
+Parent reference
+      +
+Child object
+      +
+Method overriding
+      ↓
+Runtime Polymorphism
+
+
+Interview Answer:
+
+> Runtime polymorphism is achieved through method overriding,
+> where a parent class reference refers to a child class object
+> and the overridden method is resolved at runtime.
+
+
+======================================================================
+Q63. ENCAPSULATION USING GETTERS AND SETTERS
+----------------------------------------------------------------------
+
+Definition:
+
+Encapsulation means bundling data and methods together while
+restricting direct access to internal data.
+
+Example:
+
+class Animal {
+
+    private String name;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Animal a = new Animal();
+
+        a.setName("Cat");
+
+        System.out.println(a.getName());
+    }
+}
+
+
+Output:
+
+Cat
+
+
+Working:
+
+private String name;
+        ↓
+Direct access restricted
+        ↓
+setName()
+        ↓
+Modify data
+
+getName()
+        ↓
+Access data
+
+
+Important:
+
+Getter → retrieves/returns data
+
+Setter → modifies/updates data
+
+
+Interview Trap:
+
+Getter and setter alone do not define encapsulation.
+
+The main idea is:
+
+> Bundling data and methods together while restricting direct
+> access to the internal data.
+
+
+======================================================================
+Q64. STUDENT MANAGEMENT SYSTEM
+----------------------------------------------------------------------
+
+Requirements:
+
+• Class
+• Object
+• Constructor
+• Getters
+• Setters
+• Encapsulation
+
+
+Program:
+
+class Student {
+
+    private int id;
+    private String name;
+    private int age;
+
+    // Constructor
+    Student(int id, String name, int age) {
+
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
+
+    // Getters
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    // Setters
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void display() {
+
+        System.out.println("ID   : " + id);
+        System.out.println("Name : " + name);
+        System.out.println("Age  : " + age);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Student s1 =
+            new Student(101, "Vishal", 21);
+
+        s1.display();
+
+        s1.setName("Rahul");
+        s1.setAge(22);
+
+        System.out.println("\nAfter Update:");
+
+        s1.display();
+    }
+}
+
+
+OOP Concepts Used:
+
+Student
+   ↓
+Class
+   ↓
+Private fields
+   ↓
+Encapsulation
+   ↓
+Constructor
+   ↓
+Object creation
+   ↓
+Getters / Setters
+
+
+Interview Answer:
+
+> I created a Student class containing private student details.
+> The constructor initializes the object, while getters and
+> setters provide controlled access to the fields. The main
+> method creates and manages Student objects.
+
+
+======================================================================
+Q65. TRAVEL BOOKING SYSTEM USING OOP
+----------------------------------------------------------------------
+
+A simple interview-friendly design:
+
+class TravelBooking {
+
+    private String passengerName;
+    private String destination;
+    private double fare;
+
+    // Constructor
+    TravelBooking(String passengerName,
+                  String destination,
+                  double fare) {
+
+        this.passengerName = passengerName;
+        this.destination = destination;
+        this.fare = fare;
+    }
+
+    // Getters
+    public String getPassengerName() {
+        return passengerName;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public double getFare() {
+        return fare;
+    }
+
+    // Setter
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
+
+    public void displayBooking() {
+
+        System.out.println(
+            "Passenger   : " + passengerName
+        );
+
+        System.out.println(
+            "Destination : " + destination
+        );
+
+        System.out.println(
+            "Fare        : " + fare
+        );
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        TravelBooking booking =
+            new TravelBooking(
+                "Vishal",
+                "Delhi",
+                5000
+            );
+
+        booking.displayBooking();
+
+        booking.setDestination("Mumbai");
+
+        System.out.println("\nUpdated Booking:");
+
+        booking.displayBooking();
+    }
+}
+
+
+OOP Concepts Used:
+
+                TravelBooking
+                      |
+       +--------------+--------------+
+       |              |              |
+ Encapsulation    Constructor      Object
+       |              |              |
+ private fields   Initialize      new TravelBooking()
+       |
+ getters/setters
+
+
+Interview Answer:
+
+> I designed a TravelBooking class containing passenger name,
+> destination, and fare. I used encapsulation by keeping fields
+> private and providing getters and setters. The constructor
+> initializes booking details, and objects represent individual
+> travel bookings.
+
+
+======================================================================
+IMPORTANT CODING PATTERNS
+----------------------------------------------------------------------
+
+1. METHOD OVERLOADING
+
+Same method name
+       +
+Different parameter list
+       ↓
+Compile-time polymorphism
+
+
+2. RUNTIME POLYMORPHISM
+
+Parent reference
+       +
+Child object
+       +
+Method overriding
+       ↓
+Runtime polymorphism
+
+
+Example:
+
+Animal a = new Cat();
+
+
+3. ENCAPSULATION
+
+private fields
+       +
+getters/setters
+       ↓
+Controlled access
+
+
+4. CONSTRUCTOR
+
+new Student(...)
+       ↓
+Constructor executes
+       ↓
+Object initialized
+
+
+5. BASIC OOP DESIGN
+
+Class
+  ↓
+Private fields
+  ↓
+Constructor
+  ↓
+Getters/Setters
+  ↓
+Methods
+  ↓
+Objects
+
+
+======================================================================
+COMMON INTERVIEW TRAPS
+----------------------------------------------------------------------
+
+❌ Same method name alone means overloading.
+
+✅ Same name + different parameter list.
+
+
+❌ Runtime polymorphism happens because of constructor.
+
+✅ Runtime polymorphism happens through method overriding and
+   dynamic method dispatch.
+
+
+❌ Getter/setter automatically means encapsulation.
+
+✅ Encapsulation means bundling data and behavior while restricting
+   direct access to internal data.
+
+
+❌ `Animal a = new Cat();` creates an Animal object.
+
+✅ It creates a Cat object with an Animal reference.
+
+
+❌ Changing return type creates method overloading.
+
+✅ Parameter list must be different.
+
+
+======================================================================
+QUICK REVISION
+----------------------------------------------------------------------
+
+Q61 → Method Overloading
+      Same name + different parameters
+      → Compile-time polymorphism
+
+Q62 → Runtime Polymorphism
+      Parent reference + child object
+      → Method overriding
+      → Runtime method selection
+
+Q63 → Encapsulation
+      private fields + getters/setters
+
+Q64 → Student Management
+      Class + Object + Constructor + Encapsulation
+
+Q65 → Travel Booking
+      Class + Object + Constructor + Encapsulation
+
+
+======================================================================
+STATUS
+----------------------------------------------------------------------
+
+PART 2.9 – OOP CODING QUESTIONS
+
+Q61 → Method Overloading                ✅
+Q62 → Runtime Polymorphism              ✅
+Q63 → Encapsulation                     ✅
+Q64 → Student Management System         ✅
+Q65 → Travel Booking System             ✅
+
+STATUS: ✅ COMPLETED
+
+======================================================================
+JAVA OOPS INTERVIEW SET – CURRENT STATUS
+----------------------------------------------------------------------
+
+OOP Fundamentals        ✅
+Encapsulation            ✅
+Inheritance              ✅
+Polymorphism             ✅
+Abstraction & Interface  ✅
+Packages & Access        ✅
+Constructors             ✅
+Operator Overloading     ✅
+OOP Coding Questions     ✅
+
+ALL PROVIDED QUESTIONS COMPLETED
+======================================================================
+
+======================================================================
+              JAVA COLLECTIONS FRAMEWORK INTERVIEW NOTES
+                  PART 3.1 – COLLECTIONS BASICS
+======================================================================
+
+Questions Covered
+
+✓ Q66. What is the Java Collections Framework?
+✓ Q68. Difference between Collection and Collections
+✓ Q69. What is the hierarchy of the Collections Framework?
+✓ Q70. What is a List?
+✓ Q71. Difference between Array and ArrayList
+✓ Q72. Difference between ArrayList and LinkedList
+
+
+======================================================================
+Q66. WHAT IS THE JAVA COLLECTIONS FRAMEWORK?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+The Java Collections Framework is a unified architecture of
+interfaces, classes, and algorithms used to store and manipulate
+groups of objects efficiently.
+
+It provides data structures such as:
+
+• List
+• Set
+• Queue
+• Map
+
+Common implementations:
+
+• ArrayList
+• LinkedList
+• HashSet
+• TreeSet
+• HashMap
+• TreeMap
+
+
+Important:
+
+Collections Framework does NOT simply "reduce time complexity".
+
+Different implementations provide different performance
+characteristics for different operations.
+
+
+======================================================================
+Q68. COLLECTION vs COLLECTIONS
+----------------------------------------------------------------------
+
+Collection:
+
+→ An interface
+→ Represents a group of objects
+→ Part of the Collections Framework
+
+Collections:
+
+→ A utility class
+→ Contains static utility methods for manipulating collections
+
+Example:
+
+List<Integer> list = new ArrayList<>();
+
+Collection<Integer> c = list;
+
+Collections.sort(list);
+Collections.reverse(list);
+
+
+Memory Trick:
+
+Collection
+    ↓
+INTERFACE
+    ↓
+Represents collection of objects
+
+
+Collections
+    ↓
+UTILITY CLASS
+    ↓
+Provides utility methods
+
+
+Common Collections methods:
+
+Collections.sort()
+Collections.reverse()
+Collections.min()
+Collections.max()
+Collections.shuffle()
+
+
+IMPORTANT INTERVIEW TRAP:
+
+Collection ≠ Collections
+
+Collection  → Interface
+Collections → Utility class
+
+
+======================================================================
+Q69. COLLECTIONS FRAMEWORK HIERARCHY
+----------------------------------------------------------------------
+
+Conceptual hierarchy:
+
+                         Iterable
+                            |
+                       Collection
+                            |
+              +-------------+-------------+
+              |             |             |
+             List           Set          Queue
+              |             |             |
+       +------+-----+    +---+---+     PriorityQueue
+       |            |    |       |
+   ArrayList    LinkedList HashSet TreeSet
+                           |
+                      LinkedHashSet
+
+
+Map is a SEPARATE hierarchy:
+
+                         Map
+                          |
+              +-----------+-----------+
+              |           |           |
+           HashMap     TreeMap    Hashtable
+              |
+        LinkedHashMap
+
+
+IMPORTANT:
+
+Map does NOT extend Collection.
+
+Remember:
+
+Collection
+   |
+   +-- List
+   +-- Set
+   +-- Queue
+
+Map
+   |
+   +-- HashMap
+   +-- TreeMap
+   +-- LinkedHashMap
+   +-- Hashtable
+
+
+======================================================================
+Q70. WHAT IS A LIST?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+List is an interface in the Java Collections Framework that
+represents an ordered collection of elements.
+
+It:
+
+✓ Maintains insertion order
+✓ Allows duplicate elements
+✓ Supports index-based access
+
+Common implementations:
+
+• ArrayList
+• LinkedList
+
+
+Example:
+
+List<String> names = new ArrayList<>();
+
+names.add("Vishal");
+names.add("Rahul");
+names.add("Vishal");
+
+
+Result:
+
+[Vishal, Rahul, Vishal]
+
+
+Memory Trick:
+
+List
+ ↓
+Ordered
+ ↓
+Duplicates allowed
+ ↓
+Index-based access
+
+
+======================================================================
+Q71. ARRAY vs ARRAYLIST
+----------------------------------------------------------------------
+
++------------------+-------------------------+----------------------+
+| Feature          | Array                   | ArrayList             |
++------------------+-------------------------+----------------------+
+| Size             | Fixed                   | Dynamic               |
+| Index access     | Yes                     | Yes                   |
+| Duplicates       | Yes                     | Yes                   |
+| Primitive types  | Yes                     | No, uses wrappers     |
+| add/remove APIs  | No collection APIs      | Yes                   |
+| Random access     | O(1)                    | O(1)                  |
++------------------+-------------------------+----------------------+
+
+Array:
+
+int[] arr = new int[5];
+
+Size is fixed after creation.
+
+
+ArrayList:
+
+ArrayList<Integer> list = new ArrayList<>();
+
+list.add(10);
+list.add(20);
+list.add(30);
+
+
+ArrayList automatically manages its internal resizable array.
+
+
+IMPORTANT:
+
+ArrayList does not require the programmer to specify an initial
+capacity, although internally it uses a backing array whose
+capacity can grow.
+
+
+Memory Trick:
+
+Array     → Fixed size
+ArrayList → Dynamic size
+
+
+======================================================================
+Q72. ARRAYLIST vs LINKEDLIST
+----------------------------------------------------------------------
+
+ArrayList:
+
+→ Internally uses a dynamically resizable array.
+
+LinkedList:
+
+→ Uses a doubly linked list.
+→ Each node contains data and references to neighboring nodes.
+
+
+Both:
+
+✓ Maintain insertion order
+✓ Allow duplicates
+✓ Implement List
+✓ Support index-based access
+
+
+Performance:
+
++-------------------------+------------+------------+
+| Operation               | ArrayList  | LinkedList |
++-------------------------+------------+------------+
+| get(index)              | O(1)       | O(n)       |
+| set(index, value)       | O(1)       | O(n)       |
+| add(element) at end     | O(1)*      | O(1)       |
+| insert at middle        | O(n)       | O(n)**     |
+| remove at middle        | O(n)       | O(n)**     |
++-------------------------+------------+------------+
+
+* Amortized O(1)
+
+** Finding the position/node can take O(n). Once the node is
+   already known, LinkedList insertion/removal can be O(1).
+
+
+WHY IS ARRAYLIST GET O(1)?
+
+ArrayList uses an array.
+
+Example:
+
+list.get(3)
+
+The required index can be directly accessed.
+
+
+WHY IS LINKEDLIST GET O(n)?
+
+LinkedList must traverse nodes until it reaches the required
+position.
+
+
+======================================================================
+WHEN TO PREFER WHICH?
+----------------------------------------------------------------------
+
+Choose ArrayList when:
+
+✓ Frequent random/index-based access is required
+✓ Reads are more frequent
+✓ Insertions/deletions in the middle are relatively uncommon
+
+
+Choose LinkedList when:
+
+✓ Frequent insertion/deletion at the beginning/end is required
+✓ Random access is not a major requirement
+
+
+Memory Trick:
+
+ArrayList
+    ↓
+FAST ACCESS
+
+
+LinkedList
+    ↓
+FAST INSERT/DELETE AT ENDS
+
+
+======================================================================
+COMMON INTERVIEW TRAPS
+----------------------------------------------------------------------
+
+❌ "ArrayList is fixed size."
+
+✅ ArrayList is dynamically resizable.
+
+
+❌ "LinkedList always has O(1) insertion."
+
+✅ Insertion can be O(1) after reaching/knowing the required node.
+   Finding the position can take O(n).
+
+
+❌ "LinkedList is always better for insertion/deletion."
+
+✅ It depends on where the operation occurs and whether the node
+   is already known.
+
+
+❌ "Map extends Collection."
+
+✅ Map is a separate hierarchy.
+
+
+❌ "Collection and Collections are the same."
+
+✅ Collection → Interface
+   Collections → Utility class
+
+
+❌ "ArrayList and LinkedList are interfaces."
+
+✅ Both are concrete implementations of the List interface.
+
+
+======================================================================
+QUICK REVISION
+----------------------------------------------------------------------
+
+Collections Framework
+→ Interfaces + implementations + algorithms
+
+
+Collection
+→ Interface
+
+
+Collections
+→ Utility class
+
+
+List
+→ Ordered + duplicates + index access
+
+
+Array
+→ Fixed size
+
+
+ArrayList
+→ Dynamic array + fast random access
+
+
+LinkedList
+→ Doubly linked list + efficient operations at known/end nodes
+
+
+ArrayList get()
+→ O(1)
+
+
+LinkedList get()
+→ O(n)
+
+
+ArrayList
+→ Prefer for frequent access
+
+
+LinkedList
+→ Useful for frequent insertion/deletion at ends
+
+
+Map
+→ Separate from Collection hierarchy
+
+
+======================================================================
+ONE-MINUTE INTERVIEW REVISION
+----------------------------------------------------------------------
+
+Q: What is Collections Framework?
+A: A unified architecture of interfaces, classes, and algorithms
+   for storing and manipulating groups of objects.
+
+Q: Collection vs Collections?
+A: Collection is an interface; Collections is a utility class.
+
+Q: What is List?
+A: An ordered collection that allows duplicates and index-based
+   access.
+
+Q: Array vs ArrayList?
+A: Array has fixed size; ArrayList is dynamically resizable.
+
+Q: ArrayList vs LinkedList?
+A: ArrayList uses a dynamic array and provides O(1) random access;
+   LinkedList uses a doubly linked list and provides O(n) indexed
+   access.
+
+
+======================================================================
+STATUS
+----------------------------------------------------------------------
+
+PART 3.1 – COLLECTIONS BASICS
+
+Q66 → ✅
+Q68 → ✅
+Q69 → ✅
+Q70 → ✅
+Q71 → ✅
+Q72 → ✅
+
+STATUS: ✅ COMPLETED
+
+Meaningful questions remaining overall: 18
+
+NEXT SECTION:
+PART 3.2 – SET
+Questions remaining in section: 3
+======================================================================
