@@ -7285,3 +7285,725 @@ Meaningful questions remaining:
 PART 3 – COLLECTIONS FRAMEWORK
                        ✅ COMPLETED
 ======================================================================
+
+======================================================================
+       PART 4.1 – EXCEPTION HANDLING | INTERVIEW REVISION NOTES
+======================================================================
+
+Questions Covered:
+
+✓ Q101. What is an exception?
+✓ Q102. What is exception handling?
+✓ Q104. Exception hierarchy
+✓ Q105. Checked vs Unchecked Exceptions
+✓ Q106. try-catch
+✓ Q107. finally
+✓ Q108. try without catch
+✓ Q109. throw vs throws
+✓ Q111. Custom Exception
+✓ Q112. Exception Propagation
+✓ Q113. try-with-resources
+
+
+======================================================================
+Q101. WHAT IS AN EXCEPTION?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+An exception is an abnormal condition or event that occurs during
+program execution and disrupts the normal flow of the program.
+
+Example:
+
+int result = 10 / 0;
+
+→ ArithmeticException
+
+
+Memory:
+
+Exception
+   ↓
+Abnormal condition
+   ↓
+Normal flow interrupted
+   ↓
+Can be handled using exception handling
+
+
+======================================================================
+Q102. WHAT IS EXCEPTION HANDLING?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+Exception handling is a mechanism in Java used to handle exceptions
+so that the program can respond to abnormal situations gracefully
+instead of terminating unexpectedly.
+
+Java provides:
+
+• try
+• catch
+• finally
+• throw
+• throws
+
+
+Important:
+
+Exception handling does not mean that an exception never occurs.
+It means we handle the exception appropriately.
+
+
+======================================================================
+Q104. EXCEPTION HIERARCHY
+----------------------------------------------------------------------
+
+                    Throwable
+                   /         \
+                  /           \
+               Error        Exception
+                             /       \
+                            /         \
+                Checked Exception   RuntimeException
+                                      |
+                              Unchecked Exceptions
+
+
+Examples:
+
+Error
+├── OutOfMemoryError
+└── StackOverflowError
+
+Exception
+├── IOException          → Checked
+├── SQLException         → Checked
+└── RuntimeException     → Unchecked
+    ├── NullPointerException
+    ├── ArithmeticException
+    └── ArrayIndexOutOfBoundsException
+
+
+Important:
+
+Error
+→ Serious JVM/system-level problem
+→ Generally not handled by application code
+
+Exception
+→ Application-level abnormal condition
+→ Generally can be handled
+
+
+Interview Trap:
+
+RuntimeException is itself an Exception.
+
+Its subclasses are called unchecked exceptions because the compiler
+does not force us to handle or declare them.
+
+
+======================================================================
+Q105. CHECKED vs UNCHECKED EXCEPTIONS
+----------------------------------------------------------------------
+
+Interview Answer:
+
+Checked exceptions are exceptions for which the compiler requires
+the programmer to handle or declare them.
+
+Unchecked exceptions are RuntimeException subclasses for which the
+compiler does not force handling or declaration.
+
+
++----------------------+-------------------------+
+| Checked              | Unchecked               |
++----------------------+-------------------------+
+| Compiler enforced    | Not compiler enforced   |
+| Handle or declare    | No requirement          |
+| IOException          | NullPointerException    |
+| SQLException         | ArithmeticException     |
++----------------------+-------------------------+
+
+
+Example Checked:
+
+FileReader f = new FileReader("data.txt");
+
+May cause FileNotFoundException.
+
+Java requires handling or declaring it.
+
+
+Example Unchecked:
+
+int result = 10 / 0;
+
+→ ArithmeticException
+
+Compiler does not force us to catch it.
+
+
+Memory:
+
+CHECKED
+→ Compiler checks handling
+→ IOException
+
+UNCHECKED
+→ RuntimeException
+→ NullPointerException
+→ ArithmeticException
+
+
+IMPORTANT:
+
+The exception itself generally occurs at runtime.
+
+For checked exceptions, the compiler checks whether the exception
+has been handled or declared.
+
+
+======================================================================
+Q106. TRY-CATCH BLOCK
+----------------------------------------------------------------------
+
+Interview Answer:
+
+A try-catch block is used to handle exceptions in Java.
+
+Potentially risky code is placed inside the try block.
+
+If an exception occurs, the remaining statements in the try block
+are skipped and control transfers to the matching catch block.
+
+
+Example:
+
+try {
+    int result = 10 / 0;
+    System.out.println(result);
+}
+catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero");
+}
+
+
+Flow:
+
+try
+ ↓
+Exception occurs
+ ↓
+Remaining try statements skipped
+ ↓
+Matching catch
+ ↓
+Exception handled
+ ↓
+Program continues
+
+
+Important:
+
+The catch block should generally catch the appropriate exception
+type.
+
+
+======================================================================
+Q107. PURPOSE OF FINALLY
+----------------------------------------------------------------------
+
+Interview Answer:
+
+The finally block is used to execute cleanup or important code
+regardless of whether an exception occurs or not.
+
+It is commonly used for:
+
+• Closing files
+• Releasing database connections
+• Releasing resources
+• Cleanup operations
+
+
+Example:
+
+try {
+    int result = 10 / 0;
+}
+catch (ArithmeticException e) {
+    System.out.println("Exception handled");
+}
+finally {
+    System.out.println("Cleanup code");
+}
+
+
+Flow:
+
+try
+ ↓
+Exception?
+ ↓
+catch → Handle
+ ↓
+finally → Cleanup
+
+
+Memory:
+
+finally
+→ Cleanup
+
+
+Interview Trap:
+
+Do not say finally is specifically for printing important messages.
+
+Its standard purpose is resource cleanup.
+
+
+Note:
+
+"finally always runs" is a useful rule, but not an absolute guarantee
+if the JVM is forcibly terminated.
+
+
+======================================================================
+Q108. CAN TRY EXIST WITHOUT CATCH?
+----------------------------------------------------------------------
+
+Interview Answer:
+
+Yes, a try block can exist without a catch block, but it must be
+followed by a finally block.
+
+A try block cannot exist independently.
+
+
+Valid:
+
+try {
+    System.out.println("Business logic");
+}
+finally {
+    System.out.println("Cleanup");
+}
+
+
+Invalid:
+
+try {
+    System.out.println("Business logic");
+}
+
+
+Rule:
+
+try
+ ↓
+Must have at least one:
+   ├── catch
+   └── finally
+
+
+If an exception occurs and there is no catch, the exception is not
+handled there. After finally executes, it propagates to the caller.
+
+
+======================================================================
+Q109. throw vs throws
+----------------------------------------------------------------------
+
+Interview Answer:
+
+throw is used to explicitly throw an exception.
+
+throws is used in a method declaration to declare that a method may
+throw one or more exceptions.
+
+
+throw:
+
+if (age < 18) {
+    throw new IllegalArgumentException("Not eligible");
+}
+
+
+throws:
+
+public void readFile() throws IOException {
+    // file handling
+}
+
+
+Comparison:
+
++------------------+-----------------------------+
+| throw            | throws                      |
++------------------+-----------------------------+
+| Actually throws  | Declares possible exception |
+| Used inside code | Used in method signature    |
+| Usually one      | Can declare multiple       |
+| exception        | exceptions                 |
++------------------+-----------------------------+
+
+
+Memory:
+
+THROW
+→ "Throw it now!"
+
+THROWS
+→ "This method may throw it."
+
+
+======================================================================
+Q111. CUSTOM EXCEPTION
+----------------------------------------------------------------------
+
+Interview Answer:
+
+A custom exception is a user-defined exception created for
+application-specific error conditions.
+
+It can extend:
+
+• Exception → Checked custom exception
+• RuntimeException → Unchecked custom exception
+
+
+Example:
+
+class InvalidAgeException extends Exception {
+
+    InvalidAgeException(String message) {
+        super(message);
+    }
+}
+
+
+Using it:
+
+public static void checkAge(int age)
+        throws InvalidAgeException {
+
+    if (age < 18) {
+        throw new InvalidAgeException(
+            "Age must be 18 or above"
+        );
+    }
+}
+
+
+Understand:
+
+extends Exception
+→ Creates custom exception class
+
+throw new InvalidAgeException(...)
+→ Actually throws it
+
+throws InvalidAgeException
+→ Declares method may throw it
+
+
+Memory:
+
+CREATE
+→ extends Exception / RuntimeException
+
+THROW
+→ throw new ...
+
+DECLARE
+→ throws ...
+
+
+======================================================================
+Q112. EXCEPTION PROPAGATION
+----------------------------------------------------------------------
+
+Interview Answer:
+
+Exception propagation is the process by which an exception moves up
+the call stack from the method where it occurs to its calling method
+until it is handled by a matching catch block.
+
+
+Example:
+
+static void method3() {
+    int x = 10 / 0;
+}
+
+static void method2() {
+    method3();
+}
+
+static void method1() {
+    method2();
+}
+
+public static void main(String[] args) {
+
+    try {
+        method1();
+    }
+    catch (ArithmeticException e) {
+        System.out.println("Exception handled");
+    }
+}
+
+
+Flow:
+
+main()
+  ↓
+method1()
+  ↓
+method2()
+  ↓
+method3()
+  ↓
+Exception occurs
+  ↓
+No handler
+  ↓
+Back to method2()
+  ↓
+No handler
+  ↓
+Back to method1()
+  ↓
+No handler
+  ↓
+main()
+  ↓
+catch
+  ↓
+Handled
+
+
+Memory:
+
+Exception occurs
+      ↓
+Current method
+      ↓
+Caller
+      ↓
+Caller
+      ↓
+Matching catch
+      ↓
+Handled
+
+
+If no matching catch is found, the exception reaches the JVM's
+uncaught-exception handling mechanism and the thread terminates.
+
+
+======================================================================
+Q113. TRY-WITH-RESOURCES
+----------------------------------------------------------------------
+
+Interview Answer:
+
+Try-with-resources is a Java feature that automatically closes
+resources after they are used.
+
+It is used with resources implementing:
+
+• AutoCloseable
+• Closeable
+
+
+Examples:
+
+• FileReader
+• FileInputStream
+• Database connections
+• Streams
+
+
+Example:
+
+try (FileReader reader = new FileReader("data.txt")) {
+
+    int data = reader.read();
+    System.out.println(data);
+
+}
+catch (IOException e) {
+    System.out.println("File error");
+}
+
+
+When the try block finishes:
+
+→ reader is automatically closed.
+
+
+Traditional approach:
+
+try
+ ↓
+Use resource
+ ↓
+finally
+ ↓
+Close resource
+
+
+Try-with-resources:
+
+try
+ ↓
+Use resource
+ ↓
+Automatically close
+
+
+Advantages:
+
+• Prevents resource leaks
+• Less boilerplate
+• Automatic cleanup
+• Safer resource management
+
+
+Important:
+
+The resource must implement AutoCloseable or Closeable.
+
+
+======================================================================
+COMMON INTERVIEW TRAPS
+----------------------------------------------------------------------
+
+1. ❌ Checked exception means exception occurs during compilation.
+
+   ✅ Compiler checks whether it is handled or declared.
+
+
+2. ❌ try can exist alone.
+
+   ✅ try must have catch or finally.
+
+
+3. ❌ throws handles an exception.
+
+   ✅ throws only declares that a method may throw it.
+
+
+4. ❌ throw creates a custom exception.
+
+   ✅ extends Exception/RuntimeException creates the custom class.
+      throw actually throws the object.
+
+
+5. ❌ HashMap-style logic applies to exception propagation.
+
+   ✅ Propagation means movement up the method call stack.
+
+
+6. ❌ finally is only used for printing messages.
+
+   ✅ finally is mainly used for cleanup/resource release.
+
+
+7. ❌ try-with-resources requires manually closing the resource.
+
+   ✅ It automatically closes AutoCloseable resources.
+
+
+======================================================================
+QUICK REVISION – 1 MINUTE
+----------------------------------------------------------------------
+
+Exception
+→ Abnormal condition disrupting normal program flow
+
+
+Exception Handling
+→ Handle exceptions gracefully
+
+
+Hierarchy
+→ Throwable
+   → Error
+   → Exception
+      → RuntimeException
+
+
+Checked
+→ Compiler forces handle/declare
+→ IOException
+
+
+Unchecked
+→ RuntimeException
+→ No compiler requirement
+→ NullPointerException
+
+
+try-catch
+→ Handle exception
+
+
+finally
+→ Cleanup
+
+
+throw
+→ Actually throws exception
+
+
+throws
+→ Declares possible exception
+
+
+Custom Exception
+→ extends Exception / RuntimeException
+
+
+Exception Propagation
+→ Exception moves up call stack
+
+
+try-with-resources
+→ Automatic resource closing
+
+
+======================================================================
+SECTION STATUS
+----------------------------------------------------------------------
+
+PART 4.1 – EXCEPTION HANDLING
+
+Q101 → Exception                         ✓
+Q102 → Exception Handling                ✓
+Q104 → Exception Hierarchy               ✓
+Q105 → Checked vs Unchecked              ✓
+Q106 → try-catch                         ✓
+Q107 → finally                           ✓
+Q108 → try without catch                 ✓
+Q109 → throw vs throws                   ✓
+Q111 → Custom Exception                  ✓
+Q112 → Exception Propagation             ✓
+Q113 → try-with-resources                ✓
+
+STATUS: COMPLETE ✓
+
+Remaining Overall: 18 Questions
+
+NEXT SECTION:
+PART 4.2 – JVM & MEMORY MANAGEMENT
+
+Q115. What is JVM?
+======================================================================
