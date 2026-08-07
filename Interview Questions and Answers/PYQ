@@ -6715,3 +6715,573 @@ Q97 → Character frequency using HashMap
 Q98 → First non-repeating character using HashMap
 Q99 → Word frequency using HashMap
 ======================================================================
+
+======================================================================
+              JAVA COLLECTIONS FRAMEWORK INTERVIEW NOTES
+                    PART 3.6 – CODING QUESTIONS
+======================================================================
+
+Meaningful Questions Covered
+
+✓ Q94. Remove duplicate elements from a List
+✓ Q96. Sort custom Employee objects by salary
+✓ Q97. Character frequency using HashMap
+✓ Q98. First non-repeating character using HashMap
+✓ Q99. Word frequency using HashMap
+
+
+======================================================================
+Q94. REMOVE DUPLICATE ELEMENTS FROM A LIST
+----------------------------------------------------------------------
+
+Interview Solution 1 — Using List logic:
+
+public static List<Integer> removeDuplicates(List<Integer> list) {
+
+    List<Integer> result = new ArrayList<>();
+
+    for (int ele : list) {
+        if (!result.contains(ele)) {
+            result.add(ele);
+        }
+    }
+
+    return result;
+}
+
+
+Logic:
+
+For every element:
+    ↓
+Check whether result already contains it
+    ↓
+YES → Skip
+NO  → Add
+
+
+Time Complexity:
+
+contains() on ArrayList → O(n)
+
+For n elements:
+
+Time → O(n²)
+
+
+--------------------------------------------------
+Better Solution — LinkedHashSet
+--------------------------------------------------
+
+public static List<Integer> removeDuplicates(List<Integer> list) {
+
+    return new ArrayList<>(new LinkedHashSet<>(list));
+}
+
+
+Why LinkedHashSet?
+
+Set
+→ Removes duplicates
+
+LinkedHashSet
+→ Removes duplicates
+→ Maintains insertion order
+
+
+Average Time:
+
+O(n)
+
+
+Memory Trick:
+
+HashSet
+→ Unique
+
+LinkedHashSet
+→ Unique + insertion order
+
+
+======================================================================
+Q96. SORT CUSTOM EMPLOYEE OBJECTS BY SALARY
+----------------------------------------------------------------------
+
+This question tests:
+
+• Collections
+• Custom objects
+• Comparator
+• Lambda expression
+• Sorting
+
+
+Example:
+
+class Employee {
+
+    String name;
+    double salary;
+
+    Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+}
+
+
+Sorting:
+
+List<Employee> employees = new ArrayList<>();
+
+employees.add(new Employee("Vishal", 50000));
+employees.add(new Employee("Rahul", 70000));
+employees.add(new Employee("Amit", 40000));
+
+
+employees.sort(
+    (e1, e2) -> Double.compare(e1.salary, e2.salary)
+);
+
+
+Output:
+
+Amit   → 40000
+Vishal → 50000
+Rahul  → 70000
+
+
+Descending order:
+
+employees.sort(
+    (e1, e2) -> Double.compare(e2.salary, e1.salary)
+);
+
+
+IMPORTANT:
+
+Comparator is used because salary is a custom sorting criterion.
+
+
+Memory Trick:
+
+Comparable
+→ Natural ordering
+
+Comparator
+→ Custom ordering
+
+
+======================================================================
+Q97. COUNT FREQUENCY OF EACH CHARACTER USING HASHMAP
+----------------------------------------------------------------------
+
+Interview Solution:
+
+public static Map<Character, Integer> countFreq(String str) {
+
+    Map<Character, Integer> map = new HashMap<>();
+
+    for (char ch : str.toCharArray()) {
+        map.put(ch, map.getOrDefault(ch, 0) + 1);
+    }
+
+    return map;
+}
+
+
+Example:
+
+Input:
+
+"hello"
+
+
+Result:
+
+h → 1
+e → 1
+l → 2
+o → 1
+
+
+Logic:
+
+Character
+    ↓
+Already exists?
+    ↓
+YES → increment frequency
+NO  → initialize with 1
+
+
+Without getOrDefault():
+
+if (map.containsKey(ch)) {
+    map.put(ch, map.get(ch) + 1);
+} else {
+    map.put(ch, 1);
+}
+
+
+Complexity:
+
+Time  → O(n)
+Space → O(k)
+
+n = length of String
+k = number of distinct characters
+
+
+======================================================================
+Q98. FIRST NON-REPEATING CHARACTER USING HASHMAP
+----------------------------------------------------------------------
+
+IMPORTANT:
+
+Finding the frequency is not enough.
+
+We need the FIRST character whose frequency is 1.
+
+
+Correct solution:
+
+public static char firstNonRepeating(String str) {
+
+    Map<Character, Integer> map = new HashMap<>();
+
+    // First pass: Count frequency
+    for (char ch : str.toCharArray()) {
+        map.put(ch, map.getOrDefault(ch, 0) + 1);
+    }
+
+    // Second pass: Preserve original String order
+    for (char ch : str.toCharArray()) {
+        if (map.get(ch) == 1) {
+            return ch;
+        }
+    }
+
+    return ' ';
+}
+
+
+Example:
+
+Input:
+
+"swiss"
+
+
+Frequency:
+
+s → 3
+w → 1
+i → 1
+
+
+Output:
+
+w
+
+
+Why don't we iterate through:
+
+map.keySet()
+
+?
+
+Because HashMap does NOT guarantee insertion order.
+
+
+Correct approach:
+
+HashMap
+→ Count frequency
+
+
+Original String
+→ Determine first occurrence
+
+
+Flow:
+
+String
+   ↓
+First pass
+   ↓
+HashMap
+   ↓
+Frequency
+
+
+Original String
+   ↓
+Second pass
+   ↓
+Find first frequency == 1
+   ↓
+Answer
+
+
+Complexity:
+
+Time  → O(n)
+Space → O(k)
+
+
+IMPORTANT INTERVIEW TRAP:
+
+❌ HashMap keySet() gives the first character in original order.
+
+✅ HashMap does not guarantee insertion order.
+
+
+======================================================================
+Q99. COUNT WORD FREQUENCY USING HASHMAP
+----------------------------------------------------------------------
+
+Interview Solution:
+
+public static Map<String, Integer> wordFrequency(String str) {
+
+    Map<String, Integer> map = new HashMap<>();
+
+    String[] words = str.split("\\s+");
+
+    for (String word : words) {
+        map.put(word, map.getOrDefault(word, 0) + 1);
+    }
+
+    return map;
+}
+
+
+Example:
+
+Input:
+
+"java is easy java is powerful"
+
+
+Output:
+
+java     → 2
+is       → 2
+easy     → 1
+powerful → 1
+
+
+Flow:
+
+Sentence
+    ↓
+split("\\s+")
+    ↓
+String[]
+    ↓
+HashMap
+    ↓
+word → frequency
+
+
+IMPORTANT:
+
+split("\\s+")
+
+is preferable to:
+
+split(" ")
+
+
+because \\s+ handles one or more whitespace characters.
+
+
+Complexity:
+
+Time  → O(n)
+Space → O(k)
+
+n = number of words
+k = number of distinct words
+
+
+======================================================================
+COMMON INTERVIEW TRAPS
+----------------------------------------------------------------------
+
+Q94:
+
+❌ Use HashSet when insertion order must be preserved.
+
+✅ Use LinkedHashSet.
+
+
+--------------------------------------------------
+
+Q96:
+
+❌ Use Comparable for every custom sorting requirement.
+
+✅ Use Comparator when custom/multiple sorting strategies are needed.
+
+
+--------------------------------------------------
+
+Q97:
+
+❌ Search the entire string repeatedly for every character.
+
+✅ Use HashMap to count frequencies in O(n).
+
+
+--------------------------------------------------
+
+Q98:
+
+❌ Iterate through HashMap.keySet() to determine the FIRST
+   non-repeating character.
+
+✅ Count using HashMap, then traverse the original String.
+
+
+--------------------------------------------------
+
+Q99:
+
+❌ split(" ") for all whitespace cases.
+
+✅ split("\\s+").
+
+
+======================================================================
+QUICK REVISION
+----------------------------------------------------------------------
+
+Q94 → Remove duplicates
+       LinkedHashSet
+       → Unique + insertion order
+
+
+Q96 → Sort Employee by salary
+       Comparator
+       → Custom sorting
+
+
+Q97 → Character frequency
+       HashMap<Character, Integer>
+
+
+Q98 → First non-repeating character
+       HashMap + second pass through original String
+
+
+Q99 → Word frequency
+       split("\\s+")
+       +
+       HashMap<String, Integer>
+
+
+======================================================================
+IMPORTANT HASHMAP PATTERN
+----------------------------------------------------------------------
+
+Frequency counting pattern:
+
+map.put(
+    key,
+    map.getOrDefault(key, 0) + 1
+);
+
+
+Use this pattern for:
+
+• Character frequency
+• Word frequency
+• Number frequency
+• Element frequency
+
+
+======================================================================
+COLLECTIONS CODING PATTERNS
+----------------------------------------------------------------------
+
+Remove duplicates:
+
+new LinkedHashSet<>(list)
+
+
+Frequency:
+
+map.getOrDefault(key, 0) + 1
+
+
+Custom sorting:
+
+list.sort(
+    (a, b) -> comparison
+)
+
+
+First non-repeating:
+
+1. Count using HashMap
+2. Traverse original input
+3. Find frequency == 1
+
+
+======================================================================
+FINAL STATUS – PART 3
+======================================================================
+
+PART 3.1 – COLLECTIONS BASICS
+→ Completed
+
+
+PART 3.2 – SET
+→ Completed
+
+
+PART 3.3 – MAP
+→ Completed
+
+
+PART 3.4 – SORTING & COMPARISON
+→ Completed
+
+
+PART 3.5 – ITERATION
+→ Completed
+
+
+PART 3.6 – CODING
+→ Completed
+
+
+Original question range:
+Q66 – Q100
+
+
+Removed as repeated / low-priority:
+
+Q84 → Repetitive with HashMap internal working
+Q85 → Covered as part of HashMap collision/internal working
+Q86 → Covered while discussing HashMap
+Q87 → Low-priority use-case question
+Q93 → Low-priority iteration methods
+Q95 → Basic sorting question
+Q100 → Low-priority ArrayList reversal
+
+
+Meaningful questions completed:
+25
+
+
+Meaningful questions remaining:
+0
+
+
+======================================================================
+PART 3 – COLLECTIONS FRAMEWORK
+                       ✅ COMPLETED
+======================================================================
