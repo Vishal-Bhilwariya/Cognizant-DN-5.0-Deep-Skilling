@@ -11446,3 +11446,488 @@ Next Topic:
 Part 6 Remaining:
 33 meaningful questions
 ======================================================================
+
+======================================================================
+                 PART 6.5 – SQL SUBQUERIES | INTERVIEW NOTES
+======================================================================
+
+QUESTIONS COVERED:
+
+✓ Q226. What is a Subquery?
+✓ Q227. Query to find Second-Highest Salary
+✓ Q228. Query to find Second-Highest Bank Balance
+✓ Q229. Query to find Nth-Highest Salary
+✓ Q230. Subquery vs JOIN
+
+
+======================================================================
+Q226. WHAT IS A SUBQUERY?
+======================================================================
+
+Interview Answer:
+
+A subquery is a query nested inside another SQL query.
+
+The inner query is executed to provide a result that is used by the
+outer query.
+
+Example:
+
+SELECT name, salary
+FROM Employee
+WHERE salary > (
+    SELECT AVG(salary)
+    FROM Employee
+);
+
+
+Structure:
+
+Outer Query
+    ↓
+SELECT name, salary
+FROM Employee
+WHERE salary >
+          ↓
+      Inner Query
+      SELECT AVG(salary)
+      FROM Employee
+
+
+IMPORTANT:
+
+A subquery is NOT limited to the FROM clause.
+
+It can be used in places such as:
+
+→ WHERE
+→ FROM
+→ SELECT
+
+depending on the query.
+
+
+Memory Trick:
+
+SUBQUERY
+→ Query inside Query
+→ Inner query
+→ Result used by outer query
+
+
+======================================================================
+Q227. FIND THE SECOND-HIGHEST SALARY
+======================================================================
+
+Interview Answer:
+
+To find the second-highest DISTINCT salary, we can sort salaries in
+descending order and skip the highest salary.
+
+MySQL:
+
+SELECT DISTINCT salary
+FROM Employee
+ORDER BY salary DESC
+LIMIT 1 OFFSET 1;
+
+
+Example:
+
+50000
+40000
+30000
+20000
+
+DESC:
+
+50000  ← OFFSET 0
+40000  ← OFFSET 1 → SECOND HIGHEST
+30000
+20000
+
+
+Result:
+
+40000
+
+
+IMPORTANT:
+
+DISTINCT is useful when duplicate salaries exist and we want the
+second-highest DISTINCT salary.
+
+
+Alternative approach using a derived table:
+
+SELECT salary
+FROM (
+    SELECT DISTINCT salary
+    FROM Employee
+    ORDER BY salary DESC
+    LIMIT 2
+) AS temp
+ORDER BY salary ASC
+LIMIT 1;
+
+
+Memory:
+
+Second highest
+→ Sort DESC
+→ Skip 1
+→ Take 1
+
+
+======================================================================
+Q228. FIND THE SECOND-HIGHEST BANK BALANCE
+======================================================================
+
+Interview Answer:
+
+The same concept can be applied to a BankAccount table.
+
+Query:
+
+SELECT balance
+FROM (
+    SELECT DISTINCT balance
+    FROM BankAccount
+    ORDER BY balance DESC
+    LIMIT 2
+) AS temp
+ORDER BY balance ASC
+LIMIT 1;
+
+
+Working:
+
+Bank balances:
+
+10000
+8000
+7000
+5000
+
+
+Inner query:
+
+→ DISTINCT
+→ DESC
+→ LIMIT 2
+
+Result:
+
+10000
+8000
+
+
+Outer query:
+
+→ ASC
+
+8000
+10000
+
+LIMIT 1:
+
+8000
+
+
+Result:
+
+8000
+
+
+IMPORTANT:
+
+A derived table in the FROM clause should be given an alias.
+
+Example:
+
+) AS temp
+
+
+======================================================================
+Q229. FIND THE NTH-HIGHEST SALARY
+======================================================================
+
+One valid MySQL approach using a derived table:
+
+SELECT salary
+FROM (
+    SELECT DISTINCT salary
+    FROM Employee
+    ORDER BY salary DESC
+    LIMIT N
+) AS temp
+ORDER BY salary ASC
+LIMIT 1;
+
+
+Example: Find 3rd-highest salary.
+
+SELECT salary
+FROM (
+    SELECT DISTINCT salary
+    FROM Employee
+    ORDER BY salary DESC
+    LIMIT 3
+) AS temp
+ORDER BY salary ASC
+LIMIT 1;
+
+
+Suppose:
+
+100000
+80000
+70000
+50000
+30000
+
+
+Inner query with LIMIT 3:
+
+100000
+80000
+70000
+
+
+Outer query with ASC:
+
+70000
+80000
+100000
+
+
+LIMIT 1:
+
+70000
+
+
+Result:
+
+70000
+
+
+Another simpler MySQL approach:
+
+SELECT DISTINCT salary
+FROM Employee
+ORDER BY salary DESC
+LIMIT 1 OFFSET N - 1;
+
+
+For 3rd highest:
+
+SELECT DISTINCT salary
+FROM Employee
+ORDER BY salary DESC
+LIMIT 1 OFFSET 2;
+
+
+Memory:
+
+Nth highest
+→ DESC
+→ Skip N-1 rows
+→ Take 1
+
+
+IMPORTANT:
+
+LIMIT N means:
+
+→ Return the TOP N rows
+
+It does NOT directly mean:
+
+→ Return the Nth row
+
+In the derived-table approach, we use LIMIT N and then select the
+smallest value among those N values.
+
+
+======================================================================
+Q230. SUBQUERY vs JOIN
+======================================================================
+
+Interview Answer:
+
+A subquery is a query nested inside another query, while a JOIN
+combines rows from two or more tables based on a related column or
+condition.
+
+
++------------------+---------------------------------------------+
+| SUBQUERY         | JOIN                                        |
++------------------+---------------------------------------------+
+| Query inside     | Combines rows from multiple tables          |
+| another query    |                                             |
+|                  |                                             |
+| Result of inner  | Uses related columns/conditions              |
+| query is used by |                                             |
+| outer query      |                                             |
+|                  |                                             |
+| Can be used in   | Commonly uses ON condition                  |
+| WHERE/FROM/SELECT|                                             |
++------------------+---------------------------------------------+
+
+
+Subquery Example:
+
+SELECT name
+FROM Employee
+WHERE salary > (
+    SELECT AVG(salary)
+    FROM Employee
+);
+
+
+JOIN Example:
+
+SELECT e.name, d.dept_name
+FROM Employee e
+JOIN Department d
+ON e.dept_id = d.dept_id;
+
+
+Memory Trick:
+
+SUBQUERY
+→ Query inside Query
+
+JOIN
+→ Combine related data from tables
+
+
+======================================================================
+COMMON INTERVIEW TRAPS – SUBQUERIES
+======================================================================
+
+1. SUBQUERY
+
+✓ Query inside another query.
+
+❌ Not necessarily only inside FROM.
+
+
+2. SECOND-HIGHEST VALUE
+
+Be careful about duplicate salaries.
+
+For DISTINCT second-highest:
+
+→ Use DISTINCT.
+
+
+3. LIMIT N
+
+LIMIT N:
+
+→ Returns N rows.
+
+It does NOT directly return the Nth row.
+
+
+4. NTH HIGHEST
+
+For MySQL:
+
+LIMIT 1 OFFSET N-1
+
+Example:
+
+3rd highest
+→ OFFSET 2
+
+
+5. DERIVED TABLE
+
+A subquery inside FROM is treated like a temporary/derived table.
+
+It should be given an alias:
+
+FROM (
+    ...
+) AS temp
+
+
+6. SUBQUERY vs JOIN
+
+Subquery:
+
+→ Query inside query
+
+JOIN:
+
+→ Combines related rows from tables
+
+
+======================================================================
+QUICK REVISION – 1 MINUTE
+======================================================================
+
+SUBQUERY
+→ Query inside Query
+
+
+SECOND HIGHEST:
+
+SELECT DISTINCT salary
+FROM Employee
+ORDER BY salary DESC
+LIMIT 1 OFFSET 1;
+
+
+NTH HIGHEST:
+
+SELECT DISTINCT salary
+FROM Employee
+ORDER BY salary DESC
+LIMIT 1 OFFSET N-1;
+
+
+DERIVED TABLE:
+
+SELECT ...
+FROM (
+    SELECT ...
+) AS temp;
+
+
+SUBQUERY
+→ Nested query
+
+JOIN
+→ Combine related tables
+
+
+LIMIT N
+→ Top N rows
+
+OFFSET N-1
+→ Skip first N-1 rows
+
+
+======================================================================
+PART 6.5 STATUS
+======================================================================
+
+Q226 ✓
+Q227 ✓
+Q228 ✓
+Q229 ✓
+Q230 ✓
+
+              5 / 5 COMPLETE ✓
+
+Next Topic:
+→ NULL HANDLING
+
+Q231. What is NULL in SQL?
+
+Part 6 Remaining:
+30 meaningful questions
+======================================================================
