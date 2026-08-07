@@ -1936,3 +1936,495 @@ Java deliberately avoids multiple inheritance through classes
 to prevent ambiguity such as the Diamond Problem.
 
 ======================================================================
+
+======================================================================
+             JAVA OOPS INTERVIEW REVISION NOTES
+                  PART 2.4 – POLYMORPHISM
+======================================================================
+
+Questions Covered
+
+✓ Q17. What is polymorphism?
+✓ Q18. What are the types of polymorphism?
+✓ Q19. Explain compile-time and runtime polymorphism.
+✓ Q20. What is method overloading?
+✓ Q21. Write a Java program demonstrating method overloading.
+✓ Q22. What is method overriding?
+✓ Q23. Explain runtime polymorphism with an example.
+
+NOTE:
+Repeated questions were skipped when the same concept had already
+been answered.
+
+
+======================================================================
+1. WHAT IS POLYMORPHISM?
+----------------------------------------------------------------------
+
+Interview Answer
+
+Polymorphism means "one name, many forms."
+
+It allows the same method, interface, or reference to exhibit
+different behavior depending on the situation.
+
+Java mainly supports two types:
+
+1. Compile-time Polymorphism
+2. Runtime Polymorphism
+
+
+======================================================================
+2. TYPES OF POLYMORPHISM
+----------------------------------------------------------------------
+
+1. Compile-Time Polymorphism
+   ↓
+   Method Overloading
+
+2. Runtime Polymorphism
+   ↓
+   Method Overriding
+
+
+======================================================================
+3. COMPILE-TIME POLYMORPHISM
+----------------------------------------------------------------------
+
+Definition
+
+Compile-time polymorphism is achieved through method overloading.
+
+The compiler determines which method should be called based on
+the method signature / arguments.
+
+Characteristics
+
+• Same method name
+• Different parameter list
+• Decision made at compile time
+
+Example
+
+class Calculator {
+
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+
+======================================================================
+4. METHOD OVERLOADING
+----------------------------------------------------------------------
+
+Definition
+
+Method overloading occurs when a class contains multiple methods
+with the same name but different parameter lists.
+
+Parameters can differ by:
+
+• Number of parameters
+• Type of parameters
+• Order of parameters
+
+Example
+
+class Calculator {
+
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+Here:
+
+add(int, int)
+
+and
+
+add(int, int, int)
+
+are overloaded methods.
+
+
+======================================================================
+5. METHOD OVERLOADING PROGRAM
+----------------------------------------------------------------------
+
+class Calculator {
+
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Calculator c = new Calculator();
+
+        System.out.println(c.add(10, 20));
+
+        System.out.println(c.add(10, 20, 30));
+
+        System.out.println(c.add(10.5, 20.5));
+    }
+}
+
+
+======================================================================
+6. RUNTIME POLYMORPHISM
+----------------------------------------------------------------------
+
+Definition
+
+Runtime polymorphism occurs when a parent class reference
+refers to a child class object and the child overrides a
+method of the parent.
+
+The method to execute is determined at runtime based on the
+actual object.
+
+Also known as:
+
+Dynamic Method Dispatch
+
+
+======================================================================
+7. METHOD OVERRIDING
+----------------------------------------------------------------------
+
+Definition
+
+Method overriding occurs when a child class provides its own
+implementation of a method already defined in the parent class.
+
+Conditions
+
+• Same method name
+• Same parameter list
+• Parent-child relationship
+• Child provides its own implementation
+
+Example
+
+class Animal {
+
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+
+======================================================================
+8. RUNTIME POLYMORPHISM EXAMPLE
+----------------------------------------------------------------------
+
+class Animal {
+
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Animal a = new Dog();
+
+        a.sound();
+    }
+}
+
+Output:
+
+Dog barks
+
+
+======================================================================
+9. HOW RUNTIME POLYMORPHISM WORKS
+----------------------------------------------------------------------
+
+Animal a = new Dog();
+
+        Reference Type
+              ↓
+           Animal
+              │
+              ▼
+        Actual Object
+              ↓
+             Dog
+
+When:
+
+a.sound();
+
+Java executes:
+
+Dog's sound()
+
+because the actual object is Dog.
+
+The method implementation is selected at runtime.
+
+
+======================================================================
+10. REFERENCE TYPE vs OBJECT TYPE
+----------------------------------------------------------------------
+
+Example:
+
+Animal a = new Dog();
+
+Animal
+
+↓
+
+Reference Type
+
+Determines what members can be accessed through the reference.
+
+Dog
+
+↓
+
+Actual Object Type
+
+Determines which overridden method implementation executes
+at runtime.
+
+
+======================================================================
+11. OVERLOADING vs OVERRIDING
+----------------------------------------------------------------------
+
++----------------------+-------------------------+
+| Method Overloading   | Method Overriding       |
++----------------------+-------------------------+
+| Compile-time         | Runtime                 |
+| Same method name     | Same method signature   |
+| Different parameters | Same parameters         |
+| Usually same class   | Parent-child classes    |
+| Static binding       | Dynamic binding         |
++----------------------+-------------------------+
+
+
+======================================================================
+QUICK REVISION
+----------------------------------------------------------------------
+
+✔ Polymorphism
+
+One Name → Many Forms
+
+--------------------------------------------------
+
+✔ Two Types
+
+Compile-Time
+
+↓
+
+Method Overloading
+
+Runtime
+
+↓
+
+Method Overriding
+
+--------------------------------------------------
+
+✔ Overloading
+
+Same Method Name
+
++
+
+Different Parameters
+
+↓
+
+Compile-Time Decision
+
+--------------------------------------------------
+
+✔ Overriding
+
+Parent Method
+
+↓
+
+Child Provides New Implementation
+
+↓
+
+Runtime Decision
+
+--------------------------------------------------
+
+✔ Runtime Example
+
+Animal a = new Dog();
+
+a.sound();
+
+↓
+
+Dog's sound() executes
+
+--------------------------------------------------
+
+✔ Runtime Polymorphism
+
+Also called:
+
+Dynamic Method Dispatch
+
+--------------------------------------------------
+
+✔ Important Concept
+
+Reference Type ≠ Actual Object Type
+
+Animal a = new Dog();
+
+Reference → Animal
+
+Object → Dog
+
+
+======================================================================
+INTERVIEW TRAPS
+----------------------------------------------------------------------
+
+❌ Don't say:
+
+Method overloading means same method name only.
+
+✅ Say:
+
+Same method name + different parameter list.
+
+
+--------------------------------------------------
+
+❌ Don't say:
+
+Method overriding is possible in unrelated classes.
+
+✅ Say:
+
+Overriding requires a parent-child relationship.
+
+
+--------------------------------------------------
+
+❌ Don't say:
+
+Runtime polymorphism depends only on the reference type.
+
+✅ Say:
+
+The overridden method implementation is selected based on
+the actual object at runtime.
+
+
+--------------------------------------------------
+
+❌ Don't confuse:
+
+Method Overloading
+
+↓
+
+Compile-Time Polymorphism
+
+Method Overriding
+
+↓
+
+Runtime Polymorphism
+
+
+--------------------------------------------------
+
+❌ Don't confuse constructor overloading with method overloading.
+
+Example:
+
+Student()
+Student(String name)
+Student(String name, int age)
+
+These are:
+
+Constructor Overloading
+
+NOT Method Overloading.
+
+
+======================================================================
+MEMORY TRICK
+----------------------------------------------------------------------
+
+OVERLOADING
+
+"Same Name, Different Parameters"
+
+↓
+
+COMPILE TIME
+
+
+OVERRIDING
+
+"Parent Method, Child Implementation"
+
+↓
+
+RUNTIME
+
+
+======================================================================
