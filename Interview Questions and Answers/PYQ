@@ -10673,3 +10673,554 @@ Next Topic:
 Part 6 Remaining:
 43 meaningful questions
 ======================================================================
+
+======================================================================
+              PART 6.3 – SQL JOINS | INTERVIEW NOTES
+======================================================================
+
+QUESTIONS COVERED:
+
+✓ Q215. What is a JOIN?
+✓ Q216. INNER JOIN
+✓ Q217. LEFT JOIN
+✓ Q218. RIGHT JOIN
+✓ Q219. FULL OUTER JOIN
+✓ Q220. SELF JOIN
+✓ Q221. CROSS JOIN
+✓ Q222. INNER JOIN vs OUTER JOIN
+
+
+======================================================================
+Q215. WHAT IS A JOIN?
+======================================================================
+
+Interview Answer:
+
+A JOIN in SQL is used to combine related rows from two or more
+tables based on a specified join condition, usually using a common
+or related column.
+
+Example:
+
+SELECT e.name, d.dept_name
+FROM Employee e
+INNER JOIN Department d
+ON e.dept_id = d.dept_id;
+
+
+Common JOIN Types:
+
+INNER JOIN
+→ Matching rows from both tables
+
+LEFT JOIN
+→ All rows from left + matching rows from right
+
+RIGHT JOIN
+→ All rows from right + matching rows from left
+
+FULL OUTER JOIN
+→ All rows from both tables
+
+SELF JOIN
+→ Table joined with itself
+
+CROSS JOIN
+→ Cartesian product
+
+
+Memory:
+
+JOIN
+→ Connect related data
+→ Usually using related/common columns
+
+
+======================================================================
+Q216. INNER JOIN
+======================================================================
+
+Interview Answer:
+
+An INNER JOIN returns only the rows that have matching values in
+both tables according to the specified join condition.
+
+
+Example:
+
+SELECT s1.name
+FROM Student1 s1
+INNER JOIN Student2 s2
+ON s1.name = s2.name;
+
+
+If:
+
+Student1:
+Vishal
+Rohit
+Ankit
+
+Student2:
+Vishal
+Kunal
+Gopal
+
+
+Result:
+
+Vishal
+
+
+Because Vishal exists in both tables.
+
+
+Memory:
+
+INNER JOIN
+→ Only MATCHING data
+→ Common portion
+
+
+Visual:
+
+Table A       Table B
+    \           /
+     \         /
+      INNER JOIN
+           ↓
+    Matching rows only
+
+
+======================================================================
+Q217. LEFT JOIN
+======================================================================
+
+Interview Answer:
+
+A LEFT JOIN returns all rows from the left table and the matching
+rows from the right table.
+
+If there is no matching row in the right table, the right-side
+columns contain NULL.
+
+
+Example:
+
+SELECT s1.name, s2.course
+FROM Student1 s1
+LEFT JOIN Student2 s2
+ON s1.id = s2.student_id;
+
+
+Behavior:
+
+LEFT TABLE              RIGHT TABLE
+
+Vishal  ─────────────→  Vishal
+Rohit   ─────────────→  Rohit
+Ankit                     No match
+
+
+Result:
+
+Vishal → Matching data
+Rohit  → Matching data
+Ankit  → NULL on right-side columns
+
+
+Memory:
+
+LEFT JOIN
+→ ALL LEFT
+→ Matching RIGHT
+→ No match → NULL
+
+
+======================================================================
+Q218. RIGHT JOIN
+======================================================================
+
+Interview Answer:
+
+A RIGHT JOIN returns all rows from the right table and the matching
+rows from the left table.
+
+If there is no matching row in the left table, the left-side columns
+contain NULL.
+
+
+Example:
+
+SELECT s1.name, s2.course
+FROM Student1 s1
+RIGHT JOIN Student2 s2
+ON s1.id = s2.student_id;
+
+
+Behavior:
+
+LEFT TABLE              RIGHT TABLE
+
+Vishal  ─────────────→  Vishal
+Rohit   ─────────────→  Rohit
+                           Kunal
+                           No match
+
+
+Result:
+
+Vishal → Matching data
+Rohit  → Matching data
+Kunal  → NULL on left-side columns
+
+
+Memory:
+
+RIGHT JOIN
+→ ALL RIGHT
+→ Matching LEFT
+→ No match → NULL
+
+
+======================================================================
+Q219. FULL OUTER JOIN
+======================================================================
+
+Interview Answer:
+
+A FULL OUTER JOIN returns all rows from both tables.
+
+Matching rows are combined, while unmatched rows from either table
+are also included with NULL values for the columns where there is
+no match.
+
+
+Example:
+
+Table 1:
+Vishal
+Rohit
+Ankit
+
+Table 2:
+Vishal
+Kunal
+Gopal
+
+
+FULL OUTER JOIN:
+
+Vishal → Match
+Rohit  → NULL
+Ankit  → NULL
+Kunal  → NULL
+Gopal  → NULL
+
+
+SQL:
+
+SELECT s1.name, s2.course
+FROM Student1 s1
+FULL OUTER JOIN Student2 s2
+ON s1.id = s2.student_id;
+
+
+Memory:
+
+FULL OUTER JOIN
+→ ALL LEFT
+→ ALL RIGHT
+→ Matching + Unmatched
+→ Missing side → NULL
+
+
+IMPORTANT:
+
+MySQL does not natively support FULL OUTER JOIN.
+
+It can be simulated using:
+
+LEFT JOIN
++
+RIGHT JOIN
++
+UNION
+
+
+======================================================================
+Q220. SELF JOIN
+======================================================================
+
+Interview Answer:
+
+A SELF JOIN is a JOIN in which a table is joined with itself.
+
+It is useful when rows within the same table have a relationship
+with each other.
+
+Aliases are used to distinguish the two logical instances of the
+same table.
+
+
+Example:
+
+SELECT e.name AS employee,
+       m.name AS manager
+FROM Employee e
+JOIN Employee m
+ON e.manager_id = m.emp_id;
+
+
+Example data:
+
+Employee
+--------------------------------
+emp_id   name     manager_id
+
+1        Rahul    NULL
+2        Vishal   1
+3        Rohit    1
+
+
+Result:
+
+Employee    Manager
+Vishal      Rahul
+Rohit       Rahul
+
+
+Memory:
+
+SELF JOIN
+→ Same table
+→ Two aliases
+→ Relate rows within same table
+
+
+======================================================================
+Q221. CROSS JOIN
+======================================================================
+
+Interview Answer:
+
+A CROSS JOIN returns the Cartesian product of two tables.
+
+Each row from the first table is combined with every row from the
+second table.
+
+It does not require a JOIN condition.
+
+
+Example:
+
+SELECT *
+FROM TableA
+CROSS JOIN TableB;
+
+
+If:
+
+Table A → 3 rows
+Table B → 2 rows
+
+Result:
+
+3 × 2 = 6 rows
+
+
+Concept:
+
+A1 → B1
+A1 → B2
+
+A2 → B1
+A2 → B2
+
+A3 → B1
+A3 → B2
+
+
+Memory:
+
+CROSS JOIN
+→ Every row × Every row
+→ Cartesian Product
+→ No JOIN condition
+
+
+======================================================================
+Q222. INNER JOIN vs OUTER JOIN
+======================================================================
+
+Interview Answer:
+
+An INNER JOIN returns only matching rows from both tables.
+
+An OUTER JOIN also includes unmatched rows from one or both tables,
+depending on whether it is LEFT, RIGHT, or FULL OUTER JOIN.
+
+
+INNER JOIN:
+
+→ Matching rows only
+
+
+LEFT OUTER JOIN:
+
+→ All LEFT
+→ Matching RIGHT
+→ Unmatched RIGHT → NULL
+
+
+RIGHT OUTER JOIN:
+
+→ All RIGHT
+→ Matching LEFT
+→ Unmatched LEFT → NULL
+
+
+FULL OUTER JOIN:
+
+→ All rows from BOTH
+→ Unmatched rows → NULL
+
+
+Memory:
+
+INNER
+→ Only MATCH
+
+
+OUTER
+→ MATCH + UNMATCHED
+
+
+======================================================================
+JOIN COMPARISON – QUICK TABLE
+======================================================================
+
++------------------+----------------------------------------------+
+| JOIN             | Result                                       |
++------------------+----------------------------------------------+
+| INNER JOIN       | Matching rows only                           |
+| LEFT JOIN        | All LEFT + matching RIGHT                    |
+| RIGHT JOIN       | All RIGHT + matching LEFT                    |
+| FULL OUTER JOIN  | All rows from both tables                    |
+| SELF JOIN        | Table joined with itself                     |
+| CROSS JOIN       | Every row × every row                        |
++------------------+----------------------------------------------+
+
+
+======================================================================
+COMMON INTERVIEW TRAPS – JOINS
+======================================================================
+
+1. INNER JOIN
+
+❌ Returns all rows from both tables.
+
+✓ Returns only matching rows.
+
+
+2. LEFT JOIN
+
+✓ All rows from LEFT are preserved.
+
+❌ Only matching rows are returned.
+
+
+3. RIGHT JOIN
+
+✓ All rows from RIGHT are preserved.
+
+
+4. FULL OUTER JOIN
+
+✓ Includes unmatched rows from both sides.
+
+
+5. SELF JOIN
+
+✓ Same physical table
+✓ Different aliases
+
+
+6. CROSS JOIN
+
+✓ Cartesian product
+✓ No join condition required
+
+
+7. OUTER JOIN
+
+OUTER JOIN is a category:
+
+→ LEFT OUTER JOIN
+→ RIGHT OUTER JOIN
+→ FULL OUTER JOIN
+
+
+======================================================================
+QUICK REVISION – 1 MINUTE
+======================================================================
+
+INNER
+→ MATCH only
+
+
+LEFT
+→ ALL LEFT + matching RIGHT
+
+
+RIGHT
+→ ALL RIGHT + matching LEFT
+
+
+FULL
+→ ALL LEFT + ALL RIGHT
+
+
+SELF
+→ SAME TABLE + ALIASES
+
+
+CROSS
+→ EVERY ROW × EVERY ROW
+
+
+MAIN MEMORY TRICK:
+
+              INNER
+                ↓
+             MATCH ONLY
+
+LEFT  → LEFT is SAFE
+RIGHT → RIGHT is SAFE
+FULL  → BOTH are SAFE
+
+SELF  → SAME TABLE
+CROSS → CARTESIAN PRODUCT
+
+
+======================================================================
+PART 6.3 STATUS
+======================================================================
+
+Q215 ✓
+Q216 ✓
+Q217 ✓
+Q218 ✓
+Q219 ✓
+Q220 ✓
+Q221 ✓
+Q222 ✓
+
+              8 / 8 COMPLETE ✓
+
+Next Topic:
+→ AGGREGATE FUNCTIONS
+
+Part 6 Remaining:
+35 meaningful questions
+======================================================================
