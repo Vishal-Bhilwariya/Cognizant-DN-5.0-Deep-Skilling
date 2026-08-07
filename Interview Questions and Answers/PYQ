@@ -2428,3 +2428,541 @@ RUNTIME
 
 
 ======================================================================
+
+======================================================================
+             JAVA OOPS INTERVIEW REVISION NOTES
+                 PART 2.5 – ABSTRACTION & INTERFACE
+======================================================================
+
+Questions Covered
+
+✓ Q1. What is abstraction?
+✓ Q2. Why is abstraction needed in software development?
+✓ Q3. What is an abstract class?
+✓ Q4. When should you use an abstract class?
+✓ Q5. What is an interface?
+✓ Q6. When should you use an interface?
+✓ Q7. What is the difference between an abstract class and an interface?
+✓ Q8. Can an abstract class contain constructors? Why?
+✓ Q9. Can an interface have methods with implementation? Explain.
+
+
+======================================================================
+1. WHAT IS ABSTRACTION?
+----------------------------------------------------------------------
+
+Interview Answer
+
+Abstraction is one of the four pillars of OOP.
+
+It is the process of hiding implementation details and exposing
+only the essential functionality to the user.
+
+In Java, abstraction is mainly achieved using:
+
+1. Abstract classes
+2. Interfaces
+
+Example:
+
+When we use an ATM, we see options such as:
+
+    Withdraw
+    Deposit
+    Check Balance
+
+But we don't need to know the internal implementation of how
+the banking transaction is processed.
+
+This is abstraction.
+
+
+======================================================================
+2. WHY IS ABSTRACTION NEEDED?
+----------------------------------------------------------------------
+
+Abstraction is needed to:
+
+• Hide unnecessary implementation details
+• Reduce complexity
+• Expose only essential functionality
+• Improve maintainability
+• Provide loose coupling
+• Allow implementation to change without affecting users
+
+Example:
+
+User
+  |
+  v
+ATM Interface
+  |
+  v
+Hidden Banking Implementation
+
+
+======================================================================
+3. WHAT IS AN ABSTRACT CLASS?
+----------------------------------------------------------------------
+
+Interview Answer
+
+An abstract class is a class declared using the `abstract`
+keyword that cannot be instantiated directly.
+
+It can contain:
+
+• Abstract methods
+• Concrete methods
+• Variables
+• Constructors
+
+Example:
+
+abstract class Animal {
+
+    abstract void sound();
+
+    void eat() {
+        System.out.println("Animal eats");
+    }
+}
+
+class Dog extends Animal {
+
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+Here:
+
+Animal → Abstract class
+sound() → Abstract method
+eat() → Concrete method
+Dog → Child class
+
+
+======================================================================
+4. WHEN SHOULD YOU USE AN ABSTRACT CLASS?
+----------------------------------------------------------------------
+
+Use an abstract class when:
+
+• Multiple related classes share common behavior/state.
+• Some functionality can be implemented in the parent.
+• Some behavior must be implemented by child classes.
+
+Example:
+
+abstract class Animal {
+
+    void eat() {
+        System.out.println("Eating");
+    }
+
+    abstract void sound();
+}
+
+Dog and Cat can inherit `eat()` but provide their own
+implementation of `sound()`.
+
+Memory Trick:
+
+Abstract Class
+
+    Common functionality
+           +
+    Child-specific implementation
+
+
+======================================================================
+5. WHAT IS AN INTERFACE?
+----------------------------------------------------------------------
+
+Interview Answer
+
+An interface in Java is a blueprint or contract that defines
+behavior that implementing classes must follow.
+
+A class implements an interface using the `implements` keyword.
+
+Example:
+
+interface Animal {
+
+    void sound();
+}
+
+class Dog implements Animal {
+
+    @Override
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+Here:
+
+Animal → Interface
+sound() → Contract
+Dog → Implementing class
+
+
+======================================================================
+6. WHEN SHOULD YOU USE AN INTERFACE?
+----------------------------------------------------------------------
+
+Use an interface when you want to:
+
+• Define a common contract
+• Achieve abstraction
+• Achieve loose coupling
+• Allow different classes to follow the same contract
+• Support multiple inheritance of type
+
+Example:
+
+interface Payment {
+    void pay();
+}
+
+class CreditCard implements Payment {
+    public void pay() {
+        System.out.println("Paid using Credit Card");
+    }
+}
+
+class UPI implements Payment {
+    public void pay() {
+        System.out.println("Paid using UPI");
+    }
+}
+
+Both classes follow the same contract but have different
+implementations.
+
+
+======================================================================
+7. ABSTRACT CLASS vs INTERFACE
+----------------------------------------------------------------------
+
++----------------------+-----------------------------+
+| Abstract Class       | Interface                   |
++----------------------+-----------------------------+
+| Declared with        | Declared with               |
+| `abstract`           | `interface`                 |
++----------------------+-----------------------------+
+| Extended using       | Implemented using           |
+| `extends`            | `implements`                |
++----------------------+-----------------------------+
+| Can contain abstract | Can contain abstract,       |
+| and concrete methods | default and static methods  |
++----------------------+-----------------------------+
+| Can have instance    | Does not normally represent |
+| state/variables      | object state                |
++----------------------+-----------------------------+
+| Can have constructor | Cannot have constructors    |
++----------------------+-----------------------------+
+| Class can extend     | A class can implement       |
+| only one class       | multiple interfaces         |
++----------------------+-----------------------------+
+
+IMPORTANT:
+
+Abstract class → shared state + shared implementation
+
+Interface → contract + abstraction
+
+
+======================================================================
+8. CAN AN ABSTRACT CLASS CONTAIN CONSTRUCTORS?
+----------------------------------------------------------------------
+
+YES.
+
+An abstract class can contain constructors even though we cannot
+create its object directly.
+
+Why?
+
+When an object of a concrete child class is created, the
+constructor of the parent abstract class is executed as part of
+the object creation process.
+
+Example:
+
+abstract class Animal {
+
+    Animal() {
+        System.out.println("Animal constructor");
+    }
+}
+
+class Dog extends Animal {
+
+    Dog() {
+        System.out.println("Dog constructor");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Dog d = new Dog();
+    }
+}
+
+Output:
+
+Animal constructor
+Dog constructor
+
+
+IMPORTANT:
+
+Cannot instantiate abstract class
+
+    ≠
+
+Cannot have constructor
+
+
+======================================================================
+9. CAN AN INTERFACE HAVE METHODS WITH IMPLEMENTATION?
+----------------------------------------------------------------------
+
+YES.
+
+This is an important Java interview trap.
+
+Since Java 8:
+
+1. default methods
+2. static methods
+
+can have implementations inside interfaces.
+
+Since Java 9:
+
+3. private methods
+
+can also have implementations.
+
+Example:
+
+interface Vehicle {
+
+    void start();
+
+    default void stop() {
+        System.out.println("Vehicle stopped");
+    }
+
+    static void info() {
+        System.out.println("Vehicle interface");
+    }
+}
+
+Important:
+
+Normal abstract method:
+
+void start();
+
+does not contain implementation.
+
+But:
+
+default void stop() {
+    System.out.println("Vehicle stopped");
+}
+
+contains implementation.
+
+
+======================================================================
+ABSTRACTION vs ENCAPSULATION
+----------------------------------------------------------------------
+
+VERY IMPORTANT INTERVIEW TRAP
+
+
+ABSTRACTION
+
+Focus:
+
+"What should be exposed?"
+
+Hides:
+
+Implementation details
+
+Achieved mainly using:
+
+• Abstract class
+• Interface
+
+
+ENCAPSULATION
+
+Focus:
+
+"How should data be protected?"
+
+Hides:
+
+Direct access to data
+
+Achieved using:
+
+• private fields
+• getters
+• setters
+
+
+Memory Trick:
+
+Abstraction
+    ↓
+Hide IMPLEMENTATION
+
+Encapsulation
+    ↓
+Protect DATA
+
+
+======================================================================
+COMMON INTERVIEW TRAPS
+----------------------------------------------------------------------
+
+❌ "Abstract class can only contain abstract methods."
+
+✅ Abstract class can contain both abstract and concrete methods.
+
+
+❌ "Abstract class cannot have a constructor."
+
+✅ Abstract class can have constructors.
+
+
+❌ "Interface can contain only abstract methods."
+
+✅ Modern Java interfaces can contain:
+
+• abstract methods
+• default methods
+• static methods
+• private methods
+
+
+❌ "Abstract class is inherited using abstract keyword."
+
+✅ Abstract class is inherited using `extends`.
+
+Example:
+
+class Dog extends Animal
+
+
+❌ "Interface is inherited using implements."
+
+Technically:
+
+A class IMPLEMENTS an interface.
+
+Example:
+
+class Dog implements Animal
+
+
+======================================================================
+QUICK REVISION
+----------------------------------------------------------------------
+
+ABSTRACTION
+    ↓
+Hide implementation
+Show essential functionality
+    ↓
+Abstract Class / Interface
+
+
+ABSTRACT CLASS
+    ↓
+Cannot instantiate directly
+    ↓
+Abstract + Concrete methods
+    ↓
+Can have constructors
+    ↓
+Child uses extends
+
+
+INTERFACE
+    ↓
+Contract / Blueprint
+    ↓
+Class uses implements
+    ↓
+Supports multiple interfaces
+    ↓
+Can have abstract/default/static/private methods
+
+
+ABSTRACT CLASS vs INTERFACE
+
+Abstract Class
+    → Shared state + implementation
+
+Interface
+    → Contract + abstraction
+
+
+======================================================================
+ONE-MINUTE INTERVIEW REVISION
+----------------------------------------------------------------------
+
+Q: What is abstraction?
+A: Hiding implementation details and exposing essential
+   functionality.
+
+Q: How is abstraction achieved?
+A: Mainly through abstract classes and interfaces.
+
+Q: What is an abstract class?
+A: A class declared with abstract that cannot be instantiated
+   directly and can contain abstract and concrete methods.
+
+Q: When use abstract class?
+A: When related classes share common state/behavior but need
+   different implementations for some methods.
+
+Q: What is an interface?
+A: A contract that implementing classes must follow.
+
+Q: When use interface?
+A: For abstraction, loose coupling, common contracts, and
+   multiple inheritance of type.
+
+Q: Can abstract class have constructor?
+A: Yes. It initializes the parent portion of a child object.
+
+Q: Can interface have implemented methods?
+A: Yes. Since Java 8 default/static methods and since Java 9
+   private methods can have implementations.
+
+
+======================================================================
+STATUS
+----------------------------------------------------------------------
+
+PART 2.5 – ABSTRACTION & INTERFACE
+
+STATUS: ✅ COMPLETED
+
+Next:
+
+PART 2.6 – PACKAGES & ACCESS MODIFIERS
+======================================================================
