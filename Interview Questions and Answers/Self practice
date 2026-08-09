@@ -1,0 +1,634 @@
+============================================================
+        COGNIZANT INTERVIEW REVISION — PART A
+        Q1–Q30 | INTERVIEW QUESTIONS + ANSWERS
+============================================================
+
+
+========================
+Q1. Tell me about yourself and walk me through your resume.
+========================
+
+ANSWER:
+
+Good morning, sir. My name is Vishal, and I am from Agra, Uttar Pradesh. I am currently pursuing B.Tech in Computer Science from GLA University, Mathura.
+
+I have a strong foundation in Data Structures and Algorithms and have solved 1000+ coding problems across LeetCode and GeeksforGeeks, which has significantly improved my problem-solving skills.
+
+Along with DSA, I have hands-on experience with Java and have worked on full-stack web applications using the MERN stack. I have also worked with technologies such as Spring Boot, SQL, MongoDB, and PL/SQL.
+
+One of my major projects is BharatYatra, a travel and tourism platform that provides information about Indian states, cities, food, and transportation.
+
+Apart from technology, I enjoy listening to music and exploring new technologies, especially AI tools and AI agents.
+
+I am now looking forward to starting my career in a reputed organization where I can apply my technical skills, continue learning, and contribute to real-world projects.
+
+
+========================
+Q2. Why did you choose Computer Science?
+========================
+
+ANSWER:
+
+Computer Science was not my first career choice. My initial goal was to join the defence services, and I cleared some defence-related examinations, but due to medical and physical reasons, I could not pursue that path.
+
+I then chose Computer Science as an alternative career path. During my first year, I started exploring programming and gradually developed a genuine interest in coding and problem-solving.
+
+From my second semester onwards, I started practicing DSA seriously and eventually solved 1000+ coding problems. This experience made me realize that I genuinely enjoy problem-solving and software development.
+
+So, although Computer Science was not my original plan, it has now become a field that I am genuinely interested in and want to build my career in.
+
+
+========================
+Q3. You have solved 1000+ coding problems. What have you learned from this experience?
+========================
+
+ANSWER:
+
+Solving 1000+ coding problems taught me that solving problems randomly is not the most effective way to improve.
+
+Initially, I solved many problems by following tutorials and solutions, but after several hundred problems, I realized that pattern recognition is much more important.
+
+I started solving problems topic-wise and pattern-wise, such as recursion, sliding window, two pointers, binary search, and dynamic programming.
+
+This approach improved my ability to identify the underlying pattern of a problem instead of simply memorizing solutions.
+
+It also taught me consistency, patience, and how to approach unfamiliar problems systematically.
+
+
+========================
+Q4. Why did you choose Java as your primary programming language?
+========================
+
+ANSWER:
+
+I chose Java because it is platform-independent, object-oriented, widely used in enterprise applications, and has a strong ecosystem.
+
+Java provides features such as automatic memory management, exception handling, multithreading, and strong type safety.
+
+It is widely used for large-scale applications, backend development, and enterprise software.
+
+I also prefer Java for DSA because it provides a rich collection framework and allows me to focus on problem-solving while using a structured and object-oriented programming approach.
+
+
+========================
+Q5. What are the four pillars of OOP? Explain each with examples.
+========================
+
+ANSWER:
+
+The four pillars of Object-Oriented Programming are:
+
+1. Encapsulation
+2. Inheritance
+3. Abstraction
+4. Polymorphism
+
+Encapsulation means bundling data and methods into a single unit and controlling access to the data, usually using private fields and methods such as getters and setters.
+
+Inheritance allows a child class to acquire properties and behavior from a parent class. For example, Car and Bike can inherit common properties from Vehicle.
+
+Abstraction means hiding implementation details and exposing only the required functionality. For example, an ATM allows us to withdraw money without exposing its internal implementation.
+
+Polymorphism means one interface or method name can have multiple forms. It can be achieved through method overloading at compile time and method overriding at runtime.
+
+
+========================
+Q6. What is the difference between method overloading and method overriding?
+========================
+
+ANSWER:
+
+Method overloading occurs when multiple methods have the same name but different parameter lists within a class. It is compile-time polymorphism.
+
+Method overriding occurs when a child class provides its own implementation of a method already defined in its parent class. It is runtime polymorphism.
+
+For example:
+
+add(int, int)
+add(int, int, int)
+
+demonstrate overloading.
+
+A Dog class overriding the sound() method of Animal demonstrates overriding.
+
+
+========================
+Q7. What is the difference between an abstract class and an interface?
+========================
+
+ANSWER:
+
+An abstract class is used when we want to provide common behavior or state to related child classes.
+
+It can contain abstract as well as concrete methods and can have instance variables and constructors.
+
+An interface defines a contract that implementing classes must follow.
+
+It is useful when different classes need to follow common behavior but may have different implementations.
+
+A class extends an abstract class using "extends" and implements an interface using "implements".
+
+
+========================
+Q8. Explain JVM, JRE, and JDK.
+========================
+
+ANSWER:
+
+JDK, or Java Development Kit, is used to develop Java applications. It contains development tools along with the JRE.
+
+JRE, or Java Runtime Environment, provides the environment required to run Java applications and contains the JVM and supporting libraries.
+
+JVM, or Java Virtual Machine, executes Java bytecode and converts it into instructions that the underlying operating system and hardware can execute.
+
+The JVM is also a major reason Java is platform-independent because different operating systems have their own JVM implementations.
+
+Memory:
+
+JDK
+ |
+ v
+JRE
+ |
+ v
+JVM
+
+
+========================
+Q9. What is the difference between == and .equals() in Java?
+========================
+
+ANSWER:
+
+For objects, == compares whether two references point to the same object, whereas .equals() is generally used to compare logical content, depending on how the class implements it.
+
+For example, two String objects can contain the same text but be different objects.
+
+In that case, == may return false while .equals() returns true.
+
+
+========================
+Q10. Why is String immutable in Java?
+========================
+
+ANSWER:
+
+String is immutable in Java, meaning once a String object is created, its content cannot be changed.
+
+Immutability provides benefits such as:
+
+- Security
+- Thread safety
+- String pool optimization
+- Predictable behavior
+
+When we appear to modify a String, Java actually creates a new String object instead of modifying the existing one.
+
+
+========================
+Q11. What is the difference between final, finally, and finalize?
+========================
+
+ANSWER:
+
+final is a keyword used with variables, methods, and classes.
+
+A final variable cannot be reassigned.
+
+A final method cannot be overridden.
+
+A final class cannot be inherited.
+
+finally is a block used with exception handling and is generally executed whether an exception occurs or not.
+
+finalize() was an old method associated with garbage collection, but it has been deprecated and should not be relied upon for resource management.
+
+
+========================
+Q12. What is the difference between ArrayList and LinkedList?
+========================
+
+ANSWER:
+
+ArrayList internally uses a dynamic array, while LinkedList uses linked nodes.
+
+ArrayList provides efficient random access with O(1) average access time, while LinkedList requires O(n) traversal for indexed access.
+
+LinkedList can be more efficient for insertions and deletions when the node position is already known.
+
+ArrayList is generally preferred for frequent random access.
+
+Both maintain insertion order and allow duplicate elements.
+
+
+========================
+Q13. What is the difference between HashMap and HashSet?
+========================
+
+ANSWER:
+
+HashMap stores data as key-value pairs, while HashSet stores unique elements.
+
+HashMap does not allow duplicate keys but can contain duplicate values.
+
+HashSet does not allow duplicate elements.
+
+Both are hash-based collections and generally provide average O(1) time for basic operations such as insertion, search, and deletion.
+
+We use HashMap when we need key-value mapping and HashSet when we need uniqueness.
+
+
+========================
+Q14. What is time complexity and space complexity? Explain Big-O notation.
+========================
+
+ANSWER:
+
+Time complexity describes how the running time of an algorithm grows with respect to input size.
+
+Space complexity describes how much additional memory an algorithm requires as the input size grows.
+
+Big-O notation represents the asymptotic upper bound of an algorithm's growth rate.
+
+For example:
+
+Single loop running n times -> O(n)
+
+Array element access by index -> O(1)
+
+
+========================
+Q15. What is the difference between an array and a linked list?
+========================
+
+ANSWER:
+
+An array stores elements in contiguous memory and supports direct indexing.
+
+A linked list consists of nodes connected through references.
+
+Array size is generally fixed after creation in Java, whereas a linked list can dynamically grow or shrink.
+
+Array provides O(1) indexed access, while accessing an arbitrary element in a linked list generally takes O(n) time.
+
+
+========================
+Q16. What is the difference between a stack and a queue?
+========================
+
+ANSWER:
+
+A stack follows the LIFO principle:
+
+LIFO = Last In, First Out
+
+Its common operations are:
+
+push
+pop
+
+A queue follows the FIFO principle:
+
+FIFO = First In, First Out
+
+Its common operations are:
+
+enqueue
+dequeue
+
+A stack can be visualized as a stack of plates, while a queue can be visualized as people waiting in a line.
+
+
+========================
+Q17. Explain binary search and its time complexity.
+========================
+
+ANSWER:
+
+Binary search is an algorithm used to find a target element in a sorted collection.
+
+We maintain left and right boundaries, calculate the middle element, and compare it with the target.
+
+Depending on the comparison, we discard half of the search space and continue.
+
+Because the search space is divided by two at every step:
+
+Time Complexity = O(log n)
+
+Iterative Space Complexity = O(1)
+
+
+========================
+Q18. What is recursion? What are its advantages and disadvantages?
+========================
+
+ANSWER:
+
+Recursion is a technique where a function calls itself to solve smaller instances of the same problem.
+
+Every recursive solution should have a base case to terminate the recursion.
+
+Recursion is useful for:
+
+- Tree traversal
+- Graph traversal
+- Divide and conquer
+- Backtracking
+
+Disadvantages include:
+
+- Additional call-stack memory
+- Possible stack overflow if recursion becomes too deep
+
+The time complexity depends on the particular recursive algorithm and is not necessarily exponential.
+
+
+========================
+Q19. What is the difference between BFS and DFS?
+========================
+
+ANSWER:
+
+BFS stands for Breadth-First Search.
+
+It traverses a graph level by level and generally uses a queue.
+
+DFS stands for Depth-First Search.
+
+It explores one path as deeply as possible before backtracking.
+
+DFS can be implemented using recursion or a stack.
+
+For a graph with V vertices and E edges:
+
+BFS Time Complexity = O(V + E)
+
+DFS Time Complexity = O(V + E)
+
+
+========================
+Q20. What is the difference between a primary key and a foreign key?
+========================
+
+ANSWER:
+
+A primary key uniquely identifies each row in a table.
+
+It must contain unique and non-null values.
+
+A table can have only one primary key, although it can consist of multiple columns.
+
+A foreign key is a column or set of columns used to establish a relationship between two tables.
+
+It references a primary key or unique key in another table.
+
+Unlike a primary key, a foreign key can contain duplicate values and can potentially contain NULL values.
+
+
+========================
+Q21. What is normalization? Why is it needed?
+========================
+
+ANSWER:
+
+Normalization is the process of organizing data into multiple related tables to reduce data redundancy and maintain data consistency.
+
+It also helps prevent:
+
+- Insertion anomaly
+- Update anomaly
+- Deletion anomaly
+
+Important normal forms:
+
+1NF -> Atomic values
+
+2NF -> Removes partial dependency
+
+3NF -> Removes transitive dependency
+
+BCNF -> Stronger version of 3NF
+
+
+========================
+Q22. What is the difference between DELETE, TRUNCATE, and DROP?
+========================
+
+ANSWER:
+
+DELETE is used to remove specific rows using a WHERE condition, while the table structure remains.
+
+TRUNCATE removes all rows from a table but keeps the table structure.
+
+DROP removes the entire table, including its structure and data.
+
+DELETE -> Selected/all rows
+
+TRUNCATE -> All rows
+
+DROP -> Entire table
+
+
+========================
+Q23. What is the difference between WHERE and HAVING?
+========================
+
+ANSWER:
+
+WHERE and HAVING are both used for filtering.
+
+WHERE filters individual rows before grouping.
+
+HAVING filters groups after GROUP BY, usually based on aggregate functions such as:
+
+COUNT()
+SUM()
+AVG()
+
+Query order:
+
+FROM
+  ↓
+WHERE
+  ↓
+GROUP BY
+  ↓
+HAVING
+  ↓
+SELECT
+  ↓
+ORDER BY
+
+
+========================
+Q24. What is the difference between SQL and PL/SQL?
+========================
+
+ANSWER:
+
+SQL stands for Structured Query Language and is primarily used to interact with relational databases through queries such as:
+
+SELECT
+INSERT
+UPDATE
+DELETE
+
+PL/SQL stands for Procedural Language/SQL and is Oracle's procedural extension to SQL.
+
+It combines SQL with programming features such as:
+
+- Variables
+- Conditions
+- Loops
+- Procedures
+- Functions
+- Exception handling
+
+SQL -> Query the database
+
+PL/SQL -> Query + Programming Logic
+
+
+========================
+Q25. What are procedures, functions, and triggers in PL/SQL?
+========================
+
+ANSWER:
+
+A procedure is a named PL/SQL program unit used to perform a specific operation or business logic.
+
+It does not have to return a value.
+
+A function is also a named program unit used to perform a specific task, but it must return a value.
+
+A trigger is a PL/SQL program that executes automatically when a specified database event such as:
+
+INSERT
+UPDATE
+DELETE
+
+occurs.
+
+
+Memory:
+
+Procedure -> Perform
+
+Function -> Return
+
+Trigger -> Automatically reacts
+
+
+========================
+Q26. What is a cursor in PL/SQL and why is it used?
+========================
+
+ANSWER:
+
+A cursor in PL/SQL is a mechanism used to process the rows returned by a SQL query, generally one row at a time.
+
+It is useful when we need to retrieve and process multiple rows individually.
+
+Types of cursors:
+
+1. Implicit Cursor
+
+Automatically managed by Oracle.
+
+2. Explicit Cursor
+
+Declared and controlled by the programmer.
+
+
+========================
+Q27. What is the difference between a process and a thread?
+========================
+
+ANSWER:
+
+A process is an independent program in execution with its own memory space and resources.
+
+A thread is the smallest unit of execution within a process.
+
+Multiple threads of the same process share resources such as the heap and code section, but each thread has its own stack and execution state.
+
+Processes are generally more heavyweight, while threads are comparatively lightweight.
+
+
+========================
+Q28. What is deadlock? What are the necessary conditions for deadlock?
+========================
+
+ANSWER:
+
+Deadlock is a situation where two or more processes are permanently waiting for resources held by each other, so none of them can proceed.
+
+The four necessary conditions are:
+
+1. Mutual Exclusion
+2. Hold and Wait
+3. No Preemption
+4. Circular Wait
+
+Memory:
+
+M - Mutual Exclusion
+H - Hold and Wait
+N - No Preemption
+C - Circular Wait
+
+
+========================
+Q29. What is context switching?
+========================
+
+ANSWER:
+
+Context switching is the process of saving the execution state of a currently running process or thread and loading the saved state of another process or thread so that the CPU can switch execution between them.
+
+For example, if a process is waiting for I/O, the operating system can switch the CPU to another ready process.
+
+Context switching improves CPU utilization and enables multitasking.
+
+However, it introduces overhead because saving and restoring execution states takes time.
+
+
+========================
+Q30. Explain one of the most difficult DSA problems you have solved and how you approached it.
+========================
+
+ANSWER:
+
+One of the challenging areas for me initially was Dynamic Programming, especially problems based on the take-or-skip pattern.
+
+For example, while learning 0/1 Knapsack, I initially found it difficult to understand how the recursive choices were being made.
+
+Instead of just memorizing the solution, I started dry-running the recursion and drawing the recursion tree to understand how each take-or-skip decision was generating subproblems.
+
+Then I solved three to four problems based on the same pattern.
+
+This helped me recognize the underlying pattern and made it much easier for me to approach similar DP problems independently.
+
+
+============================================================
+                    PROGRESS
+============================================================
+
+PART A — OTHER RESUME / CORE TOPICS
+
+Completed: 30 / 30 ✅
+
+PART B — MERN + PROJECTS + REST + SPRING BOOT
+
+Remaining: 40 / 40 🔴
+
+TOTAL
+
+Completed: 30 / 70
+Remaining: 40 / 70
+
+IMPORTANT:
+- No repeated questions
+- Only questions from the original 70-question set
+- Continue from Q31
+============================================================
